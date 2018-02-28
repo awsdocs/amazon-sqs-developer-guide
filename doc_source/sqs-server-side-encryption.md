@@ -29,11 +29,11 @@ Other features of AWS services or third\-party services that send notifications 
 [AWS IoT Rule Actions](http://docs.aws.amazon.com/iot/latest/developerguide/iot-rule-actions.html)
 For information about compatibility of other services with encrypted queues, see [Example 3: Enable Compatibility Between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Encrypted Queues](#compatibility-with-aws-services) and your service documentation\.
 
-AWS KMS combines secure, highly available hardware and software to provide a key management system scaled for the cloud\. When you use Amazon SQS with AWS KMS, the data keys that encrypt your message data are also encrypted and stored with the data they protect\.
+AWS KMS combines secure, highly available hardware and software to provide a key management system scaled for the cloud\. When you use Amazon SQS with AWS KMS, the [data keys](#sqs-sse-key-terms) that encrypt your message data are also encrypted and stored with the data they protect\.
 
 The following are benefits of using AWS KMS:
 
-+ You can create and manage customer master keys \(CMKs\) yourself\.
++ You can create and manage [customer master keys \(CMKs\)](#sqs-sse-key-terms) yourself\.
 
 + You can also use the AWS\-managed CMK for Amazon SQS, which is unique for each account and region\.
 
@@ -59,7 +59,7 @@ Encrypting a message makes its contents unavailable to unauthorized or anonymous
 
 + Any encrypted message remains encrypted even if the encryption of its queue is disabled\.
 
-Moving a message to a dead\-letter queue doesn't affect its encryption:
+Moving a message to a [dead\-letter queue](sqs-dead-letter-queues.md) doesn't affect its encryption:
 
 + When Amazon SQS moves a message from an encrypted source queue to a unencrypted dead\-letter queue, the message remains encrypted\.
 
@@ -91,7 +91,7 @@ There are additional charges for using AWS KMS\. For more information, see [How 
 
 ## How Does the Data Key Reuse Period Work?<a name="sqs-how-does-the-data-key-reuse-period-work"></a>
 
-Amazon SQS uses a single customer master key \(either the AWS\-managed CMK for Amazon SQS or a custom CMK\) to provide [envelope encryption](http://docs.aws.amazon.com/kms/latest/developerguide/workflow.html#envelope_encryption) and decryption of multiple Amazon SQS messages during the *data key reuse period*\. To make the most of the data key reuse period, keep the following in mind:
+Amazon SQS uses a single customer master key \(either the AWS\-managed CMK for Amazon SQS or a custom CMK\) to provide [envelope encryption](http://docs.aws.amazon.com/kms/latest/developerguide/workflow.html#envelope_encryption) and decryption of multiple Amazon SQS messages during the *data key reuse period*\. To make the most of the [data key reuse period](#sqs-sse-key-terms), keep the following in mind:
 
 + A shorter reuse period provides better security but results in more calls to AWS KMS, which might incur charges beyond the Free Tier\.
 
@@ -120,7 +120,7 @@ R = B / D * (2 * P + C)
 
 `B` is the billing period \(in seconds\)\.
 
-`D` is the data key reuse period \(in seconds\)\.
+`D` is the [data key reuse period](#sqs-sse-key-terms) \(in seconds\)\.
 
 `P` is the number of producing [principals](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#Principal) that send to the Amazon SQS queue\.
 
@@ -205,7 +205,7 @@ The producer must have the `kms:GenerateDataKey` and `kms:Decrypt` permissions f
 
 ### Example 2: Allow a User to Receive Messages from an Encrypted Queue<a name="receive-from-encrypted-queue"></a>
 
-The consumer must have the `kms:Decrypt` permission for any customer master key \(CMK\) that is used to encrypt the messages in the specified queue\. If the queue acts as a dead\-letter queue, the consumer must also have the `kms:Decrypt` permission for any CMK that is used to encrypt the messages in the source queue\.
+The consumer must have the `kms:Decrypt` permission for any customer master key \(CMK\) that is used to encrypt the messages in the specified queue\. If the queue acts as a [dead\-letter queue](sqs-dead-letter-queues.md), the consumer must also have the `kms:Decrypt` permission for any CMK that is used to encrypt the messages in the source queue\.
 
 ```
 {
@@ -255,7 +255,7 @@ For Amazon SNS topic subscriptions, use `sns`
    }
    ```
 
-1. Create a new SSE queue or configure an existing SSE queue using the ARN of your CMK\.
+1. [Create a new SSE queue](sqs-create-queue-sse.md) or [configure an existing SSE queue](sqs-configure-sse-existing-queue.md) using the ARN of your CMK\.
 
 **Learn More**
 

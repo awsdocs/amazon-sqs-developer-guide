@@ -18,12 +18,12 @@ Occasionally, producers and consumers might fail to interpret aspects of the pro
 
 The *redrive policy* specifies the *source queue*, the *dead\-letter queue*, and the conditions under which Amazon SQS moves messages from the former to the latter if the consumer of the source queue fails to process a message a specified number of times\. For example, if the source queue has a redrive policy with `maxReceiveCount` set to 5, and the consumer of the source queue receives a message 5 times without ever deleting it, Amazon SQS moves the message to the dead\-letter queue\.
 
-To specify a dead\-letter queue, you can use the AWS Management Console or an API action\. You must do this for each queue that sends messages to a dead\-letter queue\. Multiple queues can target a single dead\-letter queue\. For more information, see [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md) and the `RedrivePolicy` attribute of the [ `CreateQueue`](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html#API_CreateQueue_RequestParameters) or [ `SetQueueAttributes`](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html#API_SetQueueAttributes_RequestParameters) API action\.
+To specify a dead\-letter queue, you can [use the AWS Management Console or an API action](sqs-configure-dead-letter-queue.md)\. You must do this for each queue that sends messages to a dead\-letter queue\. Multiple queues can target a single dead\-letter queue\. For more information, see [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md) and the `RedrivePolicy` attribute of the [ `CreateQueue`](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html#API_CreateQueue_RequestParameters) or [ `SetQueueAttributes`](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html#API_SetQueueAttributes_RequestParameters) API action\.
 
 **Important**  
 The dead\-letter queue of a FIFO queue must also be a FIFO queue\. Similarly, the dead\-letter queue of a standard queue must also be a standard queue\.  
 You must use the same AWS account to create the dead\-letter queue and the other queues that send messages to the dead\-letter queue\. Also, dead\-letter queues must reside in the same region as the other queues that use the dead\-letter queue\. For example, if you create a queue in the US East \(Ohio\) region and you want to use a dead\-letter queue with that queue, the second queue must also be in the US East \(Ohio\) region\.  
-The expiration of a message is always based on its original enqueue timestamp\. When a message is moved to a dead\-letter queue, the enqueue timestamp remains unchanged\. For example, if a message spends 1 day in the original queue before being moved to a dead\-letter queue, and the retention period of the dead\-letter queue is set to 4 days, the message is deleted from the dead\-letter queue after 3 days\. Thus, it is a best practice to always set the retention period of a dead\-letter queue to be longer than the retention period of the original queue\.
+The expiration of a message is always based on its original enqueue timestamp\. When a message is moved to a [dead\-letter queue](#sqs-dead-letter-queues), the enqueue timestamp remains unchanged\. For example, if a message spends 1 day in the original queue before being moved to a dead\-letter queue, and the retention period of the dead\-letter queue is set to 4 days, the message is deleted from the dead\-letter queue after 3 days\. Thus, it is a best practice to always set the retention period of a dead\-letter queue to be longer than the retention period of the original queue\.
 
 ## What are the Benefits of Dead\-Letter Queues?<a name="sqs-dead-letter-queues-benefits"></a>
 
@@ -41,7 +41,7 @@ The main task of a dead\-letter queue is handling message failure\. A dead\-lett
 
 ### Standard Queues<a name="dead-letter-queues-standard-queues"></a>
 
-Standard queues keep processing messages until the expiration of the retention period\. This ensures continuous processing of messages, which minimizes the chances of your queue being blocked by messages that can’t be processed\. It also ensures fast recovery for your queue\.
+[Standard queues](standard-queues.md) keep processing messages until the expiration of the retention period\. This ensures continuous processing of messages, which minimizes the chances of your queue being blocked by messages that can’t be processed\. It also ensures fast recovery for your queue\.
 
 In a system that processes thousands of messages, having a large number of messages that the consumer repeatedly fails to acknowledge and delete might increase costs and place extra load on the hardware\. Instead of trying to process failing messages until they expire, it is better to move them to a dead\-letter queue after a few processing attempts\.
 
@@ -50,7 +50,7 @@ Standard queues allow a high number of in\-flight messages\. If the majority of 
 
 ### FIFO Queues<a name="dead-letter-queues-FIFO-queues"></a>
 
-FIFO queues ensure exactly\-once processing by consuming messages in sequence from a message group\. Thus, although the consumer can continue to retrieve ordered messages from another message group, the first message group remains unavailable until the message blocking the queue is processed successfully\.
+[FIFO queues](FIFO-queues.md) ensure exactly\-once processing by consuming messages in sequence from a message group\. Thus, although the consumer can continue to retrieve ordered messages from another message group, the first message group remains unavailable until the message blocking the queue is processed successfully\.
 
 **Note**  
 FIFO queues allow a lower number of in\-flight messages\. Thus, to ensure that your FIFO queue doesn’t get blocked by a message, you must ensure that your application handles message processing correctly\.

@@ -5,6 +5,8 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| February 28, 2018 | Corrected image display in GitHub\. | 
+| February 27, 2018 | In addition to HTML, PDF, and Kindle, the Amazon Simple Queue Service Developer Guide is available on GitHub\. To leave feedback, choose the GitHub icon in the upper right\-hand corner\.![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/submit-github-feedback.png)  | 
 | February 26, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | February 23, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | February 21, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
@@ -55,9 +57,9 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | May 23, 2017 | Server\-side encryption \(SSE\) for Amazon SQS is available in the US East \(N\. Virginia\) region, in addition to the US East \(Ohio\) and US West \(Oregon\) regions\. For more information on server\-side encryption and how to get started using it, see [Protecting Data Using Server\-Side Encryption \(SSE\) and AWS KMS ](sqs-server-side-encryption.md)\. | 
 | May 19, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | April 25, 2017 | Restructured and updated the [Amazon SQS Long Polling](sqs-long-polling.md) section\. | 
-| February 6, 2017 | Updated the Authentication and Access Control section with new content\. | 
+| February 6, 2017 | Updated the [Authentication and Access Control](sqs-authentication-and-access-control.md) section with new content\. | 
 | December 16, 2016 | Retired the Amazon Simple Queue Service Getting Started Guide and incorporated some of its content into the following sections of this guide:[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
-| December 2, 2016 | Restructured and updated the Authentication and Access Control section\. | 
+| December 2, 2016 | Restructured and updated the [Authentication and Access Control](sqs-authentication-and-access-control.md) section\. | 
 | November 2, 2016 | Renamed the Walkthroughs section to [Amazon SQS Tutorials](sqs-tutorials.md)\. | 
 | May 27, 2016 | Added the [Best Practices for Amazon SQS](sqs-best-practices.md) section\. | 
 | May 12, 2016 | Added the [Amazon SQS Limits](sqs-limits.md) section\. | 

@@ -8,59 +8,59 @@ If you want to explicitly deny or allow access based on more specific conditions
 
 To write your own policies, you must be familiar with [JSON](http://json.org/) and a number of key concepts\.
 
-**allow**  
-The result of a [[ERROR] BAD/MISSING LINK TEXT](#statement) that has [[ERROR] BAD/MISSING LINK TEXT](#effect) set to `allow`\.
+**allow**  <a name="allow"></a>
+The result of a [statement](#statement) that has [effect](#effect) set to `allow`\.
 
-**action**  
-The activity that the [[ERROR] BAD/MISSING LINK TEXT](#principal) has permission to perform, typically a request to AWS\.
+**action**  <a name="action"></a>
+The activity that the [principal](#principal) has permission to perform, typically a request to AWS\.
 
-**default\-deny**  
-The result of a [[ERROR] BAD/MISSING LINK TEXT](#statement) that that has no [[ERROR] BAD/MISSING LINK TEXT](#allow) or [[ERROR] BAD/MISSING LINK TEXT](#explicit-deny) settings\.
+**default\-deny**  <a name="default-deny"></a>
+The result of a [statement](#statement) that that has no [allow](#allow) or [explicit deny](#explicit-deny) settings\.
 
-**condition**  
-Any restriction or detail about a [[ERROR] BAD/MISSING LINK TEXT](#permission)\. Typical conditions are related to date and time and IP addresses\.
+**condition**  <a name="condition"></a>
+Any restriction or detail about a [permission](#permission)\. Typical conditions are related to date and time and IP addresses\.
 
-**effect**  
-The result that you want the [[ERROR] BAD/MISSING LINK TEXT](#statement) of a [[ERROR] BAD/MISSING LINK TEXT](#policy) to return at evaluation time\. You specify the `deny` or `allow` value when you write the policy statement\. There can be three possible results at policy evaluation time: [[ERROR] BAD/MISSING LINK TEXT](#default-deny), [[ERROR] BAD/MISSING LINK TEXT](#allow), and [[ERROR] BAD/MISSING LINK TEXT](#explicit-deny)\.
+**effect**  <a name="effect"></a>
+The result that you want the [statement](#statement) of a [policy](#policy) to return at evaluation time\. You specify the `deny` or `allow` value when you write the policy statement\. There can be three possible results at policy evaluation time: [default-deny](#default-deny), [allow](#allow), and [explicit deny](#explicit-deny)\.
 
-**explicit deny**  
-The result of a [[ERROR] BAD/MISSING LINK TEXT](#statement) that has [[ERROR] BAD/MISSING LINK TEXT](#effect) set to `deny`\.
+**explicit deny**  <a name="explicit-deny"></a>
+The result of a [statement](#statement) that has [effect](#effect) set to `deny`\.
 
-**evaluation**  
-The process that Amazon SQS uses to determine whether an incoming request should be denied or allowed based on a [[ERROR] BAD/MISSING LINK TEXT](#policy)\.
+**evaluation**  <a name="evaluation"></a>
+The process that Amazon SQS uses to determine whether an incoming request should be denied or allowed based on a [policy](#policy)\.
 
-**issuer**  
-The user who writes a [[ERROR] BAD/MISSING LINK TEXT](#policy) to grant permissions to a resource\. The issuer, by definition is always the resource owner\. AWS doesn't permit Amazon SQS users to create policies for resources they don't own\.
+**issuer**  <a name="issuer"></a>
+The user who writes a [policy](#policy) to grant permissions to a resource\. The issuer, by definition is always the resource owner\. AWS doesn't permit Amazon SQS users to create policies for resources they don't own\.
 
-**key**  
+**key**  <a name="key"></a>
 The specific characteristic that is the basis for access restriction\.
 
-**permission**  
-The concept of allowing or disallowing access to a resource using a [[ERROR] BAD/MISSING LINK TEXT](#condition) and a [[ERROR] BAD/MISSING LINK TEXT](#key)\.
+**permission**  <a name="permission"></a>
+The concept of allowing or disallowing access to a resource using a [condition](#condition) and a [key](#key)\.
 
-**policy**  
-The document that acts as a container for one or more statements\.  
+**policy**  <a name="policy"></a>
+The document that acts as a container for one or more [statements](#statement)\.  
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AccessPolicyLanguage_Statement_and_Policy.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AccessPolicyLanguage_Statement_and_Policy.png)
 Amazon SQS uses the policy to determine whether to grant access to a user for a resource\.
 
-**principal**  
-The user who receives [[ERROR] BAD/MISSING LINK TEXT](#permission) in the [[ERROR] BAD/MISSING LINK TEXT](#policy)\.
+**principal**  <a name="principal"></a>
+The user who receives [permission](#permission) in the [policy](#policy)\.
 
-**resource**  
-The object that the [[ERROR] BAD/MISSING LINK TEXT](#principal) requests access to\.
+**resource**  <a name="resource"></a>
+The object that the [principal](#principal) requests access to\.
 
-**statement**  
-The formal description of a single permission, written in the access policy language as part of a broader [[ERROR] BAD/MISSING LINK TEXT](#policy) document\.
+**statement**  <a name="statement"></a>
+The formal description of a single permission, written in the access policy language as part of a broader [policy](#policy) document\.
 
-**requester**  
-The user who sends a request for access to a [[ERROR] BAD/MISSING LINK TEXT](#resource)\.
+**requester**  <a name="requester"></a>
+The user who sends a request for access to a [resource](#resource)\.
 
 ## Architecture<a name="sqs-creating-custom-policies-architecture"></a>
 
 The following figure and table describe the access control for your Amazon SQS resources\.
 
-![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AccessPolicyLanguage_Arch_Overview.png)![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AccessPolicyLanguage_Arch_Overview.png)
 
 
 |  |  | 
@@ -75,7 +75,7 @@ The following figure and table describe the access control for your Amazon SQS r
 
 The following figure and table describe the general workflow of access control with the Amazon SQS access policy language\.
 
-![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AccessPolicyLanguage_Basic_Flow.png)![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AccessPolicyLanguage_Basic_Flow.png)
 
 
 |  |  | 
@@ -93,46 +93,46 @@ At evaluation time, Amazon SQS determines whether a request from someone other t
 
 + By default, all requests to use your resource coming from anyone but you are denied\.
 
-+ An [[ERROR] BAD/MISSING LINK TEXT](#allow) overrides any [[ERROR] BAD/MISSING LINK TEXT](#default-deny)\.
++ An [allow](#allow) overrides any [default-deny](#default-deny)\.
 
-+ An [[ERROR] BAD/MISSING LINK TEXT](#explicit-deny) overrides any [[ERROR] BAD/MISSING LINK TEXT](#allow)\.
++ An [explicit deny](#explicit-deny) overrides any [allow](#allow)\.
 
 + The order in which the policies are evaluated isn't important\.
 
 The following figure and table describe in detail how Amazon SQS evaluates decisions about access permissions\.
 
-![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AccessPolicyLanguage_Evaluation_Flow.png)![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AccessPolicyLanguage_Evaluation_Flow.png)
 
 
 |  |  | 
 | --- |--- |
-| 1 | The decision starts with a [[ERROR] BAD/MISSING LINK TEXT](#default-deny)\. | 
+| 1 | The decision starts with a [default-deny](#default-deny)\. | 
 | 2 | The enforcement code evaluates all the policies that are applicable to the request \(based on the resource, principal, action, and conditions\)\. The order in which the enforcement code evaluates the policies isn't important | 
-| 3 | The enforcement code looks for an [[ERROR] BAD/MISSING LINK TEXT](#explicit-deny) instruction that can apply to the request\. If it finds even one, the enforcement code returns a decision of *deny* and the process finishes\. | 
-| 4 | If no [[ERROR] BAD/MISSING LINK TEXT](#explicit-deny) instruction is found, the enforcement code looks for any [[ERROR] BAD/MISSING LINK TEXT](#allow) instructions that can apply to the request\. If it finds even one, the enforcement code returns a decision of *allow* and the process finishes \(the service continues to process the request\)\.  | 
-| 5 | If no [[ERROR] BAD/MISSING LINK TEXT](#allow) instruction is found, then the final decision is *deny* \(because there is no [[ERROR] BAD/MISSING LINK TEXT](#explicit-deny) or [[ERROR] BAD/MISSING LINK TEXT](#allow), this is considered a [[ERROR] BAD/MISSING LINK TEXT](#default-deny)\.  | 
+| 3 | The enforcement code looks for an [explicit deny](#explicit-deny) instruction that can apply to the request\. If it finds even one, the enforcement code returns a decision of *deny* and the process finishes\. | 
+| 4 | If no [explicit deny](#explicit-deny) instruction is found, the enforcement code looks for any [allow](#allow) instructions that can apply to the request\. If it finds even one, the enforcement code returns a decision of *allow* and the process finishes \(the service continues to process the request\)\.  | 
+| 5 | If no [allow](#allow) instruction is found, then the final decision is *deny* \(because there is no [explicit deny](#explicit-deny) or [allow](#allow), this is considered a [default-deny](#default-deny)\.  | 
 
 ## Relationships Between Explicit and Default Denials<a name="sqs-creating-custom-policies-relationships-between-explicit-default-denials"></a>
 
-If an Amazon SQS policy doesn't directly apply to a request, the request results in a [[ERROR] BAD/MISSING LINK TEXT](#default-deny)\. For example, if a user requests permission to use Amazon SQS but the only policy that applies to the user can use DynamoDB, the requests results in a [[ERROR] BAD/MISSING LINK TEXT](#default-deny)\.
+If an Amazon SQS policy doesn't directly apply to a request, the request results in a [default-deny](#default-deny)\. For example, if a user requests permission to use Amazon SQS but the only policy that applies to the user can use DynamoDB, the requests results in a [default-deny](#default-deny)\.
 
-If a condition in a statement isn't met, the request results in a [[ERROR] BAD/MISSING LINK TEXT](#default-deny)\. If all conditions in a statement are met, the request results in either an [[ERROR] BAD/MISSING LINK TEXT](#allow) or an [[ERROR] BAD/MISSING LINK TEXT](#explicit-deny) based on the value of the [[ERROR] BAD/MISSING LINK TEXT](#effect) element of the policy\. Policies don't specify what to do if a condition isn't met, so the default result in this case is a [[ERROR] BAD/MISSING LINK TEXT](#default-deny)\. For example, you want to prevent requests that come from Antarctica\. You write Policy A1 that allows a request only if it doesn't come from Antarctica\. The following diagram illustrates the Amazon SQS policy\.
+If a condition in a statement isn't met, the request results in a [default-deny](#default-deny)\. If all conditions in a statement are met, the request results in either an [allow](#allow) or an [explicit deny](#explicit-deny) based on the value of the [effect](#effect) element of the policy\. Policies don't specify what to do if a condition isn't met, so the default result in this case is a [default-deny](#default-deny)\. For example, you want to prevent requests that come from Antarctica\. You write Policy A1 that allows a request only if it doesn't come from Antarctica\. The following diagram illustrates the Amazon SQS policy\.
 
-![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-security-custom-policy-allow-request-if-not-from-antarctica.png)![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-security-custom-policy-allow-request-if-not-from-antarctica.png)
 
-If a user sends a request from the U\.S\., the condition is met \(the request isn't from Antarctica\), and the request results in an [[ERROR] BAD/MISSING LINK TEXT](#allow)\. However, if a user sends a request from Antarctica, the condition isn't met and the request defaults to a [[ERROR] BAD/MISSING LINK TEXT](#default-deny)\. You can change the result to an [[ERROR] BAD/MISSING LINK TEXT](#explicit-deny) by writing Policy A2 that explicitly denies a request if it comes from Antarctica\. The following diagram illustrates the policy\.
+If a user sends a request from the U\.S\., the condition is met \(the request isn't from Antarctica\), and the request results in an [allow](#allow)\. However, if a user sends a request from Antarctica, the condition isn't met and the request defaults to a [default-deny](#default-deny)\. You can change the result to an [explicit deny](#explicit-deny) by writing Policy A2 that explicitly denies a request if it comes from Antarctica\. The following diagram illustrates the policy\.
 
-![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-security-custom-policy-explicitly-deny-request-if-from-antarctica.png)![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-security-custom-policy-explicitly-deny-request-if-from-antarctica.png)
 
-If a user sends a request from Antarctica, the condition is met and the request results in an [[ERROR] BAD/MISSING LINK TEXT](#explicit-deny)\.
+If a user sends a request from Antarctica, the condition is met and the request results in an [explicit deny](#explicit-deny)\.
 
-The distinction between a [[ERROR] BAD/MISSING LINK TEXT](#default-deny) and an [[ERROR] BAD/MISSING LINK TEXT](#explicit-deny) is important because an [[ERROR] BAD/MISSING LINK TEXT](#allow) can overwrite the former but not the latter\. For example, Policy B allows requests if they arrive on June 1, 2010\. The following diagram compares combining this policy with Policy A1 and Policy A2\.
+The distinction between a [default-deny](#default-deny) and an [explicit deny](#explicit-deny) is important because an [allow](#allow) can overwrite the former but not the latter\. For example, Policy B allows requests if they arrive on June 1, 2010\. The following diagram compares combining this policy with Policy A1 and Policy A2\.
 
-![\[Overriding\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-security-custom-policy-compare-allow-request-deny-request-policies-override.png)![\[Overriding\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Overriding\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Overriding\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-security-custom-policy-compare-allow-request-deny-request-policies-override.png)
 
-In Scenario 1, Policy A1 results in a [[ERROR] BAD/MISSING LINK TEXT](#default-deny) and Policy B results in an [[ERROR] BAD/MISSING LINK TEXT](#allow) because the policy allows requests that come in on June 1, 2010\. The [[ERROR] BAD/MISSING LINK TEXT](#allow) from Policy B overrides the [[ERROR] BAD/MISSING LINK TEXT](#default-deny) from Policy A1, and the request is allowed\.
+In Scenario 1, Policy A1 results in a [default-deny](#default-deny) and Policy B results in an [allow](#allow) because the policy allows requests that come in on June 1, 2010\. The [allow](#allow) from Policy B overrides the [default-deny](#default-deny) from Policy A1, and the request is allowed\.
 
-In Scenario 2, Policy B2 results in an [[ERROR] BAD/MISSING LINK TEXT](#explicit-deny) and Policy B results in an [[ERROR] BAD/MISSING LINK TEXT](#allow)\. The [[ERROR] BAD/MISSING LINK TEXT](#explicit-deny) from Policy A2 overrides the [[ERROR] BAD/MISSING LINK TEXT](#allow) from Policy B, and the request is denied\.
+In Scenario 2, Policy B2 results in an [explicit deny](#explicit-deny) and Policy B results in an [allow](#allow)\. The [explicit deny](#explicit-deny) from Policy A2 overrides the [allow](#allow) from Policy B, and the request is denied\.
 
 ## Amazon SQS Access Policy Examples<a name="sqs-creating-custom-policies-access-policy-examples"></a>
 

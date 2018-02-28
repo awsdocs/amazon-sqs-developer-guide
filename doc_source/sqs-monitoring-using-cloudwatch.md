@@ -1,6 +1,6 @@
 # Monitoring Amazon SQS using CloudWatch<a name="sqs-monitoring-using-cloudwatch"></a>
 
-Amazon SQS and Amazon CloudWatch are integrated so you can use CloudWatch to view and analyze metrics for your Amazon SQS queues\. You can view and analyze your queues' metrics from the Amazon SQS console, the CloudWatch console, using the AWS CLI, or using the CloudWatch API\. You can also set CloudWatch alarms for Amazon SQS metrics\.
+Amazon SQS and Amazon CloudWatch are integrated so you can use CloudWatch to view and analyze metrics for your Amazon SQS queues\. You can view and analyze your queues' metrics from the [Amazon SQS console](sqs-access-metrics.md#access-cloudwatch-metrics-sqs-console), the [CloudWatch console](sqs-access-metrics.md#access-metrics-cloudwatch-console), using the [AWS CLI](sqs-access-metrics.md#access-cloudwatch-metrics-cli), or using the [CloudWatch API](sqs-access-metrics.md#access-metrics-cloudwatch-api)\. You can also [set CloudWatch alarms](set-cloudwatch-alarms-for-metrics.md) for Amazon SQS metrics\.
 
 CloudWatch metrics for your Amazon SQS queues are automatically collected and pushed to CloudWatch every five minutes\. These metrics are gathered on all queues that meet the CloudWatch guidelines for being *active*\. CloudWatch considers a queue to be active for up to six hours if it contains any messages or if any API action accesses it\. 
 

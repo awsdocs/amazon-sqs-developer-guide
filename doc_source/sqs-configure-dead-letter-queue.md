@@ -14,15 +14,15 @@ The dead\-letter queue of a FIFO queue must also be a FIFO queue\. Similarly, th
 1. On the **Create New Queue** page, ensure that you're in the correct region and then type the **Queue Name**\.
 **Note**  
 The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-queue-name.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-queue-name.png)
 
 1. **Standard** is selected by default\. Choose **FIFO**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-queue-type-descriptions.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-queue-type-descriptions.png)
 
 1. Choose **Configure Queue**\.
 
 1. In this example, you enable the redrive policy for your new queue, set the `MyDeadLetterQueue.fifo` queue as the dead\-letter queue, and set the number of maximum receives to `50`\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-dead-letter-queue-configure-parameters.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-dead-letter-queue-configure-parameters.png)
 
    1. To configure the dead\-letter queue, choose **Use Redrive Policy**\.
 
@@ -39,7 +39,7 @@ The **Maximum Receives** setting applies only to individual messages\.
 When you create a queue, it can take a short time for the queue to propagate throughout Amazon SQS\.
 
    Your queue's **Maximum Receives** and **Dead Letter Queue** ARN are displayed on the **Redrive Policy** tab\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-dead-letter-queue-redrive-policy.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-dead-letter-queue-redrive-policy.png)
 
 ## Java<a name="configure-dead-letter-queue-java"></a>
 
@@ -47,7 +47,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
 ### To configure a dead\-letter queue<a name="configure-dead-letter-queue-java-api"></a>
 
-1. Copy the example program for a standard queue or a FIFO queue\.
+1. Copy the example program for a [standard queue](standard-queues.md#standard-queues-getting-started-java) or a [FIFO queue](FIFO-queues.md#FIFO-queues-getting-started-java)\.
 
 1. Set a string that contains JSON\-formatted parameters and values for the `RedrivePolicy` queue attribute:
 

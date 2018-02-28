@@ -2,7 +2,7 @@
 
 The following diagram describes the lifecycle of an Amazon SQS message, from creation to deletion\. In this example, a queue already exists\.
 
-![\[Message Lifecycle\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-message-lifecycle-diagram.png)![\[Message Lifecycle\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Message Lifecycle\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Message Lifecycle\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-message-lifecycle-diagram.png)
 
 
 **Message Lifecycle**  

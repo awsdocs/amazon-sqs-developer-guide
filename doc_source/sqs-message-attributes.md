@@ -40,19 +40,19 @@ You can append a custom type label to any supported data type to create custom d
 
 You can use the AWS Management Console to configure message attributes\. In the Amazon SQS console, select a queue, choose the **Queue Actions** drop\-down list, and then select **Send a Message**\. The console expects the user to input a Base\-64\-encoded value for sending a Binary type\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-msg-attrib.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-msg-attrib.png)
 
 On the **Message Attributes** tab, enter a name, select the type, and enter a value for the message attribute\. Optionally, you can also append custom information to the type\. For example, the following screen shows the *Number* type selected with *byte* added for customization\. For more information about custom data for the supported data types, see the [Message Attribute Data Types and Validation](#message-attributes-data-types-validation) section\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-msg-attrib-num-byte.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-msg-attrib-num-byte.png)
 
 To add an attribute, choose **Add Attribute**\. The attribute information appears in the **Name**, **Type**, and **Values** list\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-msg-attrib-add-attrib.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-msg-attrib-add-attrib.png)
 
 You can also use the console to view information about the message attributes for received messages\. In the console, select a queue, and from the **Queue Actions** drop\-down list select **View/Delete Messages**\. In the list of messages, choose **Message Details** to view the information\. For example, you can see the message attribute size and MD5 message digest\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-msg-attrib-view-md5.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-msg-attrib-view-md5.png)
 
 ## Using Message Attributes with the AWS SDKs<a name="sqs-attrib-java-sdk"></a>
 
@@ -253,4 +253,4 @@ The string and number logical data types use the *string* transport type\. The b
 
 The following diagram shows the encoding of the MD5 message digest for a single message attribute:
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-msg-attrib-md5.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-msg-attrib-md5.png)

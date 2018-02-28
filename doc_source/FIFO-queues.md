@@ -1,10 +1,10 @@
 # FIFO \(First\-In\-First\-Out\) Queues<a name="FIFO-queues"></a>
 
-FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\. In addition to having all the capabilities of the standard queue, *FIFO \(First\-In\-First\-Out\)* queues are designed to enhance messaging between applications when the order of operations and events is critical, or where duplicates can't be tolerated\. FIFO queues also provide exactly\-once processing but have a limited number of transactions per second \(TPS\):
+FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\. In addition to having all the capabilities of the [standard queue](standard-queues.md), *FIFO \(First\-In\-First\-Out\)* queues are designed to enhance messaging between applications when the order of operations and events is critical, or where duplicates can't be tolerated\. FIFO queues also provide exactly\-once processing but have a limited number of transactions per second \(TPS\):
 
 + FIFO queues support up to 300 messages per second \(300 send, receive, or delete operations per second\)\.
 
-+ When you batch 10 messages per operation \(maximum\), FIFO queues can support up to 3,000 messages per second\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/v1?#/case/create)\.
++ When you [batch](sqs-batch-api-actions.md) 10 messages per operation \(maximum\), FIFO queues can support up to 3,000 messages per second\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/v1?#/case/create)\.
 
 [![AWS Videos](http://img.youtube.com/vi/https://www.youtube.com/embed/XrX7rb6M3jw?rel=0&amp;controls=0&amp;showinfo=0/0.jpg)](http://www.youtube.com/watch?v=https://www.youtube.com/embed/XrX7rb6M3jw?rel=0&amp;controls=0&amp;showinfo=0)
 
@@ -17,7 +17,7 @@ FIFO queues are designed to enhance messaging between applications when the orde
 + Prevent a student from enrolling in a course before registering for an account\.
 
 **Note**  
-The name of a FIFO queue must end with the `.fifo` suffix\. The suffix counts towards the 80\-character queue name limit\. To determine whether a queue is FIFO, you can check whether the queue name ends with the suffix\.
+The name of a FIFO queue must end with the `.fifo` suffix\. The suffix counts towards the 80\-character queue name limit\. To determine whether a queue is [FIFO](#FIFO-queues), you can check whether the queue name ends with the suffix\.
 
 For best practices of working with FIFO queues, see [Recommendations for FIFO \(First\-In\-First\-Out\) Queues ](FIFO-queue-recommendations.md) and [General Recommendations](general-recommendations.md)\.
 
@@ -33,7 +33,7 @@ For information about compatibility of clients and services with FIFO queues, se
 
 ## Message Ordering<a name="FIFO-queues-message-order"></a>
 
-The FIFO queue improves upon and complements the standard queue\. The most important features of this queue type are *FIFO \(First\-In\-First\-Out\) delivery* and *exactly\-once processing*: The order in which messages are sent and received is strictly preserved and a message is delivered once and remains available until a consumer processes and deletes it; duplicates aren't introduced into the queue\. In addition, FIFO queues support *message groups* that allow multiple ordered message groups within a single queue\.
+The FIFO queue improves upon and complements the [standard queue](standard-queues.md)\. The most important features of this queue type are *FIFO \(First\-In\-First\-Out\) delivery* and *exactly\-once processing*: The order in which messages are sent and received is strictly preserved and a message is delivered once and remains available until a consumer processes and deletes it; duplicates aren't introduced into the queue\. In addition, FIFO queues support *message groups* that allow multiple ordered message groups within a single queue\.
 
 ## FIFO Queue Logic<a name="FIFO-queues-understanding-logic"></a>
 
@@ -272,7 +272,7 @@ You can't convert an existing standard queue into a FIFO queue\. To make the mov
 
 Use the following checklist to ensure that your application works correctly with a FIFO queue\.
 
-+ FIFO queues support up to 300 messages per second \(300 send, receive, or delete operations per second\)\. When you batch 10 messages per operation \(maximum\), FIFO queues can support up to 3,000 messages per second\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/v1?#/case/create)\.
++ FIFO queues support up to 300 messages per second \(300 send, receive, or delete operations per second\)\. When you [batch](sqs-batch-api-actions.md) 10 messages per operation \(maximum\), FIFO queues can support up to 3,000 messages per second\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/v1?#/case/create)\.
 
 + FIFO queues don't support per\-message delays, only per\-queue delays\. If your application sets the same value of the `DelaySeconds` parameter on each message, you must modify your application to remove the per\-message delay and set `DelaySeconds` on the entire queue instead\.
 

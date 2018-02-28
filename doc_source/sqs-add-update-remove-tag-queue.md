@@ -4,17 +4,17 @@ You can add cost allocation tags to your Amazon SQS queues to help organize and 
 
 ## AWS Management Console<a name="sqs-update-remove-tag-queue-console"></a>
 
-The following steps assume that you already created an Amazon SQS queue\.
+The following steps assume that you already [created an Amazon SQS queue](sqs-create-queue.md)\.
 
 1. Sign in to the [Amazon SQS console](https://console.aws.amazon.com/sqs/)\.
 
 1. From the queue list, select a queue\.  
-![\[A list of queues in the Amazon SQS console\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-select-queue.png)![\[A list of queues in the Amazon SQS console\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[A list of queues in the Amazon SQS console\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[A list of queues in the Amazon SQS console\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-select-queue.png)
 
 1. Choose the **Tags** tab\.
 
    The tags added to the queue are listed\.  
-![\[A list of tags on the Tags tab in the Amazon SQS console\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-managing-queue-tags-list-tags.png)![\[A list of tags on the Tags tab in the Amazon SQS console\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[A list of tags on the Tags tab in the Amazon SQS console\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[A list of tags on the Tags tab in the Amazon SQS console\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-managing-queue-tags-list-tags.png)
 
 1. Choose **Add/Edit Tags**\.
 
@@ -34,7 +34,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
 ### To add, update, and remove tags from a queue<a name="sqs-add-update-remove-tag-queue-java-update-remove"></a>
 
-1. Copy the example program for a standard queue or a FIFO queue\.
+1. Copy the example program for a [standard queue](standard-queues.md#standard-queues-getting-started-java) or a [FIFO queue](FIFO-queues.md#FIFO-queues-getting-started-java)\.
 
 1. To list the tags added to a queue, use the `ListQueueTags` API action:
 

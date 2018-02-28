@@ -12,7 +12,7 @@ There are two ways to give your users permissions to your Amazon SQS resources: 
 
 For example, the following diagram shows an IAM policy and an Amazon SQS policy equivalent to it\. The IAM policy grants the rights to the Amazon SQS `ReceiveMessage` and `SendMessage` actions for the queue called `queue_xyz` in your AWS Account, and the policy is attached to users named Bob and Susan \(Bob and Susan have the permissions stated in the policy\)\. This Amazon SQS policy also gives Bob and Susan rights to the `ReceiveMessage` and `SendMessage` actions for the same queue\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-iam-policies-equivalent.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-iam-policies-equivalent.png)
 
 **Note**  
 This example shows simple policies without conditions\. You can specify a particular condition in either policy and get the same result\.
@@ -22,12 +22,12 @@ There is one major difference between IAM and Amazon SQS policies: the Amazon SQ
 It is up to you how you use both of the systems together to manage your permissions\. The following examples show how the two policy systems work together\.
 
 + In the first example, Bob has both an IAM policy and an Amazon SQS policy that apply to his account\. The IAM policy grants his account permission for the `ReceiveMessage` action on `queue_xyz`, whereas the Amazon SQS policy gives his account permission for the `SendMessage` action on the same queue\. The following diagram illustrates the concept\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-iam-policies-union.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-iam-policies-union.png)
 
   If Bob sends a `ReceiveMessage` request to `queue_xyz`, the IAM policy allows the action\. If Bob sends a `SendMessage` request to `queue_xyz`, the Amazon SQS policy allows the action\.
 
 + In the second example, Bob abuses his access to `queue_xyz`, so it becomes necessary to remove his entire access to the queue\. The easiest thing to do is to add a policy that denies him access to all actions for the queue\. This policy overrides the other two because an explicit `deny` always overrides an `allow`\. For more information about policy evaluation logic, see [Creating Custom Policies Using the Amazon SQS Access Policy Language](sqs-creating-custom-policies.md)\. The following diagram illustrates the concept\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-iam-policies-deny-override.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-iam-policies-deny-override.png)
 
   You can also add an additional statement to the Amazon SQS policy that denies Bob any type of access to the queue\. It has the same effect as adding an IAM policy that denies Bob access to the queue\. For examples of policies that cover Amazon SQS actions and resources, see [Customer\-Managed Policy Examples](#sqs-customer-managed-policy-examples)\. For more information about writing Amazon SQS policies, see [Creating Custom Policies Using the Amazon SQS Access Policy Language](sqs-creating-custom-policies.md)\.
 

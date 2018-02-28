@@ -20,7 +20,7 @@ For best practices of working with standard queues, see [General Recommendations
 
 ## Message Ordering<a name="standard-queues-message-order"></a>
 
-A standard queue makes a best effort to preserve the order of messages, but more than one copy of a message might be delivered out of order\. If your system requires that order be preserved, we recommend using a *FIFO \(First\-In\-First\-Out\) queue* or adding sequencing information in each message so you can reorder the messages when they're received\.
+A standard queue makes a best effort to preserve the order of messages, but more than one copy of a message might be delivered out of order\. If your system requires that order be preserved, we recommend using a [*FIFO \(First\-In\-First\-Out\) queue*](FIFO-queues.md) or adding sequencing information in each message so you can reorder the messages when they're received\.
 
 ## At\-Least\-Once Delivery<a name="standard-queues-at-least-once-delivery"></a>
 
@@ -36,7 +36,7 @@ When you consume messages from a queue using short polling, Amazon SQS samples a
 
 The following figure shows the short\-polling behavior of messages returned from a standard queue after one of your system components makes a receive request\. Amazon SQS samples several of its servers \(in gray\) and returns messages A, C, D, and B from these servers\. Message E isn't returned for this request, but is returned for a subsequent request\.
 
-![\[Message Sampling using Short (Standard) Polling\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/ArchOverview_Receive.png)![\[Message Sampling using Short (Standard) Polling\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Message Sampling using Short (Standard) Polling\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Message Sampling using Short (Standard) Polling\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/ArchOverview_Receive.png)
 
 ## Working Java Example for Standard Queues<a name="standard-queues-getting-started-java"></a>
 

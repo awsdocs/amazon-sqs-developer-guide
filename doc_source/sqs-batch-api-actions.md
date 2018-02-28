@@ -23,7 +23,7 @@ The Amazon SQS console doesn't support batch API actions\.
 
 The [AWS SDK for Java](https://aws.amazon.com/sdkforjava/) includes `AmazonSQSBufferedAsyncClient` which accesses Amazon SQS\. This client allows for simple request batching using client\-side buffering—calls made from the client are first buffered and then sent as a batch request to Amazon SQS\.
 
-Client\-side buffering allows up to 10 requests to be buffered and sent as a batch request, decreasing your cost of using Amazon SQS and reducing the number of sent requests\. `AmazonSQSBufferedAsyncClient` buffers both synchronous and asynchronous calls\. Batched requests and support for long polling can also help increase throughput\. For more information, see [Increasing Throughput using Horizontal Scaling and API Action Batching](#sqs-throughput-horizontal-scaling-and-batching)\.
+Client\-side buffering allows up to 10 requests to be buffered and sent as a batch request, decreasing your cost of using Amazon SQS and reducing the number of sent requests\. `AmazonSQSBufferedAsyncClient` buffers both synchronous and asynchronous calls\. Batched requests and support for [long polling](sqs-long-polling.md) can also help increase throughput\. For more information, see [Increasing Throughput using Horizontal Scaling and API Action Batching](#sqs-throughput-horizontal-scaling-and-batching)\.
 
 Because `AmazonSQSBufferedAsyncClient` implements the same interface as `AmazonSQSAsyncClient`, migrating from `AmazonSQSAsyncClient` to `AmazonSQSBufferedAsyncClient` typically requires only minimal changes to your existing code\.
 
@@ -101,7 +101,7 @@ final AmazonSQSAsync bufferedSqs = new AmazonSQSBufferedAsyncClient(sqsAsync, co
 
 ## Increasing Throughput using Horizontal Scaling and API Action Batching<a name="sqs-throughput-horizontal-scaling-and-batching"></a>
 
-Amazon SQS queues can deliver very high throughput\. Standard queues support a nearly unlimited number of transactions per second \(TPS\) per API action\. FIFO queues support up to 300 messages per second \(300 send, receive, or delete operations per second\)\. When you batch 10 messages per operation \(maximum\), FIFO queues can support up to 3,000 messages per second\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/v1?#/case/create)\.
+Amazon SQS queues can deliver very high throughput\. Standard queues support a nearly unlimited number of transactions per second \(TPS\) per API action\. FIFO queues support up to 300 messages per second \(300 send, receive, or delete operations per second\)\. When you [batch](#sqs-batch-api-actions) 10 messages per operation \(maximum\), FIFO queues can support up to 3,000 messages per second\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/v1?#/case/create)\.
 
 To achieve high throughput, you must scale message producers and consumers horizontally \(add more producers and consumers\)\.
 
@@ -132,7 +132,7 @@ For `[AmazonSQSAsyncClient](http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc
 
 ### API Action Batching<a name="request-batching"></a>
 
-*Batching* performs more work during each round trip to the service \(for example, when you send multiple messages with a single `SendMessageBatch` request\)\. The Amazon SQS batch API actions are `[SendMessageBatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html)`, `[DeleteMessageBatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessageBatch.html)`, and `[ChangeMessageVisibilityBatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibilityBatch.html)`\. To take advantage of batching without changing your producers or consumers, you can use the Amazon SQS Buffered Asynchronous Client\.
+*Batching* performs more work during each round trip to the service \(for example, when you send multiple messages with a single `SendMessageBatch` request\)\. The Amazon SQS batch API actions are `[SendMessageBatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html)`, `[DeleteMessageBatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessageBatch.html)`, and `[ChangeMessageVisibilityBatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibilityBatch.html)`\. To take advantage of batching without changing your producers or consumers, you can use the [Amazon SQS Buffered Asynchronous Client](#sqs-client-side-buffering-request-batching)\.
 
 **Note**  
 Because `[ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` can process 10 messages at a time, there is no `ReceiveMessageBatch` action\.

@@ -14,15 +14,15 @@ When you subscribe an Amazon SQS queue to an Amazon SNS topic, Amazon SNS uses H
 1. Sign in to the [Amazon SQS console](https://console.aws.amazon.com/sqs/)\.
 
 1. From the list of queues, choose the queue \(or queues\) to which you want to subscribe an Amazon SNS topic\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-subscribe-queue-to-sns-topic-choose-queue.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-subscribe-queue-to-sns-topic-choose-queue.png)
 
 1. From **Queue Actions**, select **Subscribe Queue to SNS Topic** \(or **Subscribe Queues to SNS Topic**\)\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-subscribe-queue-to-sns-topic-drop-down.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-subscribe-queue-to-sns-topic-drop-down.png)
 
    The **Subscribe to a Topic** dialog box is displayed\.
 
 1. From the **Choose a Topic** drop\-down list, select an Amazon SNS topic to which you want to subscribe your queue \(or queues\), select the **Topic Region** \(optional\), and then choose **Subscribe**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-subscribe-queue-to-sns-topic-dialog-box.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-subscribe-queue-to-sns-topic-dialog-box.png)
 **Note**  
 Typing a different **Topic ARN** is useful when you want to subscribe a queue to an Amazon SNS topic from an AWS account other than the one you used to create your Amazon SQS queue\.  
 This is also useful if the Amazon SNS topic isn't listed in the **Choose a Topic** drop\-down list\.
@@ -30,7 +30,7 @@ This is also useful if the Amazon SNS topic isn't listed in the **Choose a Topic
    The **Topic Subscription Result** dialog box is displayed\.
 
 1. Review the list of Amazon SQS queues that are subscribed to the Amazon SNS topic and choose **OK**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-subscribe-queue-to-sns-topic-subscription-result.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-subscribe-queue-to-sns-topic-subscription-result.png)
 
    The queue is subscribed to the topic\.
 **Note**  

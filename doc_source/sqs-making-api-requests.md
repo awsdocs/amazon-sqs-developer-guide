@@ -34,7 +34,7 @@ The structure of *`AUTHPARAMS`* depends on the signature of the API request\. Fo
 
 An Amazon SQS `GET` request is structured as a URL which consists of the following:
 
-+ **Endpoint** – The resource that the request is acting on \(the queue name and URL\), for example: `https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue`
++ **Endpoint** – The resource that the request is acting on \(the [queue name and URL](sqs-queue-message-identifiers.md#queue-name-url)\), for example: `https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue`
 
 + **Action** – The [API action](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_Operations.html) that you want to perform on the endpoint\. A question mark \(`?`\) separates the endpoint from the action, for example: `?Action=SendMessage&MessageBody=Your%20Message%20Text`
 
@@ -134,7 +134,7 @@ If you use \.NET, you must not send overly specific timestamps \(because of diff
 
 The following is the process you must follow to authenticate AWS requests using an HMAC\-SHA request signature\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-basic-authentication-process-hmac-user.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-basic-authentication-process-hmac-user.png)
 
 1. Construct a request to AWS\. 
 
@@ -146,7 +146,7 @@ The following is the process you must follow to authenticate AWS requests using 
 
 AWS begins the following process in response\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-basic-authentication-process-hmac-aws.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-basic-authentication-process-hmac-aws.png)
 
 1. AWS uses the Access Key ID to look up your Secret Access Key\.
 

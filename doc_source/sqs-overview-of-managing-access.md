@@ -93,11 +93,11 @@ The following diagram illustrates the concept of one of these basic Amazon SQS p
 **Note**  
 The resource in the policy is specified as `123456789012/queue_xyz`, where `123456789012` is the AWS Account ID of the account that owns the queue\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/SQS_BasicPolicy.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/SQS_BasicPolicy.png)
 
 With the introduction of IAM and the concepts of *Users* and *Amazon Resource Names \(ARNs\)*, a few things have changed about SQS policies\. The following diagram and table describe the changes\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/SQS_PolicyWithNewFeatures.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/SQS_PolicyWithNewFeatures.png)
 
 
 |  |  | 
@@ -133,7 +133,7 @@ Amazon SQS doesn't support resource\-level permissions in identity\-based polici
 
 ## Specifying Policy Elements: Actions, Effects, Resources, and Principals<a name="sqs-specifying-policy-elements"></a>
 
-For each Amazon Simple Queue Service resource, the service defines a set of [API actions](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_Operations.html)\. To grant permissions for these API actions, Amazon SQS defines a set of actions that you can specify in a policy\.
+For each [Amazon Simple Queue Service resource](#sqs-resource-and-operations), the service defines a set of [API actions](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_Operations.html)\. To grant permissions for these API actions, Amazon SQS defines a set of actions that you can specify in a policy\.
 
 **Note**  
 Performing an API action can require permissions for more than one action\. When granting permissions for specific actions, you also identify the resource for which the actions are allowed or denied\.

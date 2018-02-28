@@ -4,9 +4,7 @@ When a consumer receives and processes a message from a queue, the message remai
 
 Immediately after the message is received, it remains in the queue\. To prevent other consumers from processing the message again, Amazon SQS sets a *visibility timeout*, a period of time during which Amazon SQS prevents other consumers from receiving and processing the message\. The default visibility timeout for a message is 30 seconds\. The maximum is 12 hours\.
 
-## <a name="sqs-inflight-messages"></a>
-
-![\[Visibility Timeout\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/Visibility_Timeout.png)![\[Visibility Timeout\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Visibility Timeout\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Visibility Timeout\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/Visibility_Timeout.png)
 
 **Note**  
 For standard queues, the visibility timeout isn't a guarantee against receiving a message twice\. For more information, see [At\-Least\-Once Delivery](standard-queues.md#standard-queues-at-least-once-delivery)\.  
@@ -16,7 +14,6 @@ If the consumer detects a failed `ReceiveMessage` action, it can retry as many t
 When you receive a message with a message group ID, no more messages for the same message group ID are returned unless you delete the message or it becomes visible\.
 
 
-+ [[ERROR] BAD/MISSING LINK TEXT](#sqs-inflight-messages)
 + [Inflight Messages](#inflight-messages)
 + [Setting the Visibility Timeout](#configuring-visibility-timeout)
 + [Changing the Visibility Timeout for a Message](#changing-message-visibility-timeout)

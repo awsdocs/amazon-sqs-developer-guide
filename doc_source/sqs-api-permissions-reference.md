@@ -28,4 +28,4 @@ If you see an expand arrow \(**↗**\) in the upper\-right corner of the table, 
 
 
 **Amazon Simple Queue Service API and Required Permissions for Actions**  
-[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-permissions-reference.html)
+<a name="sqs-api-and-required-permissions-for-actions-table"></a>[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-permissions-reference.html)

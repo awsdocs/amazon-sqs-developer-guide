@@ -98,4 +98,4 @@ You can explore Amazon SQS without writing code with tools such as the AWS Comma
 
 ## Next Steps<a name="sqs-next-steps-setting-up"></a>
 
-Now that you're prepared for working with Amazon SQS, can get started with managing Amazon SQS queues and messages using the AWS Management Console\. You can also try the more advanced Amazon SQS tutorials\.
+Now that you're prepared for working with Amazon SQS, can [get started](sqs-getting-started.md) with managing Amazon SQS queues and messages using the AWS Management Console\. You can also try the more advanced Amazon SQS [tutorials](sqs-tutorials.md)\.

@@ -7,25 +7,25 @@ After you create your queue, you can send a message to it\. The following exampl
 1. Sign in to the [Amazon SQS console](https://console.aws.amazon.com/sqs/)\.
 
 1. From the queue list, select a queue\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-select-queue.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-select-queue.png)
 
 1. From **Queue Actions**, select **Send a Message**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message.png)
 
    The **Send a Message to *QueueName*** dialog box is displayed\.
 
-   The following example shows the **Message Group ID** and **Message Deduplication ID** parameters specific to FIFO queues \(content\-based deduplication is disabled\)\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message-dialog-box.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+   The following example shows the **Message Group ID** and **Message Deduplication ID** parameters specific to FIFO queues \([content\-based deduplication](FIFO-queues.md#FIFO-queues-exactly-once-processing) is disabled\)\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message-dialog-box.png)
 
 1. To send a message to a FIFO queue, type the **Message Body**, the **Message Group ID** `MyMessageGroupId1234567890`, and the **Message Deduplication ID** `MyMessageDeduplicationId1234567890`, and then choose **Send Message**\. For more information, see [FIFO Queue Logic](FIFO-queues.md#FIFO-queues-understanding-logic)\.
 **Note**  
 The message group ID is always required\. However, if content\-based deduplication is enabled, the message deduplication ID is optional\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message-button-fifo.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message-button-fifo.png)
 
    Your message is sent and the **Send a Message to *QueueName*** dialog box is displayed, showing the attributes of the sent message\.
 
    The following example shows the **Sequence Number** attribute specific to FIFO queues\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message-message-attributes.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message-message-attributes.png)
 
 1. Choose **Close**\.
 
@@ -35,7 +35,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
 ### To send a message to a standard queue<a name="send-message-standard-queue"></a>
 
-1. Copy the example program\.
+1. Copy the [example program](standard-queues.md#standard-queues-getting-started-java)\.
 
    The following section of the code sends the `This is my message text.` message to your queue:
 
@@ -49,7 +49,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
    The message is sent to the queue\. The response includes the following items:
 
-   + The message ID Amazon SQS assigns to the message\.
+   + The [message ID](sqs-queue-message-identifiers.md#message-id) Amazon SQS assigns to the message\.
 
    + An MD5 digest of the message body, used to confirm that Amazon SQS received the message correctly \(for more information, see [RFC1321](http://faqs.org/rfcs/rfc1321.html)\)\.
 
@@ -57,7 +57,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
 ### To send a message to a FIFO queue<a name="send-message-fifo-queue"></a>
 
-1. Copy the example program\.
+1. Copy the [example program](FIFO-queues.md#FIFO-queues-getting-started-java)\.
 
    The following section of the code sends the `This is my message text.` message to your queue:
 
