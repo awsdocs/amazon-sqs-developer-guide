@@ -5,7 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
-| March 2, 2018 | Added the sqs:ListQueueTags, sqs:TagQueue, and sqs:UntagQueue permissions to the [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md) section\. | 
+| March 2, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | February 28, 2018 | Corrected image display in GitHub\. | 
 | February 27, 2018 | In addition to HTML, PDF, and Kindle, the Amazon Simple Queue Service Developer Guide is available on GitHub\. To leave feedback, choose the GitHub icon in the upper right\-hand corner\.![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/submit-github-feedback.png)  | 
 | February 26, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
