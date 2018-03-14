@@ -2,6 +2,11 @@
 
 The first and most common Amazon SQS task is creating queues\. The following example demonstrates how to create and configure a queue\.
 
+
++ [AWS Management Console](#create-queue-console)
++ [Java](#create-queue-java)
++ [AWS CloudFormation](#create-queue-cloudformation)
+
 ## AWS Management Console<a name="create-queue-console"></a>
 
 1. Sign in to the [Amazon SQS console](https://console.aws.amazon.com/sqs/)\.
@@ -13,8 +18,7 @@ The first and most common Amazon SQS task is creating queues\. The following exa
 The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-queue-name.png)
 
-1. **Standard** is selected by default\. Choose **FIFO**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-queue-type-descriptions.png)
+1. **Standard** is selected by default\. Choose **FIFO**\.
 
 1. Create your queue\.
 

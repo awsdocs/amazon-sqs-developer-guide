@@ -1,6 +1,6 @@
 # New and Frequently Viewed Amazon SQS Topics<a name="sqs-newly-added-most-frequently-viewed-topics"></a>
 
-**Latest update:** February 5, 2018
+**Latest update:** March 7, 2018
 
 ## **Amazon Simple Queue Service Developer Guide**<a name="developer-guide"></a>
 

@@ -2,6 +2,10 @@
 
 If you don't use an Amazon SQS queue \(and don't foresee using it in the near future\), it is a best practice to delete it from Amazon SQS\. The following example demonstrates deleting a queue\.
 
+
++ [AWS Management Console](#delete-queue-console)
++ [Java](#delete-queue-java)
+
 ## AWS Management Console<a name="delete-queue-console"></a>
 
 1. Sign in to the [Amazon SQS console](https://console.aws.amazon.com/sqs/)\.

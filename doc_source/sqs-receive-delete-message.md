@@ -9,6 +9,10 @@ Amazon SQS doesn't automatically delete a message after receiving it for you, in
 
 The following example demonstrates receiving and deleting a message\.
 
+
++ [AWS Management Console](#receive-delete-message-console)
++ [Java](#receive-delete-message-java)
+
 ## AWS Management Console<a name="receive-delete-message-console"></a>
 
 1. Sign in to the [Amazon SQS console](https://console.aws.amazon.com/sqs/)\.

@@ -7,6 +7,10 @@ All requests to queues with SSE enabled must use HTTPS and [Signature Version 4]
 
 The following example demonstrates how to create an Amazon SQS queue with SSE enabled\. Although the example uses a FIFO queue, SSE works with both standard and FIFO queues\.
 
+
++ [Create an Amazon SQS queue with SSE using the AWS Management Console](#sqs-create-queue-sse-console)
++ [Create an Amazon SQS queue with SSE using Java](#sqs-create-queue-sse-java)
+
 ## AWS Management Console<a name="sqs-create-queue-sse-console"></a>
 
 1. Sign in to the [Amazon SQS console](https://console.aws.amazon.com/sqs/)\.
@@ -18,8 +22,7 @@ The following example demonstrates how to create an Amazon SQS queue with SSE en
 The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-queue-name.png)
 
-1. **Standard** is selected by default\. Choose **FIFO**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-queue-type-descriptions.png)
+1. **Standard** is selected by default\. Choose **FIFO**\.
 
 1. Choose **Configure Queue**, and then choose **Use SSE**\.
 

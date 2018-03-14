@@ -101,7 +101,7 @@ final AmazonSQSAsync bufferedSqs = new AmazonSQSBufferedAsyncClient(sqsAsync, co
 
 ## Increasing Throughput using Horizontal Scaling and API Action Batching<a name="sqs-throughput-horizontal-scaling-and-batching"></a>
 
-Amazon SQS queues can deliver very high throughput\. Standard queues support a nearly unlimited number of transactions per second \(TPS\) per API action\. FIFO queues support up to 300 messages per second \(300 send, receive, or delete operations per second\)\. When you [batch](#sqs-batch-api-actions) 10 messages per operation \(maximum\), FIFO queues can support up to 3,000 messages per second\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/v1?#/case/create)\.
+Amazon SQS queues can deliver very high throughput\. Standard queues support a nearly unlimited number of transactions per second \(TPS\) per API action\. By default, FIFO queues support up to 3,000 messages per second with [batching](#sqs-batch-api-actions)\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/v1?#/case/create)\. FIFO queues support up to 300 messages per second \(300 send, receive, or delete operations per second\) without batching\.
 
 To achieve high throughput, you must scale message producers and consumers horizontally \(add more producers and consumers\)\.
 

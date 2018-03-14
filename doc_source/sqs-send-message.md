@@ -2,6 +2,10 @@
 
 After you create your queue, you can send a message to it\. The following example demonstrates sending a message to an existing queue\.
 
+
++ [AWS Management Console](#send-message-console)
++ [Java](#send-message-java)
+
 ## AWS Management Console<a name="send-message-console"></a>
 
 1. Sign in to the [Amazon SQS console](https://console.aws.amazon.com/sqs/)\.

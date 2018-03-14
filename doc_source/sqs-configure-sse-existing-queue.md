@@ -8,6 +8,10 @@ When you disable SSE, messages remain encrypted\. You must receive and decrypt a
 
 The following example demonstrates enabling, disabling, and configuring SSE for an existing Amazon SQS queue\.
 
+
++ [Configure SSE for an Amazon SQS queue using the AWS Management Console](#sqs-configure-sse-existing-queue-console)
++ [Configure SSE for an Amazon SQS queue using Java](#sqs-configure-sse-existing-queue-java)
+
 ## AWS Management Console<a name="sqs-configure-sse-existing-queue-console"></a>
 
 1. Sign in to the [Amazon SQS console](https://console.aws.amazon.com/sqs/)\.

@@ -5,6 +5,10 @@ A dead\-letter queue is a queue that other \(source\) queues can target for mess
 **Important**  
 The dead\-letter queue of a FIFO queue must also be a FIFO queue\. Similarly, the dead\-letter queue of a standard queue must also be a standard queue\.
 
+
++ [AWS Management Console](#configure-dead-letter-queue-console)
++ [Java](#configure-dead-letter-queue-java)
+
 ## AWS Management Console<a name="configure-dead-letter-queue-console"></a>
 
 1. Sign in to the [Amazon SQS console](https://console.aws.amazon.com/sqs/)\.
@@ -16,8 +20,7 @@ The dead\-letter queue of a FIFO queue must also be a FIFO queue\. Similarly, th
 The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-queue-name.png)
 
-1. **Standard** is selected by default\. Choose **FIFO**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-queue-type-descriptions.png)
+1. **Standard** is selected by default\. Choose **FIFO**\.
 
 1. Choose **Configure Queue**\.
 

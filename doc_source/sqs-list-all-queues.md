@@ -2,6 +2,10 @@
 
 When you create a queue, it can take a short time for the queue to propagate throughout Amazon SQS\. The following example demonstrates confirming your queue's existence by listing all queues in the current region\.
 
+
++ [AWS Management Console](#list-all-queues-console)
++ [Java](#list-all-queues-java)
+
 ## AWS Management Console<a name="list-all-queues-console"></a>
 
 1. Sign in to the [Amazon SQS console](https://console.aws.amazon.com/sqs/)\.

@@ -2,9 +2,9 @@
 
 FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\. In addition to having all the capabilities of the [standard queue](standard-queues.md), *FIFO \(First\-In\-First\-Out\)* queues are designed to enhance messaging between applications when the order of operations and events is critical, or where duplicates can't be tolerated\. FIFO queues also provide exactly\-once processing but have a limited number of transactions per second \(TPS\):
 
-+ FIFO queues support up to 300 messages per second \(300 send, receive, or delete operations per second\)\.
++ By default, FIFO queues support up to 3,000 messages per second with [batching](sqs-batch-api-actions.md)\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/v1?#/case/create)\.
 
-+ When you [batch](sqs-batch-api-actions.md) 10 messages per operation \(maximum\), FIFO queues can support up to 3,000 messages per second\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/v1?#/case/create)\.
++ FIFO queues support up to 300 messages per second \(300 send, receive, or delete operations per second\) without batching\.
 
 [![AWS Videos](http://img.youtube.com/vi/https://www.youtube.com/embed/XrX7rb6M3jw?rel=0&amp;controls=0&amp;showinfo=0/0.jpg)](http://www.youtube.com/watch?v=https://www.youtube.com/embed/XrX7rb6M3jw?rel=0&amp;controls=0&amp;showinfo=0)
 
@@ -272,7 +272,7 @@ You can't convert an existing standard queue into a FIFO queue\. To make the mov
 
 Use the following checklist to ensure that your application works correctly with a FIFO queue\.
 
-+ FIFO queues support up to 300 messages per second \(300 send, receive, or delete operations per second\)\. When you [batch](sqs-batch-api-actions.md) 10 messages per operation \(maximum\), FIFO queues can support up to 3,000 messages per second\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/v1?#/case/create)\.
++ By default, FIFO queues support up to 3,000 messages per second with [batching](sqs-batch-api-actions.md)\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/v1?#/case/create)\. FIFO queues support up to 300 messages per second \(300 send, receive, or delete operations per second\) without batching\.
 
 + FIFO queues don't support per\-message delays, only per\-queue delays\. If your application sets the same value of the `DelaySeconds` parameter on each message, you must modify your application to remove the per\-message delay and set `DelaySeconds` on the entire queue instead\.
 
