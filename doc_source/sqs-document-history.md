@@ -5,6 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| March 19, 2018 | Clarified in the [Limits Related to Policies](sqs-limits.md#limits-policies) and [Tutorial: Adding Permissions to an Amazon SQS Queue](sqs-add-permissions.md) sections that an Amazon SQS policy can have a maximum of 7 actions\. | 
 | March 14, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | March 13, 2018 | Clarified the batched and unbatched throughput for FIFO queues throughout this guide\. | 
 | March 7, 2018 | Updated the [New and Frequently Viewed Amazon SQS Topics](sqs-newly-added-most-frequently-viewed-topics.md) section\. | 

@@ -2,6 +2,9 @@
 
 You can specify to whom you allow \(or explicitly deny\) the ability to interact with your queue in specific ways by adding permissions to a queue\. The following example demonstrates adding the permission for anyone to get a queue's URL\.
 
+**Note**  
+An Amazon SQS policy can have a maximum of 7 actions\.
+
 ## AWS Management Console<a name="add-permissions-console"></a>
 
 1. Sign in to the [Amazon SQS console](https://console.aws.amazon.com/sqs/)\.

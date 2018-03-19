@@ -24,9 +24,10 @@ The following table lists limits related to messages\.
 The following table lists limits related to policies\.
 
 
-| Name | Maximum Size | 
+| Name | Maximum | 
 | --- | --- | 
-|  Bytes  |  8192  | 
-|  Conditions  |  10  | 
-|  Principals  |  50  | 
-|  Statements  |  20  | 
+| Actions | 7 | 
+| Bytes | 8,192 | 
+| Conditions | 10 | 
+| Principals | 50 | 
+| Statements | 20 | 
