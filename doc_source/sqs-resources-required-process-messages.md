@@ -6,11 +6,11 @@ To help you estimate the resources you need to process queued messages, Amazon S
 For standard queues, the result is approximate because of the distributed architecture of Amazon SQS\. In most cases, the count should be close to the actual number of messages in the queue\.  
 For FIFO queues, the result is exact\.
 
-The following table lists the API action to use\.
+The following table lists the attribute name to use with the `[GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)` API action\.
 
 
-| To do this\.\.\. | Use this action | Use this `AttributeName` | 
-| --- | --- | --- | 
-|  Get the approximate number of messages in the queue\.  |  `[GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)`  |  `ApproximateNumberOfMessages`  | 
-|  Get the approximate number of messages that are pending to be added to the queue\.  |  `[GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)`   |  `ApproximateNumberOfMessagesDelayed`  | 
-|  Get the approximate number of messages in the queue that are not visible \(messages in flight\)\.  |  `[GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)`   |  `ApproximateNumberOfMessagesNotVisible`  | 
+| Task | Attribute Name | 
+| --- | --- | 
+| Get the approximate number of messages in a queue\. | ApproximateNumberOfMessages | 
+| Get the approximate number of messages that are pending beingadded to a queue\. | ApproximateNumberOfMessagesDelayed | 
+| Get the approximate number of in flight messages in a queue\. | ApproximateNumberOfMessagesNotVisible | 

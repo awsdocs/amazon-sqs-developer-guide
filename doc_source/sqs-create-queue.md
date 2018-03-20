@@ -15,8 +15,7 @@ The first and most common Amazon SQS task is creating queues\. The following exa
 
 1. On the **Create New Queue** page, ensure that you're in the correct region and then type the **Queue Name**\.
 **Note**  
-The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-queue-name.png)
+The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\.
 
 1. **Standard** is selected by default\. Choose **FIFO**\.
 
@@ -138,11 +137,9 @@ The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are avai
 
 1. Sign in to the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation), and then choose **Create Stack**\.
 
-1. On the **Select Template** page, choose **Upload a template to Amazon S3**, choose your `MyQueue.json` file, and then choose **Next**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-cfn-select-template.png)
+1. On the **Select Template** page, choose **Upload a template to Amazon S3**, choose your `MyQueue.json` file, and then choose **Next**\.
 
-1. On the **Specify Details** page, type `MyQueue` for **Stack Name**, and then choose **Next**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-cfn-stack-name.png)
+1. On the **Specify Details** page, type `MyQueue` for **Stack Name**, and then choose **Next**\.
 
 1. On the **Options** page, choose **Next**\.
 

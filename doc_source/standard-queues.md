@@ -10,7 +10,7 @@ You can use standard message queues in many scenarios, as long as your applicati
 
 + **Batch messages for future processing** – Schedule multiple entries to be added to a database\.
 
-For best practices of working with standard queues, see [General Recommendations](general-recommendations.md)\.
+For best practices of working with standard queues, see [Recommendations for Standard and FIFO \(First\-In\-First\-Out\) Queues ](sqs-standard-fifo-queue-best-practices.md)\.
 
 
 + [Message Ordering](#standard-queues-message-order)

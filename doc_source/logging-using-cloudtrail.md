@@ -10,17 +10,17 @@ When CloudTrail logging is enabled in your AWS account, API calls made to Amazon
 
 The following actions are supported:
 
-+ [AddPermission](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html)
++ `[AddPermission](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html)`
 
-+ [CreateQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)
++ `[CreateQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`
 
-+ [DeleteQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteQueue.html)
++ `[DeleteQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteQueue.html)`
 
-+ [PurgeQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_PurgeQueue.html)
++ `[PurgeQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_PurgeQueue.html)`
 
-+ [RemovePermission](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_RemovePermission.html)
++ `[RemovePermission](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_RemovePermission.html)`
 
-+ [SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)
++ `[SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`
 
 Every log entry contains information about who generated the request\. The user identity information in the log helps you determine whether the request was made with root or IAM user credentials, with temporary security credentials for a role or federated user, or by another AWS service\. For more information, see the **userIdentity** field in the [CloudTrail Event Reference](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference.html)\.
 
@@ -34,7 +34,7 @@ You can also aggregate Amazon SQS log files from multiple AWS regions and multip
 
 CloudTrail log files contain one or more log entries where each entry is made up of multiple JSON\-formatted events\. A log entry represents a single request from any source and includes information about the requested action, any parameters, the date and time of the action, and so on\. The log entries aren't guaranteed to be in any particular order\. That is, they're not an ordered stack trace of the public API calls\.
 
-### AddPermission<a name="addpermission"></a>
+### AddPermission<a name="add-permission"></a>
 
 The following example shows a CloudTrail log entry for AddPermission:
 
@@ -75,7 +75,7 @@ The following example shows a CloudTrail log entry for AddPermission:
 }
 ```
 
-### CreateQueue<a name="createqueue"></a>
+### CreateQueue<a name="create-queue"></a>
 
 The following example shows a CloudTrail log entry for CreateQueue:
 
@@ -111,7 +111,7 @@ The following example shows a CloudTrail log entry for CreateQueue:
 }
 ```
 
-### DeleteQueue<a name="deletequeue"></a>
+### DeleteQueue<a name="delete-queue"></a>
 
 The following example shows a CloudTrail log entry for DeleteQueue:
 
@@ -180,7 +180,7 @@ The following example shows a CloudTrail log entry for RemovePermission:
 }
 ```
 
-### SetQueueAttributes<a name="setqueueattributes"></a>
+### SetQueueAttributes<a name="set-queue-attributes"></a>
 
 The following example shows a CloudTrail log entry for SetQueueAttributes:
 

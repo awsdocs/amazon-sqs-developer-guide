@@ -20,13 +20,13 @@ An Amazon SQS policy can have a maximum of 7 actions\.
 1. In this example, you allow anyone to get the queue's URL:  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-adding-permissions-add-a-permission-dialog-box.png)
 
-   1. Ensure that next to **Effect**, **Allow** is selected\.
+   ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-1-red.png) Ensure that next to **Effect**, **Allow** is selected\.
 
-   1. Next to **Principal**, check the **Everybody** box\.
+   ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-2-red.png) Next to **Principal**, check the **Everybody** box\.
 
-   1. From the **Actions** drop\-down list, select **GetQueueUrl** box\.
+   ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-3-red.png) From the **Actions** drop\-down list, select **GetQueueUrl** box\.
 
-   1. Choose **Add Permission**\.
+   ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-4-red.png) Choose **Add Permission**\.
 
    The permission is added to the queue\.
 

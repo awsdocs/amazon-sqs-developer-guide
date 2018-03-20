@@ -5,6 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| March 20, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | March 19, 2018 | Clarified in the [Limits Related to Policies](sqs-limits.md#limits-policies) and [Tutorial: Adding Permissions to an Amazon SQS Queue](sqs-add-permissions.md) sections that an Amazon SQS policy can have a maximum of 7 actions\. | 
 | March 14, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | March 13, 2018 | Clarified the batched and unbatched throughput for FIFO queues throughout this guide\. | 
@@ -49,7 +50,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | September 19, 2017 | Corrected the diagrams in the [Using Amazon SQS and IAM Policies](sqs-using-identity-based-policies.md#sqs-using-sqs-and-iam-policies) section\. | 
 | August 29, 2017 | Clarified the information in the [Changing the Visibility Timeout for a Message](sqs-visibility-timeout.md#changing-message-visibility-timeout) section\. | 
 | August 17, 2017 | Clarified the permissions for the SendMessage and SendMessageBatch API actions in [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)\. | 
-| August 15, 2017 | Updated information about dead\-letter queues in the [General Recommendations](general-recommendations.md) section\. | 
+| August 15, 2017 | Updated information about dead\-letter queues in the [Recommendations for Standard and FIFO \(First\-In\-First\-Out\) Queues ](sqs-standard-fifo-queue-best-practices.md) section\. | 
 | August 9, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | July 27, 2017 |  Changed the [deprecated `AmazonSQSClient` constructor](http://aws.amazon.com/blogs/developer/client-constructors-now-deprecated/) to `AmazonSQSClientBuilder` and revised the corresponding region specification in the [Working Java Example for Standard Queues](standard-queues.md#standard-queues-getting-started-java) section\.  | 
 | July 25, 2017 | Clarified the throughput for standard and FIFO queues throughout this guide\. | 

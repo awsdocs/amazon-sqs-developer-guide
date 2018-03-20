@@ -1,6 +1,8 @@
 # Queue and Message Identifiers<a name="sqs-queue-message-identifiers"></a>
 
-## General Identifiers<a name="sqs-general-identifiers"></a>
+This section describes the identifiers of standard and FIFO queues\. These identifiers can help you find and manipulate specific queues and messages\.
+
+## Identifiers for Standard and FIFO Queues<a name="sqs-general-identifiers"></a>
 
 ### Queue Name and URL<a name="queue-name-url"></a>
 

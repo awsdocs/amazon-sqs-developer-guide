@@ -19,8 +19,7 @@ The following example demonstrates how to create an Amazon SQS queue with SSE en
 
 1. On the **Create New Queue** page, ensure that you're in the correct region and then type the **Queue Name**\.
 **Note**  
-The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-queue-name.png)
+The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\.
 
 1. **Standard** is selected by default\. Choose **FIFO**\.
 

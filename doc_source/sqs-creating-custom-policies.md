@@ -60,32 +60,35 @@ The user who sends a request for access to a [resource](#resource)\.
 
 The following figure and table describe the access control for your Amazon SQS resources\.
 
-![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AccessPolicyLanguage_Arch_Overview.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AccessPolicyLanguage_Arch_Overview.png)
 
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-1-red.png) You, the resource owner\.
 
-|  |  | 
-| --- |--- |
-| 1 | You, the resource owner\.  | 
-| 2 | Your resources contained within the AWS service \(for example, Amazon SQS queues\)\.  | 
-| 3 |  Your policies\. It is a good practice to have one policy per resource The AWS service itself provides an API you use to upload and manage your policies\.  | 
-| 4 |  Requesters and their incoming requests to the AWS service\.  | 
-| 5 |  The access policy language evaluation code\. This is the set of code within the AWS service that evaluates incoming requests against the applicable policies and determines whether the requester is allowed access to the resource\.  | 
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-2-red.png) Your resources contained within the AWS service \(for example, Amazon SQS queues\)\.
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-3-red.png) Your policies\. It is a good practice to have one policy per resource The AWS service itself provides an API you use to upload and manage your policies\.
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-4-red.png) Requesters and their incoming requests to the AWS service\.
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-5-red.png) The access policy language evaluation code\. This is the set of code within the AWS service that evaluates incoming requests against the applicable policies and determines whether the requester is allowed access to the resource\.
 
 ## Process Workflow<a name="sqs-creating-custom-policies-process-workflow"></a>
 
 The following figure and table describe the general workflow of access control with the Amazon SQS access policy language\.
 
-![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AccessPolicyLanguage_Basic_Flow.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AccessPolicyLanguage_Basic_Flow.png)
 
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-1-red.png) You write an Amazon SQS policy for your queue\.
 
-|  |  | 
-| --- |--- |
-| 1  | You write an Amazon SQS policy for your queue\.  | 
-| 2 | You upload your policy to AWS\. The AWS service provides an API that you use to upload your policies\. For example, you use the Amazon SQS `SetQueueAttributes` action to upload a policy for a particular Amazon SQS queue\. | 
-| 3 | Someone sends a request to use your Amazon SQS queue\.  | 
-| 4 | Amazon SQS examines all available Amazon SQS policies and determines which ones are applicable\. | 
-| 5  | Amazon SQS evaluates the policies and determines whether the requester is allowed to use your queue\.  | 
-| 6 | Based on the policy evaluation result, Amazon SQS either returns an `Access denied` error to the requester or continues to process the request\.  | 
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-2-red.png) You upload your policy to AWS\. The AWS service provides an API that you use to upload your policies\. For example, you use the Amazon SQS `SetQueueAttributes` action to upload a policy for a particular Amazon SQS queue\.
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-3-red.png) Someone sends a request to use your Amazon SQS queue\.
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-4-red.png) Amazon SQS examines all available Amazon SQS policies and determines which ones are applicable\.
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-5-red.png) Amazon SQS evaluates the policies and determines whether the requester is allowed to use your queue\.
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-6-red.png) Based on the policy evaluation result, Amazon SQS either returns an `Access denied` error to the requester or continues to process the request\.
 
 ## Evaluation Logic<a name="sqs-creating-custom-policies-evaluation-logic"></a>
 
@@ -101,16 +104,17 @@ At evaluation time, Amazon SQS determines whether a request from someone other t
 
 The following figure and table describe in detail how Amazon SQS evaluates decisions about access permissions\.
 
-![\[Architectural Overview\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AccessPolicyLanguage_Evaluation_Flow.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AccessPolicyLanguage_Evaluation_Flow.png)
 
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-1-red.png) The decision starts with a [default-deny](#default-deny)\.
 
-|  |  | 
-| --- |--- |
-| 1 | The decision starts with a [default-deny](#default-deny)\. | 
-| 2 | The enforcement code evaluates all the policies that are applicable to the request \(based on the resource, principal, action, and conditions\)\. The order in which the enforcement code evaluates the policies isn't important | 
-| 3 | The enforcement code looks for an [explicit deny](#explicit-deny) instruction that can apply to the request\. If it finds even one, the enforcement code returns a decision of *deny* and the process finishes\. | 
-| 4 | If no [explicit deny](#explicit-deny) instruction is found, the enforcement code looks for any [allow](#allow) instructions that can apply to the request\. If it finds even one, the enforcement code returns a decision of *allow* and the process finishes \(the service continues to process the request\)\.  | 
-| 5 | If no [allow](#allow) instruction is found, then the final decision is *deny* \(because there is no [explicit deny](#explicit-deny) or [allow](#allow), this is considered a [default-deny](#default-deny)\.  | 
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-2-red.png) The enforcement code evaluates all the policies that are applicable to the request \(based on the resource, principal, action, and conditions\)\. The order in which the enforcement code evaluates the policies isn't important\.
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-3-red.png) The enforcement code looks for an [explicit deny](#explicit-deny) instruction that can apply to the request\. If it finds even one, the enforcement code returns a decision of *deny* and the process finishes\.
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-4-red.png) If no [explicit deny](#explicit-deny) instruction is found, the enforcement code looks for any [allow](#allow) instructions that can apply to the request\. If it finds even one, the enforcement code returns a decision of *allow* and the process finishes \(the service continues to process the request\)\.
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-5-red.png) If no [allow](#allow) instruction is found, then the final decision is *deny* \(because there is no [explicit deny](#explicit-deny) or [allow](#allow), this is considered a [default-deny](#default-deny)\.
 
 ## Relationships Between Explicit and Default Denials<a name="sqs-creating-custom-policies-relationships-between-explicit-default-denials"></a>
 

@@ -3,5 +3,5 @@
 These best practices can help you make the most of Amazon SQS\.
 
 
-+ [General Recommendations](general-recommendations.md)
-+ [Recommendations for FIFO \(First\-In\-First\-Out\) Queues](FIFO-queue-recommendations.md)
++ [Recommendations for Standard and FIFO \(First\-In\-First\-Out\) Queues](sqs-standard-fifo-queue-best-practices.md)
++ [Additional Recommendations for FIFO Queues](sqs-additional-fifo-queue-recommendations.md)

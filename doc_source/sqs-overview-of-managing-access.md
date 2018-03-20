@@ -99,12 +99,11 @@ With the introduction of IAM and the concepts of *Users* and *Amazon Resource Na
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/SQS_PolicyWithNewFeatures.png)
 
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-1-red.png) In addition to specifying which AWS Accounts have access to a queue, you can specify which users *in your own AWS account* have access to the queue\. If the users are in different accounts, see [Tutorial: Delegate Access Across AWS Accounts Using IAM Roles](http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html) in the *IAM User Guide*\.
 
-|  |  | 
-| --- |--- |
-| 1 |  In addition to specifying which AWS Accounts have access to a queue, you can specify which users *in your own AWS Account* have access to the queue\. If the users are in different accounts, see [Tutorial: Delegate Access Across AWS Accounts Using IAM Roles](http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html) in the *IAM User Guide*\.  | 
-| 2 |  The subset of actions included in `*` has expanded\. For a list of allowed actions, see [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)\.  | 
-| 3 |  You can specify the resource using the Amazon Resource Name \(ARN\), the standard means of specifying resources in IAM policies\. For information about the ARN format for Amazon SQS queues, see [Amazon Simple Queue Service Resource and Operations](#sqs-resource-and-operations)\.  | 
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-2-red.png) The subset of actions included in `*` has expanded\. For a list of allowed actions, see [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)\.
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-3-red.png) You can specify the resource using the Amazon Resource Name \(ARN\), the standard means of specifying resources in IAM policies\. For information about the ARN format for Amazon SQS queues, see [Amazon Simple Queue Service Resource and Operations](#sqs-resource-and-operations)\.
 
 For example, according to the Amazon SQS policy in the preceding figure, anyone who possesses the security credentials for AWS Account 1 or AWS Account 2 can access `queue_xyz`\. In addition, Users Bob and Susan in your own AWS Account \(with ID `123456789012`\) can access the queue\.
 

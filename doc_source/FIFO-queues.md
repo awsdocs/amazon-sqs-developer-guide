@@ -19,7 +19,7 @@ FIFO queues are designed to enhance messaging between applications when the orde
 **Note**  
 The name of a FIFO queue must end with the `.fifo` suffix\. The suffix counts towards the 80\-character queue name limit\. To determine whether a queue is [FIFO](#FIFO-queues), you can check whether the queue name ends with the suffix\.
 
-For best practices of working with FIFO queues, see [Recommendations for FIFO \(First\-In\-First\-Out\) Queues ](FIFO-queue-recommendations.md) and [General Recommendations](general-recommendations.md)\.
+For best practices of working with FIFO queues, see [Additional Recommendations for FIFO Queues ](sqs-additional-fifo-queue-recommendations.md) and [Recommendations for Standard and FIFO \(First\-In\-First\-Out\) Queues ](sqs-standard-fifo-queue-best-practices.md)\.
 
 For information about compatibility of clients and services with FIFO queues, see [Compatibility](#FIFO-compatibility)\.
 

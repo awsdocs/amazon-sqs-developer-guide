@@ -17,8 +17,7 @@ The dead\-letter queue of a FIFO queue must also be a FIFO queue\. Similarly, th
 
 1. On the **Create New Queue** page, ensure that you're in the correct region and then type the **Queue Name**\.
 **Note**  
-The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-queue-name.png)
+The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\.
 
 1. **Standard** is selected by default\. Choose **FIFO**\.
 
@@ -27,15 +26,15 @@ The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are avai
 1. In this example, you enable the redrive policy for your new queue, set the `MyDeadLetterQueue.fifo` queue as the dead\-letter queue, and set the number of maximum receives to `50`\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-dead-letter-queue-configure-parameters.png)
 
-   1. To configure the dead\-letter queue, choose **Use Redrive Policy**\.
+   ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-1-red.png) To configure the dead\-letter queue, choose **Use Redrive Policy**\.
 
-   1. Enter the name of the existing **Dead Letter Queue** to which you want sources queues to send messages\.
+   ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-2-red.png) Enter the name of the existing **Dead Letter Queue** to which you want sources queues to send messages\.
 
-   1. To configure the number of times that a message can be received before being sent to a dead\-letter queue, set **Maximum Receives** to a value between 1 and 1,000\.
+   ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-3-red.png) To configure the number of times that a message can be received before being sent to a dead\-letter queue, set **Maximum Receives** to a value between 1 and 1,000\.
 **Note**  
-The **Maximum Receives** setting applies only to individual messages\. 
+The **Maximum Receives** setting applies only to individual messages\.
 
-   1. Choose **Create Queue**\.
+   ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-4-red.png) Choose **Create Queue**\.
 
    Your new queue is configured to use a dead\-letter queue, created, and selected in the queue list\.
 **Note**  
