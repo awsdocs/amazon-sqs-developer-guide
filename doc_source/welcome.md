@@ -1,6 +1,6 @@
 # What is Amazon Simple Queue Service?<a name="welcome"></a>
 
-Amazon Simple Queue Service \(Amazon SQS\) offers a secure, durable, and available hosted queue that lets you integrate and decouple distributed software systems and components\. Amazon SQS offers common middleware constructs such as *dead\-letter queues* and *poison\-pill messages*\. It provides a generic web services API and it can be accessed by any programming language that the AWS SDK supports\.
+Amazon Simple Queue Service \(Amazon SQS\) offers a secure, durable, and available hosted queue that lets you integrate and decouple distributed software systems and components\. Amazon SQS offers common constructs such as [dead\-letter queues](sqs-dead-letter-queues.md) and [cost allocation tags](sqs-queue-tags.md)\. It provides a generic web services API and it can be accessed by any programming language that the AWS SDK supports\.
 
 Amazon SQS supports both [standard](standard-queues.md) and [FIFO queues](FIFO-queues.md)\. For more information, see [What Type of Queue Do I Need?](#sqs-queue-types)
 
@@ -12,9 +12,9 @@ Amazon SQS supports both [standard](standard-queues.md) and [FIFO queues](FIFO-q
 
 ## What Are the Main Benefits of Amazon SQS?<a name="sqs-benefits"></a>
 
-+ **Security** – You control who can send messages to and receive messages from an Amazon SQS queue\. [ Server\-side encryption \(SSE\)](sqs-server-side-encryption.md) lets you transmit sensitive data by protecting the contents of messages in queues using keys managed in the AWS Key Management Service \(AWS KMS\)\.
++ **Security** – You control who can send messages to and receive messages from an Amazon SQS queue\. [Server\-side encryption \(SSE\)](sqs-server-side-encryption.md) lets you transmit sensitive data by protecting the contents of messages in queues using keys managed in the AWS Key Management Service \(AWS KMS\)\.
 
-+ **Durability** – To ensure the safety of your messages, Amazon SQS stores them on multiple servers\. Standard queues support [at\-least\-once message delivery](standard-queues.md#standard-queues-at-least-once-delivery), while FIFO queues support [exactly\-once message processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.
++ **Durability** – To ensure the safety of your messages, Amazon SQS stores them on multiple servers\. Standard queues support [at\-least\-once message delivery](standard-queues.md#standard-queues-at-least-once-delivery), and FIFO queues support [exactly\-once message processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.
 
 + **Availability** – Amazon SQS uses [redundant infrastructure](sqs-basic-architecture.md) to provide highly\-concurrent access to messages and high availability for producing and consuming messages\. 
 

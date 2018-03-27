@@ -39,7 +39,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
 ### To send a message to a standard queue<a name="send-message-standard-queue"></a>
 
-1. Copy the [example program](standard-queues.md#standard-queues-getting-started-java)\.
+1. Copy the [example program](standard-queues-getting-started-java.md)\.
 
    The following section of the code sends the `This is my message text.` message to your queue:
 
@@ -53,7 +53,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
    The message is sent to the queue\. The response includes the following items:
 
-   + The [message ID](sqs-queue-message-identifiers.md#message-id) Amazon SQS assigns to the message\.
+   + The [message ID](sqs-general-identifiers.md#message-id) Amazon SQS assigns to the message\.
 
    + An MD5 digest of the message body, used to confirm that Amazon SQS received the message correctly \(for more information, see [RFC1321](http://faqs.org/rfcs/rfc1321.html)\)\.
 
@@ -61,7 +61,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
 ### To send a message to a FIFO queue<a name="send-message-fifo-queue"></a>
 
-1. Copy the [example program](FIFO-queues.md#FIFO-queues-getting-started-java)\.
+1. Copy the [example program](FIFO-queues-getting-started-java.md)\.
 
    The following section of the code sends the `This is my message text.` message to your queue:
 

@@ -38,7 +38,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
 ### To add, update, and remove tags from a queue<a name="sqs-add-update-remove-tag-queue-java-update-remove"></a>
 
-1. Copy the example program for a [standard queue](standard-queues.md#standard-queues-getting-started-java) or a [FIFO queue](FIFO-queues.md#FIFO-queues-getting-started-java)\.
+1. Copy the example program for a [standard queue](standard-queues-getting-started-java.md) or a [FIFO queue](FIFO-queues-getting-started-java.md)\.
 
 1. To list the tags added to a queue, use the `ListQueueTags` API action:
 

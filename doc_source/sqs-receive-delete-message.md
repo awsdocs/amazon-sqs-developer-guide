@@ -51,7 +51,7 @@ The first time you take this action, an information screen is displayed\. To hid
 
 ## Java<a name="receive-delete-message-java"></a>
 
-To specify the message to delete, provide the [receipt handle](sqs-queue-message-identifiers.md#receipt-handle) that Amazon SQS returned when you received the message\. You can delete only one message per action\. To delete an entire queue, you must use the `DeleteQueue` action\. \(You can delete an entire queue even if the queue has messages in it\.\)
+To specify the message to delete, provide the [receipt handle](sqs-general-identifiers.md#receipt-handle) that Amazon SQS returned when you received the message\. You can delete only one message per action\. To delete an entire queue, you must use the `DeleteQueue` action\. \(You can delete an entire queue even if the queue has messages in it\.\)
 
 **Note**  
 If you don't have the receipt handle for the message, you can call the `ReceiveMessage` action to receive the message again\. Each time you receive the message, you get a different receipt handle\. Use the latest receipt handle when using the `DeleteMessage` action\. Otherwise, your message might not be deleted from the queue\.
@@ -60,7 +60,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
 ### To receive and delete a message from a standard queue<a name="receive-delete-message-java-standard"></a>
 
-1. Copy the [example program](standard-queues.md#standard-queues-getting-started-java)\.
+1. Copy the [example program](standard-queues-getting-started-java.md)\.
 
    The following section of the code receives a message from your queue:
 
@@ -97,9 +97,9 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
    The queue is polled and returns 0 or more messages\. The example prints the following items:
 
-   + The [message ID](sqs-queue-message-identifiers.md#message-id) that you received when you sent the message to the queue\.
+   + The [message ID](sqs-general-identifiers.md#message-id) that you received when you sent the message to the queue\.
 
-   + The [receipt handle](sqs-queue-message-identifiers.md#receipt-handle) that you later use to delete the message\.
+   + The [receipt handle](sqs-general-identifiers.md#receipt-handle) that you later use to delete the message\.
 
    + An MD5 digest of the message body \(for more information, see [RFC1321](http://faqs.org/rfcs/rfc1321.html)\)\.
 
@@ -113,7 +113,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
 ### To receive and delete a message from a FIFO queue<a name="receive-delete-message-java-FIFO"></a>
 
-1. Copy the [example program](FIFO-queues.md#FIFO-queues-getting-started-java)\.
+1. Copy the [example program](FIFO-queues-getting-started-java.md)\.
 
    The following section of the code receives a message from your queue:
 

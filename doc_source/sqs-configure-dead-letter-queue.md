@@ -1,6 +1,6 @@
 # Tutorial: Configuring an Amazon SQS Dead\-Letter Queue<a name="sqs-configure-dead-letter-queue"></a>
 
-A dead\-letter queue is a queue that other \(source\) queues can target for messages that can't be processed \(consumed\) successfully\. The following example demonstrates how to create a queue and to configure a dead\-letter queue for it\. For more information, see [Using Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md)\.
+A dead\-letter queue is a queue that other \(source\) queues can target for messages that can't be processed \(consumed\) successfully\. The following example demonstrates how to create a queue and to configure a dead\-letter queue for it\. For more information, see [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md)\.
 
 **Important**  
 The dead\-letter queue of a FIFO queue must also be a FIFO queue\. Similarly, the dead\-letter queue of a standard queue must also be a standard queue\.
@@ -49,7 +49,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
 ### To configure a dead\-letter queue<a name="configure-dead-letter-queue-java-api"></a>
 
-1. Copy the example program for a [standard queue](standard-queues.md#standard-queues-getting-started-java) or a [FIFO queue](FIFO-queues.md#FIFO-queues-getting-started-java)\.
+1. Copy the example program for a [standard queue](standard-queues-getting-started-java.md) or a [FIFO queue](FIFO-queues-getting-started-java.md)\.
 
 1. Set a string that contains JSON\-formatted parameters and values for the `RedrivePolicy` queue attribute:
 

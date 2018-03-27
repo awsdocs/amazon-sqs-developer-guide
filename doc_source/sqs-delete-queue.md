@@ -34,7 +34,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 **Note**  
 This action is identical for standard and FIFO queues\.
 
-1. Copy the [standard queue example program](standard-queues.md#standard-queues-getting-started-java) or the [FIFO queue example program](FIFO-queues.md#FIFO-queues-getting-started-java)\.
+1. Copy the [standard queue example program](standard-queues-getting-started-java.md) or the [FIFO queue example program](FIFO-queues-getting-started-java.md)\.
 
    The following section of the code deletes the queue:
 

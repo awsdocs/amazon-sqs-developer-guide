@@ -1,4 +1,4 @@
-# Using Amazon SQS Dead\-Letter Queues<a name="sqs-dead-letter-queues"></a>
+# Amazon SQS Dead\-Letter Queues<a name="sqs-dead-letter-queues"></a>
 
 Amazon SQS supports *dead\-letter queues*\. A dead\-letter queue is a queue that other \(source\) queues can target for messages that can't be processed \(consumed\) successfully\. Dead\-letter queues are useful for debugging your application or messaging system\. Dead\-letter queues allow you to isolate problematic messages to determine why their processing doesn't succeed\.
 

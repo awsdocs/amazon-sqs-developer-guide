@@ -44,7 +44,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
 ### To create a standard queue<a name="create-queue-java-standard"></a>
 
-1. Copy the [example program](standard-queues.md#standard-queues-getting-started-java)\.
+1. Copy the [example program](standard-queues-getting-started-java.md)\.
 
    The following section of the code creates the `MyQueue` queue:
 
@@ -61,7 +61,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
 ### To create a FIFO queue<a name="create-queue-java-FIFO"></a>
 
-1. Copy the [example program](FIFO-queues.md#FIFO-queues-getting-started-java)\.
+1. Copy the [example program](FIFO-queues-getting-started-java.md)\.
 
    The following section of the code creates the `MyFifoQueue.fifo` queue:
 
