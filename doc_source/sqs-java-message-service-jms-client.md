@@ -1,4 +1,4 @@
-# Using JMS with Amazon SQS<a name="sqs-java-message-service-jms-client"></a>
+# Working with JMS and Amazon SQS<a name="sqs-java-message-service-jms-client"></a>
 
 The Amazon SQS Java Messaging Library is a JMS interface for Amazon SQS that lets you take advantage of Amazon SQS in applications that already use JMS\. The interface lets you use Amazon SQS as the JMS provider with minimal code changes\. Together with the AWS SDK for Java, the Amazon SQS Java Messaging Library lets you create JMS connections and sessions, as well as producers and consumers that send and receive messages to and from Amazon SQS queues\.
 

@@ -2,6 +2,10 @@
 
 If you don't use an Amazon SQS queue \(and don't foresee using it in the near future\), it is a best practice to delete it from Amazon SQS\. The following example demonstrates deleting a queue\.
 
+**Note**  
+You can delete a queue even when it isn't empty\. If you want to delete the messages in a queue but not the queue itself, you can [purge the queue](sqs-purge-queue.md)\.  
+By default, a queue retains a message for four days after it is sent\. You can configure a queue to retain messages for up to 14 days\.
+
 
 + [AWS Management Console](#delete-queue-console)
 + [Java](#delete-queue-java)

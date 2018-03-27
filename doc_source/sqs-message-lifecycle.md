@@ -1,4 +1,4 @@
-# Message Lifecycle<a name="sqs-message-lifecycle"></a>
+# Amazon SQS Message Lifecycle<a name="sqs-message-lifecycle"></a>
 
 The following diagram describes the lifecycle of an Amazon SQS message, from creation to deletion\. In this example, a queue already exists\.
 

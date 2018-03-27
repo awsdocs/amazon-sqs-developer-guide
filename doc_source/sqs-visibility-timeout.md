@@ -1,4 +1,4 @@
-# Visibility Timeout<a name="sqs-visibility-timeout"></a>
+# Amazon SQS Visibility Timeout<a name="sqs-visibility-timeout"></a>
 
 When a consumer receives and processes a message from a queue, the message remains in the queue\. Amazon SQS doesn't automatically delete the message\. Because Amazon SQS is a distributed system, there's no guarantee that the consumer actually receives the message \(for example, due to a connectivity issue, or due to an issue in the consumer application\)\. Thus, the consumer must delete the message from the queue after receiving and processing it\.
 

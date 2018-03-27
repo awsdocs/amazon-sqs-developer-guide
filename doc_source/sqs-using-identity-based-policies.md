@@ -1,4 +1,4 @@
-# Using Identity\-Based Policies \(IAM\) Policies for Amazon SQS<a name="sqs-using-identity-based-policies"></a>
+# Using Identity\-Based \(IAM\) Policies for Amazon SQS<a name="sqs-using-identity-based-policies"></a>
 
 This topic provides examples of identity\-based policies in which an account administrator can attach permissions policies to IAM identities \(users, groups, and roles\)\.
 

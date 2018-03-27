@@ -48,7 +48,7 @@ The following sections describe how to manage permissions for Amazon SQS\. We re
 
 + [Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource](sqs-overview-of-managing-access.md)
 
-+ [Using Identity\-Based Policies \(IAM\) Policies for Amazon SQS](sqs-using-identity-based-policies.md)
++ [Using Identity\-Based \(IAM\) Policies for Amazon SQS](sqs-using-identity-based-policies.md)
 
 + [Creating Custom Policies Using the Amazon SQS Access Policy Language](sqs-creating-custom-policies.md)
 

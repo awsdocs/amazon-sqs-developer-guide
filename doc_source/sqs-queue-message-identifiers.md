@@ -1,4 +1,4 @@
-# Queue and Message Identifiers<a name="sqs-queue-message-identifiers"></a>
+# Amazon SQS Queue and Message Identifiers<a name="sqs-queue-message-identifiers"></a>
 
 This section describes the identifiers of standard and FIFO queues\. These identifiers can help you find and manipulate specific queues and messages\.
 

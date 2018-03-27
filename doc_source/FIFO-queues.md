@@ -1,4 +1,4 @@
-# FIFO \(First\-In\-First\-Out\) Queues<a name="FIFO-queues"></a>
+# Amazon SQS FIFO \(First\-In\-First\-Out\) Queues<a name="FIFO-queues"></a>
 
 FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\. In addition to having all the capabilities of the [standard queue](standard-queues.md), *FIFO \(First\-In\-First\-Out\)* queues are designed to enhance messaging between applications when the order of operations and events is critical, or where duplicates can't be tolerated\. FIFO queues also provide exactly\-once processing but have a limited number of transactions per second \(TPS\):
 

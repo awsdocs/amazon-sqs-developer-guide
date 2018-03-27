@@ -1,4 +1,4 @@
-# Using Amazon SQS Message Attributes<a name="sqs-message-attributes"></a>
+# Amazon SQS Message Attributes<a name="sqs-message-attributes"></a>
 
 Amazon SQS provides support for *message attributes*\. Message attributes allow you to provide structured metadata items \(such as timestamps, geospatial data, signatures, and identifiers\) about the message\. Message attributes are optional and separate from, but sent along with, the message body\. This information can be used by the consumer of the message to help decide how to handle the message without having to first process the message body\. Each message can have up to 10 attributes\. To specify message attributes, you can use the AWS Management Console, AWS software development kits \(SDKs\), or Query API\. 
 

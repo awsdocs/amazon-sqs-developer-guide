@@ -122,7 +122,7 @@ The following is an example policy that allows a user to use all Amazon SQS acti
 }
 ```
 
-For more information, see [Using Identity\-Based Policies \(IAM\) Policies for Amazon SQS](sqs-using-identity-based-policies.md), and [Identities \(Users, Groups, and Roles\)](http://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\.
+For more information, see [Using Identity\-Based \(IAM\) Policies for Amazon SQS](sqs-using-identity-based-policies.md), and [Identities \(Users, Groups, and Roles\)](http://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\.
 
 ### Resource\-Based Policies<a name="sqs-resource-based-policies"></a>
 

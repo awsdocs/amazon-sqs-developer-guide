@@ -46,6 +46,14 @@ To avoid inconsistent message processing by standard queues, avoid setting the n
 **Important**  
 In some unlikely scenarios, if you set the number of maximum receives to 1, any time a `ReceiveMessage` call fails, a message might be moved to a dead\-letter queue without being received\.
 
+### Implementing Request\-Response Systems<a name="implementing-request-response-systems"></a>
+
+When implementing a request\-response or remote procedure call \(RPC\) system, keep the following best practices in mind:
+
++ Don't create reply queues *per message*\. Instead, create reply queues on startup, *per producer*, and use a correlation ID message attribute to map replies to requests\.
+
++ Don't let your producers share reply queues\. This can cause a producer to receive response messages intended for another producer\.
+
 ## Reducing Costs<a name="reducing-costs"></a>
 
 ### Batching Message Actions<a name="batching-message-actions"></a>

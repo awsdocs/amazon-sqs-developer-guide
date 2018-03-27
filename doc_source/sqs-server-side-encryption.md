@@ -27,7 +27,7 @@ Some features of AWS services that can send notifications to Amazon SQS using th
 [AWS Lambda Dead\-Letter Queues](http://docs.aws.amazon.com/lambda/latest/dg/dlq.html)
 Other features of AWS services or third\-party services that send notifications to Amazon SQS aren't compatible with SSE, despite allowing you to set an encrypted queue as a target:  
 [AWS IoT Rule Actions](http://docs.aws.amazon.com/iot/latest/developerguide/iot-rule-actions.html)
-For information about compatibility of other services with encrypted queues, see [Example 3: Enable Compatibility Between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Encrypted Queues](#compatibility-with-aws-services) and your service documentation\.
+For information about compatibility of other services with encrypted queues, see [Example 3: Enable Compatibility Between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Queues with SSE](#compatibility-with-aws-services) and your service documentation\.
 
 AWS KMS combines secure, highly available hardware and software to provide a key management system scaled for the cloud\. When you use Amazon SQS with AWS KMS, the [data keys](#sqs-sse-key-terms) that encrypt your message data are also encrypted and stored with the data they protect\.
 
@@ -178,7 +178,7 @@ You must also ensure that the key policies of the customer master key \(CMK\) al
 
 Alternatively, you can specify the required AWS KMS actions and CMK ARN in an IAM policy assigned to the principals which produce and consume encrypted messages in Amazon SQS\. For more information, see [Managing Access to AWS KMS CMKs](http://docs.aws.amazon.com/kms/latest/developerguide/control-access-overview.html#managing-access) in the *AWS Key Management Service Developer Guide*
 
-### Example 1: Allow a User to Send Single or Batched Messages to an Encrypted Queue<a name="send-to-encrypted-queue"></a>
+### Example 1: Allow a User to Send Single or Batched Messages to a Queue with SSE<a name="send-to-encrypted-queue"></a>
 
 The producer must have the `kms:GenerateDataKey` and `kms:Decrypt` permissions for the customer master key \(CMK\)\.
 
@@ -203,7 +203,7 @@ The producer must have the `kms:GenerateDataKey` and `kms:Decrypt` permissions f
 }
 ```
 
-### Example 2: Allow a User to Receive Messages from an Encrypted Queue<a name="receive-from-encrypted-queue"></a>
+### Example 2: Allow a User to Receive Messages from a Queue with SSE<a name="receive-from-encrypted-queue"></a>
 
 The consumer must have the `kms:Decrypt` permission for any customer master key \(CMK\) that is used to encrypt the messages in the specified queue\. If the queue acts as a [dead\-letter queue](sqs-dead-letter-queues.md), the consumer must also have the `kms:Decrypt` permission for any CMK that is used to encrypt the messages in the source queue\.
 
@@ -226,7 +226,7 @@ The consumer must have the `kms:Decrypt` permission for any customer master key 
 }
 ```
 
-### Example 3: Enable Compatibility Between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Encrypted Queues<a name="compatibility-with-aws-services"></a>
+### Example 3: Enable Compatibility Between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Queues with SSE<a name="compatibility-with-aws-services"></a>
 
 To allow Amazon CloudWatch Events, Amazon S3 event notifications, or Amazon SNS topic subscriptions to work with encrypted queues, you must perform the following steps:
 
@@ -273,7 +273,7 @@ For information about how to manage SSE using the AWS Management Console or usin
 
 + [Tutorial: Configuring Server\-Side Encryption \(SSE\) for an Existing Amazon SQS Queue](sqs-configure-sse-existing-queue.md)
 
-+ [Example 3: Enable Compatibility Between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Encrypted Queues](#compatibility-with-aws-services)
++ [Example 3: Enable Compatibility Between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Queues with SSE](#compatibility-with-aws-services)
 
 You can enable and disable SSE for an Amazon SQS queue using the following API actions\.
 
