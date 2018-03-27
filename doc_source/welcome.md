@@ -12,7 +12,7 @@ Amazon SQS supports both [standard](standard-queues.md) and [FIFO queues](FIFO-q
 
 ## What Are the Main Benefits of Amazon SQS?<a name="sqs-benefits"></a>
 
-+ **Security** – You control who can send messages to and receive messages from an Amazon SQS queue\. [Server\-side encryption \(SSE\)](sqs-server-side-encryption.md) lets you transmit sensitive data by protecting the contents of messages in queues using keys managed in the AWS Key Management Service \(AWS KMS\)\.
++ **Security** – [You control](sqs-authentication-and-access-control.md) who can send messages to and receive messages from an Amazon SQS queue\. [Server\-side encryption \(SSE\)](sqs-server-side-encryption.md) lets you transmit sensitive data by protecting the contents of messages in queues using keys managed in the AWS Key Management Service \(AWS KMS\)\.
 
 + **Durability** – To ensure the safety of your messages, Amazon SQS stores them on multiple servers\. Standard queues support [at\-least\-once message delivery](standard-queues.md#standard-queues-at-least-once-delivery), and FIFO queues support [exactly\-once message processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.
 
