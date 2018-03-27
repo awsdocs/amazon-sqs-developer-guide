@@ -7,6 +7,7 @@ Amazon SQS supports both [standard](standard-queues.md) and [FIFO queues](FIFO-q
 
 + [What Are the Main Benefits of Amazon SQS?](#sqs-benefits)
 + [How is Amazon SQS Different from Amazon MQ or Amazon SNS?](#sqs-difference-from-amazon-mq-sns)
++ [How Can I Get Started with Amazon SQS?](#get-started)
 + [What Type of Queue Do I Need?](#sqs-queue-types)
 + [We Want to Hear from You](#sqs-we-want-to-hear-from-you)
 
@@ -29,6 +30,18 @@ Amazon SQS supports both [standard](standard-queues.md) and [FIFO queues](FIFO-q
 Amazon SQS and [Amazon SNS](https://aws.amazon.com/sns/) are queue and topic services that are highly scalable, simple to use, and don't require you to set up message brokers\. We recommend these services for new applications that can benefit from nearly unlimited scalability and simple APIs\.
 
 [Amazon MQ](https://aws.amazon.com/amazon-mq/) is a managed message broker service that provides compatibility with many popular message brokers\. We recommend Amazon MQ for migrating applications from existing message brokers that rely on compatibility with APIs such as JMS or protocols such as AMQP, MQTT, OpenWire, and STOMP\.
+
+## How Can I Get Started with Amazon SQS?<a name="get-started"></a>
+
++ To create your first queue with Amazon SQS and send, receive, and delete a message, see [Getting Started with Amazon SQS](sqs-getting-started.md)\.
+
++ To discover the functionality and architecture of Amazon SQS, see [How Amazon SQS Works](sqs-how-it-works.md)\.
+
++ To find out the guidelines and caveats that will help you make the most of Amazon SQS, see [Best Practices for Amazon SQS](sqs-best-practices.md)\.
+
++ To learn about Amazon SQS API actions, see the *Amazon Simple Queue Service API Reference*\.
+
++ To learn about Amazon SQS AWS CLI commands, see [Amazon SQS in the *AWS CLI Command Reference*](http://docs.aws.amazon.com/cli/latest/reference/sqs/index.html)\.
 
 ## What Type of Queue Do I Need?<a name="sqs-queue-types"></a>
 
