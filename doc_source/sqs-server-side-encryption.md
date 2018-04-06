@@ -267,7 +267,7 @@ For Amazon SNS topic subscriptions, use `sns`
 
 ## Getting Started with SSE<a name="sqs-sse-getting-started"></a>
 
-For information about how to manage SSE using the AWS Management Console or using API actions, see the following tutorials:
+For information about managing SSE using the AWS Management Console or using API actions, see the following tutorials:
 
 + [Tutorial: Configuring Server\-Side Encryption \(SSE\) for an Existing Amazon SQS Queue](sqs-create-queue-sse.md)
 

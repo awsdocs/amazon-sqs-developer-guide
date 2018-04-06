@@ -11,7 +11,7 @@ The following example demonstrates receiving and deleting a message\.
 
 
 + [AWS Management Console](#receive-delete-message-console)
-+ [Java](#receive-delete-message-java)
++ [AWS SDK for Java](#receive-delete-message-java)
 
 ## AWS Management Console<a name="receive-delete-message-console"></a>
 
@@ -49,7 +49,7 @@ The first time you take this action, an information screen is displayed\. To hid
 
 1. Select **Close**\.
 
-## Java<a name="receive-delete-message-java"></a>
+## AWS SDK for Java<a name="receive-delete-message-java"></a>
 
 To specify the message to delete, provide the [receipt handle](sqs-general-identifiers.md#receipt-handle) that Amazon SQS returned when you received the message\. You can delete only one message per action\. To delete an entire queue, you must use the `DeleteQueue` action\. \(You can delete an entire queue even if the queue has messages in it\.\)
 

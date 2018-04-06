@@ -56,7 +56,7 @@ For instructions on creating custom CMKs, see [Creating Keys](http://docs.aws.am
 
    Your changes are applied to the queue\.
 
-## Java<a name="sqs-configure-sse-existing-queue-java"></a>
+## AWS SDK for Java<a name="sqs-configure-sse-existing-queue-java"></a>
 
 Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 
@@ -99,8 +99,8 @@ Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` AP
    attributes.put("KmsDataKeyReusePeriodSeconds", "60");
    ```
 
-For information about how to retrieve the attributes of a queue, see [Examples](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html#API_GetQueueAttributes_Examples) in the *Amazon Simple Queue Service API Reference*\.
+For information about retrieving the attributes of a queue, see [Examples](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html#API_GetQueueAttributes_Examples) in the *Amazon Simple Queue Service API Reference*\.
 
 To retrieve the CMK ID or the data key reuse period for a particular queue, use the `KmsMasterKeyId` and `KmsDataKeyReusePeriodSeconds` attributes of the `[GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)` action\.
 
-For information about how to switch a queue to a different CMK with the same alias, see [Updating an Alias](http://docs.aws.amazon.com/kms/latest/developerguide/programming-aliases.html#update-alias) in the *AWS Key Management Service Developer Guide*\.
+For information about switching a queue to a different CMK with the same alias, see [Updating an Alias](http://docs.aws.amazon.com/kms/latest/developerguide/programming-aliases.html#update-alias) in the *AWS Key Management Service Developer Guide*\.

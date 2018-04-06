@@ -50,7 +50,7 @@ The following sections describe how to manage permissions for Amazon SQS\. We re
 
 + [Using Identity\-Based \(IAM\) Policies for Amazon SQS](sqs-using-identity-based-policies.md)
 
-+ [Creating Custom Policies Using the Amazon SQS Access Policy Language](sqs-creating-custom-policies.md)
++ [Using Custom Policies with the Amazon SQS Access Policy Language](sqs-creating-custom-policies.md)
 
 + [Using Temporary Security Credentials](sqs-using-temporary-security-credentials.md)
 

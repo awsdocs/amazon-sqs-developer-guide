@@ -64,7 +64,7 @@ if (!client.queueExists("MyQueue.fifo")) {
 
 **Note**  
 The name of a FIFO queue must end with the `.fifo` suffix\.  
-For more information on the `ContentBasedDeduplication` attribute, see [Exactly\-Once Processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.
+For more information about the `ContentBasedDeduplication` attribute, see [Exactly\-Once Processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.
 
 ## Sending Messages Synchronously<a name="send-messages-synchronously"></a>
 

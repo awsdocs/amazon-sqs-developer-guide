@@ -7,7 +7,7 @@ The dead\-letter queue of a FIFO queue must also be a FIFO queue\. Similarly, th
 
 
 + [AWS Management Console](#configure-dead-letter-queue-console)
-+ [Java](#configure-dead-letter-queue-java)
++ [AWS SDK for Java](#configure-dead-letter-queue-java)
 
 ## AWS Management Console<a name="configure-dead-letter-queue-console"></a>
 
@@ -43,7 +43,7 @@ When you create a queue, it can take a short time for the queue to propagate thr
    Your queue's **Maximum Receives** and **Dead Letter Queue** ARN are displayed on the **Redrive Policy** tab\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-dead-letter-queue-redrive-policy.png)
 
-## Java<a name="configure-dead-letter-queue-java"></a>
+## AWS SDK for Java<a name="configure-dead-letter-queue-java"></a>
 
 Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 

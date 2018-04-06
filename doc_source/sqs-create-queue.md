@@ -4,7 +4,7 @@ The first and most common Amazon SQS task is creating queues\. The following exa
 
 
 + [AWS Management Console](#create-queue-console)
-+ [Java](#create-queue-java)
++ [AWS SDK for Java](#create-queue-java)
 + [AWS CloudFormation](#create-queue-cloudformation)
 
 ## AWS Management Console<a name="create-queue-console"></a>
@@ -23,7 +23,7 @@ The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are avai
 
    + To create your queue with the default parameters, choose **Quick\-Create Queue**\.
 
-   + To configure your queue's parameters, choose **Configure Queue**\. When you finish configuring the parameters, choose **Create Queue**\. For more information about creating a queue with SSE, see [Tutorial: Creating an Amazon SQS Queue with Server\-Side Encryption](sqs-create-queue-sse.md)\.
+   + To configure your queue's parameters, choose **Configure Queue**\. When you finish configuring the parameters, choose **Create Queue**\. For more information about creating a queue with SSE, see [Tutorial: Creating an Amazon SQS Queue with Server\-Side Encryption \(SSE\)](sqs-create-queue-sse.md)\.
 
      The following example shows the **Content\-Based Deduplication** parameter specific to FIFO queues\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-configure-parameters.png)
@@ -38,7 +38,7 @@ When you create a queue, it can take a short time for the queue to propagate thr
    Your queue's **Name**, **URL**, and **ARN** are displayed on the **Details** tab\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-details-url-arn.png)
 
-## Java<a name="create-queue-java"></a>
+## AWS SDK for Java<a name="create-queue-java"></a>
 
 Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 

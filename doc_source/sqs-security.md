@@ -1,6 +1,6 @@
 # Amazon SQS Security<a name="sqs-security"></a>
 
-This section provides information about Amazon SQS security, authentication and access control, and the access policy language\.
+This section provides information about Amazon SQS security, authentication and access control, and the Amazon SQS Access Policy Language\.
 
 
 + [Controlling User Access to Your AWS Account](sqs-authentication-and-access-control.md)

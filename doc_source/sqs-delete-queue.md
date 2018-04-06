@@ -8,7 +8,7 @@ By default, a queue retains a message for four days after it is sent\. You can c
 
 
 + [AWS Management Console](#delete-queue-console)
-+ [Java](#delete-queue-java)
++ [AWS SDK for Java](#delete-queue-java)
 
 ## AWS Management Console<a name="delete-queue-console"></a>
 
@@ -27,7 +27,7 @@ By default, a queue retains a message for four days after it is sent\. You can c
 
    The queue is deleted\.
 
-## Java<a name="delete-queue-java"></a>
+## AWS SDK for Java<a name="delete-queue-java"></a>
 
 Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 

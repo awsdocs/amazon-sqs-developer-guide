@@ -4,7 +4,7 @@ After you create your queue, you can send a message to it\. The following exampl
 
 
 + [AWS Management Console](#send-message-console)
-+ [Java](#send-message-java)
++ [AWS SDK for Java](#send-message-java)
 
 ## AWS Management Console<a name="send-message-console"></a>
 
@@ -33,7 +33,7 @@ The message group ID is always required\. However, if content\-based deduplicati
 
 1. Choose **Close**\.
 
-## Java<a name="send-message-java"></a>
+## AWS SDK for Java<a name="send-message-java"></a>
 
 Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 

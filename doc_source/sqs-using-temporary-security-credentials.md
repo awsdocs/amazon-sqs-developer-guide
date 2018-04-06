@@ -7,7 +7,7 @@ You can use these temporary security credentials to make requests to Amazon SQS\
 **Note**  
 You can't set a policy based on temporary credentials\.
 
-**To get started with temporary security credentials**
+## Prerequisites<a name="temporary-security-credentials-prerequisites"></a>
 
 1. Use IAM to create temporary security credentials:
 
@@ -22,9 +22,9 @@ You can't set a policy based on temporary credentials\.
 1. Use the temporary Secret Access Key instead of your own Secret Access Key to sign your Query API request\.
 
 **Note**  
-When you submit the signed Query API request, use the temporary Access Key ID instead of your own Access Key ID and to include the security token\. For more information on IAM support for temporary security credentials, see [Granting Temporary Access to Your AWS Resources](http://docs.aws.amazon.com/IAM/latest/UserGuide/TokenBasedAuth.html) in the *IAM User Guide*\. 
+When you submit the signed Query API request, use the temporary Access Key ID instead of your own Access Key ID and to include the security token\. For more information about IAM support for temporary security credentials, see [Granting Temporary Access to Your AWS Resources](http://docs.aws.amazon.com/IAM/latest/UserGuide/TokenBasedAuth.html) in the *IAM User Guide*\. 
 
-**To call an Amazon SQS Query API action using temporary security credentials**
+## To call an Amazon SQS Query API action using temporary security credentials<a name="temporary-security-credentials-query-api"></a>
 
 1. Request a temporary security token using AWS Identity and Access Management\. For more information, see [Creating Temporary Security Credentials to Enable Access for IAM Users](http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingSessionTokens.html) in the *IAM User Guide*\.
 
@@ -50,7 +50,7 @@ When you submit the signed Query API request, use the temporary Access Key ID in
    &AUTHPARAMS
    ```
 
-   The following example uses temporary security credentials to send two messages with `SendMessageBatch`\.
+   The following example uses temporary security credentials to send two messages using the `SendMessageBatch` action\.
 
    ```
    https://sqs.us-east-2.amazonaws.com/

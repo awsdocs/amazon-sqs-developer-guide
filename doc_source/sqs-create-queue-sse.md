@@ -1,4 +1,4 @@
-# Tutorial: Creating an Amazon SQS Queue with Server\-Side Encryption<a name="sqs-create-queue-sse"></a>
+# Tutorial: Creating an Amazon SQS Queue with Server\-Side Encryption \(SSE\)<a name="sqs-create-queue-sse"></a>
 
 Server\-side encryption \(SSE\) for Amazon SQS is available in the US East \(N\. Virginia\), US East \(Ohio\), and US West \(Oregon\) regions\. You can enable server\-side encryption \(SSE\) for a queue to protect its data\. For more information about using SSE, see [Protecting Data Using Server\-Side Encryption \(SSE\) and AWS KMS ](sqs-server-side-encryption.md)\.
 
@@ -56,7 +56,7 @@ For instructions on creating custom CMKs, see [Creating Keys](http://docs.aws.am
    Your new queue is created with SSE\. The encryption status, alias of the CMK, **Description**, **Account**, **Key ARN**, and the **Data Key Reuse Period** are displayed on the **Encryption** tab\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-server-side-encryption-details.png)
 
-## Java<a name="sqs-create-queue-sse-java"></a>
+## AWS SDK for Java<a name="sqs-create-queue-sse-java"></a>
 
 Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 
@@ -117,8 +117,8 @@ Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` AP
    attributes.put("KmsDataKeyReusePeriodSeconds", "60");
    ```
 
-For information about how to retrieve the attributes of a queue, see [Examples](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html#API_GetQueueAttributes_Examples) in the *Amazon Simple Queue Service API Reference*\.
+For information about retrieving the attributes of a queue, see [Examples](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html#API_GetQueueAttributes_Examples) in the *Amazon Simple Queue Service API Reference*\.
 
 To retrieve the CMK ID or the data key reuse period for a particular queue, use the `KmsMasterKeyId` and `KmsDataKeyReusePeriodSeconds` attributes of the `[GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)` action\.
 
-For information about how to switch a queue to a different CMK with the same alias, see [Updating an Alias](http://docs.aws.amazon.com/kms/latest/developerguide/programming-aliases.html#update-alias) in the *AWS Key Management Service Developer Guide*\.
+For information about switching a queue to a different CMK with the same alias, see [Updating an Alias](http://docs.aws.amazon.com/kms/latest/developerguide/programming-aliases.html#update-alias) in the *AWS Key Management Service Developer Guide*\.

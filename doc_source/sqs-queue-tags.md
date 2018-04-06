@@ -31,7 +31,7 @@ You can't add tags to a new queue when you create it using the AWS Management Co
 
 ## Getting Started with Tagging<a name="sqs-queue-tags-getting-started"></a>
 
-For information on how to manage Amazon SQS queue tags using the AWS Management Console or API actions, see the [Adding, Updating, and Removing Tags from an Amazon SQS Queue](sqs-add-update-remove-tag-queue.md) tutorial\.
+For information about managing Amazon SQS queue tags using the AWS Management Console or API actions, see the [Adding, Updating, and Removing Tags from an Amazon SQS Queue](sqs-add-update-remove-tag-queue.md) tutorial\.
 
 You can list, add, update, or remove tags for an Amazon SQS queue using the following API actions:
 

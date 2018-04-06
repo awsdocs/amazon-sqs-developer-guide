@@ -4,7 +4,7 @@ When you create a queue, it can take a short time for the queue to propagate thr
 
 
 + [AWS Management Console](#list-all-queues-console)
-+ [Java](#list-all-queues-java)
++ [AWS SDK for Java](#list-all-queues-java)
 
 ## AWS Management Console<a name="list-all-queues-console"></a>
 
@@ -18,7 +18,7 @@ When you create a queue, it can take a short time for the queue to propagate thr
    Your queue's **Name**, **URL**, and **ARN** are displayed on the **Details** tab\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-details-url-arn.png)
 
-## Java<a name="list-all-queues-java"></a>
+## AWS SDK for Java<a name="list-all-queues-java"></a>
 
 Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 
