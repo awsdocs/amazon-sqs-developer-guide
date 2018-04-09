@@ -78,7 +78,8 @@ Before you begin working with the example code, specify your AWS credentials\. F
    final SendMessageResult sendMessageResult = sqs.sendMessage(sendMessageRequest);
    final String sequenceNumber = sendMessageResult.getSequenceNumber();
    final String messageId = sendMessageResult.getMessageId();
-   System.out.println("SendMessage succeed with messageId " + messageId + ", sequence number " + sequenceNumber + "\n");
+   System.out.println("SendMessage succeed with messageId " + messageId + ", sequence number " + sequenceNumber 
+           + "\n");
    ```
 
 1. Compile and run the example\.

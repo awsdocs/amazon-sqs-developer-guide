@@ -77,7 +77,8 @@ Before you begin working with the example code, specify your AWS credentials\. F
    attributes.put("ContentBasedDeduplication", "true");
    
    // The FIFO queue name must end with the .fifo suffix
-   final CreateQueueRequest createQueueRequest = new CreateQueueRequest("MyFifoQueue.fifo").withAttributes(attributes);
+   final CreateQueueRequest createQueueRequest = new CreateQueueRequest("MyFifoQueue.fifo")
+           .withAttributes(attributes);
    final String myQueueUrl = sqs.createQueue(createQueueRequest).getQueueUrl();
    ```
 

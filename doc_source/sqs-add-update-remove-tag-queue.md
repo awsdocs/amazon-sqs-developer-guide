@@ -44,8 +44,10 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
    ```
    final ListQueueTagsRequest listQueueTagsRequest = new ListQueueTagsRequest(queueUrl);
-   final ListQueueTagsResult listQueueTagsResult = SQSClientFactory.newSQSClient().listQueueTags(listQueueTagsRequest);
-   System.out.println(String.format("ListQueueTags: \tTags for queue %s are %s.\n", QUEUE_NAME, listQueueTagsResult.getTags()))
+   final ListQueueTagsResult listQueueTagsResult = SQSClientFactory.newSQSClient()
+           .listQueueTags(listQueueTagsRequest);
+   System.out.println(String.format("ListQueueTags: \tTags for queue %s are %s.\n", 
+           QUEUE_NAME, listQueueTagsResult.getTags()));
    ```
 
 1. To add or update the values of the queue's tags using the tag's key, add the following code which uses the `TagQueue` API action:

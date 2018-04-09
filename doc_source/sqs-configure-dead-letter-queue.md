@@ -54,7 +54,8 @@ Before you begin working with the example code, specify your AWS credentials\. F
 1. Set a string that contains JSON\-formatted parameters and values for the `RedrivePolicy` queue attribute:
 
    ```
-   final String redrivePolicy = "{\"maxReceiveCount\":\"5\", \"deadLetterTargetArn\":\"arn:aws:sqs:us-east-2:123456789012:MyDeadLetterQueue\"}";
+   final String redrivePolicy = 
+           "{\"maxReceiveCount\":\"5\", \"deadLetterTargetArn\":\"arn:aws:sqs:us-east-2:123456789012:MyDeadLetterQueue\"}";
    ```
 
 1. Use the `CreateQueue` or `SetQueueAttributesRequest` API action to set the `RedrivePolicy` queue attribute:
@@ -71,26 +72,3 @@ Before you begin working with the example code, specify your AWS credentials\. F
 1. Compile and run your program\.
 
    The dead\-letter queue is configured\.
-
-#### Sample Request<a name="dead-letter-queue-sample-request"></a>
-
-```
-https://sqs.us-east-2.amazonaws.com/123456789012/MySourceQueue 
-?Action=SetQueueAttributes
-&Attribute.1.Value=%7B%22maxReceiveCount%22%3A%225%22%2C+%22deadLetterTargetArn%22%3A%22arn%3Aaws%3Asqs%3Aus-east-2%3A123456789012%3AMyDeadLetterQueue%22%7D
-&Attribute.1.Name=RedrivePolicy
-&Version=2012-11-05
-```
-
-**Note**  
-Queue names and queue URLs are case\-sensitive\.
-
-#### Sample Response<a name="dead-letter-queue-sample-response"></a>
-
-```
-<SetQueueAttributesResponse xmlns="https://queue.amazonaws.com/doc/2012-11-05/">
-   <ResponseMetadata>
-      <RequestId>40945605-b328-53b5-aed4-1cc24a7240e8</RequestId>
-   </ResponseMetadata>
-</SetQueueAttributesResponse>
-```
