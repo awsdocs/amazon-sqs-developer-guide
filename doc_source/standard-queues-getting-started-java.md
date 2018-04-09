@@ -1,6 +1,6 @@
 # Working Java Example for Standard Queues<a name="standard-queues-getting-started-java"></a>
 
-You can try out Amazon SQS standard queue functionality using the following Maven prerequisites and example Java code\.
+Learn about Amazon SQS standard queue functionality using the provided Maven prerequisites and example Java code\.
 
 ## Prerequisites<a name="standard-queue-example-prerequisites"></a>
 

@@ -385,6 +385,7 @@ The following Java code example creates a synchronous consumer with client ackno
  * permissions and limitations under the License.
  *
  */
+
 /**
  * An example class to demonstrate the behavior of CLIENT_ACKNOWLEDGE mode for received messages. This example
  * complements the example given in {@link SyncMessageReceiverUnorderedAcknowledge} for UNORDERED_ACKNOWLEDGE mode.

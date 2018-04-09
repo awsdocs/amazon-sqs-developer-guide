@@ -70,7 +70,7 @@ Even when you use dead\-letter queues, you should continue to monitor your queue
 
 ## Getting Started with Dead\-Letter Queues<a name="sqs-dead-letter-queues-getting-started"></a>
 
-For information about creating a dead\-letter queue using the AWS Management Console or using the Query API action, see the [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md) tutorial\.
+For information about creating a dead\-letter queue using the AWS Management Console or using API actions, see the [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md) tutorial\.
 
 You can configure an Amazon SQS queue as a dead\-letter queue using the following API actions\.
 

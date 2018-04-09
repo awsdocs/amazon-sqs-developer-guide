@@ -1,31 +1,32 @@
 # Amazon SQS Long Polling<a name="sqs-long-polling"></a>
 
-*Long polling* helps reduce your cost of using Amazon SQS by reducing the number of empty responses \(when there are no messages available to return in reply to a `ReceiveMessage` request sent to an Amazon SQS queue\) and eliminating false empty responses \(when messages are available in the queue but aren't included in the response\):
+*Long polling* helps reduce the cost of using Amazon SQS by eliminating the number of empty responses \(when there are no messages available for a `[ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` request\) and false empty responses \(when messages are available but aren't included in a response\)\.
 
-+ Long polling reduces the number of empty responses by allowing Amazon SQS to wait until a message is available in the queue before sending a response\. Unless the connection times out, the response to the `ReceiveMessage` request contains at least one of the available messages, up to the maximum number of messages specified in the `ReceiveMessage` action\.
+## Differences Between Short and Long Polling<a name="sqs-short-long-polling-differences"></a>
 
-+ Long polling eliminates false empty responses by querying all \(rather than a limited number\) of the servers\.
+By default, Amazon SQS uses *short polling*, querying only a subset of its servers \(based on a weighted random distribution\), to determine whether any messages are available for a response\.
 
-+ Long polling returns messages as soon any message becomes available\.
-
-
-+ [The Differences Between Short and Long Polling](#sqs-short-long-polling-differences)
-+ [Enabling Long Polling using the AWS Management Console](#sqs-long-polling-console)
-+ [Enabling Long Polling Using the API](#sqs-long-polling-api)
-+ [Enabling Long Polling Using the Query API](#sqs-long-polling-query-api)
-
-## The Differences Between Short and Long Polling<a name="sqs-short-long-polling-differences"></a>
-
-Amazon SQS uses *short polling* by default, querying only a subset of the servers \(based on a weighted random distribution\) to determine whether any messages are available for inclusion in the response\.
-
-Short polling occurs when the `WaitTimeSeconds` parameter of a `ReceiveMessage` call is set to `0` in one of two ways:
+Short polling occurs when the `WaitTimeSeconds` parameter of a `[ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` request is set to `0` in one of two ways:
 
 + The `ReceiveMessage` call sets `WaitTimeSeconds` to `0`\.
 
-+ The `ReceiveMessage` call doesn’t set `WaitTimeSeconds` and the queue attribute `ReceiveMessageWaitTimeSeconds` is set to `0`\.
++ The `ReceiveMessage` call doesn’t set `WaitTimeSeconds`, but the queue attribute [http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html) is set to `0`\.
 
 **Note**  
-For the `WaitTimeSeconds` parameter of `ReceiveMessage`, a value set between `1` and `20` has priority over any value set for the queue attribute `ReceiveMessageWaitTimeSeconds`\.
+For the `WaitTimeSeconds` parameter of the `ReceiveMessage` action, a value set between `1` and `20` has priority over any value set for the queue attribute `ReceiveMessageWaitTimeSeconds`\.
+
+Long polling offers the following benefits:
+
++ Eliminating empty responses by allowing Amazon SQS to wait until a message is available in a queue before sending a response\. Unless the connection times out, the response to the `ReceiveMessage` request contains at least one of the available messages, up to the maximum number of messages specified in the `ReceiveMessage` action\.
+
++ Eliminating false empty responses by querying all \(rather than a subset of\) Amazon SQS servers\.
+
++ Returning messages as soon as they become available\.
+
+
++ [Differences Between Short and Long Polling](#sqs-short-long-polling-differences)
++ [Enabling Long Polling using the AWS Management Console](#sqs-long-polling-console)
++ [Enabling Long Polling Using the API](#sqs-long-polling-api)
 
 ## Enabling Long Polling using the AWS Management Console<a name="sqs-long-polling-console"></a>
 
@@ -76,33 +77,3 @@ If you decide to implement long polling with multiple queues, we recommend using
 When you use one thread for each queue, your application can process the messages in each of the queues as they become available\. A single thread for multiple queues might cause your application to become blocked from processing available messages in the other queues while waiting \(up to 20 seconds\) for a queue that doesn't have any available messages\.
 
 In most cases, when using long polling, set the timeout value to a maximum of 20 seconds\. If the 20\-second maximum doesn't work for your application, set a shorter timeout for long polling \(the minimum is 1 second\)\. If you don't use an AWS SDK to access Amazon SQS, or if you configure an AWS SDK to have a shorter timeout, you may need to modify your Amazon SQS client to allow for longer requests or to use a shorter timeout for long polling\.
-
-## Enabling Long Polling Using the Query API<a name="sqs-long-polling-query-api"></a>
-
-The following example enables long polling by calling the `[ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` action with the `WaitTimeSeconds` parameter set to 10 seconds\.
-
-The structure of *`AUTHPARAMS`* depends on the signature of the API request\. For more information, see [Signing AWS API Requests](http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html) in the *Amazon Web Services General Reference*\.
-
-```
-https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue/
-?Action=ReceiveMessage
-&WaitTimeSeconds=10
-&MaxNumberOfMessages=5
-&VisibilityTimeout=15
-&AttributeName=All;
-&Expires=2013-10-25T22%3A52%3A43PST
-&Version=2012-11-05
-&AUTHPARAMS
-```
-
-The following example shows another way to enable long polling\. Here, the `ReceiveMessageWaitTimeSeconds` attribute for the `[SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)` action is set to 20 seconds\.
-
-```
-https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue/
-?Action=SetQueueAttributes
-&Attribute.Name=ReceiveMessageWaitTimeSeconds
-&Attribute.Value=20
-&Expires=2013-10-25T22%3A52%3A43PST
-&Version=2012-11-05
-&AUTHPARAMS
-```

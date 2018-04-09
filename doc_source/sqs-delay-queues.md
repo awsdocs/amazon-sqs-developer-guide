@@ -1,9 +1,5 @@
 # Amazon SQS Delay Queues<a name="sqs-delay-queues"></a>
 
-
-+ [Creating Delay Queues with the AWS Management Console](#sqs-delay-queues-console)
-+ [Creating Delay Queues with the Query API](#sqs-delay-queues-query-api)
-
 Delay queues let you postpone the delivery of new messages in a queue for the specified number of seconds\. If you create a delay queue, any message that you send to that queue is invisible to consumers for the duration of the delay period\. You can use the `CreateQueue` action to create a delay queue by setting the `DelaySeconds` attribute to any value between `0` and `900` \(15 minutes\)\. You can also change an existing queue into a delay queue using the `SetQueueAttributes` action to set the queue's `DelaySeconds` attribute\.
 
 **Note**  
@@ -51,34 +47,3 @@ You can use the AWS Management Console to change the **Delivery Delay** setting 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AWS_Console_Configure_Queue_Dialog_Delay.png)
 
 1. Choose **Save Changes**\.
-
-## Creating Delay Queues with the Query API<a name="sqs-delay-queues-query-api"></a>
-
-The following Query API example calls the `CreateQueue` action to create a delay queue that hides each message from consumers for the first 45 seconds that the message is in the queue\.
-
-The structure of *`AUTHPARAMS`* depends on the signature of the API request\. For more information, see [Signing AWS API Requests](http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html) in the *Amazon Web Services General Reference*\.
-
-```
-https://sqs.us-east-2.amazonaws.com/
-?Action=CreateQueue
-&QueueName=MyQueue
-&Attribute.1.Name=DelaySeconds
-&Attribute.1.Value=45
-&Expires=2015-12-20T22%3A52%3A43PST
-&Version=2012-11-05
-&AUTHPARAMS
-```
-
-**Note**  
-Queue names and queue URLs are case\-sensitive\.
-
-You can also change an existing queue into a delay queue by changing the DelaySeconds attribute from its default value of 0 to a positive integer value that is less than or equal to 900\. The following example calls `SetQueueAttributes` to set the `DelaySeconds` attribute of a queue named `MyQueue` to 45 seconds\.
-
-```
-https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue/
-?Action=SetQueueAttributes
-&DelaySeconds=45
-&Expires=2015-12-20T22%3A52%3A43PST
-&Version=2012-11-05
-&AUTHPARAMS
-```

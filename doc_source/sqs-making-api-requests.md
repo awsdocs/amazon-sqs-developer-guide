@@ -70,7 +70,7 @@ The header is followed by a `[form\-urlencoded](https://www.w3.org/MarkUp/html-s
 ```
 Action=SendMessage
 &MessageBody=Your+Message+Text
-&Expires=2017-10-15T12%3A00%3A00Z
+&Expires=2020-10-15T12%3A00%3A00Z
 &Version=2012-11-05
 &AUTHPARAMS
 ```

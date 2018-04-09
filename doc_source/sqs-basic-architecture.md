@@ -1,6 +1,6 @@
 # Basic Amazon SQS Architecture<a name="sqs-basic-architecture"></a>
 
-   Describes the parts of a distributed messaging system and the lifecycle of an Amazon SQS message, from creation to deletion\.   
+   Learn about the parts of a distributed messaging system and the lifecycle of an Amazon SQS message, from creation to deletion\.   
 
 This section outlines the parts of a distributed messaging system and explains the lifecycle of an Amazon SQS message\.
 

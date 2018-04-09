@@ -43,7 +43,7 @@ When you submit the signed Query API request, use the temporary Access Key ID in
    &QueueName=MyQueue
    &Attribute.1.Name=VisibilityTimeout
    &Attribute.1.Value=40
-   &Expires=2015-12-18T22%3A52%3A43PST
+   &Expires=2020-12-18T22%3A52%3A43PST
    &SecurityToken=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
    &AWSAccessKeyId=AKIAIOSFODNN7EXAMPLE
    &Version=2012-11-05
@@ -60,7 +60,7 @@ When you submit the signed Query API request, use the temporary Access Key ID in
    &SendMessageBatchRequestEntry.2.Id=test_msg_002
    &SendMessageBatchRequestEntry.2.MessageBody=test%20message%20body%202
    &SendMessageBatchRequestEntry.2.DelaySeconds=60
-   &Expires=2015-12-18T22%3A52%3A43PST
+   &Expires=2020-12-18T22%3A52%3A43PST
    &SecurityToken=je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
    &AWSAccessKeyId=AKIAI44QH8DHBEXAMPLE
    &Version=2012-11-05

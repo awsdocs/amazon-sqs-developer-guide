@@ -1,6 +1,6 @@
 # Working Java Example for FIFO Queues<a name="FIFO-queues-getting-started-java"></a>
 
-You can try out Amazon SQS FIFO queue functionality using the following Maven prerequisites and example Java code\.
+Learn about Amazon SQS FIFO queue functionality using the provided Maven prerequisites and example Java code\.
 
 ## Prerequisites<a name="FIFO-queue-example-prerequisites"></a>
 
