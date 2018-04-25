@@ -9,11 +9,12 @@ You can explore Amazon SQS without writing code with tools such as the AWS Comma
 
 
 + [Creating an Amazon SQS Queue](sqs-create-queue.md)
-+ [Creating an Amazon SQS queue with SSE](sqs-create-queue-sse.md)
-+ [Configuring SSE for an existing Amazon SQS queue](sqs-configure-sse-existing-queue.md)
++ [Creating an Amazon SQS Queue with SSE](sqs-create-queue-sse.md)
++ [Configuring SSE for an Existing Amazon SQS Queue](sqs-configure-sse-existing-queue.md)
 + [Listing all Amazon SQS Queues in a Region](sqs-list-all-queues.md)
 + [Adding Permissions to an Amazon SQS Queue](sqs-add-permissions.md)
 + [Adding, Updating, and Removing Tags from an Amazon SQS Queue](sqs-add-update-remove-tag-queue.md)
++ [Configuring Long Polling for an Amazon SQS queue](sqs-configure-long-polling-for-queue.md)
 + [Sending a Message to an Amazon SQS Queue](sqs-send-message.md)
 + [Sending a Message with Attributes to an Amazon SQS Queue](sqs-send-message-with-attributes.md)
 + [Receiving and Deleting a Message from an Amazon SQS Queue](sqs-receive-delete-message.md)

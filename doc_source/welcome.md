@@ -19,7 +19,7 @@ Amazon SQS supports both [standard](standard-queues.md) and [FIFO queues](FIFO-q
 
 + **Availability** – Amazon SQS uses [redundant infrastructure](sqs-basic-architecture.md) to provide highly\-concurrent access to messages and high availability for producing and consuming messages\. 
 
-+ **Scalability** – Amazon SQS can process each [buffered request](sqs-batch-api-actions.md#sqs-client-side-buffering-request-batching) independently, scaling transparently to handle any load increases or spikes without any provisioning instructions\.
++ **Scalability** – Amazon SQS can process each [buffered request](sqs-client-side-buffering-request-batching.md) independently, scaling transparently to handle any load increases or spikes without any provisioning instructions\.
 
 + **Reliability** – Amazon SQS locks your messages during processing, so that multiple producers can send and multiple consumers can receive messages at the same time\. 
 
@@ -36,7 +36,7 @@ Amazon SQS and [Amazon SNS](https://aws.amazon.com/sns/) are queue and topic ser
 
 | Standard Queue | FIFO Queue | 
 | --- | --- | 
-|  Available in all regions\. **Unlimited Throughput** – Standard queues support a nearly unlimited number of transactions per second \(TPS\) per API action\. **At\-Least\-Once Delivery** – A message is delivered at least once, but occasionally more than one copy of a message is delivered\. **Best\-Effort Ordering** – Occasionally, messages might be delivered in an order different from which they were sent\.  | Available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\.High Throughput – By default, FIFO queues support up to 3,000 messages per second with [batching](sqs-batch-api-actions.md)\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/v1?#/case/create)\. FIFO queues support up to 300 messages per second \(300 send, receive, or delete operations per second\) without batching\.**Exactly\-Once Processing** – A message is delivered once and remains available until a consumer processes and deletes it\. Duplicates aren't introduced into the queue\.**First\-In\-First\-Out Delivery** – The order in which messages are sent and received is strictly preserved\. | 
+|  Available in all regions\. **Unlimited Throughput** – Standard queues support a nearly unlimited number of transactions per second \(TPS\) per action\. **At\-Least\-Once Delivery** – A message is delivered at least once, but occasionally more than one copy of a message is delivered\. **Best\-Effort Ordering** – Occasionally, messages might be delivered in an order different from which they were sent\.  | Available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\.High Throughput – By default, FIFO queues support up to 3,000 messages per second with [batching](sqs-batch-api-actions.md)\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/v1?#/case/create)\. FIFO queues support up to 300 messages per second \(300 send, receive, or delete operations per second\) without batching\.**Exactly\-Once Processing** – A message is delivered once and remains available until a consumer processes and deletes it\. Duplicates aren't introduced into the queue\.**First\-In\-First\-Out Delivery** – The order in which messages are sent and received is strictly preserved\. | 
 |  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-what-is-sqs-standard-queue-diagram.png)  |  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-what-is-sqs-fifo-queue-diagram.png)  | 
 |  Send data between applications when the throughput is important, for example: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html)  |  Send data between applications when the order of events is important, for example: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html)  | 
 
@@ -48,7 +48,7 @@ Amazon SQS and [Amazon SNS](https://aws.amazon.com/sns/) are queue and topic ser
 
 + To find out the guidelines and caveats that will help you make the most of Amazon SQS, see [Best Practices for Amazon SQS](sqs-best-practices.md)\.
 
-+ To learn about Amazon SQS API actions, see the *Amazon Simple Queue Service API Reference*\.
++ To learn about Amazon SQS actions, see the *Amazon Simple Queue Service API Reference*\.
 
 + To learn about Amazon SQS AWS CLI commands, see [Amazon SQS in the *AWS CLI Command Reference*](http://docs.aws.amazon.com/cli/latest/reference/sqs/index.html)\.
 

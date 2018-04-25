@@ -45,7 +45,7 @@ The following are examples of the ARN format for queues:
 
 You can get the ARN value for an existing queue by calling the [http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html) action\. The value of the `QueueArn` attribute is the ARN of the queue\. For more information about ARNs, see [IAM ARNs](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns) in the *IAM User Guide*\.
 
-Amazon SQS provides a set of API actions that work with the queue resource\. For more information, see [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)\.
+Amazon SQS provides a set of actions that work with the queue resource\. For more information, see [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)\.
 
 ## Understanding Resource Ownership<a name="sqs-understanding-resource-ownership"></a>
 
@@ -132,10 +132,10 @@ Amazon SQS doesn't support resource\-level permissions in identity\-based polici
 
 ## Specifying Policy Elements: Actions, Effects, Resources, and Principals<a name="sqs-specifying-policy-elements"></a>
 
-For each [Amazon Simple Queue Service resource](#sqs-resource-and-operations), the service defines a set of [API actions](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_Operations.html)\. To grant permissions for these API actions, Amazon SQS defines a set of actions that you can specify in a policy\.
+For each [Amazon Simple Queue Service resource](#sqs-resource-and-operations), the service defines a set of [actions](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_Operations.html)\. To grant permissions for these actions, Amazon SQS defines a set of actions that you can specify in a policy\.
 
 **Note**  
-Performing an API action can require permissions for more than one action\. When granting permissions for specific actions, you also identify the resource for which the actions are allowed or denied\.
+Performing an action can require permissions for more than one action\. When granting permissions for specific actions, you also identify the resource for which the actions are allowed or denied\.
 
 The following are the most basic policy elements:
 
@@ -149,7 +149,7 @@ The following are the most basic policy elements:
 
 To learn more about Amazon SQS policy syntax and descriptions, see [AWS IAM Policy Reference](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
 
-For a table of all Amazon Simple Queue Service API actions and the resources that they apply to, see [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)\.
+For a table of all Amazon Simple Queue Service actions and the resources that they apply to, see [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)\.
 
 ## Specifying Conditions in a Policy<a name="sqs-specifying-conditions-in-policy"></a>
 

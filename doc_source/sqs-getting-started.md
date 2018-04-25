@@ -2,9 +2,6 @@
 
 This section helps you become more familiar with Amazon SQS by showing you how to manage queues and messages using the AWS Management Console\.
 
-**Note**  
-The *Amazon Simple Queue Service Getting Started Guide* has been retired\. If you want to work with Amazon SQS programmatically, see the [Amazon SQS Tutorials](sqs-tutorials.md) and [Making Query API Requests](sqs-making-api-requests.md) sections\.
-
 ## Prerequisites<a name="sqs-prerequisites"></a>
 
 Before you begin, complete the steps in [Setting Up Amazon SQS](sqs-setting-up.md)\.
@@ -50,7 +47,7 @@ After you create your queue, you can send a message to it\. The following exampl
    The following example shows the **Message Group ID** and **Message Deduplication ID** parameters specific to FIFO queues \([content\-based deduplication](FIFO-queues.md#FIFO-queues-exactly-once-processing) is disabled\)\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message-dialog-box.png)
 
-1. To send a message to a FIFO queue, type the **Message Body**, the **Message Group ID** `MyMessageGroupId1234567890`, and the **Message Deduplication ID** `MyMessageDeduplicationId1234567890`, and then choose **Send Message**\. For more information, see [FIFO Queue Logic](FIFO-queues.md#FIFO-queues-understanding-logic)\.
+1. To send a message to a FIFO queue, type the **Message Body**, the **Message Group ID** `MyMessageGroupId1234567890`, and the **Message Deduplication ID** `MyMessageDeduplicationId1234567890`, and then choose **Send Message**\. For more information, see [FIFO Delivery Logic](FIFO-queues.md#FIFO-queues-understanding-logic)\.
 **Note**  
 The message group ID is always required\. However, if content\-based deduplication is enabled, the message deduplication ID is optional\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message-button-fifo.png)
@@ -125,6 +122,8 @@ Now that you've created a queue and learned how to send, receive, and delete mes
 + [Add permissions to a queue\.](sqs-add-permissions.md)
 
 + [Add, update, or remove tags for a queue\.](sqs-add-update-remove-tag-queue.md)
+
++ [Configure long polling for a queue\.](sqs-configure-long-polling-for-queue.md)
 
 + [Send a message with attributes\.](sqs-send-message-with-attributes.md)
 

@@ -9,8 +9,8 @@ When you disable SSE, messages remain encrypted\. You must receive and decrypt a
 The following example demonstrates enabling, disabling, and configuring SSE for an existing Amazon SQS queue\.
 
 
-+ [Configure SSE for an Amazon SQS queue using the AWS Management Console](#sqs-configure-sse-existing-queue-console)
-+ [Configure SSE for an Amazon SQS queue using Java](#sqs-configure-sse-existing-queue-java)
++ [Configure SSE for an Amazon SQS Queue Using the AWS Management Console](#sqs-configure-sse-existing-queue-console)
++ [Configure SSE for an Amazon SQS Queue Using the AWS SDK for Java](#sqs-configure-sse-existing-queue-java)
 
 ## AWS Management Console<a name="sqs-configure-sse-existing-queue-console"></a>
 
@@ -39,7 +39,7 @@ Ask the owner of the CMK to grant you these permissions\. For more information, 
 Keep the following in mind:  
 If you don't specify a custom CMK, Amazon SQS uses the AWS\-managed CMK for Amazon SQS\. For instructions on creating custom CMKs, see [Creating Keys](http://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) in the *AWS Key Management Service Developer Guide*\.
 The first time you use the AWS Management Console to specify the AWS\-managed CMK for Amazon SQS for a queue, AWS KMS creates the AWS\-managed CMK for Amazon SQS\.
-Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` API action on a queue with SSE enabled, AWS KMS creates the AWS\-managed CMK for Amazon SQS\.
+Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` action on a queue with SSE enabled, AWS KMS creates the AWS\-managed CMK for Amazon SQS\.
 
    + To use a custom CMK from your AWS account, select it from the list\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-server-side-encryption-custom-cmk.png)
@@ -67,7 +67,7 @@ Before you can use SSE, you must configure AWS KMS key policies to allow encrypt
 Keep the following in mind:  
 If you don't specify a custom CMK, Amazon SQS uses the AWS\-managed CMK for Amazon SQS\. For instructions on creating custom CMKs, see [Creating Keys](http://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) in the *AWS Key Management Service Developer Guide*\.
 The first time you use the AWS Management Console to specify the AWS\-managed CMK for Amazon SQS for a queue, AWS KMS creates the AWS\-managed CMK for Amazon SQS\.
-Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` API action on a queue with SSE enabled, AWS KMS creates the AWS\-managed CMK for Amazon SQS\.
+Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` action on a queue with SSE enabled, AWS KMS creates the AWS\-managed CMK for Amazon SQS\.
 
 1. To enable server\-side encryption, specify the CMK ID by setting the `KmsMasterKeyId` attribute of the `[CreateQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)` or `[SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)` action\.
 

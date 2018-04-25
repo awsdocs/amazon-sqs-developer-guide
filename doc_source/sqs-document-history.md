@@ -5,6 +5,11 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| April 25, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
+| April 24, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
+| April 23, 2018 | Rewrote the [Processing Messages in a Timely Manner](working-with-messages.md#processing-messages-timely-manner) section\. | 
+| April 11, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
+| April 10, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | April 9, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | April 6, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | April 5, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
@@ -32,7 +37,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | February 14, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | February 13, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | February 9, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| February 8, 2018 | Rewrote the Java example in the [Working Java Example for Single\-Operation and Batch Requests](sqs-batch-api-actions.md#working-java-example-batch-requests) section\. | 
+| February 8, 2018 | Rewrote the Java example in the [Working Java Example for Single\-Operation and Batch Requests](sqs-throughput-horizontal-scaling-and-batching.md#working-java-example-batch-requests) section\. | 
 | February 7, 2018 | Rewrote the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | February 6, 2018 | Rewrote the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | February 5, 2018 | Clarified the information in the [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md) section\. | 
@@ -42,7 +47,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | January 30, 2018 | Rewrote the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | January 29, 2018 | Rewrote the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | January 25, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| January 24, 2018 | Clarified the wording for Amazon SQS API actions throughout this guide\. | 
+| January 24, 2018 | Clarified the wording for Amazon SQS actions throughout this guide\. | 
 | January 22, 2018 | Added the [Example 3: Enable Compatibility Between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Queues with SSE](sqs-server-side-encryption.md#compatibility-with-aws-services) section\. | 
 | January 19, 2018 | Clarified the information in the [How Do Dead\-Letter Queues Work?](sqs-dead-letter-queues.md#sqs-dead-letter-queues-how-they-work) section\. | 
 | January 18, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
@@ -55,15 +60,15 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | December 1, 2017 | Clarified and reorganized the information in the [Monitoring Amazon SQS Queues Using CloudWatch](sqs-monitoring-using-cloudwatch.md) section\. | 
 | October 30, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | October 27, 2017 | Clarified the explanation of throughput for FIFO queues in the [Amazon SQS FIFO \(First\-In\-First\-Out\) Queues](FIFO-queues.md) section\. | 
-| September 29, 2017 | Added a note about the Amazon SQS Buffered Asynchronous Client to the [Increasing Throughput using Horizontal Scaling and API Action Batching](sqs-batch-api-actions.md#sqs-throughput-horizontal-scaling-and-batching) section\. | 
+| September 29, 2017 | Added a note about the Amazon SQS Buffered Asynchronous Client to the [Increasing Throughput using Horizontal Scaling and Action Batching](sqs-throughput-horizontal-scaling-and-batching.md) section\. | 
 | September 19, 2017 | Corrected the diagrams in the [Using Amazon SQS and IAM Policies](sqs-using-identity-based-policies.md#sqs-using-sqs-and-iam-policies) section\. | 
 | August 29, 2017 | Clarified the information in the [Changing the Visibility Timeout for a Message](sqs-visibility-timeout.md#changing-message-visibility-timeout) section\. | 
-| August 17, 2017 | Clarified the permissions for the SendMessage and SendMessageBatch API actions in [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)\. | 
+| August 17, 2017 | Clarified the permissions for the SendMessage and SendMessageBatch actions in [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)\. | 
 | August 15, 2017 | Updated information about dead\-letter queues in the [Recommendations for Amazon SQS Standard and FIFO \(First\-In\-First\-Out\) Queues ](sqs-standard-fifo-queue-best-practices.md) section\. | 
 | August 9, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | July 27, 2017 |  Changed the [deprecated `AmazonSQSClient` constructor](http://aws.amazon.com/blogs/developer/client-constructors-now-deprecated/) to `AmazonSQSClientBuilder` and revised the corresponding region specification in the [Working Java Example for Standard Queues](standard-queues-getting-started-java.md) section\.  | 
 | July 25, 2017 | Clarified the throughput for standard and FIFO queues throughout this guide\. | 
-| July 20, 2017 | Clarified the compatibility between Amazon SQS SSE queues and AWS and third\-party service features throughout this guide: Some features of AWS services that can send notifications to Amazon SQS using the AWS Security Token Service `[AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)` API action are compatible with SSE but work *only with standard queues:* [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) Other features of AWS services or third\-party services that send notifications to Amazon SQS aren't compatible with SSE, despite allowing you to set an encrypted queue as a target: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) For information about compatibility of other services with encrypted queues, see [Example 3: Enable Compatibility Between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Queues with SSE](sqs-server-side-encryption.md#compatibility-with-aws-services) and your service documentation\. | 
+| July 20, 2017 | Clarified the compatibility between Amazon SQS SSE queues and AWS and third\-party service features throughout this guide: Some features of AWS services that can send notifications to Amazon SQS using the AWS Security Token Service `[AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)` action are compatible with SSE but work *only with standard queues:* [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) Other features of AWS services or third\-party services that send notifications to Amazon SQS aren't compatible with SSE, despite allowing you to set an encrypted queue as a target: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) For information about compatibility of other services with encrypted queues, see [Example 3: Enable Compatibility Between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Queues with SSE](sqs-server-side-encryption.md#compatibility-with-aws-services) and your service documentation\. | 
 | June 23, 2017 |  Corrected the information in the [Limits Related to Messages](sqs-limits.md#limits-messages) section\.  | 
 | June 20, 2017 |  Clarified the information in the [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md) section\.  | 
 | June 2, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
@@ -79,4 +84,4 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | May 27, 2016 | Added the [Best Practices for Amazon SQS](sqs-best-practices.md) section\. | 
 | May 12, 2016 | Added the [Amazon SQS Limits](sqs-limits.md) section\. | 
 | December 7, 2015 |  Updated Amazon SQS console screenshots\.  | 
-| August 4, 2014 |  Updated information about access keys\. For more information, see [Authenticating Requests](sqs-making-api-requests.md#sqs-api-request-authentication)\.  | 
+| August 4, 2014 |  Updated information about access keys\. For more information, see [Authenticating Requests](sqs-api-request-authentication.md)\.  | 

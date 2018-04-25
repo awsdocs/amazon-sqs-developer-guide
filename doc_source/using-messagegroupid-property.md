@@ -2,10 +2,6 @@
 
 The message group ID is the tag that specifies that a message belongs to a specific message group\. Messages that belong to the same message group are always processed one by one, in a strict order relative to the message group \(however, messages that belong to different message groups might be processed out of order\)\.
 
-
-+ [Interleaving Multiple Ordered Message Groups](#interleaving-multiple-ordered-message-groups)
-+ [Avoiding Processing Duplicates in a Multiple\-Producer/Consumer System](#avoding-processing-duplicates-in-multiple-producer-consumer-system)
-
 ## Interleaving Multiple Ordered Message Groups<a name="interleaving-multiple-ordered-message-groups"></a>
 
 To interleave multiple ordered message groups within a single FIFO queue, use message group ID values \(for example, session data for multiple users\)\. In this scenario, multiple consumers can process the queue, but the session data of each user is processed in a FIFO manner\.

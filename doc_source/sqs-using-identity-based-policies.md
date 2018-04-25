@@ -4,7 +4,7 @@ This topic provides examples of identity\-based policies in which an account adm
 
 **Important**  
 We recommend that you first review the introductory topics that explain the basic concepts and options available for you to manage access to your Amazon Simple Queue Service resources\. For more information, see [Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource](sqs-overview-of-managing-access.md)\.  
-With the exception of `ListQueues`, all Amazon SQS API actions support resource\-level permissions\. For more information, see [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)\.
+With the exception of `ListQueues`, all Amazon SQS actions support resource\-level permissions\. For more information, see [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)\.
 
 
 + [Using Amazon SQS and IAM Policies](#sqs-using-sqs-and-iam-policies)
@@ -44,7 +44,7 @@ A user who wants to work with the Amazon SQS console must have the minimum set o
 
 If you create an IAM policy that is more restrictive than the minimum required permissions, the console might not function as intended for users with that IAM policy\.
 
-You don't need to allow minimum console permissions for users that make calls only to the AWS CLI or Amazon SQS API actions\. 
+You don't need to allow minimum console permissions for users that make calls only to the AWS CLI or Amazon SQS actions\. 
 
 ## AWS\-Managed \(Predefined\) Policies for Amazon SQS<a name="sqs-access-policy-aws-managed-policies"></a>
 

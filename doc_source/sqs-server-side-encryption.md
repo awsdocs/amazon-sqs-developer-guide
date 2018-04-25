@@ -1,28 +1,20 @@
 # Protecting Data Using Server\-Side Encryption \(SSE\) and AWS KMS<a name="sqs-server-side-encryption"></a>
 
-This section provides an overview of using server\-side encryption with AWS KMS and information about configuring IAM and AWS KMS key policies for SSE\.
+Server\-side encryption \(SSE\) for Amazon SQS is available in the US East \(N\. Virginia\), US East \(Ohio\), and US West \(Oregon\) regions\. SSE lets you transmit sensitive data in encrypted queues\. SSE protects the contents of messages in Amazon SQS queues using keys managed in the AWS Key Management Service \(AWS KMS\)\. For information about managing SSE using the AWS Management Console or the AWS SDK for Java \(and the `[CreateQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`, `[SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`, and `[GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)` actions\), see the following tutorials:
+
++ [Tutorial: Configuring Server\-Side Encryption \(SSE\) for an Existing Amazon SQS Queue](sqs-create-queue-sse.md)
+
++ [Tutorial: Configuring Server\-Side Encryption \(SSE\) for an Existing Amazon SQS Queue](sqs-configure-sse-existing-queue.md)
+
++ [Example 3: Enable Compatibility Between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Queues with SSE](#compatibility-with-aws-services)
 
 [![AWS Videos](http://img.youtube.com/vi/https://www.youtube.com/embed/Mw1NVpJsOZc?rel=0&amp;controls=0&amp;showinfo=0/0.jpg)](http://www.youtube.com/watch?v=https://www.youtube.com/embed/Mw1NVpJsOZc?rel=0&amp;controls=0&amp;showinfo=0)
-
-
-+ [Benefits of Server\-Side Encryption](#sqs-encryption-benefits-sse)
-+ [What Does SSE for Amazon SQS Encrypt?](#sqs-encryption-what-does-sse-encrypt)
-+ [Key Terms](#sqs-sse-key-terms)
-+ [How Does the Data Key Reuse Period Work?](#sqs-how-does-the-data-key-reuse-period-work)
-+ [How Do I Estimate My AWS KMS Usage Costs?](#sqs-estimate-kms-usage-costs)
-+ [What AWS KMS Permissions Do I Need to Use SSE for Amazon SQS?](#sqs-what-permissions-for-sse)
-+ [Getting Started with SSE](#sqs-sse-getting-started)
-+ [Errors](#sqs-sse-troubleshooting-errors)
-
-## Benefits of Server\-Side Encryption<a name="sqs-encryption-benefits-sse"></a>
-
-Server\-side encryption \(SSE\) for Amazon SQS is available in the US East \(N\. Virginia\), US East \(Ohio\), and US West \(Oregon\) regions\. SSE lets you transmit sensitive data in encrypted queues\. SSE protects the contents of messages in Amazon SQS queues using keys managed in the AWS Key Management Service \(AWS KMS\)\.
 
 SSE encrypts messages as soon as Amazon SQS receives them\. The messages are stored in encrypted form and Amazon SQS decrypts messages only when they are sent to an authorized consumer\.
 
 **Important**  
 All requests to queues with SSE enabled must use HTTPS and [Signature Version 4](http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)\.  
-Some features of AWS services that can send notifications to Amazon SQS using the AWS Security Token Service `[AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)` API action are compatible with SSE but work *only with standard queues:*  
+Some features of AWS services that can send notifications to Amazon SQS using the AWS Security Token Service `[AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)` action are compatible with SSE but work *only with standard queues:*  
 [Auto Scaling Lifecycle Hooks](http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html)
 [AWS Lambda Dead\-Letter Queues](http://docs.aws.amazon.com/lambda/latest/dg/dlq.html)
 Other features of AWS services or third\-party services that send notifications to Amazon SQS aren't compatible with SSE, despite allowing you to set an encrypted queue as a target:  
@@ -40,6 +32,14 @@ The following are benefits of using AWS KMS:
 + The AWS KMS security standards can help you meet encryption\-related compliance requirements\.
 
 For more information, see [What is AWS Key Management Service?](http://docs.aws.amazon.com/kms/latest/developerguide/overview.html) in the *AWS Key Management Service Developer Guide* and the [AWS Key Management Service Cryptographic Details](https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf) whitepaper\.
+
+
++ [What Does SSE for Amazon SQS Encrypt?](#sqs-encryption-what-does-sse-encrypt)
++ [Key Terms](#sqs-sse-key-terms)
++ [How Does the Data Key Reuse Period Work?](#sqs-how-does-the-data-key-reuse-period-work)
++ [How Do I Estimate My AWS KMS Usage Costs?](#sqs-estimate-kms-usage-costs)
++ [What AWS KMS Permissions Do I Need to Use SSE for Amazon SQS?](#sqs-what-permissions-for-sse)
++ [Errors](#sqs-sse-troubleshooting-errors)
 
 ## What Does SSE for Amazon SQS Encrypt?<a name="sqs-encryption-what-does-sse-encrypt"></a>
 
@@ -85,8 +85,8 @@ Keep the following in mind:
 
 + The first time you use the AWS Management Console to specify the AWS\-managed CMK for Amazon SQS for a queue, AWS KMS creates the AWS\-managed CMK for Amazon SQS\.
 
-+ Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` API action on a queue with SSE enabled, AWS KMS creates the AWS\-managed CMK for Amazon SQS\.
-You can create CMKs, define the policies that control how CMKs can be used, and audit CMK usage using the **Encryption Keys** section of the AWS KMS console or using AWS KMS API actions\. For more information about CMKs, see [Customer Master Keys](http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys) in the *AWS Key Management Service Developer Guide*\. For more examples of CMK identifiers, see [KeyId](http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters) in the *AWS Key Management Service API Reference*\.  
++ Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` action on a queue with SSE enabled, AWS KMS creates the AWS\-managed CMK for Amazon SQS\.
+You can create CMKs, define the policies that control how CMKs can be used, and audit CMK usage using the **Encryption Keys** section of the AWS KMS console or using AWS KMS actions\. For more information about CMKs, see [Customer Master Keys](http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys) in the *AWS Key Management Service Developer Guide*\. For more examples of CMK identifiers, see [KeyId](http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters) in the *AWS Key Management Service API Reference*\.  
 There are additional charges for using AWS KMS\. For more information, see [How Do I Estimate My AWS KMS Usage Costs?](#sqs-estimate-kms-usage-costs) and [AWS Key Management Service Pricing](https://aws.amazon.com/kms/pricing)\.
 
 ## How Does the Data Key Reuse Period Work?<a name="sqs-how-does-the-data-key-reuse-period-work"></a>
@@ -264,25 +264,6 @@ For Amazon SNS topic subscriptions, use `sns`
 + [Creating a CloudWatch Events Rule That Triggers on an Event](http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/Create-CloudWatch-Events-Rule.html) in the *Amazon CloudWatch Events User Guide*
 
 + [Configuring Amazon S3 Event Notifications](http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) in the *Amazon Simple Storage Service Developer Guide*
-
-## Getting Started with SSE<a name="sqs-sse-getting-started"></a>
-
-For information about managing SSE using the AWS Management Console or using API actions, see the following tutorials:
-
-+ [Tutorial: Configuring Server\-Side Encryption \(SSE\) for an Existing Amazon SQS Queue](sqs-create-queue-sse.md)
-
-+ [Tutorial: Configuring Server\-Side Encryption \(SSE\) for an Existing Amazon SQS Queue](sqs-configure-sse-existing-queue.md)
-
-+ [Example 3: Enable Compatibility Between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Queues with SSE](#compatibility-with-aws-services)
-
-You can enable and disable SSE for an Amazon SQS queue using the following API actions\.
-
-
-| Task | API Action | 
-| --- | --- | 
-| Create a new queue with SSE enabled\. | [CreateQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html) | 
-| Enable SSE for an existing queue\. | [SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html) | 
-| Determine whether SSE is enabled for an existing queue\. | [GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html) | 
 
 ## Errors<a name="sqs-sse-troubleshooting-errors"></a>
 

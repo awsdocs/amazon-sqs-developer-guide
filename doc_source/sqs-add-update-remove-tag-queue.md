@@ -3,7 +3,7 @@
 You can add cost allocation tags to your Amazon SQS queues to help organize and identify them\. The following example demonstrates adding, updating, and removing tags for a queue\. For a more information, see [Amazon SQS Cost Allocation Tags](sqs-queue-tags.md)\.
 
 
-+ [To update or remove a tag added to an Amazon SQS queue using the AWS Management Console](#sqs-update-remove-tag-queue-console)
++ [To Update or Remove a Tag Added to an Amazon SQS Queue Using the AWS Management Console](#sqs-update-remove-tag-queue-console)
 + [AWS SDK for Java](#sqs-add-update-remove-tag-queue-java)
 
 ## AWS Management Console<a name="sqs-update-remove-tag-queue-console"></a>
@@ -40,7 +40,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
 1. Copy the example program for a [standard queue](standard-queues-getting-started-java.md) or a [FIFO queue](FIFO-queues-getting-started-java.md)\.
 
-1. To list the tags added to a queue, add the following code which uses the `ListQueueTags` API action:
+1. To list the tags added to a queue, add the following code which uses the `ListQueueTags` action:
 
    ```
    final ListQueueTagsRequest listQueueTagsRequest = new ListQueueTagsRequest(queueUrl);
@@ -50,7 +50,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
            QUEUE_NAME, listQueueTagsResult.getTags()));
    ```
 
-1. To add or update the values of the queue's tags using the tag's key, add the following code which uses the `TagQueue` API action:
+1. To add or update the values of the queue's tags using the tag's key, add the following code which uses the `TagQueue` action:
 
    ```
    final Map<String, String> addedTags = new HashMap<>();
@@ -63,7 +63,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
    SQSClientFactory.newSQSClient().tagQueue(tagQueueRequest);
    ```
 
-1. To remove a tag from the queue using the tag's key, add the following code which uses the `UntagQueue` API action:
+1. To remove a tag from the queue using the tag's key, add the following code which uses the `UntagQueue` action:
 
    ```
    final List<String> tagKeys = Arrays.asList("Accounting ID");

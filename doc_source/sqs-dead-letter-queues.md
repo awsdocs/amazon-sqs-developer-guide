@@ -1,13 +1,12 @@
 # Amazon SQS Dead\-Letter Queues<a name="sqs-dead-letter-queues"></a>
 
-Amazon SQS supports *dead\-letter queues*\. A dead\-letter queue is a queue that other \(source\) queues can target for messages that can't be processed \(consumed\) successfully\. Dead\-letter queues are useful for debugging your application or messaging system\. Dead\-letter queues allow you to isolate problematic messages to determine why their processing doesn't succeed\.
+Amazon SQS supports *dead\-letter queues*, which other queues \(*source queues*\) can target for messages that can't be processed \(consumed\) successfully\. Dead\-letter queues are useful for debugging your application or messaging system because they let you isolate problematic messages to determine why their processing doesn't succeed\. For information about creating a queue and configuring a dead\-letter queue for it using the AWS Management Console or the AWS SDK for Java \(and the `[CreateQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`, `[SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`, and `[GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)` actions\), see [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md)\.
 
 
 + [How Do Dead\-Letter Queues Work?](#sqs-dead-letter-queues-how-they-work)
 + [What are the Benefits of Dead\-Letter Queues?](#sqs-dead-letter-queues-benefits)
 + [How Do Different Queue Types Handle Message Failure?](#sqs-dead-letter-queues-handling-message-failure)
 + [When Should I Use a Dead\-Letter Queue?](#sqs-dead-letter-queues-when-to-use)
-+ [Getting Started with Dead\-Letter Queues](#sqs-dead-letter-queues-getting-started)
 + [Troubleshooting Dead\-Letter Queues](#sqs-dead-letter-queues-troubleshooting)
 
 ## How Do Dead\-Letter Queues Work?<a name="sqs-dead-letter-queues-how-they-work"></a>
@@ -18,7 +17,7 @@ Occasionally, producers and consumers might fail to interpret aspects of the pro
 
 The *redrive policy* specifies the *source queue*, the *dead\-letter queue*, and the conditions under which Amazon SQS moves messages from the former to the latter if the consumer of the source queue fails to process a message a specified number of times\. For example, if the source queue has a redrive policy with `maxReceiveCount` set to 5, and the consumer of the source queue receives a message 5 times without ever deleting it, Amazon SQS moves the message to the dead\-letter queue\.
 
-To specify a dead\-letter queue, you can [use the AWS Management Console or an API action](sqs-configure-dead-letter-queue.md)\. You must do this for each queue that sends messages to a dead\-letter queue\. Multiple queues can target a single dead\-letter queue\. For more information, see [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md) and the `RedrivePolicy` attribute of the [ `CreateQueue`](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html#API_CreateQueue_RequestParameters) or [ `SetQueueAttributes`](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html#API_SetQueueAttributes_RequestParameters) API action\.
+To specify a dead\-letter queue, you can [use the AWS Management Console or the AWS SDK for Java](sqs-configure-dead-letter-queue.md)\. You must do this for each queue that sends messages to a dead\-letter queue\. Multiple queues can target a single dead\-letter queue\. For more information, see [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md) and the `RedrivePolicy` attribute of the [ `CreateQueue`](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html#API_CreateQueue_RequestParameters) or [ `SetQueueAttributes`](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html#API_SetQueueAttributes_RequestParameters) action\.
 
 **Important**  
 The dead\-letter queue of a FIFO queue must also be a FIFO queue\. Similarly, the dead\-letter queue of a standard queue must also be a standard queue\.  
@@ -67,19 +66,6 @@ Even when you use dead\-letter queues, you should continue to monitor your queue
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/cross.png)Don’t use a dead\-letter queue with standard queues when you want to be able to keep retrying the transmission of a message indefinitely\. For example, don’t use a dead\-letter queue if your program must wait for a dependent process to become active or available\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/cross.png)Don’t use a dead\-letter queue with a FIFO queue if you don’t want to break the exact order of messages or operations\. For example, don’t use a dead\-letter queue with instructions in an Edit Decision List \(EDL\) for a video editing suite, where changing the order of edits changes the context of subsequent edits\.
-
-## Getting Started with Dead\-Letter Queues<a name="sqs-dead-letter-queues-getting-started"></a>
-
-For information about creating a dead\-letter queue using the AWS Management Console or using API actions, see the [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md) tutorial\.
-
-You can configure an Amazon SQS queue as a dead\-letter queue using the following API actions\.
-
-
-| Task | API Action | 
-| --- | --- | 
-| Configure a dead\-letter queue for a new queue\. | [CreateQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html) | 
-| Configure a dead\-letter queue for an existing queue\. | [SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html) | 
-| Determine whether a queue uses a dead\-letter queue\. | [GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html) | 
 
 ## Troubleshooting Dead\-Letter Queues<a name="sqs-dead-letter-queues-troubleshooting"></a>
 

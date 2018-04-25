@@ -42,6 +42,16 @@ Amazon SQS has its own resource\-based permissions system that uses policies wri
 
 **Note**  
 It is important to understand that all AWS accounts can delegate their permissions to users under their accounts\. Cross\-account access allows you to share access to your AWS resources without having to manage additional users\. For information about using cross\-account access, see [Enabling Cross\-Account Access](http://docs.aws.amazon.com/IAM/latest/UserGuide/Delegation.html) in the *IAM User Guide*\.   
+Cross\-account permissions don't apply to the following actions:  
+`[AddPermission](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html)`
+`[CreateQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`
+`[DeleteQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteQueue.html)`
+`[ListQueues](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueues.html)`
+`[ListQueueTags](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueueTags.html)`
+`[RemovePermission](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_RemovePermission.html)`
+`[SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`
+`[TagQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_TagQueue.html)`
+`[UntagQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_UntagQueue.html)`
 Currently, Amazon SQS supports only a limited subset of the [condition keys available in IAM](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys)\. For more information, see [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)\. 
 
 The following sections describe how to manage permissions for Amazon SQS\. We recommend that you read the overview first\.

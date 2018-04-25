@@ -1,8 +1,11 @@
 # Working with Amazon SQS Messages<a name="working-with-messages"></a>
 
+The following guidelines can help you process messages efficiently using Amazon SQS\.
+
 
 + [Processing Messages in a Timely Manner](#processing-messages-timely-manner)
 + [Handling Request Errors](#handling-request-errors)
++ [Setting Up Long Polling](#setting-up-long-polling)
 + [Capturing Problematic Messages](#capturing-problematic-messages)
 + [Setting Up Dead\-Letter Queue Retention](#setting-up-dead-letter-queue-retention)
 + [Avoiding Inconsistent Message Processing](#avoiding-inconsistent-message-processing)
@@ -10,13 +13,15 @@
 
 ## Processing Messages in a Timely Manner<a name="processing-messages-timely-manner"></a>
 
-Setting the visibility timeout depends on how long it takes your application to process and delete a message\. For example, if your application requires 10 seconds but you set the visibility timeout to 15 minutes, you might have to wait too long to process a message\. Alternatively, if your application requires 10 seconds but you set the visibility timeout to 2 seconds, a duplicate might be received by another receiver\. 
+Setting the visibility timeout depends on how long it takes your application to process and delete a message\. For example, if your application requires 10 seconds to process a message and you set the visibility timeout to 15 minutes, you must wait for a relatively long time to attempt to process the message again if the previous processing attempt fails\. Alternatively, if your application requires 10 seconds to process a message but you set the visibility timeout to only 2 seconds, a duplicate message is received by another consumer while the original consumer is still working on the message\.
 
-To ensure that there is sufficient time to process a message, use one of the following strategies:
+For example, if your application requires 10 seconds but you set the visibility timeout to 15 minutes, you might have to wait too long to process a message\. Alternatively, if your application requires 10 seconds but you set the visibility timeout to 2 seconds, a duplicate might be received by another receiver\. 
+
+To ensure that there is sufficient time to process messages, use one of the following strategies:
 
 + If you know \(or can reasonably estimate\) how long it takes to process a message, extend the message's *visibility timeout* to the maximum time it takes to process and delete the message\. For more information, see [Configuring the Visibility Timeout](sqs-visibility-timeout.md#configuring-visibility-timeout) and [Changing a Message's Visibility Timeout](sqs-visibility-timeout.md#changing-message-visibility-timeout)\.
 
-+ If you don't know how long it takes to process a message, specify the initial visibility timeout \(for example, 2 minutes\) and the period of time after which you can check whether the message is processed \(for example, 1 minute\)\. If the message isn't processed, extend the visibility timeout \(for example, to 3 minutes\)\.
++ If you don't know how long it takes to process a message, create a *heartbeat* for your consumer process: Specify the initial visibility timeout \(for example, 2 minutes\) and then—as long as your consumer still works on the message—keep extending the visibility timeout by 2 minutes every minute\.
 
 **Note**  
 If you need to extend the visibility timeout for longer than 12 hours, consider using [AWS Step Functions](https://aws.amazon.com/step-functions/)\. 
@@ -28,6 +33,16 @@ To handle request errors, use one of the following strategies:
 + If you use an AWS SDK, you already have automatic *retry and backoff* logic at your disposal\. For more information, see [Error Retries and Exponential Backoff in AWS](http://docs.aws.amazon.com/general/latest/gr/api-retries.html) in the *Amazon Web Services General Reference*\.
 
 + If you don't use the AWS SDK features for retry and backoff, allow a pause \(for example, 200 ms\) before retrying the [ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html) action after receiving no messages, a timeout, or an error message from Amazon SQS\. For subsequent use of `ReceiveMessage` that gives the same results, allow a longer pause \(for example, 400 ms\)\. 
+
+## Setting Up Long Polling<a name="setting-up-long-polling"></a>
+
+*Long polling* helps reduce the cost of using Amazon SQS by eliminating the number of empty responses \(when there are no messages available for a `[ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` request\) and false empty responses \(when messages are available but aren't included in a response\)\. For more information, see [Amazon SQS Long Polling](sqs-long-polling.md)\.
+
+To ensure optimal message processing, use the following strategies:
+
++ In most cases, you can set the `ReceiveMessage` wait time to 20 seconds\. If 20 seconds is too long for your application, set a shorter `ReceiveMessage` wait time \(1 second minimum\)\. If you don't use an AWS SDK to access Amazon SQS, or if you configure an AWS SDK to have a shorter wait time, you might have to modify your Amazon SQS client to either allow longer requests or use a shorter wait time for long polling\.
+
++ If you implement long polling for multiple queues, use one thread for each queue instead of a single thread for all queues\. Using a single thread for each queue allows your application to process the messages in each of the queues as they become available, while using a single thread for polling multiple queues might cause your application to become unable to process messages available in other queues while the application waits \(up to 20 seconds\) for the queue which doesn't have any available messages\.
 
 ## Capturing Problematic Messages<a name="capturing-problematic-messages"></a>
 

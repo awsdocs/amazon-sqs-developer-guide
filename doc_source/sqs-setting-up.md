@@ -52,7 +52,7 @@ You can use this same process to create more groups and users, and to give your 
 
 ## Step 3: Get Your Access Key ID and Secret Access Key<a name="sqs-getting-access-key-id-secret-access-key"></a>
 
-To use Amazon SQS API actions \(for example, using Java or through the AWS Command Line Interface\), you need an access key ID and a secret access key\.
+To use Amazon SQS actions \(for example, using Java or through the AWS Command Line Interface\), you need an access key ID and a secret access key\.
 
 **Note**  
 The access key ID and secret access key are specific to AWS Identity and Access Management\. Don't confuse them with credentials for other AWS services, such as Amazon EC2 key pairs\.
