@@ -2,7 +2,7 @@
 
 You can add cost allocation tags to your Amazon SQS queues to help organize and identify them\. The following example demonstrates adding, updating, and removing tags for a queue\. For a more information, see [Amazon SQS Cost Allocation Tags](sqs-queue-tags.md)\.
 
-
+**Topics**
 + [To Update or Remove a Tag Added to an Amazon SQS Queue Using the AWS Management Console](#sqs-update-remove-tag-queue-console)
 + [AWS SDK for Java](#sqs-add-update-remove-tag-queue-java)
 
@@ -23,11 +23,8 @@ The following steps assume that you already [created an Amazon SQS queue](sqs-cr
 1. Choose **Add/Edit Tags**\.
 
 1. Modify queue tags:
-
    + To add a tag, choose **Add New Tag**, enter a **Key** and **Value**, and then choose **Apply Changes**\.
-
    + To update a tag, change its **Key** and **Value** and then choose **Apply Changes**\.
-
    + To remove a tag, choose ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-delete-queue-tag.png) next to a key\-value pair and then choose **Apply Changes**\.
 
    The queue tag changes are applied\.

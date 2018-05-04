@@ -9,7 +9,7 @@ Amazon SQS doesn't automatically delete a message after receiving it for you, in
 
 The following example demonstrates receiving and deleting a message\.
 
-
+**Topics**
 + [AWS Management Console](#receive-delete-message-console)
 + [AWS SDK for Java](#receive-delete-message-java)
 
@@ -96,15 +96,10 @@ Before you begin working with the example code, specify your AWS credentials\. F
 1. Compile and run the example\.
 
    The queue is polled and returns 0 or more messages\. The example prints the following items:
-
    + The [message ID](sqs-general-identifiers.md#message-id) that you received when you sent the message to the queue\.
-
    + The [receipt handle](sqs-general-identifiers.md#receipt-handle) that you later use to delete the message\.
-
    + An MD5 digest of the message body \(for more information, see [RFC1321](http://faqs.org/rfcs/rfc1321.html)\)\.
-
    + The message body\.
-
    + The *request ID* that Amazon SQS assigned to your request
 
    If no messages are received in this particular call, the response includes only the request ID\.

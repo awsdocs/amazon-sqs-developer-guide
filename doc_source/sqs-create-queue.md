@@ -2,7 +2,7 @@
 
 The first and most common Amazon SQS task is creating queues\. The following example demonstrates how to create and configure a queue\.
 
-
+**Topics**
 + [AWS Management Console](#create-queue-console)
 + [AWS SDK for Java](#create-queue-java)
 + [AWS CloudFormation](#create-queue-cloudformation)
@@ -20,9 +20,7 @@ The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are avai
 1. **Standard** is selected by default\. Choose **FIFO**\.
 
 1. Create your queue\.
-
    + To create your queue with the default parameters, choose **Quick\-Create Queue**\.
-
    + To configure your queue's parameters, choose **Configure Queue**\. When you finish configuring the parameters, choose **Create Queue**\. For more information about creating a queue with SSE, see [Tutorial: Creating an Amazon SQS Queue with Server\-Side Encryption \(SSE\)](sqs-create-queue-sse.md)\.
 
      The following example shows the **Content\-Based Deduplication** parameter specific to FIFO queues\.  

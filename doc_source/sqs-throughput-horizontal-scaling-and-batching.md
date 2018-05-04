@@ -4,7 +4,7 @@ Amazon SQS queues can deliver very high throughput\. Standard queues support a n
 
 To achieve high throughput, you must scale message producers and consumers horizontally \(add more producers and consumers\)\.
 
-
+**Topics**
 + [Horizontal Scaling](#horizontal-scaling)
 + [Action Batching](#request-batching)
 + [Working Java Example for Single\-Operation and Batch Requests](#working-java-example-batch-requests)
@@ -14,11 +14,8 @@ To achieve high throughput, you must scale message producers and consumers horiz
 Because you access Amazon SQS through an HTTP request\-response protocol, the *request latency* \(the interval between initiating a request and receiving a response\) limits the throughput that you can achieve from a single thread using a single connection\. For example, if the latency from an Amazon EC2\-based client to Amazon SQS in the same region averages 20 ms, the maximum throughput from a single thread over a single connection averages 50 TPS\. 
 
 *Horizontal scaling* involves increasing the number of message producers \(which make `[SendMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html)` requests\) and consumers \(which make `[ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` and `[DeleteMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessage.html)` requests\) in order to increase your overall queue throughput\. You can scale horizontally in three ways:
-
 + Increase the number of threads per client
-
 + Add more clients
-
 + Increase the number of threads per client and add more clients
 
 When you add more clients, you achieve essentially linear gains in queue throughput\. For example, if you double the number of clients, you also double the throughput\. 
@@ -46,9 +43,7 @@ Batching distributes the latency of the batch action over the multiple messages 
 You can combine batching with horizontal scaling to provide throughput with fewer threads, connections, and requests than individual message requests\. You can use batched Amazon SQS actions to send, receive, or delete up to 10 messages at a time\. Because Amazon SQS charges by the request, batching can substantially reduce your costs\. 
 
 Batching can introduce some complexity for your application \(for example, you application must accumulate messages before sending them, or it sometimes must wait longer for a response\)\. However, batching can be still effective in the following cases: 
-
 + Your application generates many messages in a short time, so the delay is never very long\. 
-
 + A message consumer fetches messages from a queue at its discretion, unlike typical message producers that need to send messages in response to events they don't control\. 
 
 **Important**  

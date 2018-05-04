@@ -2,7 +2,7 @@
 
 In response to an action request, Amazon SQS returns an XML data structure that contains the results of the request\. For more information, see the individual actions in the *[Amazon Simple Queue Service API Reference](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/)*\.
 
-
+**Topics**
 + [Successful Response Structure](#sqs-api-successful-response-structure)
 + [Error Response Structure](#sqs-api-error-response-structure)
 
@@ -11,9 +11,7 @@ In response to an action request, Amazon SQS returns an XML data structure that 
 If the request is successful, the main response element is named after the action, with `Response` appended \(`ActionNameResponse`\)\.
 
 This element contains the following child elements:
-
 + **`ActionNameResult`** – Contains an action\-specific element\. For example, the `CreateQueueResult` element contains the `QueueUrl` element which, in turn, contains the URL of the created queue\.
-
 + **`ResponseMetadata`** – Contains the `RequestId` which, in turn, contains the UUID of the request\.
 
 The following is an example successful response in XML format:
@@ -37,13 +35,9 @@ The following is an example successful response in XML format:
 If a request is unsuccessful, Amazon SQS always returns the main response element `ErrorResponse`\. This element contains an `Error` element and a `RequestId` element\.
 
 The `Error` element contains the following child elements:
-
 + **`Type`** – Specifies whether the error was a producer or consumer error\.
-
 + **`Code`** – Specifies the type of error\.
-
 + **`Message`** – Specifies the error condition in a readable format\.
-
 + **`Detail`** – \(Optional\) Specifies additional details about the error\.
 
 The `RequestId` element contains the UUID of the request\.

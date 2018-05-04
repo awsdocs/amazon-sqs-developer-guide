@@ -2,7 +2,7 @@
 
 This section describes the types of Amazon SQS queues and their basic properties\. It also describes the identifiers of queues and messages, and various queue and message management workflows\. 
 
-
+**Topics**
 + [Basic Amazon SQS Architecture](sqs-basic-architecture.md)
 + [Amazon SQS Standard Queues](standard-queues.md)
 + [Amazon SQS FIFO \(First\-In\-First\-Out\) Queues](FIFO-queues.md)

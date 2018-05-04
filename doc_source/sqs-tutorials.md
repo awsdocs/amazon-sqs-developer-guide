@@ -7,7 +7,7 @@ You can write code in other programming languages\. For more information, see th
 **Note**  
 You can explore Amazon SQS without writing code with tools such as the AWS Command Line Interface \(AWS CLI\) or Windows PowerShell\. You can find AWS CLI examples in the [Amazon SQS section](http://docs.aws.amazon.com/cli/latest/reference/sqs/index.html) of the *AWS CLI Command Reference*\. You can find Windows PowerShell examples in the Amazon Simple Queue Service section of the *[AWS Tools for PowerShell Cmdlet Reference](http://docs.aws.amazon.com/powershell/latest/reference/)*\.
 
-
+**Topics**
 + [Creating an Amazon SQS Queue](sqs-create-queue.md)
 + [Creating an Amazon SQS Queue with SSE](sqs-create-queue-sse.md)
 + [Configuring SSE for an Existing Amazon SQS Queue](sqs-configure-sse-existing-queue.md)
@@ -19,6 +19,7 @@ You can explore Amazon SQS without writing code with tools such as the AWS Comma
 + [Sending a Message with Attributes to an Amazon SQS Queue](sqs-send-message-with-attributes.md)
 + [Receiving and Deleting a Message from an Amazon SQS Queue](sqs-receive-delete-message.md)
 + [Configuring an Amazon SQS Dead-Letter Queue](sqs-configure-dead-letter-queue.md)
++ [Configuring Visibility Timeout for an Amazon SQS Queue](sqs-configure-visibility-timeout-queue.md)
 + [Subscribing an Amazon SQS Queue to an Amazon SNS Topic](sqs-subscribe-queue-sns-topic.md)
 + [Purging Messages from an Amazon SQS Queue](sqs-purge-queue.md)
 + [Deleting an Amazon SQS Queue](sqs-delete-queue.md)

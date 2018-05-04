@@ -9,7 +9,7 @@ Because `AmazonSQSBufferedAsyncClient` implements the same interface as `AmazonS
 **Note**  
 The Amazon SQS Buffered Asynchronous Client doesn't currently support FIFO queues\.
 
-
+**Topics**
 + [Using AmazonSQSBufferedAsyncClient](#using-buffered-async-client)
 + [Configuring AmazonSQSBufferedAsyncClient](#configuring-buffered-async-client)
 

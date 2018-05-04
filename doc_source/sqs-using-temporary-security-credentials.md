@@ -10,11 +10,8 @@ You can't set a policy based on temporary credentials\.
 ## Prerequisites<a name="temporary-security-credentials-prerequisites"></a>
 
 1. Use IAM to create temporary security credentials:
-
    + Security token
-
    + Access Key ID
-
    + Secret Access Key
 
 1. Prepare your string to sign with the temporary Access Key ID and the security token\.

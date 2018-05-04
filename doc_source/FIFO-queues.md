@@ -5,17 +5,12 @@ FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US 
 [![AWS Videos](http://img.youtube.com/vi/https://www.youtube.com/embed/XrX7rb6M3jw?rel=0&amp;controls=0&amp;showinfo=0/0.jpg)](http://www.youtube.com/watch?v=https://www.youtube.com/embed/XrX7rb6M3jw?rel=0&amp;controls=0&amp;showinfo=0)
 
 *FIFO \(First\-In\-First\-Out\)* queues are designed to enhance messaging between applications when the order of operations and events is critical, or where duplicates can't be tolerated, for example:
-
 + Ensure that user\-entered commands are executed in the right order\.
-
 + Display the correct product price by sending price modifications in the right order\.
-
 + Prevent a student from enrolling in a course before registering for an account\.
 
 FIFO queues also provide exactly\-once processing but have a limited number of transactions per second \(TPS\):
-
 + By default, FIFO queues support up to 3,000 messages per second with [batching](sqs-batch-api-actions.md)\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/v1?#/case/create)\.
-
 + FIFO queues support up to 300 messages per second \(300 send, receive, or delete operations per second\) without batching\.
 
 **Note**  
@@ -25,7 +20,7 @@ For best practices of working with FIFO queues, see [Additional Recommendations 
 
 For information about compatibility of clients and services with FIFO queues, see [Compatibility](#FIFO-compatibility)\.
 
-
+**Topics**
 + [Message Ordering](#FIFO-queues-message-order)
 + [Key Terms](#FIFO-key-terms)
 + [FIFO Delivery Logic](#FIFO-queues-understanding-logic)
@@ -37,9 +32,7 @@ For information about compatibility of clients and services with FIFO queues, se
 ## Message Ordering<a name="FIFO-queues-message-order"></a>
 
 The FIFO queue improves upon and complements the [standard queue](standard-queues.md)\. The most important features of this queue type are [*FIFO \(First\-In\-First\-Out\) delivery*](#FIFO-queues-understanding-logic) and *[exactly\-once processing](#FIFO-queues-exactly-once-processing)*:
-
 + The order in which messages are sent and received is strictly preserved and a message is delivered once and remains available until a consumer processes and deletes it\.
-
 + Duplicates aren't introduced into the queue\.
 
 In addition, FIFO queues support *message groups* that allow multiple ordered message groups within a single queue\.
@@ -78,11 +71,8 @@ It is possible to receive up to 10 messages in a single call using the `MaxNumbe
 
 **Retrying Multiple Times**  
 FIFO queues allow the producer or consumer to attempt multiple retries:  
-
 + If the producer detects a failed `SendMessage` action, it can retry sending as many times as necessary, using the same message deduplication ID\. Assuming that the producer receives at least one acknowledgement before the deduplication interval expires, multiple retries neither affect the ordering of messages nor introduce duplicates\.
-
 + If the consumer detects a failed `ReceiveMessage` action, it can retry as many times as necessary, using the same receive request attempt ID\. Assuming that the consumer receives at least one acknowledgement before the visibility timeout expires, multiple retries don't affect the ordering of messages\.
-
 + When you receive a message with a message group ID, no more messages for the same message group ID are returned unless you delete the message or it becomes visible\.
 
 ## Exactly\-Once Processing<a name="FIFO-queues-exactly-once-processing"></a>
@@ -90,9 +80,7 @@ FIFO queues allow the producer or consumer to attempt multiple retries:
 Unlike standard queues, FIFO queues don't introduce duplicate messages\. FIFO queues help you avoid sending duplicates to a queue\. If you retry the `SendMessage` action within the 5\-minute deduplication interval, Amazon SQS doesn't introduce any duplicates into the queue\.
 
 To configure deduplication, you must do one of the following:
-
 + Enable content\-based deduplication\. This instructs Amazon SQS to use a SHA\-256 hash to generate the message deduplication ID using the body of the message—but not the attributes of the message\. For more information, see the documentation on the `[CreateQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`, `[GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)`, and `[SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)` actions in the *Amazon Simple Queue Service API Reference*\.
-
 + Explicitly provide the message deduplication ID \(or view the sequence number\) for the message\. For more information, see the documentation on the `[SendMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html)`, `[SendMessageBatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html)`, and `[ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` actions in the *Amazon Simple Queue Service API Reference*\.
 
 ## Moving from a Standard Queue to a FIFO Queue<a name="FIFO-queues-moving"></a>
@@ -103,19 +91,12 @@ If you have an existing application that uses standard queues and you want to ta
 You can't convert an existing standard queue into a FIFO queue\. To make the move, you must either create a new FIFO queue for your application or delete your existing standard queue and recreate it as a FIFO queue\.
 
 Use the following checklist to ensure that your application works correctly with a FIFO queue\.
-
 + By default, FIFO queues support up to 3,000 messages per second with [batching](sqs-batch-api-actions.md)\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/v1?#/case/create)\. FIFO queues support up to 300 messages per second \(300 send, receive, or delete operations per second\) without batching\.
-
 + FIFO queues don't support per\-message delays, only per\-queue delays\. If your application sets the same value of the `DelaySeconds` parameter on each message, you must modify your application to remove the per\-message delay and set `DelaySeconds` on the entire queue instead\.
-
 + Every message sent to a FIFO queue requires a message group ID\. If you don't need multiple ordered message groups, specify the same message group ID for all your messages\.
-
 + Before sending messages to a FIFO queue, confirm the following:
-
   + If your application can send messages with identical message bodies, you can modify your application to provide a unique message deduplication ID for each sent message\.
-
   + If your application sends messages with unique message bodies, you can enable content\-based deduplication\.
-
 + You don't have to make any code changes to your consumer\. However, if it takes a long time to process messages and your visibility timeout is set to a high value, consider adding a receive request attempt ID to each `ReceiveMessage` action\. This allows you to retry receive attempts in case of networking failures and prevents queues from pausing due to failed receive attempts\.
 
 For more information, see the * [Amazon Simple Queue Service API Reference](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/)*\.
@@ -129,10 +110,7 @@ The Amazon SQS Buffered Asynchronous Client doesn't currently support FIFO queue
 If your application uses multiple AWS services, or a mix of AWS and external services, it is important to understand which service functionality doesn't support FIFO queues\.  
 Some AWS or external services that send notifications to Amazon SQS might not be compatible with FIFO queues, despite allowing you to set a FIFO queue as a target\.  
 The following features of AWS services aren't currently compatible with FIFO queues:  
-
 + [Auto Scaling Lifecycle Hooks](http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html)
-
 + [AWS IoT Rule Actions](http://docs.aws.amazon.com/iot/latest/developerguide/iot-rule-actions.html)
-
 + [AWS Lambda Dead\-Letter Queues](http://docs.aws.amazon.com/lambda/latest/dg/dlq.html)
 For information about compatibility of other services with FIFO queues, see your service documentation\.

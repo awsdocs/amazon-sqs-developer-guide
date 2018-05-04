@@ -16,7 +16,7 @@ Ensure that the `aws-java-sdk-sqs.jar` package is in your Java build class path\
 </dependencies>
 ```
 
-## SQSSimpleJavaClientExample\.java<a name="FIFO-queue-example-java-code"></a>
+## SQSSimpleJavaClientExample\.java<a name="simple-queue-example-java-code"></a>
 
 The following example Java code creates a queue and sends, receives, and deletes a message\.
 
@@ -57,9 +57,7 @@ import java.util.Map.Entry;
  * Make sure that your credentials are located in ~/.aws/credentials
  */
 public class SQSSimpleJavaClientExample {
-
-    public static void main(String[] args) throws Exception {
-
+    public static void main(String[] args) {
         /*
          * Create a new instance of the builder with all defaults (credentials
          * and region) set automatically. For more information, see
@@ -72,26 +70,26 @@ public class SQSSimpleJavaClientExample {
         System.out.println("===============================================\n");
 
         try {
-            // Create a queue
+            // Create a queue.
             System.out.println("Creating a new SQS queue called MyQueue.\n");
             final CreateQueueRequest createQueueRequest =
                     new CreateQueueRequest("MyQueue");
             final String myQueueUrl = sqs.createQueue(createQueueRequest)
                     .getQueueUrl();
 
-            // List queues
+            // List all queues.
             System.out.println("Listing all queues in your account.\n");
             for (final String queueUrl : sqs.listQueues().getQueueUrls()) {
                 System.out.println("  QueueUrl: " + queueUrl);
             }
             System.out.println();
 
-            // Send a message
+            // Send a message.
             System.out.println("Sending a message to MyQueue.\n");
             sqs.sendMessage(new SendMessageRequest(myQueueUrl,
                     "This is my message text."));
 
-            // Receive messages
+            // Receive messages.
             System.out.println("Receiving messages from MyQueue.\n");
             final ReceiveMessageRequest receiveMessageRequest =
                     new ReceiveMessageRequest(myQueueUrl);
@@ -118,13 +116,13 @@ public class SQSSimpleJavaClientExample {
             }
             System.out.println();
 
-            // Delete the message
+            // Delete the message.
             System.out.println("Deleting a message.\n");
             final String messageReceiptHandle = messages.get(0).getReceiptHandle();
             sqs.deleteMessage(new DeleteMessageRequest(myQueueUrl,
                     messageReceiptHandle));
 
-            // Delete the queue
+            // Delete the queue.
             System.out.println("Deleting the test queue.\n");
             sqs.deleteQueue(new DeleteQueueRequest(myQueueUrl));
         } catch (final AmazonServiceException ase) {

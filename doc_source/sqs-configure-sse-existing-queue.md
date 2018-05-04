@@ -8,7 +8,7 @@ When you disable SSE, messages remain encrypted\. You must receive and decrypt a
 
 The following example demonstrates enabling, disabling, and configuring SSE for an existing Amazon SQS queue\.
 
-
+**Topics**
 + [Configure SSE for an Amazon SQS Queue Using the AWS Management Console](#sqs-configure-sse-existing-queue-console)
 + [Configure SSE for an Amazon SQS Queue Using the AWS SDK for Java](#sqs-configure-sse-existing-queue-java)
 
@@ -32,7 +32,6 @@ The following example demonstrates enabling, disabling, and configuring SSE for 
 **Important**  
 If you aren't the owner of the CMK, or if you log in with an account that doesn't have the `kms:ListAliases` and `kms:DescribeKey` permissions, you won't be able to view information about the CMK on the Amazon SQS console\.  
 Ask the owner of the CMK to grant you these permissions\. For more information, see the [AWS KMS API Permissions: Actions and Resources Reference](http://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html) in the *AWS Key Management Service Developer Guide*\.
-
    + To use the AWS\-managed CMK for Amazon SQS, select it from the list\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-server-side-encryption-default-service-cmk.png)
 **Note**  
@@ -40,12 +39,10 @@ Keep the following in mind:
 If you don't specify a custom CMK, Amazon SQS uses the AWS\-managed CMK for Amazon SQS\. For instructions on creating custom CMKs, see [Creating Keys](http://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) in the *AWS Key Management Service Developer Guide*\.
 The first time you use the AWS Management Console to specify the AWS\-managed CMK for Amazon SQS for a queue, AWS KMS creates the AWS\-managed CMK for Amazon SQS\.
 Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` action on a queue with SSE enabled, AWS KMS creates the AWS\-managed CMK for Amazon SQS\.
-
    + To use a custom CMK from your AWS account, select it from the list\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-server-side-encryption-custom-cmk.png)
 **Note**  
 For instructions on creating custom CMKs, see [Creating Keys](http://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) in the *AWS Key Management Service Developer Guide*\.
-
    + To use a custom CMK ARN from your AWS account or from another AWS account, select **Enter an existing CMK ARN** from the list and type or copy the CMK\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-server-side-encryption-custom-cmk-arn.png)
 

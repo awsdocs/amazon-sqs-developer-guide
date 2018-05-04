@@ -49,8 +49,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class SQSFIFOJavaClientExample {
-    public static void main(String[] args) throws Exception {
-
+    public static void main(String[] args) {
         /*
          * Create a new instance of the builder with all defaults (credentials
          * and region) set automatically. For more information, see
@@ -64,12 +63,12 @@ public class SQSFIFOJavaClientExample {
 
         try {
 
-            // Create a FIFO queue
+            // Create a FIFO queue.
             System.out.println("Creating a new Amazon SQS FIFO queue called " +
                     "MyFifoQueue.fifo.\n");
-            final Map<String, String> attributes = new HashMap<String, String>();
+            final Map<String, String> attributes = new HashMap<>();
 
-            // A FIFO queue must have the FifoQueue attribute set to True
+            // A FIFO queue must have the FifoQueue attribute set to true.
             attributes.put("FifoQueue", "true");
 
             /*
@@ -78,20 +77,20 @@ public class SQSFIFOJavaClientExample {
              */
             attributes.put("ContentBasedDeduplication", "true");
 
-            // The FIFO queue name must end with the .fifo suffix
+            // The FIFO queue name must end with the .fifo suffix.
             final CreateQueueRequest createQueueRequest =
                     new CreateQueueRequest("MyFifoQueue.fifo")
                             .withAttributes(attributes);
             final String myQueueUrl = sqs.createQueue(createQueueRequest).getQueueUrl();
 
-            // List queues
+            // List all queues.
             System.out.println("Listing all queues in your account.\n");
             for (final String queueUrl : sqs.listQueues().getQueueUrls()) {
                 System.out.println("  QueueUrl: " + queueUrl);
             }
             System.out.println();
 
-            // Send a message
+            // Send a message.
             System.out.println("Sending a message to MyFifoQueue.fifo.\n");
             final SendMessageRequest sendMessageRequest =
                     new SendMessageRequest(myQueueUrl,
@@ -112,7 +111,7 @@ public class SQSFIFOJavaClientExample {
             System.out.println("SendMessage succeed with messageId "
                     + messageId + ", sequence number " + sequenceNumber + "\n");
 
-            // Receive messages
+            // Receive messages.
             System.out.println("Receiving messages from MyFifoQueue.fifo.\n");
             final ReceiveMessageRequest receiveMessageRequest =
                     new ReceiveMessageRequest(myQueueUrl);
@@ -140,13 +139,13 @@ public class SQSFIFOJavaClientExample {
             }
             System.out.println();
 
-            // Delete the message
+            // Delete the message.
             System.out.println("Deleting the message.\n");
             final String messageReceiptHandle = messages.get(0).getReceiptHandle();
             sqs.deleteMessage(new DeleteMessageRequest(myQueueUrl,
                     messageReceiptHandle));
 
-            // Delete the queue
+            // Delete the queue.
             System.out.println("Deleting the queue.\n");
             sqs.deleteQueue(new DeleteQueueRequest(myQueueUrl));
         } catch (final AmazonServiceException ase) {

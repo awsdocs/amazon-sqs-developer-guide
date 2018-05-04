@@ -8,7 +8,7 @@ For FIFO queues, the per\-queue delay setting *is retroactive*: If you change th
 
 Delay queues are similar to [visibility timeouts](sqs-visibility-timeout.md) because both features make messages unavailable to consumers for a specific period of time\. The difference between the two is that, for delay queues, a message is hidden *when it is first added to queue*, whereas for visibility timeouts a message is hidden *only after it is consumed from the queue*\. The following figure illustrates the relationship between delay queues and visibility timeouts\. 
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/Delay_Queues.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-delay-queues-diagram.png)
 
 To set delay seconds on *individual messages*, rather than on an entire queue, use [message timers](sqs-message-timers.md) to allow Amazon SQS to use the message timer's `DelaySeconds` value instead of the delay queue's `DelaySeconds` value\.
 

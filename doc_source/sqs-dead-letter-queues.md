@@ -2,7 +2,7 @@
 
 Amazon SQS supports *dead\-letter queues*, which other queues \(*source queues*\) can target for messages that can't be processed \(consumed\) successfully\. Dead\-letter queues are useful for debugging your application or messaging system because they let you isolate problematic messages to determine why their processing doesn't succeed\. For information about creating a queue and configuring a dead\-letter queue for it using the AWS Management Console or the AWS SDK for Java \(and the `[CreateQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`, `[SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`, and `[GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)` actions\), see [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md)\.
 
-
+**Topics**
 + [How Do Dead\-Letter Queues Work?](#sqs-dead-letter-queues-how-they-work)
 + [What are the Benefits of Dead\-Letter Queues?](#sqs-dead-letter-queues-benefits)
 + [How Do Different Queue Types Handle Message Failure?](#sqs-dead-letter-queues-handling-message-failure)
@@ -27,13 +27,9 @@ The expiration of a message is always based on its original enqueue timestamp\. 
 ## What are the Benefits of Dead\-Letter Queues?<a name="sqs-dead-letter-queues-benefits"></a>
 
 The main task of a dead\-letter queue is handling message failure\. A dead\-letter queue lets you set aside and isolate messages that can’t be processed correctly to determine why their processing didn’t succeed\. Setting up a dead\-letter queue allows you to do the following:
-
 + Configure an alarm for any messages delivered to a dead\-letter queue\.
-
 + Examine logs for exceptions that might have caused messages to be delivered to a dead\-letter queue\.
-
 + Analyze the contents of messages delivered to a dead\-letter queue to diagnose software or the producer’s or consumer’s hardware issues\.
-
 + Determine whether you have given your consumer sufficient time to process messages\.
 
 ## How Do Different Queue Types Handle Message Failure?<a name="sqs-dead-letter-queues-handling-message-failure"></a>
@@ -76,9 +72,7 @@ In some cases, Amazon SQS dead\-letter queues might not always behave as expecte
 Amazon SQS counts viewing a message in the AWS Management Console against the corresponding queue's redrive policy\. Thus, if you view a message in the AWS Management Console the number of times specified in the corresponding queue's redrive policy, the message is moved to the corresponding queue's dead\-letter queue\.
 
 To adjust this behavior, you can do one of the following:
-
 + Increase the **Maximum Receives** setting for the corresponding queue's redrive policy\.
-
 + Avoid viewing the corresponding queue's messages in the AWS Management Console\.
 
 ### The `NumberOfMessagesSent` and `NumberOfMessagesReceived` for a Dead\-Letter Queue Don't Match<a name="sqs-dlq-number-of-messages"></a>

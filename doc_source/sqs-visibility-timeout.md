@@ -2,9 +2,9 @@
 
 When a consumer receives and processes a message from a queue, the message remains in the queue\. Amazon SQS doesn't automatically delete the message\. Because Amazon SQS is a distributed system, there's no guarantee that the consumer actually receives the message \(for example, due to a connectivity issue, or due to an issue in the consumer application\)\. Thus, the consumer must delete the message from the queue after receiving and processing it\.
 
-Immediately after the message is received, it remains in the queue\. To prevent other consumers from processing the message again, Amazon SQS sets a *visibility timeout*, a period of time during which Amazon SQS prevents other consumers from receiving and processing the message\. The default visibility timeout for a message is 30 seconds\. The maximum is 12 hours\.
+![\[Visibility Timeout\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-visibility-timeout-diagram.png)
 
-![\[Visibility Timeout\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/Visibility_Timeout.png)
+Immediately after a message is received, it remains in the queue\. To prevent other consumers from processing the message again, Amazon SQS sets a *visibility timeout*, a period of time during which Amazon SQS prevents other consumers from receiving and processing the message\. The default visibility timeout for a message is 30 seconds\. The maximum is 12 hours\. For information about configuring visibility timeout for a queue using the AWS Management Console and for single or multiple messages using the AWS SDK for Java \(and the `[SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`, `[GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)`, `[ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)`, `[ChangeMessageVisibility](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibility.html)`, and `[ChangeMessageVisibilityBatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibilityBatch.html)` actions\), see [Tutorial: Configuring Visibility Timeout for an Amazon SQS Queue](sqs-configure-visibility-timeout-queue.md)\.
 
 **Note**  
 For standard queues, the visibility timeout isn't a guarantee against receiving a message twice\. For more information, see [At\-Least\-Once Delivery](standard-queues.md#standard-queues-at-least-once-delivery)\.  
@@ -13,12 +13,11 @@ If the producer detects a failed `SendMessage` action, it can retry sending as m
 If the consumer detects a failed `ReceiveMessage` action, it can retry as many times as necessary, using the same receive request attempt ID\. Assuming that the consumer receives at least one acknowledgement before the visibility timeout expires, multiple retries don't affect the ordering of messages\.
 When you receive a message with a message group ID, no more messages for the same message group ID are returned unless you delete the message or it becomes visible\.
 
-
+**Topics**
 + [Inflight Messages](#inflight-messages)
 + [Setting the Visibility Timeout](#configuring-visibility-timeout)
 + [Changing the Visibility Timeout for a Message](#changing-message-visibility-timeout)
 + [Terminating the Visibility Timeout for a Message](#terminating-message-visibility-timeout)
-+ [Visibility Timeout Actions](#visibility-timeout-api-actions)
 
 ## Inflight Messages<a name="inflight-messages"></a>
 
@@ -50,16 +49,3 @@ The new timeout period takes effect from the time you call the `ChangeMessageVis
 When you receive a message from a queue, you might find that you actually don't want to process and delete that message\. Amazon SQS allows you to terminate the visibility timeout for a specific message\. This makes the message immediately visible to other components in the system and available for processing\. 
 
 To terminate a message's visibility timeout after calling `ReceiveMessage`, call [http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibility.html](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibility.html) with `VisibilityTimeout` set to 0 seconds\. 
-
-## Visibility Timeout Actions<a name="visibility-timeout-api-actions"></a>
-
-The following table lists the actions you can use to manipulate the visibility timeout\. Use each action's `VisibilityTimeout` parameter to set or get the value\.
-
-
-| Task | Action | 
-| --- | --- | 
-| Set the visibility timeout for a queue\. | [SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html) | 
-| View the visibility timeout for a queue\. | [GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html) | 
-| Set the visibility timeout for received messages without affecting the visibility timeout of the entire queue\.  | [ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html) | 
-| Extend or terminate a message's visibility timeout\. | [ChangeMessageVisibility](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibility.html) | 
-| Extend or terminate the visibility timeout for up to 10 messages | [ChangeMessageVisibilityBatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibilityBatch.html) | 

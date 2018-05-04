@@ -2,7 +2,7 @@
 
 *Long polling* helps reduce the cost of using Amazon SQS by eliminating the number of empty responses \(when there are no messages available for a `[ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` request\) and false empty responses \(when messages are available but aren't included in a response\)\. The following example demonstrates how to configure long polling for an Amazon SQS queue\. For more information, see [Amazon SQS Long Polling](sqs-long-polling.md)\.
 
-
+**Topics**
 + [Configure Long Polling for an Existing Amazon SQS Queue Using the AWS Management Console](#sqs-configure-long-polling-for-queue-console)
 + [AWS SDK for Java](#configure-long-polling-for-queue-java)
 
@@ -35,7 +35,7 @@ When you create a queue, it can take a short time for the queue to propagate thr
 
 Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 
-### To configure long polling<a name="configure-long-polling-for-queue-java-api"></a>
+### To configure long polling for a queue<a name="configure-long-polling-for-queue-java-api"></a>
 
 #### Prerequisites<a name="configure-long-polling-for-queue-java-api-prerequisites"></a>
 
@@ -77,12 +77,11 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
 import com.amazonaws.services.sqs.model.CreateQueueRequest;
+import com.amazonaws.services.sqs.model.QueueAttributeName;
 
 import java.util.Scanner;
 
 public class SQSLongPollingExample {
-
-    //public static void main(String[] args) throws Exception{
     public static void main(String[] args) {
 
         final Scanner input = new Scanner(System.in);
@@ -104,7 +103,8 @@ public class SQSLongPollingExample {
             // Create a queue with long polling.
             final CreateQueueRequest createQueueRequest = new CreateQueueRequest()
                     .withQueueName(queueName)
-                    .addAttributesEntry("ReceiveMessageWaitTimeSeconds", receiveMessageWaitTime);
+                    .addAttributesEntry(QueueAttributeName.ReceiveMessageWaitTimeSeconds
+                            .toString(), receiveMessageWaitTime);
             sqs.createQueue(createQueueRequest);
 
             System.out.println("Created queue " + queueName + " with " +
@@ -131,7 +131,7 @@ public class SQSLongPollingExample {
 }
 ```
 
-### To configure long polling and send, receive, and delete a message<a name="configure-long-polling-send-receive-delete-message-java-api"></a>
+### To configure long polling for a queue and send, receive, and delete a message<a name="configure-long-polling-send-receive-delete-message-java-api"></a>
 
 1. Copy the example program for a [standard queue](standard-queues-getting-started-java.md) or a [FIFO queue](FIFO-queues-getting-started-java.md)\.
 

@@ -116,39 +116,22 @@ If you don't use an Amazon SQS queue \(and don't foresee using it in the near fu
 ## Next Steps<a name="sqs-next-steps-getting-started"></a>
 
 Now that you've created a queue and learned how to send, receive, and delete messages and how to delete a queue, you might want to try the following:
-
 + [Enable server\-side encryption \(SSE\) for a new queue](sqs-create-queue-sse.md) or [configure SSE for an existing queue\.](sqs-configure-sse-existing-queue.md)
-
 + [Add permissions to a queue\.](sqs-add-permissions.md)
-
 + [Add, update, or remove tags for a queue\.](sqs-add-update-remove-tag-queue.md)
-
 + [Configure long polling for a queue\.](sqs-configure-long-polling-for-queue.md)
-
 + [Send a message with attributes\.](sqs-send-message-with-attributes.md)
-
 + [Configure a dead\-letter queue\.](sqs-configure-dead-letter-queue.md)
-
++ [Configure visibility timeout for a queue\.](sqs-configure-visibility-timeout-queue.md)
 + [Subscribe a queue to an Amazon SNS topic\.](sqs-subscribe-queue-sns-topic.md)
-
 + [Purge a queue\.](sqs-purge-queue.md)
-
 + Learn more about Amazon SQS workflows and processes: Read [How Queues Work](sqs-how-it-works.md), [Best Practices](sqs-best-practices.md), and [Limits](sqs-limits.md)\. You can also explore the [Amazon SQS Articles & Tutorials](https://aws.amazon.com/articles/Amazon-SQS?browse=1)\. If you ever have any questions, browse the [Amazon SQS FAQs](https://aws.amazon.com/sqs/faqs/) or participate in the [Amazon SQS Developer Forums](https://forums.aws.amazon.com/forum.jspa?forumID=12)\.
-
 + Learn how to interact with Amazon SQS programmatically: Read [Working with APIs](sqs-making-api-requests.md) and explore the [Sample Code and Libraries](https://aws.amazon.com/code/Amazon-SQS?browse=1) and the developer centers:
-
   + [Java](https://aws.amazon.com/java/)
-
   + [JavaScript](https://aws.amazon.com/javascript/)
-
   + [PHP](https://aws.amazon.com/php/)
-
   + [Python](https://aws.amazon.com/python/)
-
   + [Ruby](https://aws.amazon.com/ruby/)
-
   + [Windows & \.NET](https://aws.amazon.com/net/)
-
 + Learn about keeping an eye on costs and resources in the [Monitoring, Logging, and Automating Amazon SQS Queues](sqs-monitoring-logging.md) section\.
-
 + Learn about protecting your data and access to it in the [Security](sqs-security.md) section\.

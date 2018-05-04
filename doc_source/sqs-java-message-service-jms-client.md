@@ -6,7 +6,7 @@ The library supports sending and receiving messages to a queue \(the JMS point\-
 
 For information about features of the Amazon SQS Java Messaging Library that support the JMS 1\.1 specification, see [Supported JMS 1\.1 Implementations](supported-implementations.md) and the [Amazon SQS FAQs](https://aws.amazon.com/sqs/faqs/)\.
 
-
+**Topics**
 + [Prerequisites](prerequisites.md)
 + [Getting Started with the Amazon SQS Java Messaging Library](getting-started.md)
 + [Using the JMS Client with Other Amazon SQS Clients](sqs-jms-client-with-sqs-clients.md)

@@ -4,7 +4,7 @@ You can include structured metadata \(such as timestamps, geospatial data, signa
 
 For a more detailed explanation of sending messages to standard and FIFO queues, see [Tutorial: Sending a Message to an Amazon SQS Queue](sqs-send-message.md)\.
 
-
+**Topics**
 + [AWS Management Console](#send-message-with-attributes-console)
 + [AWS SDK for Java](#send-message-with-attributes-java)
 
@@ -156,11 +156,7 @@ If you use the `[SendMessageBatch](http://docs.aws.amazon.com/AWSSimpleQueueServ
 1. Compile and run the example\.
 
    The message is sent to the queue\. The response includes the following items:
-
    + The [message ID](sqs-general-identifiers.md#message-id) Amazon SQS assigns to the message\.
-
    + An MD5 digest of the message body, used to confirm that Amazon SQS received the message correctly \(for more information, see [RFC1321](http://faqs.org/rfcs/rfc1321.html)\)\.
-
    + An MD5 digest of the message attributes, used to confirm that Amazon SQS received the message attributes correctly\.
-
    + The *request ID* that Amazon SQS assigned to your request\.

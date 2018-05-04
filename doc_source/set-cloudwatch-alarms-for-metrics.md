@@ -17,13 +17,9 @@ CloudWatch allows you to trigger alarms when a threshold is met for a metric\. F
 1. Choose **Next**\. The **Define Alarm** page displays\.
 
 1. For **Alarm Threshold**, fill in the **Name** and **Description** boxes\. For **is**, **for**, **Period**, and **Statistic**, specify the conditions for the alarm\. For example, let's say you chose \(checked\) the box for **MyQueue**, **NumberOfMessagesSent** on the **Select Metric** page, and you want to alarm when more than 100 messages are sent in any hour to the `MyQueue` queue\. You'd then set the following:
-
    + Set **is** to **> 100**\.
-
    + Set **for** to **1**\.
-
    + Set **Period** to **1 Hour**\.
-
    + Set **Statistic** to **Sum**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-cloudwatch-alarm-define.png)
 

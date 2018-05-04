@@ -1,13 +1,9 @@
 # Amazon SQS Access Policy Language Evaluation Logic<a name="sqs-creating-custom-policies-evaluation-logic"></a>
 
 At evaluation time, Amazon SQS determines whether a request from someone other than the resource owner should be allowed or denied\. The evaluation logic follows several basic rules:
-
 + By default, all requests to use your resource coming from anyone but you are denied\.
-
 + An *[allow](sqs-creating-custom-policies-key-concepts.md#allow)* overrides any *[default-deny](sqs-creating-custom-policies-key-concepts.md#default-deny)*\.
-
 + An *[explicit-deny](sqs-creating-custom-policies-key-concepts.md#explicit-deny)* overrides any **allow**\.
-
 + The order in which the policies are evaluated isn't important\.
 
 The following figure describes in detail how Amazon SQS evaluates decisions about access permissions\.

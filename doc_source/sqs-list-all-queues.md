@@ -2,7 +2,7 @@
 
 When you create a queue, it can take a short time for the queue to propagate throughout Amazon SQS\. The following example demonstrates confirming your queue's existence by listing all queues in the current region\.
 
-
+**Topics**
 + [AWS Management Console](#list-all-queues-console)
 + [AWS SDK for Java](#list-all-queues-java)
 
@@ -41,7 +41,5 @@ This action is identical for standard and FIFO queues\.
 1. Compile and run the example\.
 
    All queues in the current region created using API version 2012\-11\-05 are listed\. The response include the following items:
-
    + The unique *queue URL*\.
-
    + The *request ID* that Amazon SQS assigned to your request\.
