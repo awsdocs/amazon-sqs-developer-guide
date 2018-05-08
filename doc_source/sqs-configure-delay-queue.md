@@ -1,12 +1,13 @@
-# Tutorial: Configuring Long Polling for an Amazon SQS Queue<a name="sqs-configure-long-polling-for-queue"></a>
+# Tutorial: Configuring an Amazon SQS Delay Queue<a name="sqs-configure-delay-queue"></a>
 
-*Long polling* helps reduce the cost of using Amazon SQS by eliminating the number of empty responses \(when there are no messages available for a `[ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` request\) and false empty responses \(when messages are available but aren't included in a response\)\. The following example shows how to configure long polling for an Amazon SQS queue\. For more information, see [Amazon SQS Long Polling](sqs-long-polling.md)\.
+Delay queues let you postpone the delivery of new messages to a queue for a number of seconds\. If you create a delay queue, any messages that you send to the queue remain invisible to consumers for the duration of the delay period\. The minimum delay for a queue is 0 seconds\. The maximum is 15 minutes\. The following example shows how to configure a delay queue using the AWS Management Console or using the AWS SDK for Java\. For more information, see [Amazon SQS Delay Queues](sqs-delay-queues.md)\.
 
 **Topics**
-+ [Configure Long Polling for an Existing Amazon SQS Queue Using the AWS Management Console](#sqs-configure-long-polling-for-queue-console)
-+ [AWS SDK for Java](#configure-long-polling-for-queue-java)
++ [AWS Management Console](#sqs-configure-delay-queue-console)
++ [AWS SDK for Java](#sqs-configure-delay-queue-java)
++ [To configure a delay queue and send, receive, and delete messages](#configure-delay-queue-send-receive-delete-message-java-api)
 
-## AWS Management Console<a name="sqs-configure-long-polling-for-queue-console"></a>
+## AWS Management Console<a name="sqs-configure-delay-queue-console"></a>
 
 1. Sign in to the [Amazon SQS console](https://console.aws.amazon.com/sqs/)\.
 
@@ -20,24 +21,25 @@ The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are avai
 
 1. Choose **Configure Queue**\.
 
-1. For **Receive Message Wait Time**, type a number between `1` and `20`\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-configuring-long-polling.png)
-**Note**  
-Setting the value to `0` configures *short polling*\. For more information, see [Differences Between Long and Short Polling](sqs-long-polling.md#sqs-short-long-polling-differences)\.
+1. In this example, you set the delivery delay to 1 minute\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-configure-delay-queue-configure-parameters.png)
 
 1. Choose **Create Queue**\.
 
-   Your new queue is configured to use long polling, created, and selected in the queue list\.
+   Your new queue is configured to use a 1\-minute delay, created, and selected in the queue list\.
 **Note**  
 When you create a queue, it can take a short time for the queue to propagate throughout Amazon SQS\.
 
-## AWS SDK for Java<a name="configure-long-polling-for-queue-java"></a>
+   Your queue's **Delivery Delay** is displayed on the **Details** tab\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-configure-delay-queue-default.png)
+
+## AWS SDK for Java<a name="sqs-configure-delay-queue-java"></a>
 
 Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 
-### To configure long polling for a queue<a name="configure-long-polling-for-queue-java-api"></a>
+### To configure a delay queue<a name="configure-delay-queue-java-api"></a>
 
-#### Prerequisites<a name="configure-long-polling-for-queue-java-api-prerequisites"></a>
+#### Prerequisites<a name="configure-delay-queue-java-api-prerequisites"></a>
 
 Ensure that the `aws-java-sdk-sqs.jar` package is in your Java build class path\. The following example shows this dependency in a Maven project `pom.xml` file\.
 
@@ -51,9 +53,9 @@ Ensure that the `aws-java-sdk-sqs.jar` package is in your Java build class path\
 </dependencies>
 ```
 
-#### SQSLongPollingExample\.java<a name="configure-long-polling-example-java-code"></a>
+#### SQSDelayQueueExample\.java<a name="configure-dead-letter-queue-java-api-code"></a>
 
-The following example Java code creates a standard queue and configures long polling for it\.
+The following example Java code creates a standard queue and sets the delay for it to 1 minute\.
 
 ```
 /*
@@ -78,10 +80,11 @@ import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
 import com.amazonaws.services.sqs.model.CreateQueueRequest;
 import com.amazonaws.services.sqs.model.QueueAttributeName;
+import com.amazonaws.services.sqs.model.SetQueueAttributesRequest;
 
 import java.util.Scanner;
 
-public class SQSLongPollingExample {
+public class SQSDelayQueueExample {
     public static void main(String[] args) {
 
         final Scanner input = new Scanner(System.in);
@@ -89,8 +92,8 @@ public class SQSLongPollingExample {
         System.out.print("Enter the queue name: ");
         final String queueName = input.nextLine();
 
-        System.out.print("Enter the ReceiveMessage wait time (1-20 seconds): ");
-        final String receiveMessageWaitTime = input.nextLine();
+        System.out.print("Enter the delay in seconds (0 seconds to 15 minutes): ");
+        final String queueDelay = input.nextLine();
 
         /*
          * Create a new instance of the builder with all defaults (credentials
@@ -100,16 +103,22 @@ public class SQSLongPollingExample {
         final AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
 
         try {
-            // Create a queue with long polling.
+            // Create a queue.
             final CreateQueueRequest createQueueRequest = new CreateQueueRequest()
-                    .withQueueName(queueName)
-                    .addAttributesEntry(QueueAttributeName.ReceiveMessageWaitTimeSeconds
-                            .toString(), receiveMessageWaitTime);
+                    .withQueueName(queueName);
             sqs.createQueue(createQueueRequest);
 
+            // Set the delay for the queue.
+            final String queueUrl = sqs.getQueueUrl(queueName)
+                    .getQueueUrl();
+            final SetQueueAttributesRequest request = new SetQueueAttributesRequest()
+                    .withQueueUrl(queueUrl)
+                    .addAttributesEntry(QueueAttributeName.DelaySeconds
+                            .toString(), queueDelay);
+            sqs.setQueueAttributes(request);
+
             System.out.println("Created queue " + queueName + " with " +
-                    "ReceiveMessage wait time set to " + receiveMessageWaitTime +
-                    " seconds.");
+                    "delay set to " + queueDelay + " seconds.");
 
         } catch (final AmazonServiceException ase) {
             System.out.println("Caught an AmazonServiceException, which means " +
@@ -131,34 +140,21 @@ public class SQSLongPollingExample {
 }
 ```
 
-### To configure long polling for a queue and send, receive, and delete a message<a name="configure-long-polling-send-receive-delete-message-java-api"></a>
+## To configure a delay queue and send, receive, and delete messages<a name="configure-delay-queue-send-receive-delete-message-java-api"></a>
 
 1. Copy the example program for a [standard queue](standard-queues-getting-started-java.md) or a [FIFO queue](FIFO-queues-getting-started-java.md)\.
 
-1. Retrieve the queue's URL:
+1. To configure a delay queue, pass the delay value in seconds\.
 
    ```
+   // Set the delay for the queue.
    final String queueUrl = sqs.getQueueUrl(queueName).getQueueUrl();
-   ```
-
-1. Use the `SetQueueAttributesRequest` action to configure long polling for an existing queue:
-
-   ```
-   final SetQueueAttributesRequest setQueueAttributesRequest = new SetQueueAttributesRequest()
+   final SetQueueAttributesRequest request = new SetQueueAttributesRequest()
            .withQueueUrl(queueUrl)
-           .addAttributesEntry("ReceiveMessageWaitTimeSeconds", "20");
-   sqs.setQueueAttributes(setQueueAttributesRequest);
-   ```
-
-1. Use the `ReceiveMessageRequest` action to configure the long polling for a message receipt:
-
-   ```
-   final ReceiveMessageRequest receive_request = new ReceiveMessageRequest()
-           .withQueueUrl(queueUrl)
-           .withWaitTimeSeconds(20);
-   sqs.receiveMessage(receive_request);
+           .addAttributesEntry(QueueAttributeName.DelaySeconds.toString(), queueDelay);
+   sqs.setQueueAttributes(request);
    ```
 
 1. Compile and run your program\.
 
-   The long\-polling for your queue is configured\.
+   The visibility timeout for a single message or multiple messages is configured\.

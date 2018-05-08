@@ -31,6 +31,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Tutorial: Receiving and Deleting a Message from an Amazon SQS Queue](sqs-receive-delete-message.md)
    + [Tutorial: Configuring an Amazon SQS Dead-Letter Queue](sqs-configure-dead-letter-queue.md)
    + [Tutorial: Configuring Visibility Timeout for an Amazon SQS Queue](sqs-configure-visibility-timeout-queue.md)
+   + [Tutorial: Configuring an Amazon SQS Delay Queue](sqs-configure-delay-queue.md)
    + [Tutorial: Subscribing an Amazon SQS Queue to an Amazon SNS Topic](sqs-subscribe-queue-sns-topic.md)
    + [Tutorial: Purging Messages from an Amazon SQS Queue](sqs-purge-queue.md)
    + [Tutorial: Deleting an Amazon SQS Queue](sqs-delete-queue.md)

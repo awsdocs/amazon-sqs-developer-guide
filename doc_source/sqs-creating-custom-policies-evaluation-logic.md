@@ -6,7 +6,7 @@ At evaluation time, Amazon SQS determines whether a request from someone other t
 + An *[explicit-deny](sqs-creating-custom-policies-key-concepts.md#explicit-deny)* overrides any **allow**\.
 + The order in which the policies are evaluated isn't important\.
 
-The following figure describes in detail how Amazon SQS evaluates decisions about access permissions\.
+The following diagram describes in detail how Amazon SQS evaluates decisions about access permissions\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AccessPolicyLanguage_Evaluation_Flow.png)
 

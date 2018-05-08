@@ -123,6 +123,7 @@ Now that you've created a queue and learned how to send, receive, and delete mes
 + [Send a message with attributes\.](sqs-send-message-with-attributes.md)
 + [Configure a dead\-letter queue\.](sqs-configure-dead-letter-queue.md)
 + [Configure visibility timeout for a queue\.](sqs-configure-visibility-timeout-queue.md)
++ [Configure a delay queue\.](sqs-configure-delay-queue.md)
 + [Subscribe a queue to an Amazon SNS topic\.](sqs-subscribe-queue-sns-topic.md)
 + [Purge a queue\.](sqs-purge-queue.md)
 + Learn more about Amazon SQS workflows and processes: Read [How Queues Work](sqs-how-it-works.md), [Best Practices](sqs-best-practices.md), and [Limits](sqs-limits.md)\. You can also explore the [Amazon SQS Articles & Tutorials](https://aws.amazon.com/articles/Amazon-SQS?browse=1)\. If you ever have any questions, browse the [Amazon SQS FAQs](https://aws.amazon.com/sqs/faqs/) or participate in the [Amazon SQS Developer Forums](https://forums.aws.amazon.com/forum.jspa?forumID=12)\.

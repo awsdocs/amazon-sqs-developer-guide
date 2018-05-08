@@ -5,7 +5,7 @@ Server\-side encryption \(SSE\) for Amazon SQS is available in the US East \(N\.
 **Important**  
 All requests to queues with SSE enabled must use HTTPS and [Signature Version 4](http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)\.
 
-The following example demonstrates how to create an Amazon SQS queue with SSE enabled\. Although the example uses a FIFO queue, SSE works with both standard and FIFO queues\.
+The following example shows how to create an Amazon SQS queue with SSE enabled\. Although the example uses a FIFO queue, SSE works with both standard and FIFO queues\.
 
 **Topics**
 + [Create an Amazon SQS Queue with SSE Using the AWS Management Console](#sqs-create-queue-sse-console)

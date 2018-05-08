@@ -1,6 +1,6 @@
 # Tutorial: Listing All Amazon SQS Queues in a Region<a name="sqs-list-all-queues"></a>
 
-When you create a queue, it can take a short time for the queue to propagate throughout Amazon SQS\. The following example demonstrates confirming your queue's existence by listing all queues in the current region\.
+When you create a queue, it can take a short time for the queue to propagate throughout Amazon SQS\. The following example shows how to confirm your queue's existence by listing all queues in the current region\.
 
 **Topics**
 + [AWS Management Console](#list-all-queues-console)

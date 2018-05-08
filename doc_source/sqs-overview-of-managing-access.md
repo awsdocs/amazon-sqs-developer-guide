@@ -93,7 +93,7 @@ With the introduction of IAM and the concepts of *Users* and *Amazon Resource Na
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-3-red.png) You can specify the resource using the Amazon Resource Name \(ARN\), the standard means of specifying resources in IAM policies\. For information about the ARN format for Amazon SQS queues, see [Amazon Simple Queue Service Resource and Operations](#sqs-resource-and-operations)\.
 
-For example, according to the Amazon SQS policy in the preceding figure, anyone who possesses the security credentials for AWS Account 1 or AWS Account 2 can access `queue_xyz`\. In addition, Users Bob and Susan in your own AWS Account \(with ID `123456789012`\) can access the queue\.
+For example, according to the Amazon SQS policy in the preceding diagram, anyone who possesses the security credentials for AWS Account 1 or AWS Account 2 can access `queue_xyz`\. In addition, Users Bob and Susan in your own AWS Account \(with ID `123456789012`\) can access the queue\.
 
 Before the introduction of IAM, Amazon SQS automatically gave the creator of a queue full control over the queue \(that is, access to all of the possible Amazon SQS actions on that queue\)\. This is no longer true, unless the creator uses AWS security credentials\. Any user who has permissions to create a queue must also have permissions to use other Amazon SQS actions in order to do anything with the created queues\.
 

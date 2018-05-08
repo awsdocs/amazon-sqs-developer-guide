@@ -20,6 +20,7 @@ You can explore Amazon SQS without writing code with tools such as the AWS Comma
 + [Receiving and Deleting a Message from an Amazon SQS Queue](sqs-receive-delete-message.md)
 + [Configuring an Amazon SQS Dead-Letter Queue](sqs-configure-dead-letter-queue.md)
 + [Configuring Visibility Timeout for an Amazon SQS Queue](sqs-configure-visibility-timeout-queue.md)
++ [Configuring an Amazon SQS Delay Queue](sqs-configure-delay-queue.md)
 + [Subscribing an Amazon SQS Queue to an Amazon SNS Topic](sqs-subscribe-queue-sns-topic.md)
 + [Purging Messages from an Amazon SQS Queue](sqs-purge-queue.md)
 + [Deleting an Amazon SQS Queue](sqs-delete-queue.md)
