@@ -1,6 +1,6 @@
 # Tutorial: Deleting an Amazon SQS Queue<a name="sqs-delete-queue"></a>
 
-If you don't use an Amazon SQS queue \(and don't foresee using it in the near future\), it is a best practice to delete it from Amazon SQS\. The following example demonstrates deleting a queue\.
+If you don't use an Amazon SQS queue \(and don't foresee using it in the near future\), it is a best practice to delete it from Amazon SQS\. The following example shows how to delete a queue\.
 
 **Note**  
 You can delete a queue even when it isn't empty\. If you want to delete the messages in a queue but not the queue itself, you can [purge the queue](sqs-purge-queue.md)\.  

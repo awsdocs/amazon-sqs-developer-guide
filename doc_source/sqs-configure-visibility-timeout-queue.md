@@ -75,73 +75,73 @@ The following example Java code creates a standard queue and sets the visibility
  * permissions and limitations under the License.
  *
  */
-						
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.services.sqs.AmazonSQS;
-import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
-import com.amazonaws.services.sqs.model.CreateQueueRequest;
-import com.amazonaws.services.sqs.model.QueueAttributeName;
-import com.amazonaws.services.sqs.model.SetQueueAttributesRequest;
-
-import java.util.Scanner;
-
-public class SQSVisibilityTimeoutExample {
-    public static void main(String[] args) {
-
-        final Scanner input = new Scanner(System.in);
-
-        System.out.print("Enter the queue name: ");
-        final String queueName = input.nextLine();
-
-        System.out.print("Enter the visibility timeout in seconds " +
-                "(0 seconds to 12 hours): ");
-        final String visibilityTimeout = input.nextLine();
-
-        /*
-         * Create a new instance of the builder with all defaults (credentials
-         * and region) set automatically. For more information, see
-         * Creating Service Clients in the AWS SDK for Java Developer Guide.
-         */
-        final AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
-
-        try {
-            // Create a queue.
-            final CreateQueueRequest createQueueRequest = new CreateQueueRequest()
-                    .withQueueName(queueName);
-            sqs.createQueue(createQueueRequest);
-
-            // Set the visibility timeout for the queue.
-            final String queueUrl = sqs.getQueueUrl(queueName)
-                    .getQueueUrl();
-            final SetQueueAttributesRequest request = new SetQueueAttributesRequest()
-                    .withQueueUrl(queueUrl)
-                    .addAttributesEntry(QueueAttributeName.VisibilityTimeout
-                            .toString(), visibilityTimeout);
-            sqs.setQueueAttributes(request);
-
-            System.out.println("Created queue " + queueName + " with " +
-                    "visibility timeout set to " + visibilityTimeout +
-                    " seconds.");
-
-        } catch (final AmazonServiceException ase) {
-            System.out.println("Caught an AmazonServiceException, which means " +
-                    "your request made it to Amazon SQS, but was " +
-                    "rejected with an error response for some reason.");
-            System.out.println("Error Message:    " + ase.getMessage());
-            System.out.println("HTTP Status Code: " + ase.getStatusCode());
-            System.out.println("AWS Error Code:   " + ase.getErrorCode());
-            System.out.println("Error Type:       " + ase.getErrorType());
-            System.out.println("Request ID:       " + ase.getRequestId());
-        } catch (final AmazonClientException ace) {
-            System.out.println("Caught an AmazonClientException, which means " +
-                    "the client encountered a serious internal problem while " +
-                    "trying to communicate with Amazon SQS, such as not " +
-                    "being able to access the network.");
-            System.out.println("Error Message: " + ace.getMessage());
-        }
-    }
-}
+							
+	import com.amazonaws.AmazonClientException;
+	import com.amazonaws.AmazonServiceException;
+	import com.amazonaws.services.sqs.AmazonSQS;
+	import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
+	import com.amazonaws.services.sqs.model.CreateQueueRequest;
+	import com.amazonaws.services.sqs.model.QueueAttributeName;
+	import com.amazonaws.services.sqs.model.SetQueueAttributesRequest;
+	
+	import java.util.Scanner;
+	
+	public class SQSVisibilityTimeoutExample {
+	    public static void main(String[] args) {
+	
+	        final Scanner input = new Scanner(System.in);
+	
+	        System.out.print("Enter the queue name: ");
+	        final String queueName = input.nextLine();
+	
+	        System.out.print("Enter the visibility timeout in seconds " +
+	                "(0 seconds to 12 hours): ");
+	        final String visibilityTimeout = input.nextLine();
+	
+	        /*
+	         * Create a new instance of the builder with all defaults (credentials
+	         * and region) set automatically. For more information, see
+	         * Creating Service Clients in the AWS SDK for Java Developer Guide.
+	         */
+	        final AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
+	
+	        try {
+	            // Create a queue.
+	            final CreateQueueRequest createQueueRequest = new CreateQueueRequest()
+	                    .withQueueName(queueName);
+	            sqs.createQueue(createQueueRequest);
+	
+	            // Set the visibility timeout for the queue.
+	            final String queueUrl = sqs.getQueueUrl(queueName)
+	                    .getQueueUrl();
+	            final SetQueueAttributesRequest request = new SetQueueAttributesRequest()
+	                    .withQueueUrl(queueUrl)
+	                    .addAttributesEntry(QueueAttributeName.VisibilityTimeout
+	                            .toString(), visibilityTimeout);
+	            sqs.setQueueAttributes(request);
+	
+	            System.out.println("Created queue " + queueName + " with " +
+	                    "visibility timeout set to " + visibilityTimeout +
+	                    " seconds.");
+	
+	        } catch (final AmazonServiceException ase) {
+	            System.out.println("Caught an AmazonServiceException, which means " +
+	                    "your request made it to Amazon SQS, but was " +
+	                    "rejected with an error response for some reason.");
+	            System.out.println("Error Message:    " + ase.getMessage());
+	            System.out.println("HTTP Status Code: " + ase.getStatusCode());
+	            System.out.println("AWS Error Code:   " + ase.getErrorCode());
+	            System.out.println("Error Type:       " + ase.getErrorType());
+	            System.out.println("Request ID:       " + ase.getRequestId());
+	        } catch (final AmazonClientException ace) {
+	            System.out.println("Caught an AmazonClientException, which means " +
+	                    "the client encountered a serious internal problem while " +
+	                    "trying to communicate with Amazon SQS, such as not " +
+	                    "being able to access the network.");
+	            System.out.println("Error Message: " + ace.getMessage());
+	        }
+	    }
+	}
 ```
 
 ### To configure visibility timeout for a single message or multiple messages and send, receive, and delete messages<a name="configure-visibility-timeout-queue-send-receive-delete-message-java-api"></a>
@@ -152,39 +152,39 @@ public class SQSVisibilityTimeoutExample {
 
    ```
    // Get the message receipt handle.
-   String receiptHandle = sqs.receiveMessage(myQueueUrl)
-           .getMessages()
-           .get(0)
-           .getReceiptHandle();
-   
-   // Pass the queue URL, the message receipt handle, and the visibility timeout value.
-   sqs.changeMessageVisibility(myQueueUrl, receiptHandle, timeoutValue);
+   	String receiptHandle = sqs.receiveMessage(myQueueUrl)
+   	        .getMessages()
+   	        .get(0)
+   	        .getReceiptHandle();
+   	
+   	// Pass the queue URL, the message receipt handle, and the visibility timeout value.
+   	sqs.changeMessageVisibility(myQueueUrl, receiptHandle, timeoutValue);
    ```
 
 1. To configure visibility timeout for multiple messages \(for example, if you want to set different timeout values for different messages\), create an `ArrayList`, add messages to it with the visibility timeout value in seconds, and then pass the queue URL and the `ArrayList` of messages\.
 
    ```
    // Create an ArrayList for batched messages.
-   List<ChangeMessageVisibilityBatchRequestEntry> entries =
-           new ArrayList<ChangeMessageVisibilityBatchRequestEntry>();
-   
-   // Add the first message to the ArrayList with a visibility timeout value.
-   entries.add(new ChangeMessageVisibilityBatchRequestEntry(
-           "uniqueMessageId123", sqs.receiveMessage(myQueueUrl)
-           .getMessages()
-           .get(0)
-           .getReceiptHandle())
-           .withVisibilityTimeout(timeoutValue));
-   
-   // Add the second message to the ArrayList with a different timeout value. 
-   entries.add(new ChangeMessageVisibilityBatchRequestEntry(
-           "uniqueMessageId456", sqs.receiveMessage(myQueueUrl)
-           .getMessages()
-           .get(0)
-           .getReceiptHandle())
-           .withVisibilityTimeout(timeoutValue + 60));
-   
-   sqs.changeMessageVisibilityBatch(myQueueUrl, entries);
+   	List<ChangeMessageVisibilityBatchRequestEntry> entries =
+   	        new ArrayList<ChangeMessageVisibilityBatchRequestEntry>();
+   	
+   	// Add the first message to the ArrayList with a visibility timeout value.
+   	entries.add(new ChangeMessageVisibilityBatchRequestEntry(
+   	        "uniqueMessageId123", sqs.receiveMessage(myQueueUrl)
+   	        .getMessages()
+   	        .get(0)
+   	        .getReceiptHandle())
+   	        .withVisibilityTimeout(timeoutValue));
+   	
+   	// Add the second message to the ArrayList with a different timeout value. 
+   	entries.add(new ChangeMessageVisibilityBatchRequestEntry(
+   	        "uniqueMessageId456", sqs.receiveMessage(myQueueUrl)
+   	        .getMessages()
+   	        .get(0)
+   	        .getReceiptHandle())
+   	        .withVisibilityTimeout(timeoutValue + 60));
+   	
+   	sqs.changeMessageVisibilityBatch(myQueueUrl, entries);
    ```
 
 1. Compile and run your program\.

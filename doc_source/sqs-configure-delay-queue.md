@@ -73,71 +73,71 @@ The following example Java code creates a standard queue and sets the delay for 
  * permissions and limitations under the License.
  *
  */
-						
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.services.sqs.AmazonSQS;
-import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
-import com.amazonaws.services.sqs.model.CreateQueueRequest;
-import com.amazonaws.services.sqs.model.QueueAttributeName;
-import com.amazonaws.services.sqs.model.SetQueueAttributesRequest;
-
-import java.util.Scanner;
-
-public class SQSDelayQueueExample {
-    public static void main(String[] args) {
-
-        final Scanner input = new Scanner(System.in);
-
-        System.out.print("Enter the queue name: ");
-        final String queueName = input.nextLine();
-
-        System.out.print("Enter the delay in seconds (0 seconds to 15 minutes): ");
-        final String queueDelay = input.nextLine();
-
-        /*
-         * Create a new instance of the builder with all defaults (credentials
-         * and region) set automatically. For more information, see
-         * Creating Service Clients in the AWS SDK for Java Developer Guide.
-         */
-        final AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
-
-        try {
-            // Create a queue.
-            final CreateQueueRequest createQueueRequest = new CreateQueueRequest()
-                    .withQueueName(queueName);
-            sqs.createQueue(createQueueRequest);
-
-            // Set the delay for the queue.
-            final String queueUrl = sqs.getQueueUrl(queueName)
-                    .getQueueUrl();
-            final SetQueueAttributesRequest request = new SetQueueAttributesRequest()
-                    .withQueueUrl(queueUrl)
-                    .addAttributesEntry(QueueAttributeName.DelaySeconds
-                            .toString(), queueDelay);
-            sqs.setQueueAttributes(request);
-
-            System.out.println("Created queue " + queueName + " with " +
-                    "delay set to " + queueDelay + " seconds.");
-
-        } catch (final AmazonServiceException ase) {
-            System.out.println("Caught an AmazonServiceException, which means " +
-                    "your request made it to Amazon SQS, but was " +
-                    "rejected with an error response for some reason.");
-            System.out.println("Error Message:    " + ase.getMessage());
-            System.out.println("HTTP Status Code: " + ase.getStatusCode());
-            System.out.println("AWS Error Code:   " + ase.getErrorCode());
-            System.out.println("Error Type:       " + ase.getErrorType());
-            System.out.println("Request ID:       " + ase.getRequestId());
-        } catch (final AmazonClientException ace) {
-            System.out.println("Caught an AmazonClientException, which means " +
-                    "the client encountered a serious internal problem while " +
-                    "trying to communicate with Amazon SQS, such as not " +
-                    "being able to access the network.");
-            System.out.println("Error Message: " + ace.getMessage());
-        }
-    }
-}
+							
+	import com.amazonaws.AmazonClientException;
+	import com.amazonaws.AmazonServiceException;
+	import com.amazonaws.services.sqs.AmazonSQS;
+	import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
+	import com.amazonaws.services.sqs.model.CreateQueueRequest;
+	import com.amazonaws.services.sqs.model.QueueAttributeName;
+	import com.amazonaws.services.sqs.model.SetQueueAttributesRequest;
+	
+	import java.util.Scanner;
+	
+	public class SQSDelayQueueExample {
+	    public static void main(String[] args) {
+	
+	        final Scanner input = new Scanner(System.in);
+	
+	        System.out.print("Enter the queue name: ");
+	        final String queueName = input.nextLine();
+	
+	        System.out.print("Enter the delay in seconds (0 seconds to 15 minutes): ");
+	        final String queueDelay = input.nextLine();
+	
+	        /*
+	         * Create a new instance of the builder with all defaults (credentials
+	         * and region) set automatically. For more information, see
+	         * Creating Service Clients in the AWS SDK for Java Developer Guide.
+	         */
+	        final AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
+	
+	        try {
+	            // Create a queue.
+	            final CreateQueueRequest createQueueRequest = new CreateQueueRequest()
+	                    .withQueueName(queueName);
+	            sqs.createQueue(createQueueRequest);
+	
+	            // Set the delay for the queue.
+	            final String queueUrl = sqs.getQueueUrl(queueName)
+	                    .getQueueUrl();
+	            final SetQueueAttributesRequest request = new SetQueueAttributesRequest()
+	                    .withQueueUrl(queueUrl)
+	                    .addAttributesEntry(QueueAttributeName.DelaySeconds
+	                            .toString(), queueDelay);
+	            sqs.setQueueAttributes(request);
+	
+	            System.out.println("Created queue " + queueName + " with " +
+	                    "delay set to " + queueDelay + " seconds.");
+	
+	        } catch (final AmazonServiceException ase) {
+	            System.out.println("Caught an AmazonServiceException, which means " +
+	                    "your request made it to Amazon SQS, but was " +
+	                    "rejected with an error response for some reason.");
+	            System.out.println("Error Message:    " + ase.getMessage());
+	            System.out.println("HTTP Status Code: " + ase.getStatusCode());
+	            System.out.println("AWS Error Code:   " + ase.getErrorCode());
+	            System.out.println("Error Type:       " + ase.getErrorType());
+	            System.out.println("Request ID:       " + ase.getRequestId());
+	        } catch (final AmazonClientException ace) {
+	            System.out.println("Caught an AmazonClientException, which means " +
+	                    "the client encountered a serious internal problem while " +
+	                    "trying to communicate with Amazon SQS, such as not " +
+	                    "being able to access the network.");
+	            System.out.println("Error Message: " + ace.getMessage());
+	        }
+	    }
+	}
 ```
 
 ## To configure a delay queue and send, receive, and delete messages<a name="configure-delay-queue-send-receive-delete-message-java-api"></a>
@@ -148,11 +148,11 @@ public class SQSDelayQueueExample {
 
    ```
    // Set the delay for the queue.
-   final String queueUrl = sqs.getQueueUrl(queueName).getQueueUrl();
-   final SetQueueAttributesRequest request = new SetQueueAttributesRequest()
-           .withQueueUrl(queueUrl)
-           .addAttributesEntry(QueueAttributeName.DelaySeconds.toString(), queueDelay);
-   sqs.setQueueAttributes(request);
+   	final String queueUrl = sqs.getQueueUrl(queueName).getQueueUrl();
+   	final SetQueueAttributesRequest request = new SetQueueAttributesRequest()
+   	        .withQueueUrl(queueUrl)
+   	        .addAttributesEntry(QueueAttributeName.DelaySeconds.toString(), queueDelay);
+   	sqs.setQueueAttributes(request);
    ```
 
 1. Compile and run your program\.

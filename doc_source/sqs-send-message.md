@@ -1,6 +1,6 @@
 # Tutorial: Sending a Message to an Amazon SQS Queue<a name="sqs-send-message"></a>
 
-After you create your queue, you can send a message to it\. The following example demonstrates sending a message to an existing queue\.
+After you create your queue, you can send a message to it\. The following example shows sending a message to an existing queue\.
 
 **Topics**
 + [AWS Management Console](#send-message-console)

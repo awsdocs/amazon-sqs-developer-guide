@@ -1,10 +1,9 @@
 # Amazon SQS Release Notes<a name="sqs-release-notes"></a>
 
-The following table lists Amazon SQS feature releases and improvements\. For changes to the *Amazon Simple Queue Service Developer Guide*, see [Amazon SQS Document History](sqs-document-history.md)\.
-
 
 | Date | Feature Release | 
 | --- | --- | 
+| April 30, 2018 | Server\-side encryption \(SSE\) for Amazon SQS is available in all regions where Amazon SQS is available, except for the China Regions\. For more information on server\-side encryption and how to get started using it, see [Protecting Data Using Server\-Side Encryption \(SSE\) and AWS KMS ](sqs-server-side-encryption.md)\. | 
 | March 20, 2018 | Amazon CloudWatch Events can use Amazon SQS FIFO queues as targets\. For more information, see [Automating Notifications from AWS Services to Amazon SQS using CloudWatch Events](sqs-automating-using-cloudwatch-events.md)\. | 
 | January 23, 2018 | [Amazon S3 Event Notifications](http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) are compatible with Amazon SQS SSE\. For more information, see the updated [Example 3: Enable Compatibility Between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Queues with SSE](sqs-server-side-encryption.md#compatibility-with-aws-services) section\. | 
 | January 2, 2018 | The following features of AWS services are compatible with Amazon SQS SSE: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-release-notes.html) | 
