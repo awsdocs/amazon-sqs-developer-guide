@@ -4,7 +4,7 @@ Amazon Simple Queue Service \(Amazon SQS\) offers a secure, durable, and availab
 
 Amazon SQS supports both [standard](standard-queues.md) and [FIFO queues](FIFO-queues.md)\. For more information, see [What Type of Queue Do I Need?](#sqs-queue-types)
 
-
+**Topics**
 + [What Are the Main Benefits of Amazon SQS?](#sqs-benefits)
 + [How is Amazon SQS Different from Amazon MQ or Amazon SNS?](#sqs-difference-from-amazon-mq-sns)
 + [What Type of Queue Do I Need?](#sqs-queue-types)
@@ -12,17 +12,11 @@ Amazon SQS supports both [standard](standard-queues.md) and [FIFO queues](FIFO-q
 + [We Want to Hear from You](#sqs-we-want-to-hear-from-you)
 
 ## What Are the Main Benefits of Amazon SQS?<a name="sqs-benefits"></a>
-
 + **Security** – [You control](sqs-authentication-and-access-control.md) who can send messages to and receive messages from an Amazon SQS queue\. [Server\-side encryption \(SSE\)](sqs-server-side-encryption.md) lets you transmit sensitive data by protecting the contents of messages in queues using keys managed in the AWS Key Management Service \(AWS KMS\)\.
-
 + **Durability** – To ensure the safety of your messages, Amazon SQS stores them on multiple servers\. Standard queues support [at\-least\-once message delivery](standard-queues.md#standard-queues-at-least-once-delivery), and FIFO queues support [exactly\-once message processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.
-
 + **Availability** – Amazon SQS uses [redundant infrastructure](sqs-basic-architecture.md) to provide highly\-concurrent access to messages and high availability for producing and consuming messages\. 
-
 + **Scalability** – Amazon SQS can process each [buffered request](sqs-client-side-buffering-request-batching.md) independently, scaling transparently to handle any load increases or spikes without any provisioning instructions\.
-
 + **Reliability** – Amazon SQS locks your messages during processing, so that multiple producers can send and multiple consumers can receive messages at the same time\. 
-
 + **Customization** – Your queues don't have to be exactly alike—for example, you can [set a default delay on a queue](sqs-delay-queues.md)\. You can store the contents of messages larger than 256 KB [using Amazon Simple Storage Service \(Amazon S3\)](sqs-s3-messages.md) or Amazon DynamoDB, with Amazon SQS holding a pointer to the Amazon S3 object, or you can split a large message into smaller messages\.
 
 ## How Is Amazon SQS Different from Amazon MQ or Amazon SNS?<a name="sqs-difference-from-amazon-mq-sns"></a>
@@ -41,15 +35,10 @@ Amazon SQS and [Amazon SNS](https://aws.amazon.com/sns/) are queue and topic ser
 |  Send data between applications when the throughput is important, for example: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html)  |  Send data between applications when the order of events is important, for example: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html)  | 
 
 ## How Can I Get Started with Amazon SQS?<a name="get-started"></a>
-
 + To create your first queue with Amazon SQS and send, receive, and delete a message, see [Getting Started with Amazon SQS](sqs-getting-started.md)\.
-
 + To discover the functionality and architecture of Amazon SQS, see [How Amazon SQS Works](sqs-how-it-works.md)\.
-
 + To find out the guidelines and caveats that will help you make the most of Amazon SQS, see [Best Practices for Amazon SQS](sqs-best-practices.md)\.
-
 + To learn about Amazon SQS actions, see the *Amazon Simple Queue Service API Reference*\.
-
 + To learn about Amazon SQS AWS CLI commands, see [Amazon SQS in the *AWS CLI Command Reference*](http://docs.aws.amazon.com/cli/latest/reference/sqs/index.html)\.
 
 ## We Want to Hear from You<a name="sqs-we-want-to-hear-from-you"></a>

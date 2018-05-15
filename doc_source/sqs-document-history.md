@@ -5,7 +5,13 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
-| May 1, 2018 | Clarified the information in the [Limits Related to Queues](sqs-limits.md#limits-queues) section\. | 
+| May 15, 2018 | Clarified the information in the [Processing Messages in a Timely Manner](working-with-messages.md#processing-messages-timely-manner) section\. | 
+| May 10, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
+| May 9, 2018 | Rewrote the [Amazon SQS Message Timers](sqs-message-timers.md) section\. | 
+| May 8, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
+| May 3, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
+| May 2, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
+| May 1, 2018 | Corrected and clarified the information in the [Limits Related to Queues](sqs-limits.md#limits-queues) section\. | 
 | April 25, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | April 24, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | April 23, 2018 | Rewrote the [Processing Messages in a Timely Manner](working-with-messages.md#processing-messages-timely-manner) section\. | 

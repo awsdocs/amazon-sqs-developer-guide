@@ -9,7 +9,7 @@ There is no charge for the Amazon SQS metrics reported in CloudWatch\. They're p
 Detailed monitoring \(or one\-minute metrics\) is currently unavailable for Amazon SQS\. Making requests to CloudWatch at this resolution might return no data\.  
 CloudWatch metrics are supported for both standard and FIFO queues\.
 
-
+**Topics**
 + [Access CloudWatch Metrics for Amazon SQS](sqs-access-metrics.md)
 + [Setting CloudWatch Alarms for Amazon SQS Metrics](set-cloudwatch-alarms-for-metrics.md)
 + [Available CloudWatch Metrics for Amazon SQS](sqs-available-cloudwatch-metrics.md)

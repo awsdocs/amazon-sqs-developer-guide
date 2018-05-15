@@ -37,11 +37,8 @@ Amazon SQS and Amazon CloudWatch are integrated so you can use CloudWatch to vie
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-cloudwatch-queue-metrics-dimension.png)
 
 1. You can now examine your Amazon SQS metrics:
-
    + To sort the metrics, use the column heading\.
-
    + To graph a metric, select the check box next to the metric\.
-
    + To filter by metric, choose the metric name and then choose **Add to search**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-cloudwatch-queue-metrics-examine.png)
 

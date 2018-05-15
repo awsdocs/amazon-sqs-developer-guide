@@ -24,13 +24,13 @@ This might be unavailable in your browser if you previously signed into the AWS 
 
 1. Use your AWS account email address and password to sign in as the *[AWS account root user](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html)* to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 **Note**  
-We strongly recommend that you adhere to the best practice of using the **Administrator** user below and securely lock away the root user credentials\. Sign in as the root user only to perform a few [account and service management tasks](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
+We strongly recommend that you adhere to the best practice of using the **Administrator** IAM user below and securely lock away the root user credentials\. Sign in as the root user only to perform a few [account and service management tasks](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
 
 1. In the navigation pane of the console, choose **Users**, and then choose **Add user**\.
 
-1. For **User name**, type ** Administrator**\.
+1. For **User name**, type **Administrator**\.
 
-1. Select the check box next to **AWS Management Console access**, select **Custom password**, and then type the new user's password in the text box\. You can optionally select **Require password reset** to force the user to select a new password the next time the user signs in\.
+1. Select the check box next to **AWS Management Console access**, select **Custom password**, and then type the new user's password in the text box\. You can optionally select **Require password reset** to force the user to create a new password the next time the user signs in\.
 
 1. Choose **Next: Permissions**\.
 
@@ -38,11 +38,11 @@ We strongly recommend that you adhere to the best practice of using the **Admini
 
 1. Choose **Create group**\.
 
-1. In the **Create group** dialog box, type ** Administrators**\.
+1. In the **Create group** dialog box, type **Administrators**\.
 
 1. For **Filter**, choose **Job function**\.
 
-1. In the policy list, select the check box for ** AdministratorAccess**\. Then choose **Create group**\.
+1. In the policy list, select the check box for **AdministratorAccess**\. Then choose **Create group**\.
 
 1. Back in the list of groups, select the check box for your new group\. Choose **Refresh** if necessary to see the group in the list\.
 
@@ -72,9 +72,7 @@ The only time that you can view or download the secret access keys is when you c
 1. Choose the **Security credentials** tab and then choose **Create access key**\.
 
 1. To see the new access key, choose **Show**\. Your credentials will look something like this:
-
    + Access key ID: AKIAIOSFODNN7EXAMPLE
-
    + Secret access key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 
 1. To download the key pair, choose **Download \.csv file**\. Store the keys in a secure location\.
@@ -82,9 +80,7 @@ The only time that you can view or download the secret access keys is when you c
    Keep the keys confidential in order to protect your AWS account, and never email them\. Do not share them outside your organization, even if an inquiry appears to come from AWS or Amazon\.com\. No one who legitimately represents Amazon will ever ask you for your secret key\.
 
 **Related topics**
-
 + [What Is IAM?](http://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) in the *IAM User Guide*
-
 + [AWS Security Credentials](http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html) in *AWS General Reference* 
 
 ## Step 4: Get Ready to Use the Example Code<a name="sqs-get-ready-to-use-example-code"></a>

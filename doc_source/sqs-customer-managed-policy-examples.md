@@ -82,23 +82,14 @@ The following example policy grants two different AWS accounts numbers \(`111122
 The following example policy grants `role1` and `username1` under AWS account number `111122223333` cross\-account permission to use all actions to which Amazon SQS allows shared access for the queue named `123456789012/queue1` in the US East \(Ohio\) region\.
 
 Cross\-account permissions don't apply to the following actions:
-
 + `[AddPermission](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html)`
-
 + `[CreateQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`
-
 + `[DeleteQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteQueue.html)`
-
 + `[ListQueues](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueues.html)`
-
 + `[ListQueueTags](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueueTags.html)`
-
 + `[RemovePermission](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_RemovePermission.html)`
-
 + `[SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`
-
 + `[TagQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_TagQueue.html)`
-
 + `[UntagQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_UntagQueue.html)`
 
 ```
@@ -190,9 +181,7 @@ The following example policy grants all users \(anonymous users\) permission to 
 ## Example 8: Whitelist and Blacklist Permissions for Users in Different CIDR Ranges<a name="whitelist-blacklist-permissions-for-users-in-different-cidr-ranges"></a>
 
 The following example policy has two statements:
-
 + The first statement grants all users \(anonymous users\) in the `192.168.143.0/24` CIDR range \(except for `192.168.143.188`\) permission to use the `SendMessage` action for the queue named `111122223333`/queue1\.
-
 + The second statement blacklists all users \(anonymous users\) in the `10.1.2.0/24` CIDR range from using the queue\.
 
 ```

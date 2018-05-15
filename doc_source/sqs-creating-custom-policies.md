@@ -4,7 +4,7 @@ If you want to allow Amazon SQS access based only on an AWS account ID and basic
 
 If you want to explicitly deny or allow access based on more specific conditions \(such as the time the request comes in or the IP address of the requester\), you need to write your own Amazon SQS policies and upload them to the AWS system using the Amazon SQS `SetQueueAttributes` action\.
 
-
+**Topics**
 + [Amazon SQS Access Control Architecture](sqs-creating-custom-policies-architecture.md)
 + [Amazon SQS Access Control Process Workflow](sqs-creating-custom-policies-process-workflow.md)
 + [Amazon SQS Access Policy Language Key Concepts](sqs-creating-custom-policies-key-concepts.md)

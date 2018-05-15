@@ -8,7 +8,7 @@ Before you begin, complete the steps in [Setting Up Amazon SQS](sqs-setting-up.m
 
 ## Step 1: Create a Queue<a name="step-create-queue"></a>
 
-The first and most common Amazon SQS task is creating queues\. The following example demonstrates how to create and configure a queue\.
+The first and most common Amazon SQS task is creating queues\. The following example shows how to create and configure a queue\.
 
 1. Sign in to the [Amazon SQS console](https://console.aws.amazon.com/sqs/)\.
 
@@ -34,7 +34,7 @@ When you create a queue, it can take a short time for the queue to propagate thr
 
 ## Step 2: Send a Message<a name="step-send-message"></a>
 
-After you create your queue, you can send a message to it\. The following example demonstrates sending a message to an existing queue\.
+After you create your queue, you can send a message to it\. The following example shows sending a message to an existing queue\.
 
 1. From the queue list, select the queue that you've created\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-select-queue.png)
@@ -63,7 +63,7 @@ The message group ID is always required\. However, if content\-based deduplicati
 
 After you send a message into a queue, you can consume it \(retrieve it from the queue\)\. When you request a message from a queue, you can't specify which message to get\. Instead, you specify the maximum number of messages \(up to 10\) that you want to get\.
 
-The following example demonstrates receiving and deleting a message\.
+The following example shows how to receive and delete a message\.
 
 1. From the queue list, select the queue that you have created\.
 
@@ -98,7 +98,7 @@ The first time you take this action, an information screen is displayed\. To hid
 
 ## Step 4: Delete Your Queue<a name="step-delete-queue"></a>
 
-If you don't use an Amazon SQS queue \(and don't foresee using it in the near future\), it is a best practice to delete it from Amazon SQS\. The following example demonstrates deleting a queue\.
+If you don't use an Amazon SQS queue \(and don't foresee using it in the near future\), it is a best practice to delete it from Amazon SQS\. The following example shows how to delete a queue\.
 
 1. From the queue list, select the queue that you have created\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-select-queue.png)
@@ -116,39 +116,24 @@ If you don't use an Amazon SQS queue \(and don't foresee using it in the near fu
 ## Next Steps<a name="sqs-next-steps-getting-started"></a>
 
 Now that you've created a queue and learned how to send, receive, and delete messages and how to delete a queue, you might want to try the following:
-
 + [Enable server\-side encryption \(SSE\) for a new queue](sqs-create-queue-sse.md) or [configure SSE for an existing queue\.](sqs-configure-sse-existing-queue.md)
-
 + [Add permissions to a queue\.](sqs-add-permissions.md)
-
 + [Add, update, or remove tags for a queue\.](sqs-add-update-remove-tag-queue.md)
-
 + [Configure long polling for a queue\.](sqs-configure-long-polling-for-queue.md)
-
 + [Send a message with attributes\.](sqs-send-message-with-attributes.md)
-
++ [Send a message with a timer\.](sqs-send-message-with-timer.md)
 + [Configure a dead\-letter queue\.](sqs-configure-dead-letter-queue.md)
-
++ [Configure visibility timeout for a queue\.](sqs-configure-visibility-timeout-queue.md)
++ [Configure a delay queue\.](sqs-configure-delay-queue.md)
 + [Subscribe a queue to an Amazon SNS topic\.](sqs-subscribe-queue-sns-topic.md)
-
 + [Purge a queue\.](sqs-purge-queue.md)
-
 + Learn more about Amazon SQS workflows and processes: Read [How Queues Work](sqs-how-it-works.md), [Best Practices](sqs-best-practices.md), and [Limits](sqs-limits.md)\. You can also explore the [Amazon SQS Articles & Tutorials](https://aws.amazon.com/articles/Amazon-SQS?browse=1)\. If you ever have any questions, browse the [Amazon SQS FAQs](https://aws.amazon.com/sqs/faqs/) or participate in the [Amazon SQS Developer Forums](https://forums.aws.amazon.com/forum.jspa?forumID=12)\.
-
 + Learn how to interact with Amazon SQS programmatically: Read [Working with APIs](sqs-making-api-requests.md) and explore the [Sample Code and Libraries](https://aws.amazon.com/code/Amazon-SQS?browse=1) and the developer centers:
-
   + [Java](https://aws.amazon.com/java/)
-
   + [JavaScript](https://aws.amazon.com/javascript/)
-
   + [PHP](https://aws.amazon.com/php/)
-
   + [Python](https://aws.amazon.com/python/)
-
   + [Ruby](https://aws.amazon.com/ruby/)
-
   + [Windows & \.NET](https://aws.amazon.com/net/)
-
 + Learn about keeping an eye on costs and resources in the [Monitoring, Logging, and Automating Amazon SQS Queues](sqs-monitoring-logging.md) section\.
-
 + Learn about protecting your data and access to it in the [Security](sqs-security.md) section\.

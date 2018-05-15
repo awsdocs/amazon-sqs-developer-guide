@@ -24,9 +24,7 @@ The wrapped Amazon SQS client object included in the Amazon SQS Java Messaging L
 1. You can use the client objects returned from `getAmazonSQSClient` and `getWrappedAmazonSQSClient` to perform administrative operations not included in the JMS specification \(for example, you can create an Amazon SQS queue\)\.
 
     If you have existing code that expects JMS exceptions, then you should use `getWrappedAmazonSQSClient`:
-
    + If you use `getWrappedAmazonSQSClient`, the returned client object transforms all exceptions into JMS exceptions\.
-
    + If you use `getAmazonSQSClient`, the exceptions are all Amazon SQS exceptions\.
 
 ## Creating an Amazon SQS Queue<a name="creating-queue"></a>
@@ -86,7 +84,6 @@ For more information about the `ContentBasedDeduplication` attribute, see [Exact
    ```
 
 1. Create a text message and send it to the queue\.
-
    + To send a message to a standard queue, you don't need to set any additional parameters\.
 
      ```
@@ -97,7 +94,6 @@ For more information about the `ContentBasedDeduplication` attribute, see [Exact
      producer.send(message);
      System.out.println("JMS Message " + message.getJMSMessageID());
      ```
-
    + To send a message to a FIFO queue, you must set the message group ID\. You can also set a message deduplication ID\. For more information, see [Key Terms](FIFO-queues.md#FIFO-key-terms)\.
 
      ```
@@ -131,7 +127,6 @@ For more information about the `ContentBasedDeduplication` attribute, see [Exact
    ```
 
 1. Call the `receive` method on the consumer with a timeout set to 1 second, and then print the contents of the received message\.
-
    + After receiving a message from a standard queue, you can access the contents of the message\.
 
      ```
@@ -143,7 +138,6 @@ For more information about the `ContentBasedDeduplication` attribute, see [Exact
          System.out.println("Received: " + ((TextMessage) receivedMessage).getText());
      }
      ```
-
    + After receiving a message from a FIFO queue, you can access the contents of the message and other, FIFO\-specific message attributes, such as the message group ID, message deduplication ID, and sequence number\. For more information, see [Key Terms](FIFO-queues.md#FIFO-key-terms)\.
 
      ```

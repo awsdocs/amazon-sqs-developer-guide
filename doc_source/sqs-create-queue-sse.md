@@ -5,9 +5,9 @@ Server\-side encryption \(SSE\) for Amazon SQS is available in the US East \(N\.
 **Important**  
 All requests to queues with SSE enabled must use HTTPS and [Signature Version 4](http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)\.
 
-The following example demonstrates how to create an Amazon SQS queue with SSE enabled\. Although the example uses a FIFO queue, SSE works with both standard and FIFO queues\.
+The following example shows how to create an Amazon SQS queue with SSE enabled\. Although the example uses a FIFO queue, SSE works with both standard and FIFO queues\.
 
-
+**Topics**
 + [Create an Amazon SQS Queue with SSE Using the AWS Management Console](#sqs-create-queue-sse-console)
 + [Create an Amazon SQS Queue with SSE using the AWS SDK for Java](#sqs-create-queue-sse-java)
 
@@ -31,7 +31,6 @@ The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are avai
 **Important**  
 If you aren't the owner of the CMK, or if you log in with an account that doesn't have the `kms:ListAliases` and `kms:DescribeKey` permissions, you won't be able to view information about the CMK on the Amazon SQS console\.  
 Ask the owner of the CMK to grant you these permissions\. For more information, see the [AWS KMS API Permissions: Actions and Resources Reference](http://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html) in the *AWS Key Management Service Developer Guide*\.
-
    + The AWS\-managed CMK for Amazon SQS is selected by default\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-server-side-encryption-default-service-cmk.png)
 **Note**  
@@ -39,12 +38,10 @@ Keep the following in mind:
 If you don't specify a custom CMK, Amazon SQS uses the AWS\-managed CMK for Amazon SQS\. For instructions on creating custom CMKs, see [Creating Keys](http://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) in the *AWS Key Management Service Developer Guide*\.
 The first time you use the AWS Management Console to specify the AWS\-managed CMK for Amazon SQS for a queue, AWS KMS creates the AWS\-managed CMK for Amazon SQS\.
 Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` action on a queue with SSE enabled, AWS KMS creates the AWS\-managed CMK for Amazon SQS\.
-
    + To use a custom CMK from your AWS account, select it from the list\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-server-side-encryption-custom-cmk.png)
 **Note**  
 For instructions on creating custom CMKs, see [Creating Keys](http://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) in the *AWS Key Management Service Developer Guide*\.
-
    + To use a custom CMK ARN from your AWS account or from another AWS account, select **Enter an existing CMK ARN** from the list and type or copy the CMK\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-server-side-encryption-custom-cmk-arn.png)
 

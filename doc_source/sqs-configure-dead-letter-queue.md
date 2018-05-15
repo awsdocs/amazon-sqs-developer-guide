@@ -1,11 +1,11 @@
 # Tutorial: Configuring an Amazon SQS Dead\-Letter Queue<a name="sqs-configure-dead-letter-queue"></a>
 
-A dead\-letter queue is a queue that other \(source\) queues can target for messages that can't be processed \(consumed\) successfully\. The following example demonstrates how to create an Amazon SQS source queue and to configure a second queue as a dead\-letter queue for it\. For more information, see [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md)\.
+A dead\-letter queue is a queue that other \(source\) queues can target for messages that can't be processed \(consumed\) successfully\. The following example shows how to create an Amazon SQS source queue and to configure a second queue as a dead\-letter queue for it\. For more information, see [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md)\.
 
 **Important**  
 The dead\-letter queue of a FIFO queue must also be a FIFO queue\. Similarly, the dead\-letter queue of a standard queue must also be a standard queue\.
 
-
+**Topics**
 + [AWS Management Console](#configure-dead-letter-queue-console)
 + [AWS SDK for Java](#configure-dead-letter-queue-java)
 
@@ -63,7 +63,7 @@ Ensure that the `aws-java-sdk-sqs.jar` package is in your Java build class path\
 </dependencies>
 ```
 
-#### SQSDeadLetterQueueExample\.java<a name="simple-queue-example-java-code"></a>
+#### SQSDeadLetterQueueExample\.java<a name="configure-dead-letter-queue-java-code"></a>
 
 The following example Java code creates two standard queues and configures one queue to act as a source queue for the other—a dead\-letter queue\.
 
@@ -83,20 +83,20 @@ The following example Java code creates two standard queues and configures one q
  * permissions and limitations under the License.
  *
  */
-						
+
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
 import com.amazonaws.services.sqs.model.GetQueueAttributesRequest;
 import com.amazonaws.services.sqs.model.GetQueueAttributesResult;
+import com.amazonaws.services.sqs.model.QueueAttributeName;
 import com.amazonaws.services.sqs.model.SetQueueAttributesRequest;
 
 import java.util.Scanner;
 
 public class SQSDeadLetterQueueExample {
-
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         final Scanner input = new Scanner(System.in);
 
@@ -114,7 +114,7 @@ public class SQSDeadLetterQueueExample {
         final AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
 
         try {
-            // Create source queue.
+            // Create a source queue.
             sqs.createQueue(sourceQueueName);
 
             // Create a dead-letter queue.
@@ -123,23 +123,19 @@ public class SQSDeadLetterQueueExample {
             // Get the dead-letter queue ARN.
             final String deadLetterQueueUrl = sqs.getQueueUrl(deadLetterQueueName)
                     .getQueueUrl();
-
             final GetQueueAttributesResult deadLetterQueueAttributes = sqs.getQueueAttributes(
                     new GetQueueAttributesRequest(deadLetterQueueUrl)
                             .withAttributeNames("QueueArn"));
-
             final String deadLetterQueueArn = deadLetterQueueAttributes.getAttributes().get("QueueArn");
 
             // Set the dead letter queue for the source queue using the redrive policy.
             final String sourceQueueUrl = sqs.getQueueUrl(sourceQueueName)
                     .getQueueUrl();
-
             final SetQueueAttributesRequest request = new SetQueueAttributesRequest()
                     .withQueueUrl(sourceQueueUrl)
-                    .addAttributesEntry("RedrivePolicy",
+                    .addAttributesEntry(QueueAttributeName.RedrivePolicy.toString(),
                             "{\"maxReceiveCount\":\"5\", \"deadLetterTargetArn\":\""
                                     + deadLetterQueueArn + "\"}");
-
             sqs.setQueueAttributes(request);
 
             System.out.println("Set queue " + sourceQueueName + " as source queue " +

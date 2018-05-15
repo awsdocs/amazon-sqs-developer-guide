@@ -1,6 +1,6 @@
 # Amazon SQS Access Control Architecture<a name="sqs-creating-custom-policies-architecture"></a>
 
-The following figure describes the access control for your Amazon SQS resources\.
+The following diagram describes the access control for your Amazon SQS resources\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/AccessPolicyLanguage_Arch_Overview.png)
 
