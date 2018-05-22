@@ -53,7 +53,7 @@ A batch request might succeed even though individual messages in the batch faile
 
 ### Prerequisites<a name="batch-request-java-example-prerequisites"></a>
 
-Ensure that the `aws-java-sdk-sqs.jar`, `aws-java-sdk-ec2.jar`, and `commons-logging.jar` packages are in your Java build class path\. The following example shows these dependencies in a Maven project `pom.xml` file\.
+Add the `aws-java-sdk-sqs.jar`, `aws-java-sdk-ec2.jar`, and `commons-logging.jar` packages to your Java build class path\. The following example shows these dependencies in a Maven project `pom.xml` file\.
 
 ```
 <dependencies>

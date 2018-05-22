@@ -2,7 +2,7 @@
 
 ## Prerequisites<a name="working-java-example-using-s3-for-large-sqs-messages-prerequisites"></a>
 
-Ensure that the `amazon-sqs-java-extended-client-lib.jar`, `aws-java-sdk-sqs.jar`, and `aws-java-sdk-s3.jar` packages are in your Java build class path\. The following example shows these dependencies in a Maven project `pom.xml` file\.
+Add the `amazon-sqs-java-extended-client-lib.jar`, `aws-java-sdk-sqs.jar`, and `aws-java-sdk-s3.jar` packages to your Java class path\. The following example shows these dependencies in a Maven project `pom.xml` file\.
 
 ```
 <dependencies>

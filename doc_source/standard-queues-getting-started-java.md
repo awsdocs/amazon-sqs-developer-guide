@@ -4,14 +4,14 @@ Learn about Amazon SQS standard queue functionality using the provided Maven pre
 
 ## Prerequisites<a name="standard-queue-example-prerequisites"></a>
 
-Ensure that the `aws-java-sdk-sqs.jar` package is in your Java build class path\. The following example shows this dependency in a Maven project `pom.xml` file\.
+Add the `aws-java-sdk-sqs.jar` package to your Java class path\. The following example shows this dependency in a Maven project `pom.xml` file\.
 
 ```
 <dependencies>
     <dependency>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-sqs</artifactId>
-        <version>LATEST</version>
+        <version><replaceable>LATEST</replaceable></version>
     </dependency>
 </dependencies>
 ```
