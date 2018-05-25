@@ -17,7 +17,7 @@ The dead\-letter queue of a FIFO queue must also be a FIFO queue\. Similarly, th
 
 1. On the **Create New Queue** page, ensure that you're in the correct region and then type the **Queue Name**\.
 **Note**  
-The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) regions\.
+The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), and EU \(Ireland\) Regions\.
 
 1. **Standard** is selected by default\. Choose **FIFO**\.
 
