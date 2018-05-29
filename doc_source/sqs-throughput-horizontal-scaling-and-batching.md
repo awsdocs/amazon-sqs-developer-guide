@@ -121,8 +121,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class SimpleProducerConsumer {
 
     // The maximum runtime of the program.
-    private static final int MAX_RUNTIME_MINUTES = 60;
-    private static Log log = LogFactory.getLog(SimpleProducerConsumer.class);
+    private final static int MAX_RUNTIME_MINUTES = 60;
+    private final static Log log = LogFactory.getLog(SimpleProducerConsumer.class);
 
     public static void main(String[] args) throws InterruptedException {
 

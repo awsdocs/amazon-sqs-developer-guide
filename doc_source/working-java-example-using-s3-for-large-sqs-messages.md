@@ -63,7 +63,7 @@ import java.util.UUID;
 public class SQSExtendedClientExample {
 
     // Create an Amazon S3 bucket with a random name.
-    private static final String s3BucketName = UUID.randomUUID() + "-"
+    private final static String S3_BUCKET_NAME = UUID.randomUUID() + "-"
             + DateTimeFormat.forPattern("yyMMdd-hhmmss").print(new DateTime());
 
     public static void main(String[] args) {
@@ -87,8 +87,8 @@ public class SQSExtendedClientExample {
                 new BucketLifecycleConfiguration().withRules(expirationRule);
 
         // Create the bucket and allow message objects to be stored in the bucket.
-        s3.createBucket(s3BucketName);
-        s3.setBucketLifecycleConfiguration(s3BucketName, lifecycleConfig);
+        s3.createBucket(S3_BUCKET_NAME);
+        s3.setBucketLifecycleConfiguration(S3_BUCKET_NAME, lifecycleConfig);
         System.out.println("Bucket created and configured.");
 
         /*
@@ -97,7 +97,7 @@ public class SQSExtendedClientExample {
          */
         final ExtendedClientConfiguration extendedClientConfig =
                 new ExtendedClientConfiguration()
-                        .withLargePayloadSupportEnabled(s3, s3BucketName);
+                        .withLargePayloadSupportEnabled(s3, S3_BUCKET_NAME);
 
         final AmazonSQS sqsExtended =
                 new AmazonSQSExtendedClient(AmazonSQSClientBuilder
@@ -156,12 +156,12 @@ public class SQSExtendedClientExample {
 
     private static void deleteBucketAndAllContents(AmazonS3 client) {
 
-        ObjectListing objectListing = client.listObjects(s3BucketName);
+        ObjectListing objectListing = client.listObjects(S3_BUCKET_NAME);
 
         while (true) {
             for (S3ObjectSummary objectSummary : objectListing
                     .getObjectSummaries()) {
-                client.deleteObject(s3BucketName, objectSummary.getKey());
+                client.deleteObject(S3_BUCKET_NAME, objectSummary.getKey());
             }
 
             if (objectListing.isTruncated()) {
@@ -172,13 +172,13 @@ public class SQSExtendedClientExample {
         }
 
         final VersionListing list = client.listVersions(
-                new ListVersionsRequest().withBucketName(s3BucketName));
+                new ListVersionsRequest().withBucketName(S3_BUCKET_NAME));
 
         for (S3VersionSummary s : list.getVersionSummaries()) {
-            client.deleteVersion(s3BucketName, s.getKey(), s.getVersionId());
+            client.deleteVersion(S3_BUCKET_NAME, s.getKey(), s.getVersionId());
         }
 
-        client.deleteBucket(s3BucketName);
+        client.deleteBucket(S3_BUCKET_NAME);
     }
 }
 ```
