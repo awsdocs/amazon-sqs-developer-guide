@@ -27,7 +27,7 @@ final AmazonSQSAsync sqsAsync = new AmazonSQSAsyncClient();
 final AmazonSQSAsync bufferedSqs = new AmazonSQSBufferedAsyncClient(sqsAsync);
 ```
 
-After you create the new `AmazonSQSBufferedAsyncClient`, you can make calls to it as you do with `AmazonSQSAsyncClient`, for example:
+After you create the new `AmazonSQSBufferedAsyncClient`, you can use it to send multiple requests to Amazon SQS \(just as you can with `AmazonSQSAsyncClient`\), for example:
 
 ```
 final CreateQueueRequest createRequest = new CreateQueueRequest().withQueueName("MyQueue");
