@@ -89,7 +89,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | May 23, 2017 | Server\-side encryption \(SSE\) for Amazon SQS is available in the US East \(N\. Virginia\) Region, in addition to the US East \(Ohio\) and US West \(Oregon\) Regions\. For more information about server\-side encryption and how to get started using it, see [Protecting Data Using Server\-Side Encryption \(SSE\) and AWS KMS ](sqs-server-side-encryption.md)\. | 
 | May 19, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | April 25, 2017 | Restructured and updated the [Amazon SQS Long Polling](sqs-long-polling.md) section\. | 
-| February 6, 2017 | Updated the [Authentication and Access Control](sqs-authentication-and-access-control.md) section with new content\. | 
+| February 6, 2017 | Updated the [Authentication and Access Control](sqs-authentication-and-access-control.md) section\. | 
 | December 16, 2016 | Retired the Amazon Simple Queue Service Getting Started Guide and incorporated some of its content into the following sections of this guide:[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | December 2, 2016 | Restructured and updated the [Authentication and Access Control](sqs-authentication-and-access-control.md) section\. | 
 | November 2, 2016 | Renamed the Walkthroughs section to [Amazon SQS Tutorials](sqs-tutorials.md)\. | 
