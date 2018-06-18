@@ -1,6 +1,6 @@
 # Tutorial: Creating an Amazon SQS Queue<a name="sqs-create-queue"></a>
 
-The first and most common Amazon SQS task is creating queues\. The following example shows how to create and configure a queue\.
+The first and most common Amazon SQS task is creating queues\. In this tutorial you'll learn how to create and configure a queue\.
 
 **Topics**
 + [AWS Management Console](#create-queue-console)

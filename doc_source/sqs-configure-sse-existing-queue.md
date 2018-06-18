@@ -6,7 +6,7 @@ Server\-side encryption \(SSE\) for Amazon SQS is available in all commercial re
 All requests to queues with SSE enabled must use HTTPS and [Signature Version 4](http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)\.  
 When you disable SSE, messages remain encrypted\. You must receive and decrypt a message to view its contents\.
 
-The following example shows how to enable, disable, and configure SSE for an existing Amazon SQS queue\.
+In this tutorial you'll learn how to enable, disable, and configure SSE for an existing Amazon SQS queue\.
 
 **Topics**
 + [Configure SSE for an Amazon SQS Queue Using the AWS Management Console](#sqs-configure-sse-existing-queue-console)

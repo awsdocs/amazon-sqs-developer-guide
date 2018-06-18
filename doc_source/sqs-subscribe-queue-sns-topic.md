@@ -2,7 +2,7 @@
 
 You can subscribe one or more Amazon SQS queues to an Amazon SNS topic from a list of topics available for the selected queue\. Amazon SQS manages the subscription and any necessary permissions\. When you publish a message to a topic, Amazon SNS sends the message to every subscribed queue\. For more information about Amazon SNS, see [What is Amazon Simple Notification Service?](http://docs.aws.amazon.com/sns/latest/dg/welcome.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
-The following example shows how to subscribe an existing Amazon SQS queue to an existing Amazon SNS topic\.
+In this tutorial you'll learn how to subscribe an existing Amazon SQS queue to an existing Amazon SNS topic\.
 
 **Note**  
 Amazon SNS isn't currently compatible with FIFO queues\.  

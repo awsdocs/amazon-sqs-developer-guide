@@ -8,7 +8,7 @@ Before you begin, complete the steps in [Setting Up Amazon SQS](sqs-setting-up.m
 
 ## Step 1: Create a Queue<a name="step-create-queue"></a>
 
-The first and most common Amazon SQS task is creating queues\. The following example shows how to create and configure a queue\.
+The first and most common Amazon SQS task is creating queues\. In this tutorial you'll learn how to create and configure a queue\.
 
 1. Sign in to the [Amazon SQS console](https://console.aws.amazon.com/sqs/)\.
 
@@ -63,7 +63,7 @@ The message group ID is always required\. However, if content\-based deduplicati
 
 After you send a message into a queue, you can consume it \(retrieve it from the queue\)\. When you request a message from a queue, you can't specify which message to get\. Instead, you specify the maximum number of messages \(up to 10\) that you want to get\.
 
-The following example shows how to receive and delete a message\.
+In this tutorial you'll learn how to receive and delete a message\.
 
 1. From the queue list, select the queue that you have created\.
 
@@ -98,7 +98,7 @@ The first time you take this action, an information screen is displayed\. To hid
 
 ## Step 4: Delete Your Queue<a name="step-delete-queue"></a>
 
-If you don't use an Amazon SQS queue \(and don't foresee using it in the near future\), it is a best practice to delete it from Amazon SQS\. The following example shows how to delete a queue\.
+If you don't use an Amazon SQS queue \(and don't foresee using it in the near future\), it is a best practice to delete it from Amazon SQS\. In this tutorial you'll learn how to delete a queue\.
 
 1. From the queue list, select the queue that you have created\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-select-queue.png)
