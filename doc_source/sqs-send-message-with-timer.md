@@ -1,6 +1,6 @@
 # Tutorial: Sending a Message with a Timer to an Amazon SQS Queue<a name="sqs-send-message-with-timer"></a>
 
-Message timers let you specify an initial invisibility period for a message added to a queue\. For example, if you send a message with a 45\-second timer, the message isn't visible to consumers for its first 45 seconds in the queue\. The default is 0 seconds\. The following examples show how to send a message with a timer to an existing queue\. For more information, see [Amazon SQS Message Timers](sqs-message-timers.md)\.
+Message timers let you specify an initial invisibility period for a message added to a queue\. For example, if you send a message with a 45\-second timer, the message isn't visible to consumers for its first 45 seconds in the queue\. The default is 0 seconds\. In this tutorial you'll learn how to send a message with a timer to an existing queue\. For more information, see [Amazon SQS Message Timers](sqs-message-timers.md)\.
 
 **Note**  
 FIFO queues don't support timers on individual messages\.

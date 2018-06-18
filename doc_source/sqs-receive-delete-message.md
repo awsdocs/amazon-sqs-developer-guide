@@ -7,7 +7,7 @@ Because Amazon SQS is a distributed system, a queue with very few messages might
 
 Amazon SQS doesn't automatically delete a message after receiving it for you, in case you don't successfully receive the message \(for example, the consumers can fail or lose connectivity\)\. To delete a message, you must send a separate request which acknowledges that you no longer need the message because you've successfully received and processed it\.
 
-The following example shows how to receive and delete a message\.
+In this tutorial you'll learn how to receive and delete a message\.
 
 **Topics**
 + [AWS Management Console](#receive-delete-message-console)
