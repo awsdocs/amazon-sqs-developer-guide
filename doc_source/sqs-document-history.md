@@ -5,6 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| June 26, 2018 | Corrected the information in the [How Do Dead\-Letter Queues Work?](sqs-dead-letter-queues.md#sqs-dead-letter-queues-how-they-work) section\. | 
 | June 11, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | June 5, 2018 | In addition to GitHub, HTML, PDF, and Kindle, the *Amazon MQ Developer Guide* release notes are available as an RSS feed\. ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/amazon-mq-rss-release-notes.png)  | 
 | May 29, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
