@@ -31,6 +31,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Tutorial: Sending a Message with a Timer to an Amazon SQS Queue](sqs-send-message-with-timer.md)
    + [Tutorial: Receiving and Deleting a Message from an Amazon SQS Queue](sqs-receive-delete-message.md)
    + [Tutorial: Subscribing an Amazon SQS Queue to an Amazon SNS Topic](sqs-subscribe-queue-sns-topic.md)
+   + [Tutorial: Configuring Messages Arriving in an Amazon SQS Queue to Trigger an AWS Lambda Function](sqs-configure-lambda-function-trigger.md)
    + [Tutorial: Purging Messages from an Amazon SQS Queue](sqs-purge-queue.md)
    + [Tutorial: Deleting an Amazon SQS Queue](sqs-delete-queue.md)
    + [Tutorials: Configuring Amazon SQS Queues](sqs-tutorials-configure-queues.md)

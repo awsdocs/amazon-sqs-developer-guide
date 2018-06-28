@@ -11,6 +11,7 @@ SSE encrypts messages as soon as Amazon SQS receives them\. The messages are sto
 
 **Important**  
 All requests to queues with SSE enabled must use HTTPS and [Signature Version 4](http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)\.  
+You can't associate an [encrypted queue](#sqs-server-side-encryption) that uses an AWS managed Customer Master Key for Amazon SQS with a Lambda function in a different AWS account\.  
 Some features of AWS services that can send notifications to Amazon SQS using the AWS Security Token Service `[AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)` action are compatible with SSE but work *only with standard queues:*  
 [Auto Scaling Lifecycle Hooks](http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html)
 [AWS Lambda Dead\-Letter Queues](http://docs.aws.amazon.com/lambda/latest/dg/dlq.html)

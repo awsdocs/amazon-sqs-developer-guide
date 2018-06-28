@@ -15,6 +15,7 @@ You can explore Amazon SQS without writing code with tools such as the AWS Comma
 + [Sending Messages to Amazon SQS Queues](sqs-tutorials-send-messages.md)
 + [Receiving and Deleting a Message from an Amazon SQS Queue](sqs-receive-delete-message.md)
 + [Subscribing an Amazon SQS Queue to an Amazon SNS Topic](sqs-subscribe-queue-sns-topic.md)
++ [Configuring Messages Arriving in an Amazon SQS Queue to Trigger a Lambda Function](sqs-configure-lambda-function-trigger.md)
 + [Purging Messages from an Amazon SQS Queue](sqs-purge-queue.md)
 + [Deleting an Amazon SQS Queue](sqs-delete-queue.md)
 + [Configuring Amazon SQS Queues](sqs-tutorials-configure-queues.md)
