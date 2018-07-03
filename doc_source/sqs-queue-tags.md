@@ -22,7 +22,7 @@ We don't recommend adding more than 50 tags to a queue\.
 Tags don't have any semantic meaning\. Amazon SQS interprets tags as character strings\.
 Tags are case\-sensitive\.
 A new tag with a key identical to that of an existing tag overwrites the existing tag\.
-Tagging actions are limited to 5 TPS per AWS account\. If your application requires a higher throughput, file a [technical support request](https://console.aws.amazon.com/support/home#/case/create?issueType=technical)\.
+Tagging actions are limited to 5 TPS per AWS account\. If your application requires a higher throughput, [file a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\.
 For a full list of tag restrictions, see [Limits Related to Queues](sqs-limits.md#limits-queues)\.
 
 You can't add tags to a new queue when you create it using the AWS Management Console \(you *can* add tags after the queue is created\)\. However, you can add, update, or remove queue tags at any time using the Amazon SQS actions\.

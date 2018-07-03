@@ -161,4 +161,4 @@ public class SQSLongPollingExample {
 
 1. Compile and run your program\.
 
-   The long\-polling for your queue is configured\.
+   The long\-polling for your queue is configured and the message is sent, received, and deleted\.

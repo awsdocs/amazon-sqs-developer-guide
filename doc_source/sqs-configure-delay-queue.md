@@ -157,4 +157,4 @@ The following example Java code creates a standard queue and sets the delay for 
 
 1. Compile and run your program\.
 
-   The visibility timeout for a single message or multiple messages is configured\.
+   The delay queue is configured and the message is sent, received, and deleted\.

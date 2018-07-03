@@ -185,4 +185,4 @@ public class SQSDeadLetterQueueExample {
 
 1. Compile and run your program\.
 
-   The dead\-letter queue is configured\.
+   The dead\-letter queue is configured and the message is sent, received, and deleted\.
