@@ -5,7 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
-| July 5, 2018 | Updated the [New and Frequently Viewed Amazon SQS Topics](sqs-newly-added-most-frequently-viewed-topics.md) section\. | 
+| July 5, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | July 3, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | June 28, 2018 | Created the [Tutorial: Configuring Messages Arriving in an Amazon SQS Queue to Trigger an AWS Lambda Function](sqs-configure-lambda-function-trigger.md) tutorial\. | 
 | June 26, 2018 | Corrected the information in the [How Do Dead\-Letter Queues Work?](sqs-dead-letter-queues.md#sqs-dead-letter-queues-how-they-work) section\. | 
