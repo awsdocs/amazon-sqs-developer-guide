@@ -14,7 +14,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | June 8, 2018 | Updated the [New and Frequently Viewed Amazon SQS Topics](sqs-newly-added-most-frequently-viewed-topics.md) section\. | 
 | June 5, 2018 | In addition to GitHub, HTML, PDF, and Kindle, the *Amazon MQ Developer Guide* release notes are available as an RSS feed\. ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/amazon-mq-rss-release-notes.png)  | 
 | May 29, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| May 24, 2018 | Updated the [Protecting Data Using Server\-Side Encryption \(SSE\) and AWS KMS ](sqs-server-side-encryption.md) section\. | 
+| May 24, 2018 | Updated the [Protecting Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md) section\. | 
 | May 22, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | May 15, 2018 | Clarified the information in the [Processing Messages in a Timely Manner](working-with-messages.md#processing-messages-timely-manner) section\. | 
 | May 10, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
@@ -93,7 +93,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | June 2, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | June 1, 2017 |  Updated the [What is Amazon Simple Queue Service?](welcome.md) section\.  | 
 | May 24, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| May 23, 2017 | Server\-side encryption \(SSE\) for Amazon SQS is available in the US East \(N\. Virginia\) Region, in addition to the US East \(Ohio\) and US West \(Oregon\) Regions\. For more information about server\-side encryption and how to get started using it, see [Protecting Data Using Server\-Side Encryption \(SSE\) and AWS KMS ](sqs-server-side-encryption.md)\. | 
+| May 23, 2017 | Server\-side encryption \(SSE\) for Amazon SQS is available in the US East \(N\. Virginia\) Region, in addition to the US East \(Ohio\) and US West \(Oregon\) Regions\. For more information about server\-side encryption and how to get started using it, see [Protecting Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md)\. | 
 | May 19, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | April 25, 2017 | Restructured and updated the [Amazon SQS Long Polling](sqs-long-polling.md) section\. | 
 | February 6, 2017 | Updated the [Authentication and Access Control](sqs-authentication-and-access-control.md) section\. | 
