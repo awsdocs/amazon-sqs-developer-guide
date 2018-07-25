@@ -10,6 +10,6 @@ Detailed monitoring \(or one\-minute metrics\) is currently unavailable for Amaz
 CloudWatch metrics are supported for both standard and FIFO queues\.
 
 **Topics**
-+ [Access CloudWatch Metrics for Amazon SQS](sqs-access-metrics.md)
-+ [Setting CloudWatch Alarms for Amazon SQS Metrics](set-cloudwatch-alarms-for-metrics.md)
++ [Accessing CloudWatch Metrics for Amazon SQS](sqs-access-metrics.md)
++ [Creating CloudWatch Alarms for Amazon SQS Metrics](set-cloudwatch-alarms-for-metrics.md)
 + [Available CloudWatch Metrics for Amazon SQS](sqs-available-cloudwatch-metrics.md)
