@@ -5,6 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| August 7, 2018 | Clarified the information in the [Inflight Messages](sqs-visibility-timeout.md#inflight-messages) section\. | 
 | August 3, 2018 | Updated the [New and Frequently Viewed Amazon SQS Topics](sqs-newly-added-most-frequently-viewed-topics.md) section\. | 
 | July 25, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | July 6, 2018 |  Revised the following statements throughout this guide: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
