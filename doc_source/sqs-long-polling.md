@@ -5,6 +5,8 @@
 Long polling offers the following benefits:
 + Eliminate empty responses by allowing Amazon SQS to wait until a message is available in a queue before sending a response\. Unless the connection times out, the response to the `ReceiveMessage` request contains at least one of the available messages, up to the maximum number of messages specified in the `ReceiveMessage` action\.
 + Eliminate false empty responses by querying all—rather than a subset of—Amazon SQS servers\.
+**Note**  
+You can confirm that a queue is empty when you perform a long poll and the `ApproximateNumberOfMessagesDelayed`, `ApproximateNumberOfMessagesNotVisible`, and `ApproximateNumberOfMessagesVisible` metrics are equal to 0 at least 1 minute after the producers stop sending messages \(when the queue metadata reaches eventual consistency\)\. For more information, see [Available CloudWatch Metrics for Amazon SQS](sqs-available-cloudwatch-metrics.md)\.
 + Return messages as soon as they become available\.
 
 ## Differences Between Long and Short Polling<a name="sqs-short-long-polling-differences"></a>
