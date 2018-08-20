@@ -2,6 +2,9 @@
 
 Amazon SQS supports *dead\-letter queues*, which other queues \(*source queues*\) can target for messages that can't be processed \(consumed\) successfully\. Dead\-letter queues are useful for debugging your application or messaging system because they let you isolate problematic messages to determine why their processing doesn't succeed\. For information about creating a queue and configuring a dead\-letter queue for it using the AWS Management Console or the AWS SDK for Java \(and the `[CreateQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`, `[SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`, and `[GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)` actions\), see [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md)\.
 
+**Important**  
+When you designate a queue to be a source queue, a dead\-letter queue is *not* created automatically\. You must first create a normal standard or FIFO queue before designating it a dead\-letter queue\.
+
 **Topics**
 + [How Do Dead\-Letter Queues Work?](#sqs-dead-letter-queues-how-they-work)
 + [What are the Benefits of Dead\-Letter Queues?](#sqs-dead-letter-queues-benefits)
