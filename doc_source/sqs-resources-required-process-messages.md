@@ -11,6 +11,6 @@ The following table lists the attribute name to use with the `[GetQueueAttribute
 
 | Task | Attribute Name | 
 | --- | --- | 
-| Get the approximate number of messages in a queue\. | ApproximateNumberOfMessages | 
-| Get the approximate number of messages that are pending being added to a queue\. | ApproximateNumberOfMessagesDelayed | 
-| Get the approximate number of in flight messages in a queue\. | ApproximateNumberOfMessagesNotVisible | 
+| Get the approximate number of messages available for retrieval from the queue\. | ApproximateNumberOfMessages | 
+| Get the approximate number of messages in the queue that are delayed and not available for reading immediately\. This can happen when the queue is configured as a delay queue or when a message has been sent with a delay parameter\.  | ApproximateNumberOfMessagesDelayed | 
+| Get the approximate number of messages that are in flight\. Messages are considered to be in flight if they have been sent to a client but have not yet been deleted or have not yet reached the end of their visibility window\. | ApproximateNumberOfMessagesNotVisible | 
