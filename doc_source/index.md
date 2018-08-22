@@ -80,7 +80,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Accessing CloudWatch Metrics for Amazon SQS](sqs-access-metrics.md)
       + [Creating CloudWatch Alarms for Amazon SQS Metrics](set-cloudwatch-alarms-for-metrics.md)
       + [Available CloudWatch Metrics for Amazon SQS](sqs-available-cloudwatch-metrics.md)
-   + [Logging Amazon SQS Actions Using AWS CloudTrail](logging-using-cloudtrail.md)
+   + [Logging Amazon SQS API Calls Using AWS CloudTrail](logging-using-cloudtrail.md)
    + [Automating Notifications from AWS Services to Amazon SQS using CloudWatch Events](sqs-automating-using-cloudwatch-events.md)
 + [Amazon SQS Security](sqs-security.md)
    + [Authentication and Access Control for Amazon SQS](sqs-authentication-and-access-control.md)
