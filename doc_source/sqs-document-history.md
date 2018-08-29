@@ -5,6 +5,8 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| August 28, 2018 | Updated the [Protecting Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md) section\.  | 
+| August 27, 2018 | Corrected the information in the [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md) section\. | 
 | August 22, 2018 | Rewrote the [Logging Amazon SQS API Calls Using AWS CloudTrail](logging-using-cloudtrail.md) section\. | 
 | August 21, 2018 | Revised the attribute table in the [Resources Required to Process Amazon SQS Messages](sqs-resources-required-process-messages.md) section\. | 
 | August 20, 2018 | Added the following note to the [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md) and [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md) section: When you designate a queue to be a source queue, a dead\-letter queue is not created automatically\. You must first create a normal standard or FIFO queue before designating it a dead\-letter queue\. | 
@@ -98,7 +100,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | June 23, 2017 |  Corrected the information in the [Limits Related to Messages](sqs-limits.md#limits-messages) section\.  | 
 | June 20, 2017 |  Clarified the information in the [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md) section\.  | 
 | June 2, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| June 1, 2017 |  Updated the [What is Amazon Simple Queue Service?](welcome.md) section\.  | 
+| June 1, 2017 |  Updated the [What Is Amazon Simple Queue Service?](welcome.md) section\.  | 
 | May 24, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | May 23, 2017 | Server\-side encryption \(SSE\) for Amazon SQS is available in the US East \(N\. Virginia\) Region, in addition to the US East \(Ohio\) and US West \(Oregon\) Regions\. For more information about server\-side encryption and how to get started using it, see [Protecting Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md)\. | 
 | May 19, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
