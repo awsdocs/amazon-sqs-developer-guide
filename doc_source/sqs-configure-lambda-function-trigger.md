@@ -63,4 +63,4 @@ It takes approximately 1 minute for the Lambda function to become associated wit
      EventSourceArn:\
        Fn::GetAtt: <SQSQueue>.Outputs.QueueARN\
      FunctionName:\
-       Fn::GetAtt: <Lambda>.Outputs.LambdaArn\
+       Fn::GetAtt: <Lambda>.Outputs.LambdaArn
