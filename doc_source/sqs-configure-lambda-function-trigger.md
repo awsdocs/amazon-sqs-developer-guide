@@ -53,3 +53,14 @@ It takes approximately 1 minute for the Lambda function to become associated wit
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-configure-incoming-messages-trigger-lambda-function-association.png)
    + To verify the results of the configuration, you can [send a message to your queue](sqs-send-message.md) and then view the triggered Lambda function in the Lambda console\.
    + To delete the association between a Lambda function and your queue, choose ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-delete-queue-tag.png) next to a Lambda function ARN\.
+ 
+ To create the Lambda for event source mapping though cloudformation-\
+ LambdaStream:\
+   Type: AWS::Lambda::EventSourceMapping\
+   Properties:\
+     BatchSize: 1\
+     Enabled: True\
+     EventSourceArn:\
+       Fn::GetAtt: <SQSQueue>.Outputs.QueueARN\
+     FunctionName:\
+       Fn::GetAtt: <Lambda>.Outputs.LambdaArn\
