@@ -203,7 +203,7 @@ To allow Amazon CloudWatch Events, Amazon S3 event notifications, or Amazon SNS 
 
 1. [Create a customer master key \(CMK\)\.](http://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-keys-console)
 
-1. To allow the AWS service feature to have the `kms:GenerateDataKey` and `kms:Decrypt` permissions, add the following statement to the policy of the CMK\.
+1. To allow the AWS service feature to have the `kms:GenerateDataKey*` and `kms:Decrypt` permissions, add the following statement to the policy of the CMK\.
 **Note**  
 For Amazon CloudWatch Events, use `events`
 For Amazon S3 event notifications, use `s3`

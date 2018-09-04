@@ -18,7 +18,7 @@ Sometimes, messages can’t be processed because of a variety of possible issues
 
 Occasionally, producers and consumers might fail to interpret aspects of the protocol that they use to communicate, causing message corruption or loss\. Also, the consumer’s hardware errors might corrupt message payload\. 
 
-The *redrive policy* specifies the *source queue*, the *dead\-letter queue*, and the conditions under which Amazon SQS moves messages from the former to the latter if the consumer of the source queue fails to process a message a specified number of times\. When the `ReceiveCount` for a message exceeds the `maxReceiveCount` for a queue, Amazon SQS moves the message to a dead\-letter queue\. For example, if the source queue has a redrive policy with `maxReceiveCount` set to 5, and the consumer of the source queue receives a message 5 times without ever deleting it, Amazon SQS moves the message to the dead\-letter queue\.
+The *redrive policy* specifies the *source queue*, the *dead\-letter queue*, and the conditions under which Amazon SQS moves messages from the former to the latter if the consumer of the source queue fails to process a message a specified number of times\. When the `ReceiveCount` for a message exceeds the `maxReceiveCount` for a queue, Amazon SQS moves the message to a dead\-letter queue \(with its original message ID\)\. For example, if the source queue has a redrive policy with `maxReceiveCount` set to 5, and the consumer of the source queue receives a message 5 times without ever deleting it, Amazon SQS moves the message to the dead\-letter queue\.
 
 To specify a dead\-letter queue, you can [use the AWS Management Console or the AWS SDK for Java](sqs-configure-dead-letter-queue.md)\. You must do this for each queue that sends messages to a dead\-letter queue\. Multiple queues can target a single dead\-letter queue\. For more information, see [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md) and the `RedrivePolicy` attribute of the [ `CreateQueue`](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html#API_CreateQueue_RequestParameters) or [ `SetQueueAttributes`](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html#API_SetQueueAttributes_RequestParameters) action\.
 
@@ -44,14 +44,14 @@ The main task of a dead\-letter queue is handling message failure\. A dead\-lett
 In a system that processes thousands of messages, having a large number of messages that the consumer repeatedly fails to acknowledge and delete might increase costs and place extra load on the hardware\. Instead of trying to process failing messages until they expire, it is better to move them to a dead\-letter queue after a few processing attempts\.
 
 **Note**  
-Standard queues allow a high number of in\-flight messages\. If the majority of your messages can’t be consumed and aren’t sent to a dead\-letter queue, your rate of processing valid messages can slow down\. Thus, to maintain the efficiency of your queue, you must ensure that your application handles message processing correctly\.
+Standard queues allow a high number of inflight messages\. If the majority of your messages can’t be consumed and aren’t sent to a dead\-letter queue, your rate of processing valid messages can slow down\. Thus, to maintain the efficiency of your queue, you must ensure that your application handles message processing correctly\.
 
 ### FIFO Queues<a name="dead-letter-queues-FIFO-queues"></a>
 
 [FIFO queues](FIFO-queues.md) ensure exactly\-once processing by consuming messages in sequence from a message group\. Thus, although the consumer can continue to retrieve ordered messages from another message group, the first message group remains unavailable until the message blocking the queue is processed successfully\.
 
 **Note**  
-FIFO queues allow a lower number of in\-flight messages\. Thus, to ensure that your FIFO queue doesn’t get blocked by a message, you must ensure that your application handles message processing correctly\.
+FIFO queues allow a lower number of inflight messages\. Thus, to ensure that your FIFO queue doesn’t get blocked by a message, you must ensure that your application handles message processing correctly\.
 
 ## When Should I Use a Dead\-Letter Queue?<a name="sqs-dead-letter-queues-when-to-use"></a>
 

@@ -5,6 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| September 4, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | August 28, 2018 | Updated the [Protecting Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md) section\.  | 
 | August 27, 2018 | Corrected the information in the [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md) section\. | 
 | August 22, 2018 | Rewrote the [Logging Amazon SQS API Calls Using AWS CloudTrail](logging-using-cloudtrail.md) section\. | 
