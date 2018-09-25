@@ -81,18 +81,16 @@ The first time you take this action, an information screen is displayed\. To hid
 
    The following example shows the **Message Group ID**, **Message Deduplication ID**, and **Sequence Number** columns specific to FIFO queues\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-receive-delete-message-polling-process.png)
+**Note**  
+When the progress bar is filled in, the [visibility timeout](sqs-visibility-timeout.md) expires and the message becomes visible to consumers\.
 
 1. *Before* the visibility timeout expires, select the message that you want to delete and then choose **Delete *1* Message**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-receive-delete-message-select-message-to-delete.png)
 
-   The **Delete Messages** dialog box is displayed\.  
+1. In the **Delete Messages** dialog box, confirm that the message you want to delete is checked and choose **Yes, Delete Checked Messages**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-receive-delete-message-confirm-deleting-messages.png)
 
-1. Confirm that the message you want to delete is checked and choose **Yes, Delete Checked Messages**\.
-
    The selected message is deleted\.
-
-   When the progress bar is filled in, the [visibility timeout](sqs-visibility-timeout.md) expires and the message becomes visible to consumers\.
 
 1. Select **Close**\.
 

@@ -184,7 +184,7 @@ The following example shows a CloudTrail log entry for a `RemovePermission` API 
 
 ### SetQueueAttributes<a name="set-queue-attributes"></a>
 
-The following example shows a CloudTrail log entry for SetQueueAttributes:
+The following example shows a CloudTrail log entry for `SetQueueAttributes`:
 
 ```
 {
