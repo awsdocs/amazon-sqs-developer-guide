@@ -60,7 +60,7 @@ The following example Amazon SQS policy gives one or more AWS accounts access to
 
 ## Example 3: Give Permission to Requests from Amazon EC2 Instances<a name="requests-from-ec2"></a>
 
-The following example Amazon SQS policy gives access to requests that come from Amazon EC2 instances\. This example builds on the "[Example 2: Give Permission to One or More Accounts](#two-accounts)" example: it restricts access to before June 30, 2009 at 12 noon \(UTC\), it restricts access to the IP range `10.52.176.0/24`\. It is necessary to write this policy and to upload it to Amazon SQS using the [http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html) action because the [http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html) action doesn't permit specifying an IP address restriction when granting access to a queue\.
+The following example Amazon SQS policy gives access to requests that come from Amazon EC2 instances\. This example builds on the "[Example 2: Give Permission to One or More Accounts](#two-accounts)" example: it restricts access to before June 30, 2009 at 12 noon \(UTC\), it restricts access to the IP range `203.0.113.0/24`\. It is necessary to write this policy and to upload it to Amazon SQS using the [http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html) action because the [http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html) action doesn't permit specifying an IP address restriction when granting access to a queue\.
 
 ```
 {   
@@ -84,7 +84,7 @@ The following example Amazon SQS policy gives access to requests that come from 
             "AWS:CurrentTime": "2009-06-30T12:00Z"
          },
          "IpAddress": {
-            "AWS:SourceIp": "10.52.176.0/24"
+            "AWS:SourceIp": "203.0.113.0/24"
          }
       }   
    }]
