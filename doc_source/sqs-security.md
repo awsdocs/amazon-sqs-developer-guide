@@ -4,4 +4,5 @@ This section provides information about Amazon SQS security, authentication and 
 
 **Topics**
 + [Controlling User Access to Your AWS Account](sqs-authentication-and-access-control.md)
-+ [Protecting Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md)
++ [Protecting Amazon SQS Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md)
++ [Amazon Virtual Private Cloud Endpoints for Amazon SQS](sqs-vpc-endpoints.md)

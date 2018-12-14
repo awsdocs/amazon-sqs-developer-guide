@@ -1,6 +1,6 @@
 # Making Query API Requests<a name="sqs-making-api-requests"></a>
 
-In this section you'll learn how to construct an Amazon SQS endpoint, make `GET` and `POST` requests and interpret responses\.
+In this section you learn how to construct an Amazon SQS endpoint, make `GET` and `POST` requests and interpret responses\.
 
 **Topics**
 + [Constructing an Endpoint](#sqs-api-constructing-endpoints)
@@ -57,7 +57,7 @@ An Amazon SQS `POST` requests send query parameters as a form in the body of an 
 The following is an example of a HTTP header with `Content-Type` set to `application/x-www-form-urlencoded`\. 
 
 ```
-POST /MyQueue HTTP/1.1
+POST /123456789012/MyQueue HTTP/1.1
 Host: sqs.us-east-2.amazonaws.com
 Content-Type: application/x-www-form-urlencoded
 ```

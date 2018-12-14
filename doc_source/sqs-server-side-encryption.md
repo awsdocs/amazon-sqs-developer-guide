@@ -1,9 +1,9 @@
-# Protecting Data Using Server\-Side Encryption \(SSE\) and AWS KMS<a name="sqs-server-side-encryption"></a>
+# Protecting Amazon SQS Data Using Server\-Side Encryption \(SSE\) and AWS KMS<a name="sqs-server-side-encryption"></a>
 
-SSE lets you transmit sensitive data in encrypted queues\. SSE protects the contents of messages in Amazon SQS queues using keys managed in AWS Key Management Service \(AWS KMS\)\. For information about managing SSE using the AWS Management Console or the AWS SDK for Java \(and the `[CreateQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`, `[SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`, and `[GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)` actions\), see the following tutorials:
+Server\-side encryption \(SSE\) lets you transmit sensitive data in encrypted queues\. SSE protects the contents of messages in Amazon SQS queues using keys managed in AWS Key Management Service \(AWS KMS\)\. For information about managing SSE using the AWS Management Console or the AWS SDK for Java \(and the `[CreateQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`, `[SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`, and `[GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)` actions\), see the following tutorials:
 + [Tutorial: Configuring Server\-Side Encryption \(SSE\) for an Existing Amazon SQS Queue](sqs-create-queue-sse.md)
 + [Tutorial: Configuring Server\-Side Encryption \(SSE\) for an Existing Amazon SQS Queue](sqs-configure-sse-existing-queue.md)
-+ [Example 3: Enable Compatibility between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Queues with SSE](#compatibility-with-aws-services)
++ [Enable Compatibility between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Encrypted Queues](#compatibility-with-aws-services)
 
 [![AWS Videos](http://img.youtube.com/vi/https://www.youtube.com/embed/Mw1NVpJsOZc?rel=0&amp;controls=0&amp;showinfo=0/0.jpg)](http://www.youtube.com/watch?v=https://www.youtube.com/embed/Mw1NVpJsOZc?rel=0&amp;controls=0&amp;showinfo=0)
 
@@ -11,13 +11,13 @@ SSE encrypts messages as soon as Amazon SQS receives them\. The messages are sto
 
 **Important**  
 All requests to queues with SSE enabled must use HTTPS and [Signature Version 4](http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)\.  
-You can't associate an [encrypted queue](#sqs-server-side-encryption) that uses an AWS managed Customer Master Key for Amazon SQS with a Lambda function in a different AWS account\.  
+You can't associate an [encrypted queue](#sqs-server-side-encryption) that uses an AWS managed customer master key for Amazon SQS with a Lambda function in a different AWS account\.  
 Some features of AWS services that can send notifications to Amazon SQS using the AWS Security Token Service `[AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)` action are compatible with SSE but work *only with standard queues:*  
 [Auto Scaling Lifecycle Hooks](http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html)
 [AWS Lambda Dead\-Letter Queues](http://docs.aws.amazon.com/lambda/latest/dg/dlq.html)
 Other features of AWS services or third\-party services that send notifications to Amazon SQS aren't compatible with SSE, despite allowing you to set an encrypted queue as a target:  
 [AWS IoT Rule Actions](http://docs.aws.amazon.com/iot/latest/developerguide/iot-rule-actions.html)
-For information about compatibility of other services with encrypted queues, see [Example 3: Enable Compatibility between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Queues with SSE](#compatibility-with-aws-services) and your service documentation\.
+For information about compatibility of other services with encrypted queues, see [Enable Compatibility between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Encrypted Queues](#compatibility-with-aws-services) and your service documentation\.
 
 AWS KMS combines secure, highly available hardware and software to provide a key management system scaled for the cloud\. When you use Amazon SQS with AWS KMS, the [data keys](#sqs-sse-key-terms) that encrypt your message data are also encrypted and stored with the data they protect\.
 
@@ -29,14 +29,14 @@ The following are benefits of using AWS KMS:
 For more information, see [What is AWS Key Management Service?](http://docs.aws.amazon.com/kms/latest/developerguide/overview.html) in the *AWS Key Management Service Developer Guide* and the [AWS Key Management Service Cryptographic Details](https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf) whitepaper\.
 
 **Topics**
-+ [What Does SSE for Amazon SQS Encrypt?](#sqs-encryption-what-does-sse-encrypt)
++ [Encryption Scope](#sqs-encryption-what-does-sse-encrypt)
 + [Key Terms](#sqs-sse-key-terms)
-+ [How Does the Data Key Reuse Period Work?](#sqs-how-does-the-data-key-reuse-period-work)
-+ [How Do I Estimate My AWS KMS Usage Costs?](#sqs-estimate-kms-usage-costs)
-+ [What AWS KMS Permissions Do I Need to Use SSE for Amazon SQS?](#sqs-what-permissions-for-sse)
++ [Understanding the Data Key Reuse Period](#sqs-how-does-the-data-key-reuse-period-work)
++ [Estimating AWS KMS Costs](#sqs-estimate-kms-usage-costs)
++ [Configuring AWS KMS Permissions](#sqs-what-permissions-for-sse)
 + [Errors](#sqs-sse-troubleshooting-errors)
 
-## What Does SSE for Amazon SQS Encrypt?<a name="sqs-encryption-what-does-sse-encrypt"></a>
+## Encryption Scope<a name="sqs-encryption-what-does-sse-encrypt"></a>
 
 SSE encrypts the body of a message in an Amazon SQS queue\.
 
@@ -62,7 +62,7 @@ The data encryption key \(DEK\) responsible for encrypting the contents of Amazo
 For more information, see [Data Keys](http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys) in the *AWS Key Management Service Developer Guide* and [Envelope Encryption](http://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/how-it-works.html#envelope-encryption) in the *AWS Encryption SDK Developer Guide*\.
 
 **Data Key Reuse Period**  
-The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling AWS KMS again\. An integer representing seconds, between 60 seconds \(1 minute\) and 86,400 seconds \(24 hours\)\. The default is 300 \(5 minutes\)\. For more information, see [How Does the Data Key Reuse Period Work?](#sqs-how-does-the-data-key-reuse-period-work)\.  
+The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling AWS KMS again\. An integer representing seconds, between 60 seconds \(1 minute\) and 86,400 seconds \(24 hours\)\. The default is 300 \(5 minutes\)\. For more information, see [Understanding the Data Key Reuse Period](#sqs-how-does-the-data-key-reuse-period-work)\.  
 In the unlikely event of being unable to reach AWS KMS, Amazon SQS continues to use the cached data key until a connection is reestablished\.
 
 **Customer Master Key ID**  
@@ -72,9 +72,9 @@ Keep the following in mind:
 + The first time you use the AWS Management Console to specify the AWS managed CMK for Amazon SQS for a queue, AWS KMS creates the AWS managed CMK for Amazon SQS\.
 + Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` action on a queue with SSE enabled, AWS KMS creates the AWS managed CMK for Amazon SQS\.
 You can create CMKs, define the policies that control how CMKs can be used, and audit CMK usage using the **Encryption Keys** section of the AWS KMS console or using AWS KMS actions\. For more information about CMKs, see [Customer Master Keys](http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys) in the *AWS Key Management Service Developer Guide*\. For more examples of CMK identifiers, see [KeyId](http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters) in the *AWS Key Management Service API Reference*\.  
-There are additional charges for using AWS KMS\. For more information, see [How Do I Estimate My AWS KMS Usage Costs?](#sqs-estimate-kms-usage-costs) and [AWS Key Management Service Pricing](https://aws.amazon.com/kms/pricing)\.
+There are additional charges for using AWS KMS\. For more information, see [Estimating AWS KMS Costs](#sqs-estimate-kms-usage-costs) and [AWS Key Management Service Pricing](https://aws.amazon.com/kms/pricing)\.
 
-## How Does the Data Key Reuse Period Work?<a name="sqs-how-does-the-data-key-reuse-period-work"></a>
+## Understanding the Data Key Reuse Period<a name="sqs-how-does-the-data-key-reuse-period-work"></a>
 
 Amazon SQS uses a single customer master key \(either the AWS managed CMK for Amazon SQS or a custom CMK\) to provide [envelope encryption](http://docs.aws.amazon.com/kms/latest/developerguide/workflow.html#envelope_encryption) and decryption of multiple Amazon SQS messages during the *data key reuse period*\. To make the most of the [data key reuse period](#sqs-sse-key-terms), keep the following in mind:
 + A shorter reuse period provides better security but results in more calls to AWS KMS, which might incur charges beyond the Free Tier\.
@@ -85,7 +85,7 @@ Amazon SQS uses a single customer master key \(either the AWS managed CMK for Am
 For each data key that AWS KMS generates, SSE calls the `Decrypt` action to verify the integrity of the data key before using it\.
   + When you receive messages using the `ReceiveMessage` action, Amazon SQS typically calls the AWS KMS `Decrypt` action once per every data key reuse period\.
 
-## How Do I Estimate My AWS KMS Usage Costs?<a name="sqs-estimate-kms-usage-costs"></a>
+## Estimating AWS KMS Costs<a name="sqs-estimate-kms-usage-costs"></a>
 
 To predict costs and better understand your AWS bill, you might want to know how often Amazon SQS uses your customer master key \(CMK\)\.
 
@@ -107,7 +107,7 @@ R = B / D * (2 * P + C)
 `C` is the number of consuming principals that receive from the Amazon SQS queue\.
 
 **Important**  
-In general, producing principals incur double the cost of consuming principals\. For more information, see [How Does the Data Key Reuse Period Work?](#sqs-how-does-the-data-key-reuse-period-work)  
+In general, producing principals incur double the cost of consuming principals\. For more information, see [Understanding the Data Key Reuse Period](#sqs-how-does-the-data-key-reuse-period-work)  
 If the producer and consumer have different IAM users, the cost increases\.
 
 The following are example calculations\. For exact pricing information, see [ AWS Key Management Service Pricing](https://aws.amazon.com/kms/pricing/)\.
@@ -137,7 +137,7 @@ This example assumes the following:
 (2,419,200 / 86,400 * (2 * 3 + 1)) + (2,419,200 / 86,400 * (2 * 5 + 2)) = 532
 ```
 
-## What AWS KMS Permissions Do I Need to Use SSE for Amazon SQS?<a name="sqs-what-permissions-for-sse"></a>
+## Configuring AWS KMS Permissions<a name="sqs-what-permissions-for-sse"></a>
 
 Before you can use SSE, you must configure AWS KMS key policies to allow encryption of queues and encryption and decryption of messages\. For examples and more information about AWS KMS permissions, see [AWS KMS API Permissions: Actions and Resources Reference](http://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html) in the *AWS Key Management Service Developer Guide*\.
 
@@ -147,9 +147,9 @@ While you can configure global permissions to send to and receive from Amazon SQ
 
 You must also ensure that the key policies of the customer master key \(CMK\) allow the necessary permissions\. To do this, name the principals that produce and consume encrypted messages in Amazon SQS as users in the CMK key policy\. 
 
-Alternatively, you can specify the required AWS KMS actions and CMK ARN in an IAM policy assigned to the principals which produce and consume encrypted messages in Amazon SQS\. For more information, see [Managing Access to AWS KMS CMKs](http://docs.aws.amazon.com/kms/latest/developerguide/control-access-overview.html#managing-access) in the *AWS Key Management Service Developer Guide*\.
+Alternatively, you can specify the required AWS KMS actions and CMK ARN in an IAM policy assigned to the principals that produce and consume encrypted messages in Amazon SQS\. For more information, see [Managing Access to AWS KMS CMKs](http://docs.aws.amazon.com/kms/latest/developerguide/control-access-overview.html#managing-access) in the *AWS Key Management Service Developer Guide*\.
 
-### Example 1: Allow a User to Send Single or Batched Messages to a Queue with SSE<a name="send-to-encrypted-queue"></a>
+### Allow a User to Send Single or Batched Messages to a Queue with SSE<a name="send-to-encrypted-queue"></a>
 
 The producer must have the `kms:GenerateDataKey` and `kms:Decrypt` permissions for the customer master key \(CMK\)\.
 
@@ -174,7 +174,7 @@ The producer must have the `kms:GenerateDataKey` and `kms:Decrypt` permissions f
 }
 ```
 
-### Example 2: Allow a User to Receive Messages from a Queue with SSE<a name="receive-from-encrypted-queue"></a>
+### Allow a User to Receive Messages from a Queue with SSE<a name="receive-from-encrypted-queue"></a>
 
 The consumer must have the `kms:Decrypt` permission for any customer master key \(CMK\) that is used to encrypt the messages in the specified queue\. If the queue acts as a [dead\-letter queue](sqs-dead-letter-queues.md), the consumer must also have the `kms:Decrypt` permission for any CMK that is used to encrypt the messages in the source queue\.
 
@@ -197,7 +197,7 @@ The consumer must have the `kms:Decrypt` permission for any customer master key 
 }
 ```
 
-### Example 3: Enable Compatibility between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Queues with SSE<a name="compatibility-with-aws-services"></a>
+### Enable Compatibility between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Encrypted Queues<a name="compatibility-with-aws-services"></a>
 
 To allow Amazon CloudWatch Events, Amazon S3 event notifications, or Amazon SNS topic subscriptions to work with encrypted queues, you must perform the following steps:
 

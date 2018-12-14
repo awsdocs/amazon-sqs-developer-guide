@@ -1,6 +1,6 @@
 # Tutorial: Configuring Long Polling for an Amazon SQS Queue<a name="sqs-configure-long-polling-for-queue"></a>
 
-*Long polling* helps reduce the cost of using Amazon SQS by eliminating the number of empty responses \(when there are no messages available for a `[ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` request\) and false empty responses \(when messages are available but aren't included in a response\)\. In this tutorial you'll learn how to configure long polling for an Amazon SQS queue\. For more information, see [Amazon SQS Long Polling](sqs-long-polling.md)\.
+*Long polling* helps reduce the cost of using Amazon SQS by eliminating the number of empty responses \(when there are no messages available for a `[ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` request\) and false empty responses \(when messages are available but aren't included in a response\)\. In this tutorial you learn how to configure long polling for an Amazon SQS queue\. For more information, see [Amazon SQS Long Polling](sqs-long-polling.md)\.
 
 **Topics**
 + [Configure Long Polling for an Existing Amazon SQS Queue Using the AWS Management Console](#sqs-configure-long-polling-for-queue-console)

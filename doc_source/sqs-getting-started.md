@@ -120,6 +120,7 @@ Now that you've created a queue and learned how to send, receive, and delete mes
 + [Configure long polling for a queue\.](sqs-configure-long-polling-for-queue.md)
 + [Send a message with attributes\.](sqs-send-message-with-attributes.md)
 + [Send a message with a timer\.](sqs-send-message-with-timer.md)
++ [Send a message from a VPC\.](sqs-sending-messages-from-vpc.md)
 + [Configure a dead\-letter queue\.](sqs-configure-dead-letter-queue.md)
 + [Configure visibility timeout for a queue\.](sqs-configure-visibility-timeout-queue.md)
 + [Configure a delay queue\.](sqs-configure-delay-queue.md)
