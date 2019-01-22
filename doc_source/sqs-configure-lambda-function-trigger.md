@@ -16,7 +16,7 @@ To configure Lambda function triggers using the console, you must ensure the fol
 + Your Amazon SQS role must include the following permissions:
   + `lambda:CreateEventSourceMapping`
   + `lambda:ListEventSourceMappings`
-  + `lambda:ListFunction`
+  + `lambda:ListFunctions`
 + Your Lambda role must include the following permissions:
   + `sqs:ChangeMessageVisibility`
   + `sqs:DeleteMessage`

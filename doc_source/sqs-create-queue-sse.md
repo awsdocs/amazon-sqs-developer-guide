@@ -72,8 +72,8 @@ Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` ac
 
    ```
    final AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
-   final CreateQueueRequest createRequest = new CreateQueueRequest("MyQueue");
    final Map<String, String> attributes = new HashMap<String, String>();
+   final CreateQueueRequest createRequest = new CreateQueueRequest("MyQueue").withAttributes(attributes);
     
    // Enable server-side encryption by specifying the alias ARN of the
    // AWS managed CMK for Amazon SQS.
@@ -90,8 +90,8 @@ Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` ac
 
    ```
    final AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
-   final CreateQueueRequest createRequest = new CreateQueueRequest("MyQueue");
    final Map<String, String> attributes = new HashMap<String, String>();
+   final CreateQueueRequest createRequest = new CreateQueueRequest("MyQueue").withAttributes(attributes);
     
    // Enable server-side encryption by specifying the alias ARN of the custom CMK.
    final String kmsMasterKeyAlias = "arn:aws:kms:us-east-2:123456789012:alias/MyAlias";
