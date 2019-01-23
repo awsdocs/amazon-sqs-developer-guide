@@ -5,15 +5,16 @@ In this tutorial you learn how to configure an existing Amazon SQS queue to trig
 Lambda functions let you run code without provisioning or managing a server\. For example, you can configure a Lambda function to process messages from one queue while another queue acts as a *dead\-letter queue* for messages that your Lambda function can't process successfully\. When you resolve the issue, you can *redrive* the messages from the dead\-letter queue through the Lambda function\. For more information see [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md) and also [What is AWS Lambda?](http://docs.aws.amazon.com/lambda/latest/dg/welcome.html) and [Using AWS Lambda with Amazon SQS](http://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html) in the *AWS Lambda Developer Guide*\.
 
 **Note**  
-Your queue and Lambda function must be in the same AWS Region\.  
-FIFO queues don't support Lambda function triggers\.  
-You can associate only one queue with one or more Lambda functions\.  
+Your queue and Lambda function must be in the same AWS Region\.
+FIFO queues don't support Lambda function triggers\.
+You can associate only one queue with one or more Lambda functions\.
 You can't associate an [encrypted queue](sqs-server-side-encryption.md) that uses an AWS managed customer master key for Amazon SQS with a Lambda function in a different AWS account\.
+If you associate an encrypted queue with a a Lambda function but Lambda doesn't poll for messages, add the `kms:Decrypt` permission to your Lambda role\.
 
 ## Prerequisites<a name="configure-lambda-function-trigger-prerequisites"></a>
 
 To configure Lambda function triggers using the console, you must ensure the following:
-+ Your Amazon SQS role must include the following permissions:
++ If you use an IAM user, your Amazon SQS role must include the following permissions:
   + `lambda:CreateEventSourceMapping`
   + `lambda:ListEventSourceMappings`
   + `lambda:ListFunctions`
