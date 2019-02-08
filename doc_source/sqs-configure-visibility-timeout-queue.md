@@ -17,7 +17,7 @@ You can use the AWS Management Console to configure visibility timeout only for 
 
 1. On the **Create New Queue** page, ensure that you're in the correct region and then type the **Queue Name**\.
 **Note**  
-The name of a FIFO queue must end with the `.fifo` suffix\. FIFO queues are available in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), EU \(Ireland\), Asia Pacific \(Sydney\), and Asia Pacific \(Tokyo\) regions\.
+The name of a FIFO queue must end with the `.fifo` suffix\.
 
 1. **Standard** is selected by default\. Choose **FIFO**\.
 
