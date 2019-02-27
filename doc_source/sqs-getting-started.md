@@ -24,7 +24,7 @@ The name of a FIFO queue must end with the `.fifo` suffix\.
 
    Your new queue is created and selected in the queue list\.
 **Note**  
-When you create a queue, it can take a short time for the queue to propagate throughout Amazon SQS\.\.
+When you create a queue, it can take a short time for the queue to propagate throughout Amazon SQS\.
 
    The **Queue Type** column helps you distinguish standard queues from FIFO queues at a glance\. For a FIFO queue, the **Content\-Based Deduplication** column displays whether you have enabled [exactly\-once processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-queue-type-content-based-deduplication-columns.png)
