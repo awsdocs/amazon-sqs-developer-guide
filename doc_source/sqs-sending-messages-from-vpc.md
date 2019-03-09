@@ -105,6 +105,7 @@ Your AWS CloudFormation template launches an EC2 instance named `SQS-VPCE-Tutori
    ```
 
    The sending attempt fails, as expected\.
+
 **Important**  
 Later, when you create a VPC endpoint for Amazon SQS, your sending attempt will succeed\.
 
@@ -165,6 +166,9 @@ Now that your VPC includes an endpoint for Amazon SQS, you can connect to your E
    	"MessageId": "12345a67-8901-2345-bc67-d890123e45fg"
    }
    ```
+
+**Note**  
+The previous example command specifies a specific region (us-east-2), a specific endpoint URL, and your specific queue URL\. If this attempt does not work, verify that the parameters are correct for your region, endpoint, and queue\.
 
 For information about receiving and deleting the message from the queue created by your AWS CloudFormation template \(for example, **VPCE\-SQS\-Tutorial\-Stack\-CFQueue\-1ABCDEFGH2IJK**\), see [Tutorial: Receiving and Deleting a Message from an Amazon SQS Queue](sqs-receive-delete-message.md)\.
 
