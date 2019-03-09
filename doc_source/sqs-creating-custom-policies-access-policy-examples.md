@@ -115,3 +115,48 @@ The following example Amazon SQS policy denies a specific AWS account access to 
    }]
 }
 ```
+
+## Example 5: Deny Access if Not From VPC Endpoint<a name="vpc-endpoint"></a>
+
+The following example Amazon SQS policy that restricts access to a specific queue `queue2` for the actions `sqs:SendMessage` and `sqs:ReceiveMessage` only from the VPC endpoint with the ID `vpce-1a2b3c4d`\. The aws:sourceVpce condition is used to the specify the endpoint\. The aws:sourceVpce condition does not require an ARN for the VPC endpoint resource, only the VPC endpoint ID\. For more information about using VPC endpoints with Amazon SQS, see [Amazon Virtual Private Cloud Endpoints for Amazon SQS](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-vpc-endpoints.html)\.
+
+**Note**
+You could modify the policy example to restrict all actions to a specific VPC endpoint by denying all SQS actions (`sqs:*`) in the second statement of the example policy below\. However, such a policy statement would mean that all actions (including administrative actions needed to modify the queue permissions) must be made through that specific VPC endpoint defined in the policy. Be careful not to apply a policy that prevents you from modifying the queue permissions in the future\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Id": "UseCase5",
+  "Statement": [{
+      "Sid": "1",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "444455556666"
+        ]
+      },
+      "Action": [
+        "sqs:SendMessage",
+        "sqs:ReceiveMessage"
+      ],
+      "Resource": "arn:aws:sqs:us-east-2:444455556666:queue2"
+    },
+    {
+      "Sid": "2",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "sqs:SendMessage",
+        "sqs:ReceiveMessage"
+      ],
+      "Resource": "arn:aws:sqs:us-east-2:444455556666:queue2",
+      "Condition": {
+         "StringNotEquals": {
+            "aws:sourceVpce": "vpce-1a2b3c4d"
+         }
+      }
+    }
+  ]
+}
+```
+
