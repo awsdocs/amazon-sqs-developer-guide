@@ -27,7 +27,7 @@ A *key pair* lets you connect to an Amazon EC2 instance\. It consists of a publi
 
 1. Your browser downloads the private key file `SQS-VPCE-Tutorial-Key-Pair.pem` automatically\. 
 **Important**  
-Save this file in a safe place\. EC2 does not generate a `.pem` file a second time\.
+Save this file in a safe place\. EC2 does not generate a `.pem` file for the same key pair a second time\.
 
 1. To allow an SSH client to connect to your EC2 instance, set the permissions for your private key file so that only your user can have read permissions for it, for example:
 
