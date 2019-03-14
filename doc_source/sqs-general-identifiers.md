@@ -1,6 +1,6 @@
 # Identifiers for Amazon SQS Standard and FIFO Queues<a name="sqs-general-identifiers"></a>
 
-For more information about the following identifiers, see the *[Amazon Simple Queue Service API Reference](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/)*\.
+For more information about the following identifiers, see the *[Amazon Simple Queue Service API Reference](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/)*\.
 
 ## Queue Name and URL<a name="queue-name-url"></a>
 
@@ -17,11 +17,11 @@ https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue
 **Important**  
 In your system, always store the entire queue URL exactly as Amazon SQS returns it to you when you create the queue \(for example, `https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue`\)\. Don't build the queue URL from its separate components each time you need to specify the queue URL in a request because Amazon SQS can change the components that make up the queue URL\.
 
-You can also get the queue URL for a queue by listing your queues\. For more information, see `[ListQueues](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueues.html)`\.
+You can also get the queue URL for a queue by listing your queues\. For more information, see `[ListQueues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueues.html)`\.
 
 ## Message ID<a name="message-id"></a>
 
-Each message receives a system\-assigned *message ID* that Amazon SQS returns to you in the `[SendMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html)` response\. This identifier is useful for identifying messages\. \(However, to delete a message you need the message's *receipt handle*\.\) The maximum length of a message ID is 100 characters\.
+Each message receives a system\-assigned *message ID* that Amazon SQS returns to you in the `[SendMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html)` response\. This identifier is useful for identifying messages\. \(However, to delete a message you need the message's *receipt handle*\.\) The maximum length of a message ID is 100 characters\.
 
 ## Receipt Handle<a name="receipt-handle"></a>
 

@@ -46,7 +46,7 @@ You don't need to allow minimum console permissions for users that make calls on
 
 ## AWS\-Managed \(Predefined\) Policies for Amazon SQS<a name="sqs-access-policy-aws-managed-policies"></a>
 
-AWS addresses many common use cases by providing standalone AWS managed IAM policies\. These AWS managed policies simplify working with permissions by granting the permissions necessary for common use cases\. For more information, see [AWS Managed Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\. 
+AWS addresses many common use cases by providing standalone AWS managed IAM policies\. These AWS managed policies simplify working with permissions by granting the permissions necessary for common use cases\. For more information, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\. 
 
 The following AWS managed policies \(that you can attach to users in your account\) are specific to Amazon SQS:
 + **AmazonSQSReadOnlyAccess** – Grants read\-only access to Amazon SQS queues using the AWS Management Console\.

@@ -29,7 +29,7 @@ The following example Amazon SQS policy gives AWS account 111122223333 permissio
 
 ## Example 2: Give Permission to One or More Accounts<a name="two-accounts"></a>
 
-The following example Amazon SQS policy gives one or more AWS accounts access to queues owned by your account for a specific time period\. It is necessary to write this policy and to upload it to Amazon SQS using the [http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html) action because the [http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html) action doesn't permit specifying a time restriction when granting access to a queue\.
+The following example Amazon SQS policy gives one or more AWS accounts access to queues owned by your account for a specific time period\. It is necessary to write this policy and to upload it to Amazon SQS using the [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html) action because the [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html) action doesn't permit specifying a time restriction when granting access to a queue\.
 
 ```
 {   
@@ -60,7 +60,7 @@ The following example Amazon SQS policy gives one or more AWS accounts access to
 
 ## Example 3: Give Permission to Requests from Amazon EC2 Instances<a name="requests-from-ec2"></a>
 
-The following example Amazon SQS policy gives access to requests that come from Amazon EC2 instances\. This example builds on the "[Example 2: Give Permission to One or More Accounts](#two-accounts)" example: it restricts access to before June 30, 2009 at 12 noon \(UTC\), it restricts access to the IP range `203.0.113.0/24`\. It is necessary to write this policy and to upload it to Amazon SQS using the [http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html) action because the [http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html) action doesn't permit specifying an IP address restriction when granting access to a queue\.
+The following example Amazon SQS policy gives access to requests that come from Amazon EC2 instances\. This example builds on the "[Example 2: Give Permission to One or More Accounts](#two-accounts)" example: it restricts access to before June 30, 2009 at 12 noon \(UTC\), it restricts access to the IP range `203.0.113.0/24`\. It is necessary to write this policy and to upload it to Amazon SQS using the [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html) action because the [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html) action doesn't permit specifying an IP address restriction when granting access to a queue\.
 
 ```
 {   
@@ -93,7 +93,7 @@ The following example Amazon SQS policy gives access to requests that come from 
 
 ## Example 4: Deny Access to a Specific Account<a name="deny-account"></a>
 
-The following example Amazon SQS policy denies a specific AWS account access to your queue\. This example builds on the "[Example 1: Give Permission to One Account](#one-account)" example: it denies access to the specified AWS account\. It is necessary to write this policy and to upload it to Amazon SQS using the [http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html) action because the [http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html) action doesn't permit deny access to a queue \(it allows only granting access to a queue\)\. 
+The following example Amazon SQS policy denies a specific AWS account access to your queue\. This example builds on the "[Example 1: Give Permission to One Account](#one-account)" example: it denies access to the specified AWS account\. It is necessary to write this policy and to upload it to Amazon SQS using the [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html) action because the [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html) action doesn't permit deny access to a queue \(it allows only granting access to a queue\)\. 
 
 ```
 { 
@@ -116,47 +116,47 @@ The following example Amazon SQS policy denies a specific AWS account access to 
 }
 ```
 
-## Example 5: Deny Access if Not From VPC Endpoint<a name="vpc-endpoint"></a>
+## Example 5: Deny Access if It Isn't from a VPC Endpoint<a name="deny-not-from-vpc"></a>
 
-The following example Amazon SQS policy that restricts access to a specific queue `queue2` for the actions `sqs:SendMessage` and `sqs:ReceiveMessage` only from the VPC endpoint with the ID `vpce-1a2b3c4d`\. The aws:sourceVpce condition is used to the specify the endpoint\. The aws:sourceVpce condition does not require an ARN for the VPC endpoint resource, only the VPC endpoint ID\. For more information about using VPC endpoints with Amazon SQS, see [Amazon Virtual Private Cloud Endpoints for Amazon SQS](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-vpc-endpoints.html)\.
+The following example Amazon SQS policy restricts access to `queue1`: 111122223333 can perform the [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html) and [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html) actions only from the VPC endpoint ID `vpce-1a2b3c4d` \(specified using the `aws:sourceVpce` condition\)\. For more information, see [Amazon Virtual Private Cloud Endpoints for Amazon SQS](sqs-vpc-endpoints.md)\.
 
-**Note**
-You could modify the policy example to restrict all actions to a specific VPC endpoint by denying all SQS actions (`sqs:*`) in the second statement of the example policy below\. However, such a policy statement would mean that all actions (including administrative actions needed to modify the queue permissions) must be made through that specific VPC endpoint defined in the policy. Be careful not to apply a policy that prevents you from modifying the queue permissions in the future\.
+**Note**  
+The `aws:sourceVpce` condition doesn't require an ARN for the VPC endpoint resource, only the VPC endpoint ID\.
+You can modify the following example to restrict all actions to a specific VPC endpoint by denying all Amazon SQS actions \(`sqs:*`\) in the second statement\. However, such a policy statement would stipulate that all actions \(including administrative actions needed to modify queue permissions\) must be made through the specific VPC endpoint defined in the policy, potentially preventing the user from modifying queue permissions in the future\.
 
 ```
 {
-  "Version": "2012-10-17",
-  "Id": "UseCase5",
-  "Statement": [{
+   "Version": "2012-10-17",
+   "Id": "UseCase5",
+   "Statement": [{
       "Sid": "1",
       "Effect": "Allow",
       "Principal": {
-        "AWS": [
-          "444455556666"
-        ]
+         "AWS": [
+            "111122223333"
+         ]
       },
       "Action": [
-        "sqs:SendMessage",
-        "sqs:ReceiveMessage"
+         "sqs:SendMessage",
+         "sqs:ReceiveMessage"
       ],
-      "Resource": "arn:aws:sqs:us-east-2:444455556666:queue2"
-    },
-    {
-      "Sid": "2",
-      "Effect": "Deny",
-      "Principal": "*",
-      "Action": [
-        "sqs:SendMessage",
-        "sqs:ReceiveMessage"
-      ],
-      "Resource": "arn:aws:sqs:us-east-2:444455556666:queue2",
-      "Condition": {
-         "StringNotEquals": {
-            "aws:sourceVpce": "vpce-1a2b3c4d"
+         "Resource": "arn:aws::sqs:us-east-2:111122223333:queue1"
+      },
+      {
+         "Sid": "2",
+         "Effect": "Deny",
+         "Principal": "*",
+         "Action": [
+            "sqs:SendMessage",
+            "sqs:ReceiveMessage"
+         ],
+         "Resource": "arn:aws::sqs:us-east-2:111122223333:queue1",
+         "Condition": {
+            "StringNotEquals": {
+               "aws:sourceVpce": "vpce-1a2b3c4d"
+            }
          }
       }
-    }
-  ]
+   ]
 }
 ```
-

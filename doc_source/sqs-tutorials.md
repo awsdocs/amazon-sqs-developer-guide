@@ -5,7 +5,7 @@ This guide shows how to work with Amazon SQS using the AWS Management Console an
 You can write code in other programming languages\. For more information, see the [documentation of the AWS SDKs](https://aws.amazon.com//tools/#sdk)\.
 
 **Note**  
-You can explore Amazon SQS without writing code with tools such as the AWS Command Line Interface \(AWS CLI\) or Windows PowerShell\. You can find AWS CLI examples in the [Amazon SQS section](http://docs.aws.amazon.com/cli/latest/reference/sqs/index.html) of the *AWS CLI Command Reference*\. You can find Windows PowerShell examples in the Amazon Simple Queue Service section of the *[AWS Tools for PowerShell Cmdlet Reference](http://docs.aws.amazon.com/powershell/latest/reference/)*\.
+You can explore Amazon SQS without writing code with tools such as the AWS Command Line Interface \(AWS CLI\) or Windows PowerShell\. You can find AWS CLI examples in the [Amazon SQS section](https://docs.aws.amazon.com/cli/latest/reference/sqs/index.html) of the *AWS CLI Command Reference*\. You can find Windows PowerShell examples in the Amazon Simple Queue Service section of the *[AWS Tools for PowerShell Cmdlet Reference](https://docs.aws.amazon.com/powershell/latest/reference/)*\.
 
 **Topics**
 + [Creating Amazon SQS Queues](sqs-tutorials-create-queues.md)

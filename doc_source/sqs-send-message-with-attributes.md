@@ -52,15 +52,15 @@ For a more detailed explanation of sending messages to standard and FIFO queues,
 
 ## AWS SDK for Java<a name="send-message-with-attributes-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 
 ### To send a message with attributes to a queue<a name="send-message-with-attributes-procedure"></a>
 
 1. Copy the [standard queue example program](standard-queues-getting-started-java.md) or the [FIFO queue example program](FIFO-queues-getting-started-java.md)\.
 
-1. To define an attribute for a message, add the following code which uses the `[MessageAttributeValue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_MessageAttributeValue.html)` data type\. For more information, see [Message Attribute Components](sqs-message-attributes.md#message-attribute-components) and [Message Attribute Data Types](sqs-message-attributes.md#message-attribute-data-types)\.
+1. To define an attribute for a message, add the following code which uses the `[MessageAttributeValue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_MessageAttributeValue.html)` data type\. For more information, see [Message Attribute Components](sqs-message-attributes.md#message-attribute-components) and [Message Attribute Data Types](sqs-message-attributes.md#message-attribute-data-types)\.
 **Note**  
-The AWS SDK for Java automatically calculates the message body and message attribute checksums and compares them with the data which Amazon SQS returns\. For more information, see the *[AWS SDK for Java Developer Guide](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/)* and [Calculating the MD5 Message Digest for Message Attributes](sqs-message-attributes.md#sqs-attributes-md5-message-digest-calculation) for other programming languages\.
+The AWS SDK for Java automatically calculates the message body and message attribute checksums and compares them with the data which Amazon SQS returns\. For more information, see the *[AWS SDK for Java Developer Guide](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/)* and [Calculating the MD5 Message Digest for Message Attributes](sqs-message-attributes.md#sqs-attributes-md5-message-digest-calculation) for other programming languages\.
 
 ------
 #### [ String ]
@@ -123,7 +123,7 @@ The AWS SDK for Java automatically calculates the message body and message attri
    ```
 
 **Note**  
-Because the base data type is `Number`, the `[ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` action returns `123456`\.
+Because the base data type is `Number`, the `[ReceiveMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` action returns `123456`\.
 
 ------
 #### [ Binary \(Custom\) ]
@@ -151,7 +151,7 @@ Because the base data type is `Number`, the `[ReceiveMessage](http://docs.aws.am
    ```
 **Important**  
 If you send a message to a FIFO queue, make sure that the `sendMessage` method executes *after* you provide the message group ID\.  
-If you use the `[SendMessageBatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html)` action instead of `[SendMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html)`, you must specify message attributes for each individual message in the batch\.
+If you use the `[SendMessageBatch](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html)` action instead of `[SendMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html)`, you must specify message attributes for each individual message in the batch\.
 
 1. Compile and run the example\.
 

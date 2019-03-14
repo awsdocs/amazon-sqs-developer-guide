@@ -2,7 +2,7 @@
 
 In this tutorial you learn how to configure an existing Amazon SQS queue to trigger an AWS Lambda function when new messages arrive in a queue\.
 
-Lambda functions let you run code without provisioning or managing a server\. For example, you can configure a Lambda function to process messages from one queue while another queue acts as a *dead\-letter queue* for messages that your Lambda function can't process successfully\. When you resolve the issue, you can *redrive* the messages from the dead\-letter queue through the Lambda function\. For more information see [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md) and also [What is AWS Lambda?](http://docs.aws.amazon.com/lambda/latest/dg/welcome.html) and [Using AWS Lambda with Amazon SQS](http://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html) in the *AWS Lambda Developer Guide*\.
+Lambda functions let you run code without provisioning or managing a server\. For example, you can configure a Lambda function to process messages from one queue while another queue acts as a *dead\-letter queue* for messages that your Lambda function can't process successfully\. When you resolve the issue, you can *redrive* the messages from the dead\-letter queue through the Lambda function\. For more information see [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md) and also [What is AWS Lambda?](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html) and [Using AWS Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html) in the *AWS Lambda Developer Guide*\.
 
 **Note**  
 Your queue and Lambda function must be in the same AWS Region\.
@@ -40,7 +40,7 @@ For more information, see [Overview of Managing Access Permissions to Your Amazo
 
    In the **Configure Incoming Messages to Trigger a Lambda Function** dialog box, do one of the following:
    + To use an existing Lambda function, **Select a Lambda Function** from the list\.
-   + To create a new Lambda function in the AWS Lambda console, choose **Create New**\. For more information, see [Create a Simple Lambda Function](http://docs.aws.amazon.com/lambda/latest/dg/get-started-create-function.html) in the *AWS Lambda Developer Guide*\.  
+   + To create a new Lambda function in the AWS Lambda console, choose **Create New**\. For more information, see [Create a Simple Lambda Function](https://docs.aws.amazon.com/lambda/latest/dg/get-started-create-function.html) in the *AWS Lambda Developer Guide*\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-configure-incoming-messages-trigger-lambda-function-dialog-box.png)
 
 1. Choose **Save**\.

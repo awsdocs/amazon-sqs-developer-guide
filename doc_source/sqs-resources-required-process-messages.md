@@ -6,7 +6,7 @@ To help you estimate the resources you need to process queued messages, Amazon S
 For standard queues, the result is approximate because of the distributed architecture of Amazon SQS\. In most cases, the count should be close to the actual number of messages in the queue\.  
 For FIFO queues, the result is exact\.
 
-The following table lists the attribute name to use with the `[GetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)` action:
+The following table lists the attribute name to use with the `[GetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)` action:
 
 
 | Task | Attribute Name | 

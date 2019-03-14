@@ -35,7 +35,7 @@ When you create a queue, it can take a short time for the queue to propagate thr
 
 ## AWS SDK for Java<a name="sqs-configure-delay-queue-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 
 ### To configure a delay queue<a name="configure-delay-queue-java-api"></a>
 

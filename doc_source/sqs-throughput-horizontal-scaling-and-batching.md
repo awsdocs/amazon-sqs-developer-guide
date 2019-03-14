@@ -13,7 +13,7 @@ To achieve high throughput, you must scale message producers and consumers horiz
 
 Because you access Amazon SQS through an HTTP request\-response protocol, the *request latency* \(the interval between initiating a request and receiving a response\) limits the throughput that you can achieve from a single thread using a single connection\. For example, if the latency from an Amazon EC2\-based client to Amazon SQS in the same region averages 20 ms, the maximum throughput from a single thread over a single connection averages 50 TPS\. 
 
-*Horizontal scaling* involves increasing the number of message producers \(which make `[SendMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html)` requests\) and consumers \(which make `[ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` and `[DeleteMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessage.html)` requests\) in order to increase your overall queue throughput\. You can scale horizontally in three ways:
+*Horizontal scaling* involves increasing the number of message producers \(which make `[SendMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html)` requests\) and consumers \(which make `[ReceiveMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` and `[DeleteMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessage.html)` requests\) in order to increase your overall queue throughput\. You can scale horizontally in three ways:
 + Increase the number of threads per client
 + Add more clients
 + Increase the number of threads per client and add more clients
@@ -21,7 +21,7 @@ Because you access Amazon SQS through an HTTP request\-response protocol, the *r
 When you add more clients, you achieve essentially linear gains in queue throughput\. For example, if you double the number of clients, you also double the throughput\. 
 
 **Note**  
-As you scale horizontally, you must ensure that the Amazon SQS queue that you use has enough connections or threads to support the number of concurrent message producers and consumers that send requests and receive responses\. For example, by default, instances of the AWS SDK for Java `[AmazonSQSClient](http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/sqs/AmazonSQSClient.html)` class maintain at most 50 connections to Amazon SQS\. To create additional concurrent producers and consumers, you must adjust the maximum number of allowable producer and consumer threads on an `AmazonSQSClientBuilder` object, for example:  
+As you scale horizontally, you must ensure that the Amazon SQS queue that you use has enough connections or threads to support the number of concurrent message producers and consumers that send requests and receive responses\. For example, by default, instances of the AWS SDK for Java `[AmazonSQSClient](https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/sqs/AmazonSQSClient.html)` class maintain at most 50 connections to Amazon SQS\. To create additional concurrent producers and consumers, you must adjust the maximum number of allowable producer and consumer threads on an `AmazonSQSClientBuilder` object, for example:  
 
 ```
 final AmazonSQS sqsClient = AmazonSQSClientBuilder.standard()
@@ -29,16 +29,16 @@ final AmazonSQS sqsClient = AmazonSQSClientBuilder.standard()
                 .withMaxConnections(producerCount + consumerCount))
         .build();
 ```
-For `[AmazonSQSAsyncClient](http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/sqs/AmazonSQSAsyncClient.html)`, you also must make sure that enough threads are available\.
+For `[AmazonSQSAsyncClient](https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/sqs/AmazonSQSAsyncClient.html)`, you also must make sure that enough threads are available\.
 
 ## Action Batching<a name="request-batching"></a>
 
-*Batching* performs more work during each round trip to the service \(for example, when you send multiple messages with a single `SendMessageBatch` request\)\. The Amazon SQS batch actions are `[SendMessageBatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html)`, `[DeleteMessageBatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessageBatch.html)`, and `[ChangeMessageVisibilityBatch](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibilityBatch.html)`\. To take advantage of batching without changing your producers or consumers, you can use the [Amazon SQS Buffered Asynchronous Client](sqs-client-side-buffering-request-batching.md)\.
+*Batching* performs more work during each round trip to the service \(for example, when you send multiple messages with a single `SendMessageBatch` request\)\. The Amazon SQS batch actions are `[SendMessageBatch](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html)`, `[DeleteMessageBatch](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessageBatch.html)`, and `[ChangeMessageVisibilityBatch](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibilityBatch.html)`\. To take advantage of batching without changing your producers or consumers, you can use the [Amazon SQS Buffered Asynchronous Client](sqs-client-side-buffering-request-batching.md)\.
 
 **Note**  
-Because `[ReceiveMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` can process 10 messages at a time, there is no `ReceiveMessageBatch` action\.
+Because `[ReceiveMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` can process 10 messages at a time, there is no `ReceiveMessageBatch` action\.
 
-Batching distributes the latency of the batch action over the multiple messages in a batch request, rather than accept the entire latency for a single message \(for example, a `[SendMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html)` request\)\. Because each round trip carries more work, batch requests make more efficient use of threads and connections, improving throughput\.
+Batching distributes the latency of the batch action over the multiple messages in a batch request, rather than accept the entire latency for a single message \(for example, a `[SendMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html)` request\)\. Because each round trip carries more work, batch requests make more efficient use of threads and connections, improving throughput\.
 
 You can combine batching with horizontal scaling to provide throughput with fewer threads, connections, and requests than individual message requests\. You can use batched Amazon SQS actions to send, receive, or delete up to 10 messages at a time\. Because Amazon SQS charges by the request, batching can substantially reduce your costs\. 
 

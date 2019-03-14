@@ -23,7 +23,7 @@ When you access Amazon SQS using the Query API, you must provide the following i
 + The **AWS Access Key ID** that identifies your AWS account, which AWS uses to look up your Secret Access Key\.
 + The **HMAC\-SHA request signature**, calculated using your Secret Access Key \(a shared secret known only to you and AWS—for more information, see [RFC2104](http://www.faqs.org/rfcs/rfc2104.html)\)\. The [AWS SDK](https://aws.amazon.com/code/) handles the signing process; however, if you submit a query request over HTTP or HTTPS, you must include a signature in every query request\.
 
-  1. Derive a Signature Version 4 Signing Key\. For more information, see [Deriving the Signing Key with Java](http://docs.aws.amazon.com/general/latest/gr/signature-v4-examples.html#signature-v4-examples-java)\.
+  1. Derive a Signature Version 4 Signing Key\. For more information, see [Deriving the Signing Key with Java](https://docs.aws.amazon.com/general/latest/gr/signature-v4-examples.html#signature-v4-examples-java)\.
 **Note**  
 Amazon SQS supports Signature Version 4, which provides improved SHA256\-based security and performance over previous versions\. When you create new applications that use Amazon SQS, use Signature Version 4\.
 

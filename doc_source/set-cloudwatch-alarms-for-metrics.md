@@ -1,6 +1,6 @@
 # Creating CloudWatch Alarms for Amazon SQS Metrics<a name="set-cloudwatch-alarms-for-metrics"></a>
 
-CloudWatch lets you trigger alarms based on a metric threshold\. For example, you can create an alarm for the `NumberOfMessagesSent` metric\. For example, if more than 100 messages are sent to the `MyQueue` queue in 1 hour, an email notification is sent out\. For more information, see [Creating Amazon CloudWatch Alarms](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html) in the *Amazon CloudWatch User Guide*\.<a name="set-alarm-cloudwatch-console"></a>
+CloudWatch lets you trigger alarms based on a metric threshold\. For example, you can create an alarm for the `NumberOfMessagesSent` metric\. For example, if more than 100 messages are sent to the `MyQueue` queue in 1 hour, an email notification is sent out\. For more information, see [Creating Amazon CloudWatch Alarms](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html) in the *Amazon CloudWatch User Guide*\.<a name="set-alarm-cloudwatch-console"></a>
 
 1. Sign in to the AWS Management Console and open the CloudWatch console at [https://console\.aws\.amazon\.com/cloudwatch/](https://console.aws.amazon.com/cloudwatch/)\.
 

@@ -54,7 +54,7 @@ To specify the message to delete, provide the [receipt handle](sqs-general-ident
 **Note**  
 If you don't have the receipt handle for the message, you can call the `ReceiveMessage` action to receive the message again\. Each time you receive the message, you get a different receipt handle\. Use the latest receipt handle when using the `DeleteMessage` action\. Otherwise, your message might not be deleted from the queue\.
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 
 ### To receive and delete a message from a standard queue<a name="receive-delete-message-java-standard"></a>
 

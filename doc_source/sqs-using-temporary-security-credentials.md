@@ -19,11 +19,11 @@ You can't set a policy based on temporary credentials\.
 1. Use the temporary Secret Access Key instead of your own Secret Access Key to sign your Query API request\.
 
 **Note**  
-When you submit the signed Query API request, use the temporary Access Key ID instead of your own Access Key ID and to include the security token\. For more information about IAM support for temporary security credentials, see [Granting Temporary Access to Your AWS Resources](http://docs.aws.amazon.com/IAM/latest/UserGuide/TokenBasedAuth.html) in the *IAM User Guide*\. 
+When you submit the signed Query API request, use the temporary Access Key ID instead of your own Access Key ID and to include the security token\. For more information about IAM support for temporary security credentials, see [Granting Temporary Access to Your AWS Resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/TokenBasedAuth.html) in the *IAM User Guide*\. 
 
 ## To call an Amazon SQS Query API action using temporary security credentials<a name="temporary-security-credentials-query-api"></a>
 
-1. Request a temporary security token using AWS Identity and Access Management\. For more information, see [Creating Temporary Security Credentials to Enable Access for IAM Users](http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingSessionTokens.html) in the *IAM User Guide*\.
+1. Request a temporary security token using AWS Identity and Access Management\. For more information, see [Creating Temporary Security Credentials to Enable Access for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingSessionTokens.html) in the *IAM User Guide*\.
 
    IAM returns a security token, an Access Key ID, and a Secret Access Key\.
 
@@ -31,7 +31,7 @@ When you submit the signed Query API request, use the temporary Access Key ID in
 
 1. Submit your signed query string with the temporary Access Key ID and the security token\.
 
-   The following example demonstrates how to use temporary security credentials to authenticate an Amazon SQS request\. The structure of *`AUTHPARAMS`* depends on the signature of the API request\. For more information, see [Signing AWS API Requests](http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html) in the *Amazon Web Services General Reference*\.
+   The following example demonstrates how to use temporary security credentials to authenticate an Amazon SQS request\. The structure of *`AUTHPARAMS`* depends on the signature of the API request\. For more information, see [Signing AWS API Requests](https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html) in the *Amazon Web Services General Reference*\.
 
    ```
    https://sqs.us-east-2.amazonaws.com/

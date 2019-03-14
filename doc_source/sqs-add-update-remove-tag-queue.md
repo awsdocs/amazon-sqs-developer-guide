@@ -31,7 +31,7 @@ The following steps assume that you already [created an Amazon SQS queue](sqs-cr
 
 ## AWS SDK for Java<a name="sqs-add-update-remove-tag-queue-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 
 ### To add, update, and remove tags from a queue<a name="sqs-add-update-remove-tag-queue-java-update-remove"></a>
 

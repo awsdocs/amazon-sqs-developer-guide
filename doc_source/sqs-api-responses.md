@@ -1,6 +1,6 @@
 # Interpreting Responses<a name="sqs-api-responses"></a>
 
-In response to an action request, Amazon SQS returns an XML data structure that contains the results of the request\. For more information, see the individual actions in the *[Amazon Simple Queue Service API Reference](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/)*\.
+In response to an action request, Amazon SQS returns an XML data structure that contains the results of the request\. For more information, see the individual actions in the *[Amazon Simple Queue Service API Reference](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/)*\.
 
 **Topics**
 + [Successful Response Structure](#sqs-api-successful-response-structure)

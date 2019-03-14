@@ -21,7 +21,7 @@ Each message attribute consists of the following components:
   + Must be unique among all attribute names for the message
   + Must not start or end with a period
   + Must not have periods in a sequence
-+ **Type** – The message attribute data type\. Supported types include `String`, `Number`, and `Binary`\. You can also add custom information for any data type\. The data type has the same restrictions as the message body \(for more information, see `[SendMessage](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html)` in the *Amazon Simple Queue Service API Reference*\)\. In addition, the following restrictions apply:
++ **Type** – The message attribute data type\. Supported types include `String`, `Number`, and `Binary`\. You can also add custom information for any data type\. The data type has the same restrictions as the message body \(for more information, see `[SendMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html)` in the *Amazon Simple Queue Service API Reference*\)\. In addition, the following restrictions apply:
   + Can be up to 256 characters long
   + Is case\-sensitive
 + **Value** – The message attribute value\. For `String` data types, the attribute values has the same restrictions as the message body\.

@@ -1,36 +1,36 @@
 # Logging Amazon SQS API Calls Using AWS CloudTrail<a name="logging-using-cloudtrail"></a>
 
-Amazon SQS is integrated with AWS CloudTrail, a service that provides a record of the Amazon SQS calls that a user, role, or AWS service makes\. CloudTrail captures API calls related to Amazon SQS queues as events, including calls from the Amazon SQS console and code calls from Amazon SQS APIs\. For more information about CloudTrail, see the [http://docs.aws.amazon.com/awscloudtrail/latest/userguide/](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
+Amazon SQS is integrated with AWS CloudTrail, a service that provides a record of the Amazon SQS calls that a user, role, or AWS service makes\. CloudTrail captures API calls related to Amazon SQS queues as events, including calls from the Amazon SQS console and code calls from Amazon SQS APIs\. For more information about CloudTrail, see the [https://docs.aws.amazon.com/awscloudtrail/latest/userguide/](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
 
 **Note**  
 CloudTrail logging is supported for both standard and FIFO queues\.
 
-Using the information that CloudTrail collects, you can identify a specific request to an Amazon SQS API, the IP address of the requester, the requester's identity, the date and time of the request, and so on\. If you configure a *trail*, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket\. If you don't configure a trail, you can view the most recent events in the event history in the CloudTrail console\. For more information, see [Overview for Creating a Trail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html) in the *[AWS CloudTrail User Guide](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/)*\.
+Using the information that CloudTrail collects, you can identify a specific request to an Amazon SQS API, the IP address of the requester, the requester's identity, the date and time of the request, and so on\. If you configure a *trail*, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket\. If you don't configure a trail, you can view the most recent events in the event history in the CloudTrail console\. For more information, see [Overview for Creating a Trail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html) in the *[AWS CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)*\.
 
 ## Amazon SQS Information in CloudTrail<a name="service-name-info-in-cloudtrail"></a>
 
-When you create your AWS account, CloudTrail is enabled\. When a supported Amazon SQS event activity occurs, it is recorded in a CloudTrail event with other AWS service events in the event history\. You can view, search, and download recent events for your AWS account\. For more information, see [Viewing Events with CloudTrail Event History](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html) in the *AWS CloudTrail User Guide*\.
+When you create your AWS account, CloudTrail is enabled\. When a supported Amazon SQS event activity occurs, it is recorded in a CloudTrail event with other AWS service events in the event history\. You can view, search, and download recent events for your AWS account\. For more information, see [Viewing Events with CloudTrail Event History](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html) in the *AWS CloudTrail User Guide*\.
 
 A trail allows CloudTrail to deliver log files to an Amazon S3 bucket\. You can create a trail to keep an ongoing record of events in your AWS account\. By default, when you create a trail using the AWS Management Console, the trail applies to all AWS Regions\. The trail logs events from all AWS Regions and delivers log files to the specified Amazon S3 bucket\. You can also configure other AWS services to further analyze and act on the event data collected in CloudTrail logs\. For more information, see the following topics in the *AWS CloudTrail User Guide*: 
-+ [CloudTrail Supported Services and Integrations](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-aws-service-specific-topics.html#cloudtrail-aws-service-specific-topics-integrations)
-+ [Configuring Amazon SNS Notifications for CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_notifications_top_level.html)
-+ [Receiving CloudTrail Log Files from Multiple Regions](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/receive-cloudtrail-log-files-from-multiple-regions.html)
-+ [Receiving CloudTrail Log Files from Multiple Accounts](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-receive-logs-from-multiple-accounts.html)
++ [CloudTrail Supported Services and Integrations](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-aws-service-specific-topics.html#cloudtrail-aws-service-specific-topics-integrations)
++ [Configuring Amazon SNS Notifications for CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_notifications_top_level.html)
++ [Receiving CloudTrail Log Files from Multiple Regions](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/receive-cloudtrail-log-files-from-multiple-regions.html)
++ [Receiving CloudTrail Log Files from Multiple Accounts](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-receive-logs-from-multiple-accounts.html)
 
 Amazon SQS supports logging the following actions:
-+ `[AddPermission](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html)`
-+ `[CreateQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`
-+ `[DeleteQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteQueue.html)`
-+ `[PurgeQueue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_PurgeQueue.html)`
-+ `[RemovePermission](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_RemovePermission.html)`
-+ `[SetQueueAttributes](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`
++ `[AddPermission](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html)`
++ `[CreateQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`
++ `[DeleteQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteQueue.html)`
++ `[PurgeQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_PurgeQueue.html)`
++ `[RemovePermission](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_RemovePermission.html)`
++ `[SetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`
 
 Every event or log entry contains information about the requester\. This information helps you determine the following: 
 + Was the request made with root or IAM user credentials?
 + Was the request made with temporary security credentials for a role or a federated user?
 + Was the request made by another AWS service?
 
-For more information, see [CloudTrail userIdentity Element](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html) in the *AWS CloudTrail User Guide*\.
+For more information, see [CloudTrail userIdentity Element](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html) in the *AWS CloudTrail User Guide*\.
 
 ## Example Amazon SQS Log File Entries<a name="understanding-service-name-entries"></a>
 

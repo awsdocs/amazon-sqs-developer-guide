@@ -1,6 +1,6 @@
 # Tutorial: Subscribing an Amazon SQS Queue to an Amazon SNS Topic<a name="sqs-subscribe-queue-sns-topic"></a>
 
-You can subscribe one or more Amazon SQS queues to an Amazon SNS topic from a list of topics available for the selected queue\. Amazon SQS manages the subscription and any necessary permissions\. When you publish a message to a topic, Amazon SNS sends the message to every subscribed queue\. For more information about Amazon SNS, see [What is Amazon Simple Notification Service?](http://docs.aws.amazon.com/sns/latest/dg/welcome.html) in the *Amazon Simple Notification Service Developer Guide*\.
+You can subscribe one or more Amazon SQS queues to an Amazon SNS topic from a list of topics available for the selected queue\. Amazon SQS manages the subscription and any necessary permissions\. When you publish a message to a topic, Amazon SNS sends the message to every subscribed queue\. For more information about Amazon SNS, see [What is Amazon Simple Notification Service?](https://docs.aws.amazon.com/sns/latest/dg/welcome.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
 **Important**  
 Amazon SNS isn't currently compatible with FIFO queues\.  
@@ -34,7 +34,7 @@ This is also useful if the Amazon SNS topic isn't listed in the **Choose a Topic
 
    The queue is subscribed to the topic\.
 **Note**  
-If your Amazon SQS queue and Amazon SNS topic are in different AWS accounts, the owner of the topic must first confirm the subscription\. For more information, see [Confirm the Subscription](http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm) in the *Amazon Simple Notification Service Developer Guide*\.  
-To list your subscriptions, unsubscribe from topics, and delete topics, use the Amazon SNS console\. For more information, see [Clean Up](http://docs.aws.amazon.com/sns/latest/dg/CleanUp.html)\.
+If your Amazon SQS queue and Amazon SNS topic are in different AWS accounts, the owner of the topic must first confirm the subscription\. For more information, see [Confirm the Subscription](https://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm) in the *Amazon Simple Notification Service Developer Guide*\.  
+To list your subscriptions, unsubscribe from topics, and delete topics, use the Amazon SNS console\. For more information, see [Clean Up](https://docs.aws.amazon.com/sns/latest/dg/CleanUp.html)\.
 
-   To verify the result of the subscription, you can publish to the topic and then view the message that the topic sends to the queue\. For more information, see [Sending Amazon SNS Messages to Amazon SQS Queues](http://docs.aws.amazon.com/sns/latest/dg/SendMessageToSQS.html) in the *Amazon Simple Notification Service Developer Guide*\.
+   To verify the result of the subscription, you can publish to the topic and then view the message that the topic sends to the queue\. For more information, see [Sending Amazon SNS Messages to Amazon SQS Queues](https://docs.aws.amazon.com/sns/latest/dg/SendMessageToSQS.html) in the *Amazon Simple Notification Service Developer Guide*\.

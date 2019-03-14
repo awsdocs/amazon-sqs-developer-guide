@@ -35,7 +35,7 @@ The message group ID is always required\. However, if content\-based deduplicati
 
 ## AWS SDK for Java<a name="send-message-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 
 ### To send a message to a standard queue<a name="send-message-standard-queue"></a>
 

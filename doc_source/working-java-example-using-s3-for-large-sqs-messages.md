@@ -71,7 +71,7 @@ public class SQSExtendedClientExample {
         /*
          * Create a new instance of the builder with all defaults (credentials
          * and region) set automatically. For more information, see 
-         * [Creating Service Clients](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/creating-clients.html) in the AWS SDK for Java Developer Guide.
+         * [Creating Service Clients](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/creating-clients.html) in the AWS SDK for Java Developer Guide.
          */
         final AmazonS3 s3 = AmazonS3ClientBuilder.defaultClient();
 

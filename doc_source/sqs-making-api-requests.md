@@ -11,7 +11,7 @@ In this section you learn how to construct an Amazon SQS endpoint, make `GET` an
 
 ## Constructing an Endpoint<a name="sqs-api-constructing-endpoints"></a>
 
-In order to work with Amazon SQS queues, you must construct an endpoint\. For information about [region\-specific Amazon SQS endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region), see the *Amazon Web Services General Reference*\.
+In order to work with Amazon SQS queues, you must construct an endpoint\. For information about [region\-specific Amazon SQS endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region), see the *Amazon Web Services General Reference*\.
 
 Every Amazon SQS endpoint is independent\. For example, if two queues are named `MyQueue` and one has the endpoint `sqs.us-east-2.amazonaws.com` while the other has the endpoint `sqs.eu-west-2.amazonaws.com`, the two queues don't share any data with each other\.
 
@@ -28,13 +28,13 @@ https://sqs.eu-west-2.amazonaws.com/
 
 **Note**  
 Queue names and queue URLs are case\-sensitive\.  
-The structure of *`AUTHPARAMS`* depends on the signature of the API request\. For more information, see [Signing AWS API Requests](http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html) in the *Amazon Web Services General Reference*\.
+The structure of *`AUTHPARAMS`* depends on the signature of the API request\. For more information, see [Signing AWS API Requests](https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html) in the *Amazon Web Services General Reference*\.
 
 ## Making a GET Request<a name="structure-get-request"></a>
 
 An Amazon SQS `GET` request is structured as a URL which consists of the following:
 + **Endpoint** – The resource that the request is acting on \(the [queue name and URL](sqs-general-identifiers.md#queue-name-url)\), for example: `https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue`
-+ **Action** – The [action](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_Operations.html) that you want to perform on the endpoint\. A question mark \(`?`\) separates the endpoint from the action, for example: `?Action=SendMessage&MessageBody=Your%20Message%20Text`
++ **Action** – The [action](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_Operations.html) that you want to perform on the endpoint\. A question mark \(`?`\) separates the endpoint from the action, for example: `?Action=SendMessage&MessageBody=Your%20Message%20Text`
 + **Parameters** – Any request parameters—each parameter is separated by an ampersand \(`&`\), for example: `&Version=2012-11-05&AUTHPARAMS` 
 
 The following is an example of a `GET` request that sends a message to an Amazon SQS queue\.

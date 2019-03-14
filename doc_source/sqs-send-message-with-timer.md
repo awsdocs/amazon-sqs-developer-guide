@@ -35,7 +35,7 @@ For a more detailed explanation of sending messages to standard and FIFO queues,
 
 ## AWS SDK for Java<a name="send-message-with-timer-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 
 ### To send a message with a timer to a queue<a name="send-message-with-timer-procedure"></a>
 

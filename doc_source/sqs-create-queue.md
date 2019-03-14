@@ -38,7 +38,7 @@ When you create a queue, it can take a short time for the queue to propagate thr
 
 ## AWS SDK for Java<a name="create-queue-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 
 ### To create a standard queue<a name="create-queue-java-standard"></a>
 
@@ -86,7 +86,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
 ## AWS CloudFormation<a name="create-queue-cloudformation"></a>
 
-You can use the AWS CloudFormation console and a JSON \(or YAML\) template to create an Amazon SQS queue\. For more information, see [Working with AWS CloudFormation Templates](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html) and the [`AWS::SQS::Queue` Resource](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html) in the *AWS CloudFormation User Guide*\.
+You can use the AWS CloudFormation console and a JSON \(or YAML\) template to create an Amazon SQS queue\. For more information, see [Working with AWS CloudFormation Templates](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html) and the [`AWS::SQS::Queue` Resource](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html) in the *AWS CloudFormation User Guide*\.
 
 1. Copy the following JSON code to a file named `MyQueue.json`\. To create a standard queue, omit the `FifoQueue` and `ContentBasedDeduplication` properties\. For more information on content\-based deduplication, see [Exactly\-Once Processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.
 **Note**  

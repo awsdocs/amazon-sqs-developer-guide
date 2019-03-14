@@ -42,16 +42,16 @@ Amazon SQS and Amazon CloudWatch are integrated so you can use CloudWatch to vie
    + To filter by metric, choose the metric name and then choose **Add to search**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-cloudwatch-queue-metrics-examine.png)
 
-For more information and additional options, see [Graph Metrics](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph_metrics.html) and [Using Amazon CloudWatch Dashboards](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Dashboards.html) in the *Amazon CloudWatch User Guide*\.
+For more information and additional options, see [Graph Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph_metrics.html) and [Using Amazon CloudWatch Dashboards](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Dashboards.html) in the *Amazon CloudWatch User Guide*\.
 
 ## AWS Command Line Interface<a name="access-cloudwatch-metrics-cli"></a>
 
-To access Amazon SQS metrics using the AWS CLI, run the `[get\-metric\-statistics](http://docs.aws.amazon.com/cli/latest/reference/cloudwatch/get-metric-statistics.html)` command\.
+To access Amazon SQS metrics using the AWS CLI, run the `[get\-metric\-statistics](https://docs.aws.amazon.com/cli/latest/reference/cloudwatch/get-metric-statistics.html)` command\.
 
-For more information, see [Get Statistics for a Metric](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/getting-metric-statistics.html) in the *Amazon CloudWatch User Guide*\.
+For more information, see [Get Statistics for a Metric](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/getting-metric-statistics.html) in the *Amazon CloudWatch User Guide*\.
 
 ## CloudWatch API<a name="access-metrics-cloudwatch-api"></a>
 
-To access Amazon SQS metrics using the CloudWatch API, use the `[GetMetricStatistics](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html)` action\.
+To access Amazon SQS metrics using the CloudWatch API, use the `[GetMetricStatistics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html)` action\.
 
-For more information, see [Get Statistics for a Metric](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/getting-metric-statistics.html) in the *Amazon CloudWatch User Guide*\.
+For more information, see [Get Statistics for a Metric](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/getting-metric-statistics.html) in the *Amazon CloudWatch User Guide*\.
