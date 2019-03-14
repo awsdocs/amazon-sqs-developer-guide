@@ -38,7 +38,7 @@ You can use `*` instead of `SendMessage` to grant the following actions to a pri
 
 **Note**  
 Although `*` includes access provided by other permission types, Amazon SQS considers permissions separately\. For example, it is possible to grant both `*` and `SendMessage` permissions to a user, even though a `*` includes the access provided by `SendMessage`\.  
-This concept also applies when you remove a permission\. If a principal has only a `*` permission, requesting to remove a `SendMessage` permission *doesn't* leave the principal with an *everything\-but* permission\. Instead, the request has no effect, because the principal doesn't possess an explicit `SendMessage` permission\. To leave the principal with onlt the `ReceiveMessage` permission, first add the `ReceiveMessage` permission and then remove the `*` permission\.
+This concept also applies when you remove a permission\. If a principal has only a `*` permission, requesting to remove a `SendMessage` permission *doesn't* leave the principal with an *everything\-but* permission\. Instead, the request has no effect, because the principal doesn't possess an explicit `SendMessage` permission\. To leave the principal with only the `ReceiveMessage` permission, first add the `ReceiveMessage` permission and then remove the `*` permission\.
 
 ## Example 3: Allow Managers to Get the General Size of Queues<a name="get-size-of-queues"></a>
 
