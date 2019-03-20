@@ -4,7 +4,7 @@ Server\-side encryption \(SSE\) for Amazon SQS is available in the AWS GovCloud 
 
 **Important**  
 All requests to queues with SSE enabled must use HTTPS and [Signature Version 4](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)\.  
-When you disable SSE, messages remain encrypted\. You must receive and decrypt a message to view its contents\.
+When you disable SSE, existing messages in the queue remain encrypted, and will still be available for clients to retrieve as long as the KMS key remains enabled and accessible\.
 
 In this tutorial you learn how to enable, disable, and configure SSE for an existing Amazon SQS queue\.
 
