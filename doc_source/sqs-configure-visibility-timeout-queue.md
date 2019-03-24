@@ -149,42 +149,42 @@ public class SQSVisibilityTimeoutExample {
 
 1. To configure visibility timeout for a single message, pass the queue URL, the message receipt handle, and the visibility timeout value in seconds\.
 
-   ```
-   // Get the message receipt handle.
-   	String receiptHandle = sqs.receiveMessage(myQueueUrl)
+```
+// Get the message receipt handle.
+String receiptHandle = sqs.receiveMessage(myQueueUrl)
    	        .getMessages()
    	        .get(0)
    	        .getReceiptHandle();
    	
-   	// Pass the queue URL, the message receipt handle, and the visibility timeout value.
-   	sqs.changeMessageVisibility(myQueueUrl, receiptHandle, timeoutValue);
-   ```
+// Pass the queue URL, the message receipt handle, and the visibility timeout value.
+sqs.changeMessageVisibility(myQueueUrl, receiptHandle, timeoutValue);
+```
 
 1. To configure visibility timeout for multiple messages \(for example, if you want to set different timeout values for different messages\), create an `ArrayList`, add messages to it with the visibility timeout value in seconds, and then pass the queue URL and the `ArrayList` of messages\.
 
-   ```
-   // Create an ArrayList for batched messages.
-   	List<ChangeMessageVisibilityBatchRequestEntry> entries =
+```
+// Create an ArrayList for batched messages.
+List<ChangeMessageVisibilityBatchRequestEntry> entries =
    	        new ArrayList<ChangeMessageVisibilityBatchRequestEntry>();
    	
-   	// Add the first message to the ArrayList with a visibility timeout value.
-   	entries.add(new ChangeMessageVisibilityBatchRequestEntry(
+// Add the first message to the ArrayList with a visibility timeout value.
+entries.add(new ChangeMessageVisibilityBatchRequestEntry(
    	        "uniqueMessageId123", sqs.receiveMessage(myQueueUrl)
    	        .getMessages()
    	        .get(0)
    	        .getReceiptHandle())
    	        .withVisibilityTimeout(timeoutValue));
    	
-   	// Add the second message to the ArrayList with a different timeout value. 
-   	entries.add(new ChangeMessageVisibilityBatchRequestEntry(
+// Add the second message to the ArrayList with a different timeout value. 
+entries.add(new ChangeMessageVisibilityBatchRequestEntry(
    	        "uniqueMessageId456", sqs.receiveMessage(myQueueUrl)
    	        .getMessages()
    	        .get(0)
    	        .getReceiptHandle())
    	        .withVisibilityTimeout(timeoutValue + 60));
    	
-   	sqs.changeMessageVisibilityBatch(myQueueUrl, entries);
-   ```
+sqs.changeMessageVisibilityBatch(myQueueUrl, entries);
+```
 
 1. Compile and run your program\.
 
