@@ -5,6 +5,8 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| April 4, 2019 | Added the [Creating an Amazon VPC Endpoint Policy for Amazon SQS](sqs-vpc-endpoint-policy.md) section\. | 
+| March 26, 2019 |  Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | March 15, 2019 | Revised the information in the [Key Terms](sqs-server-side-encryption.md#sqs-sse-key-terms) section\. | 
 | March 14, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | January 22, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 

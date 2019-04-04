@@ -26,7 +26,6 @@ The following table lists limits related to policies\.
 
 | Name | Maximum | 
 | --- | --- | 
-| Actions | 7 | 
 | Bytes | 8,192 | 
 | Conditions | 10 | 
 | Principals | 50 | 

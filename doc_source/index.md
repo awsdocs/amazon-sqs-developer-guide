@@ -100,6 +100,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)
    + [Protecting Amazon SQS Data Using Server-Side Encryption (SSE) and AWS KMS](sqs-server-side-encryption.md)
    + [Amazon Virtual Private Cloud Endpoints for Amazon SQS](sqs-vpc-endpoints.md)
+      + [Creating an Amazon VPC Endpoint Policy for Amazon SQS](sqs-vpc-endpoint-policy.md)
 + [Working with Amazon SQS APIs](sqs-working-with-apis.md)
    + [Making Query API Requests](sqs-making-api-requests.md)
       + [Authenticating Requests](sqs-api-request-authentication.md)
