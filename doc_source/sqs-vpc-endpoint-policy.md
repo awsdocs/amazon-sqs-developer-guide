@@ -21,7 +21,7 @@ The following example VPC endpoint policy specifies that the IAM user `MyUser` i
 ```
 
 The following are denied:
-+ Other Amazon SQS API actions, such as `sns:CreateQueue` and `sns:DeleteQueue`\.
++ Other Amazon SQS API actions, such as `sqs:CreateQueue` and `sqs:DeleteQueue`\.
 + Other IAM users and rules which attempt to use this VPC endpoint\.
 + `MyUser` sending messages to a different Amazon SQS queue\.
 
