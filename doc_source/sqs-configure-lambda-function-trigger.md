@@ -9,7 +9,7 @@ Your queue and Lambda function must be in the same AWS Region\.
 FIFO queues don't support Lambda function triggers\.
 You can associate only one queue with one or more Lambda functions\.
 You can't associate an [encrypted queue](sqs-server-side-encryption.md) that uses an AWS managed customer master key for Amazon SQS with a Lambda function in a different AWS account\.
-If you associate an encrypted queue with a a Lambda function but Lambda doesn't poll for messages, add the `kms:Decrypt` permission to your Lambda role\.
+If you associate an encrypted queue with a Lambda function but Lambda doesn't poll for messages, add the `kms:Decrypt` permission to your Lambda role\.
 
 ## Prerequisites<a name="configure-lambda-function-trigger-prerequisites"></a>
 
