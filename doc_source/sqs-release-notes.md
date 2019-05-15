@@ -5,6 +5,7 @@ The following table lists Amazon SQS feature releases and improvements\. For cha
 
 | Date | Feature Release | 
 | --- | --- | 
+| May 15, 2019 | FIFO \(First\-In\-First\-Out\) queues are available in the Asia Pacific \(Hong Kong\), China \(Beijing\), AWS GovCloud \(US\-East\), and AWS GovCloud \(US\-West\) Regions\. For more information about how FIFO queues work and how to get started using them, see [Amazon SQS FIFO \(First\-In\-First\-Out\) Queues](FIFO-queues.md)\. | 
 | April 4, 2019 | You can create Amazon VPC endpoint policies for Amazon SQS\. For more information, see [Creating an Amazon VPC Endpoint Policy for Amazon SQS](sqs-vpc-endpoint-policy.md)\. | 
 | March 14, 2019 | FIFO \(First\-In\-First\-Out\) queues are available in the EU \(Stockholm\) and China \(Ningxia\) Regions\. For more information about how FIFO queues work and how to get started using them, see [Amazon SQS FIFO \(First\-In\-First\-Out\) Queues](FIFO-queues.md)\. | 
 | February 7, 2019 | FIFO \(First\-In\-First\-Out\) queues are available in the US East \(Ohio\), US East \(N\. Virginia\), US West \(N\. California\), US West \(Oregon\), Asia Pacific \(Mumbai\), Asia Pacific \(Seoul\), Asia Pacific \(Singapore\), Asia Pacific \(Sydney\), Asia Pacific \(Tokyo\), Canada \(Central\), EU \(Frankfurt\), EU \(Ireland\), EU \(London\), EU \(Paris\), and South America \(São Paulo\) Regions\. For more information about how FIFO queues work and how to get started using them, see [Amazon SQS FIFO \(First\-In\-First\-Out\) Queues](FIFO-queues.md)\. | 

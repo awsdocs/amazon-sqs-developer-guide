@@ -1,6 +1,6 @@
 # Amazon SQS FIFO \(First\-In\-First\-Out\) Queues<a name="FIFO-queues"></a>
 
-FIFO queues are available in the US East \(Ohio\), US East \(N\. Virginia\), US West \(N\. California\), US West \(Oregon\), Asia Pacific \(Mumbai\), Asia Pacific \(Seoul\), Asia Pacific \(Singapore\), Asia Pacific \(Sydney\), Asia Pacific \(Tokyo\), Canada \(Central\), China \(Ningxia\), EU \(Frankfurt\), EU \(Ireland\), EU \(London\), EU \(Paris\), EU \(Stockholm\), and South America \(São Paulo\) Regions\. FIFO queues have all the capabilities of the [standard queue](standard-queues.md)\.
+FIFO queues have all the capabilities of the [standard queue](standard-queues.md)\.
 
 For information about creating FIFO queues with or without server\-side encryption using the AWS Management Console, the AWS SDK for Java \(and the `[CreateQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)` action\), or AWS CloudFormation, see [Tutorial: Creating an Amazon SQS Queue](sqs-create-queue.md) and [Tutorial: Creating an Amazon SQS Queue with Server\-Side Encryption \(SSE\)](sqs-create-queue-sse.md)\.
 
