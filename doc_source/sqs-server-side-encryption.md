@@ -15,8 +15,6 @@ You can't associate an [encrypted queue](#sqs-server-side-encryption) that uses 
 Some features of AWS services that can send notifications to Amazon SQS using the AWS Security Token Service `[AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)` action are compatible with SSE but work *only with standard queues:*  
 [Auto Scaling Lifecycle Hooks](https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html)
 [AWS Lambda Dead\-Letter Queues](https://docs.aws.amazon.com/lambda/latest/dg/dlq.html)
-Other features of AWS services or third\-party services that send notifications to Amazon SQS aren't compatible with SSE, despite allowing you to set an encrypted queue as a target:  
-[AWS IoT Rule Actions](https://docs.aws.amazon.com/iot/latest/developerguide/iot-rule-actions.html)
 For information about compatibility of other services with encrypted queues, see [Enable Compatibility between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Encrypted Queues](#compatibility-with-aws-services) and your service documentation\.
 
 AWS KMS combines secure, highly available hardware and software to provide a key management system scaled for the cloud\. When you use Amazon SQS with AWS KMS, the [data keys](#sqs-sse-key-terms) that encrypt your message data are also encrypted and stored with the data they protect\.
