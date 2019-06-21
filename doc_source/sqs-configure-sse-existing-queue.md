@@ -1,6 +1,6 @@
 # Tutorial: Configuring Server\-Side Encryption \(SSE\) for an Existing Amazon SQS Queue<a name="sqs-configure-sse-existing-queue"></a>
 
-Server\-side encryption \(SSE\) for Amazon SQS is available in the AWS GovCloud \(US\-West\) Region, in addition to all commercial Regions where Amazon SQS is available, except for the China Regions\. You can enable SSE for a queue to protect its data\. For more information about using SSE, see [Protecting Amazon SQS Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md)\.
+You can enable SSE for a queue to protect its data\. For more information about using SSE, see [Protecting Amazon SQS Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md)\.
 
 **Important**  
 All requests to queues with SSE enabled must use HTTPS and [Signature Version 4](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)\.  
