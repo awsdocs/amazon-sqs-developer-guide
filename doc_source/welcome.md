@@ -40,7 +40,7 @@ Amazon SQS and [Amazon SNS](https://aws.amazon.com/sns/) are queue and topic ser
 + To create your first queue with Amazon SQS and send, receive, and delete a message, see [Getting Started with Amazon SQS](sqs-getting-started.md)\.
 + To discover the functionality and architecture of Amazon SQS, see [How Amazon SQS Works](sqs-how-it-works.md)\.
 + To find out the guidelines and caveats that will help you make the most of Amazon SQS, see [Best Practices for Amazon SQS](sqs-best-practices.md)\.
-+ To learn about Amazon SQS actions, see the *Amazon Simple Queue Service API Reference*\.
++ To learn about Amazon SQS actions, see the [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/)\.
 + To learn about Amazon SQS AWS CLI commands, see [Amazon SQS in the *AWS CLI Command Reference*](https://docs.aws.amazon.com/cli/latest/reference/sqs/index.html)\.
 
 ## We Want to Hear from You<a name="sqs-we-want-to-hear-from-you"></a>
