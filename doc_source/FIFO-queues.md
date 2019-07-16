@@ -18,6 +18,8 @@ FIFO queues also provide exactly\-once processing but have a limited number of t
 **Note**  
 The name of a FIFO queue must end with the `.fifo` suffix\. The suffix counts towards the 80\-character queue name limit\. To determine whether a queue is [FIFO](#FIFO-queues), you can check whether the queue name ends with the suffix\.
 
+For limits related to FIFO queues, see [Limits Related to Queues](sqs-limits.md#limits-queues)\.
+
 For best practices of working with FIFO queues, see [Additional Recommendations for Amazon SQS FIFO Queues ](sqs-additional-fifo-queue-recommendations.md) and [Recommendations for Amazon SQS Standard and FIFO \(First\-In\-First\-Out\) Queues ](sqs-standard-fifo-queue-best-practices.md)\.
 
 For information about compatibility of clients and services with FIFO queues, see [Compatibility](#FIFO-compatibility)\.

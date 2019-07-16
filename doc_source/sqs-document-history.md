@@ -5,6 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| July 11, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | June 22, 2019 | Fixed a broken link in the [How Can I Get Started with Amazon SQS?](welcome.md#get-started) section\. | 
 | May 30, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | May 15, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
