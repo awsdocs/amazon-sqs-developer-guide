@@ -57,6 +57,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Amazon SQS Dead-Letter Queues](sqs-dead-letter-queues.md)
    + [Amazon SQS Visibility Timeout](sqs-visibility-timeout.md)
    + [Amazon SQS Delay Queues](sqs-delay-queues.md)
+   + [Amazon SQS Temporary Queues](sqs-temporary-queues.md)
    + [Amazon SQS Message Timers](sqs-message-timers.md)
    + [Managing Large Amazon SQS Messages Using Amazon S3](sqs-s3-messages.md)
       + [Working Java Example for Using Amazon S3 for Large Amazon SQS Messages](working-java-example-using-s3-for-large-sqs-messages.md)

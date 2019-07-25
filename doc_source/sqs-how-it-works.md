@@ -14,6 +14,7 @@ This section describes the types of Amazon SQS queues and their basic properties
 + [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md)
 + [Amazon SQS Visibility Timeout](sqs-visibility-timeout.md)
 + [Amazon SQS Delay Queues](sqs-delay-queues.md)
++ [Amazon SQS Temporary Queues](sqs-temporary-queues.md)
 + [Amazon SQS Message Timers](sqs-message-timers.md)
 + [Managing Large Amazon SQS Messages Using Amazon S3](sqs-s3-messages.md)
 + [Working with JMS and Amazon SQS](sqs-java-message-service-jms-client.md)
