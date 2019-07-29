@@ -48,7 +48,7 @@ The `AmazonSQSTemporaryQueuesClient` class turns all queues it creates into temp
 
 ## Request\-Response Messaging Pattern \(Virtual Queues\)<a name="request-reply-messaging-pattern"></a>
 
-The most common use case for temporary queues is the *request\-response* messaging pattern, where a requester creates a *temporary queue* for receiving each response message\. To avoid creating an Amazon SQS queue for each response message, the Temporary Queue Client lets you create and delete multiple temporary queues without making any Amazon SQS API calls\.
+The most common use case for temporary queues is the *request\-response* messaging pattern, where a requester creates a *temporary queue* for receiving each response message\. To avoid creating an Amazon SQS queue for each response message, the Temporary Queue Client lets you create and delete multiple temporary queues without making any Amazon SQS API calls\. For more information, see [Implementing Request\-Response Systems](working-with-messages.md#implementing-request-response-systems)\.
 
 The following diagram shows a common configuration using this pattern\.
 

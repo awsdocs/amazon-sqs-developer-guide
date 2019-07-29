@@ -59,3 +59,5 @@ In some unlikely scenarios, if you set the number of maximum receives to 1, any 
 When implementing a request\-response or remote procedure call \(RPC\) system, keep the following best practices in mind:
 + Don't create reply queues *per message*\. Instead, create reply queues on startup, *per producer*, and use a correlation ID message attribute to map replies to requests\.
 + Don't let your producers share reply queues\. This can cause a producer to receive response messages intended for another producer\.
+
+For more information about implementing the request\-response pattern using the Temporary Queue Client, see [Request\-Response Messaging Pattern \(Virtual Queues\)](sqs-temporary-queues.md#request-reply-messaging-pattern)\.
