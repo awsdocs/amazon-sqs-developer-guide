@@ -9,7 +9,7 @@ The result of a [statement](#statement) that has [effect](#effect) set to `allow
 The activity that the [principal](#principal) has permission to perform, typically a request to AWS\.
 
 **default\-deny**  <a name="default-deny"></a>
-The result of a [statement](#statement) that that has no [allow](#allow) or [explicit-deny](#explicit-deny) settings\.
+The result of a [statement](#statement) that has no [allow](#allow) or [explicit-deny](#explicit-deny) settings\.
 
 **condition**  <a name="condition"></a>
 Any restriction or detail about a [permission](#permission)\. Typical conditions are related to date and time and IP addresses\.

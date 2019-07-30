@@ -72,7 +72,7 @@ In this tutorial you'll learn how to receive and delete a message\.
 
    The **View/Delete Messages in *QueueName*** dialog box is displayed\.
 **Note**  
-The first time you take this action, an information screen is displayed\. To hide the screen, check the **Don't show this again** checkbox\.
+The first time you take this action, an information screen is displayed\. To hide the screen, choose **Don't show this again**\.
 
 1. Choose **Start Polling for messages\.**  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-start-polling-for-messages.png)

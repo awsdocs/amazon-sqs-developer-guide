@@ -30,5 +30,5 @@ An Amazon SQS policy can have a maximum of 7 actions\.
 
    The permission is added to the queue\.
 
-   Your queues's policy **Effect**, **Principals**, **Actions**, and **Conditions** are displayed on your queue's **Permissions** tab\.  
+   Your queues' policy **Effect**, **Principals**, **Actions**, and **Conditions** are displayed on your queue's **Permissions** tab\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-adding-permissions-permissions-tab.png)
