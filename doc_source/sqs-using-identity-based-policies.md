@@ -1,4 +1,4 @@
-# Using Identity\-Based \(IAM\) Policies for Amazon SQS<a name="sqs-using-identity-based-policies"></a>
+# Using Identity\-Based \(IAM and Amazon SQS\) Policies for Amazon SQS<a name="sqs-using-identity-based-policies"></a>
 
 This topic provides examples of identity\-based policies in which an account administrator can attach permissions policies to IAM identities \(users, groups, and roles\)\.
 
@@ -10,8 +10,8 @@ With the exception of `ListQueues`, all Amazon SQS actions support resource\-lev
 + [Using Amazon SQS and IAM Policies](#sqs-using-sqs-and-iam-policies)
 + [Permissions Required to Use the Amazon SQS Console](#sqs-console-permissions)
 + [AWS\-Managed \(Predefined\) Policies for Amazon SQS](#sqs-access-policy-aws-managed-policies)
-+ [Basic Amazon SQS Policy Examples](sqs-writing-an-sqs-policy.md)
-+ [Advanced Amazon SQS Policy Examples](sqs-customer-managed-policy-examples.md)
++ [Basic Examples of IAM Policies for Amazon SQS](sqs-basic-examples-of-iam-policies.md)
++ [Basic Examples of Amazon SQS Policies](sqs-basic-examples-of-sqs-policies.md)
 
 ## Using Amazon SQS and IAM Policies<a name="sqs-using-sqs-and-iam-policies"></a>
 
@@ -34,7 +34,7 @@ It is up to you how you use both of the systems together to manage your permissi
 + In the second example, Bob abuses his access to `queue_xyz`, so it becomes necessary to remove his entire access to the queue\. The easiest thing to do is to add a policy that denies him access to all actions for the queue\. This policy overrides the other two because an explicit `deny` always overrides an `allow`\. For more information about policy evaluation logic, see [Using Custom Policies with the Amazon SQS Access Policy Language](sqs-creating-custom-policies.md)\. The following diagram illustrates the concept\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-iam-policies-deny-override.png)
 
-  You can also add an additional statement to the Amazon SQS policy that denies Bob any type of access to the queue\. It has the same effect as adding an IAM policy that denies Bob access to the queue\. For examples of policies that cover Amazon SQS actions and resources, see [Advanced Amazon SQS Policy Examples](sqs-customer-managed-policy-examples.md)\. For more information about writing Amazon SQS policies, see [Using Custom Policies with the Amazon SQS Access Policy Language](sqs-creating-custom-policies.md)\.
+  You can also add an additional statement to the Amazon SQS policy that denies Bob any type of access to the queue\. It has the same effect as adding an IAM policy that denies Bob access to the queue\. For examples of policies that cover Amazon SQS actions and resources, see [Basic Examples of Amazon SQS Policies](sqs-basic-examples-of-sqs-policies.md)\. For more information about writing Amazon SQS policies, see [Using Custom Policies with the Amazon SQS Access Policy Language](sqs-creating-custom-policies.md)\.
 
 ## Permissions Required to Use the Amazon SQS Console<a name="sqs-console-permissions"></a>
 

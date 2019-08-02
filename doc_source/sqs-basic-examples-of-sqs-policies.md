@@ -1,4 +1,4 @@
-# Advanced Amazon SQS Policy Examples<a name="sqs-customer-managed-policy-examples"></a>
+# Basic Examples of Amazon SQS Policies<a name="sqs-basic-examples-of-sqs-policies"></a>
 
 This section shows example policies for common Amazon SQS use cases\.
 

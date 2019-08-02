@@ -1,4 +1,4 @@
-# Basic Amazon SQS Policy Examples<a name="sqs-writing-an-sqs-policy"></a>
+# Basic Examples of IAM Policies for Amazon SQS<a name="sqs-basic-examples-of-iam-policies"></a>
 
 The following examples provide an introduction to Amazon SQS permission policies\.
 

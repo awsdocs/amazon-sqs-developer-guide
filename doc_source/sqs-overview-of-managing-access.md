@@ -110,7 +110,7 @@ The following is an example policy that allows a user to use all Amazon SQS acti
 }
 ```
 
-For more information, see [Using Identity\-Based \(IAM\) Policies for Amazon SQS](sqs-using-identity-based-policies.md), and [Identities \(Users, Groups, and Roles\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\.
+For more information, see [Using Identity\-Based \(IAM and Amazon SQS\) Policies for Amazon SQS](sqs-using-identity-based-policies.md), and [Identities \(Users, Groups, and Roles\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\.
 
 ### Resource\-Based Policies<a name="sqs-resource-based-policies"></a>
 
@@ -144,6 +144,8 @@ To express conditions, you use predefined condition keys\. There are no conditio
 + `aws:EpochTime`
 + `aws:SecureTransport`
 + `aws:SourceArn`
+**Note**  
+This condition ensures that AWS services grant access only on behalf of resources that your AWS account owns\. You can't specify the ARN of an IAM role as source ARN, because an IAM role is neither a source nor a service\.
 + `aws:SourceIP`
 + `aws:UserAgent`
 + `aws:MultiFactorAuthAge`

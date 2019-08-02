@@ -48,7 +48,7 @@ Currently, Amazon SQS supports only a limited subset of the [condition keys avai
 
 The following sections describe how to manage permissions for Amazon SQS\. We recommend that you read the overview first\.
 + [Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource](sqs-overview-of-managing-access.md)
-+ [Using Identity\-Based \(IAM\) Policies for Amazon SQS](sqs-using-identity-based-policies.md)
++ [Using Identity\-Based \(IAM and Amazon SQS\) Policies for Amazon SQS](sqs-using-identity-based-policies.md)
 + [Using Custom Policies with the Amazon SQS Access Policy Language](sqs-creating-custom-policies.md)
 + [Using Temporary Security Credentials](sqs-using-temporary-security-credentials.md)
 + [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)

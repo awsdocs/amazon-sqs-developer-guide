@@ -15,7 +15,7 @@ Amazon's trademarks and trade dress may not be used in
 -----
 ## Contents
 + [What Is Amazon Simple Queue Service?](welcome.md)
-+ [New and Frequently Viewed Amazon SQS Topics](sqs-newly-added-most-frequently-viewed-topics.md)
++ [Frequently Viewed Amazon SQS Topics](sqs-frequently-viewed-topics.md)
 + [Setting Up Amazon SQS](sqs-setting-up.md)
 + [Getting Started with Amazon SQS](sqs-getting-started.md)
 + [Amazon SQS Tutorials](sqs-tutorials.md)
@@ -87,9 +87,9 @@ Amazon's trademarks and trade dress may not be used in
 + [Amazon SQS Security](sqs-security.md)
    + [Authentication and Access Control for Amazon SQS](sqs-authentication-and-access-control.md)
       + [Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource](sqs-overview-of-managing-access.md)
-      + [Using Identity-Based (IAM) Policies for Amazon SQS](sqs-using-identity-based-policies.md)
-         + [Basic Amazon SQS Policy Examples](sqs-writing-an-sqs-policy.md)
-         + [Advanced Amazon SQS Policy Examples](sqs-customer-managed-policy-examples.md)
+      + [Using Identity-Based (IAM and Amazon SQS) Policies for Amazon SQS](sqs-using-identity-based-policies.md)
+         + [Basic Examples of IAM Policies for Amazon SQS](sqs-basic-examples-of-iam-policies.md)
+         + [Basic Examples of Amazon SQS Policies](sqs-basic-examples-of-sqs-policies.md)
       + [Using Custom Policies with the Amazon SQS Access Policy Language](sqs-creating-custom-policies.md)
          + [Amazon SQS Access Control Architecture](sqs-creating-custom-policies-architecture.md)
          + [Amazon SQS Access Control Process Workflow](sqs-creating-custom-policies-process-workflow.md)
