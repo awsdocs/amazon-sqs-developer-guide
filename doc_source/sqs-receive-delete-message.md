@@ -3,7 +3,7 @@
 After you send a message into a queue, you can consume it from the queue\. When you request a message from a queue, you can't specify which message to get\. Instead, you specify the maximum number of messages \(up to 10\) that you want to get\.
 
 **Note**  
-Because Amazon SQS is a distributed system, a queue with very few messages might display an empty response to a receive request\. In this case, you can rerun the request to get your message\. Depending on your application's needs, you might have to use short or [long polling](sqs-long-polling.md) to receive messages\.
+Because Amazon SQS is a distributed system, a queue with very few messages might display an empty response to a receive request\. In this case, you can rerun the request to get your message\. Depending on your application's needs, you might have to use short or [long polling](sqs-short-and-long-polling.md) to receive messages\.
 
 Amazon SQS doesn't automatically delete a message after receiving it for you, in case you don't successfully receive the message \(for example, the consumers can fail or lose connectivity\)\. To delete a message, you must send a separate request which acknowledges that you no longer need the message because you've successfully received and processed it\.
 

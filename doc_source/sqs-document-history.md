@@ -5,6 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| August 6, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | July 31, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | July 30, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | July 29, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
@@ -35,7 +36,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | August 22, 2018 | Rewrote the [Logging Amazon SQS API Calls Using AWS CloudTrail](logging-using-cloudtrail.md) section\. | 
 | August 21, 2018 | Revised the attribute table in the [Resources Required to Process Amazon SQS Messages](sqs-resources-required-process-messages.md) section\. | 
 | August 20, 2018 | Added the following note to the [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md) and [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md) section: When you designate a queue to be a source queue, a dead\-letter queue is not created automatically\. You must first create a normal standard or FIFO queue before designating it a dead\-letter queue\. | 
-| August 15, 2018 | Added the following note to the [Amazon SQS Long Polling](sqs-long-polling.md) section: You can confirm that a queue is empty when you perform a long poll and the ApproximateNumberOfMessagesDelayed, ApproximateNumberOfMessagesNotVisible, and ApproximateNumberOfMessagesVisible metrics are equal to 0 at least 1 minute after the producers stop sending messages \(when the queue metadata reaches eventual consistency\)\. For more information, see [Available CloudWatch Metrics for Amazon SQS](sqs-available-cloudwatch-metrics.md)\. | 
+| August 15, 2018 | Added the following note to the [Amazon SQS Short and Long Polling](sqs-short-and-long-polling.md) section: You can confirm that a queue is empty when you perform a long poll and the ApproximateNumberOfMessagesDelayed, ApproximateNumberOfMessagesNotVisible, and ApproximateNumberOfMessagesVisible metrics are equal to 0 at least 1 minute after the producers stop sending messages \(when the queue metadata reaches eventual consistency\)\. For more information, see [Available CloudWatch Metrics for Amazon SQS](sqs-available-cloudwatch-metrics.md)\. | 
 | August 7, 2018 | Clarified the information in the [Inflight Messages](sqs-visibility-timeout.md#inflight-messages) section\. | 
 | August 3, 2018 | Updated the [Frequently Viewed Amazon SQS Topics](sqs-frequently-viewed-topics.md) section\. | 
 | July 25, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
@@ -129,7 +130,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | May 24, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | May 23, 2017 | Server\-side encryption \(SSE\) for Amazon SQS is available in the US East \(N\. Virginia\) Region\. For more information about server\-side encryption and how to get started using it, see [Protecting Amazon SQS Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md)\. | 
 | May 19, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| April 25, 2017 | Restructured and updated the [Amazon SQS Long Polling](sqs-long-polling.md) section\. | 
+| April 25, 2017 | Restructured and updated the [Amazon SQS Short and Long Polling](sqs-short-and-long-polling.md) section\. | 
 | February 6, 2017 | Updated the [Authentication and Access Control](sqs-authentication-and-access-control.md) section\. | 
 | December 16, 2016 | Retired the Amazon Simple Queue Service Getting Started Guide and incorporated some of its content into the following sections of this guide:[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | December 2, 2016 | Restructured and updated the [Authentication and Access Control](sqs-authentication-and-access-control.md) section\. | 

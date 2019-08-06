@@ -2,7 +2,7 @@
 
 The [AWS SDK for Java](https://aws.amazon.com/sdkforjava/) includes `AmazonSQSBufferedAsyncClient` which accesses Amazon SQS\. This client allows for simple request batching using client\-side buffering—calls made from the client are first buffered and then sent as a batch request to Amazon SQS\.
 
-Client\-side buffering allows up to 10 requests to be buffered and sent as a batch request, decreasing your cost of using Amazon SQS and reducing the number of sent requests\. `AmazonSQSBufferedAsyncClient` buffers both synchronous and asynchronous calls\. Batched requests and support for [long polling](sqs-long-polling.md) can also help increase throughput\. For more information, see [Increasing Throughput using Horizontal Scaling and Action Batching](sqs-throughput-horizontal-scaling-and-batching.md)\.
+Client\-side buffering allows up to 10 requests to be buffered and sent as a batch request, decreasing your cost of using Amazon SQS and reducing the number of sent requests\. `AmazonSQSBufferedAsyncClient` buffers both synchronous and asynchronous calls\. Batched requests and support for [long polling](sqs-short-and-long-polling.md) can also help increase throughput\. For more information, see [Increasing Throughput using Horizontal Scaling and Action Batching](sqs-throughput-horizontal-scaling-and-batching.md)\.
 
 Because `AmazonSQSBufferedAsyncClient` implements the same interface as `AmazonSQSAsyncClient`, migrating from `AmazonSQSAsyncClient` to `AmazonSQSBufferedAsyncClient` typically requires only minimal changes to your existing code\.
 

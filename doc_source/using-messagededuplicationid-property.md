@@ -28,4 +28,4 @@ The deduplication process in FIFO queues is time\-sensitive\. When designing you
 
 ## Working with Visibility Timeouts<a name="working-with-visibility-timeouts"></a>
 
-For optimal performance, set the [visibility timeout](sqs-visibility-timeout.md) to be larger than the AWS SDK read timeout\. This applies to using the `ReceiveMessage` API action with either [short polling](standard-queues.md#consuming-messages-using-short-polling) or [long polling](sqs-long-polling.md)\.
+For optimal performance, set the [visibility timeout](sqs-visibility-timeout.md) to be larger than the AWS SDK read timeout\. This applies to using the `ReceiveMessage` API action with either [short polling](sqs-short-and-long-polling.md#sqs-short-polling) or [long polling](sqs-short-and-long-polling.md)\.

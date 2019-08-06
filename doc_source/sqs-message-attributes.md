@@ -31,7 +31,7 @@ Each message attribute consists of the following components:
 Message attribute data types instruct Amazon SQS how to handle the corresponding message attribute values\. For example, if the type is `Number`, Amazon SQS validates numerical values\.
 
 Amazon SQS supports the logical data types `String`, `Number`, and `Binary` with optional custom data type labels with the format `.custom-data-type`
-+ **String** – `String` attributes can store Unicode text with UTF\-8 binary encoding\. For more information, see [ASCII Printable Characters](http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters)\.
++ **String** – `String` attributes can store Unicode text using any valid XML characters\.
 + **Number** – `Number` attributes can store positive or negative numerical values\. A number can have up to 38 digits of precision, and it can be between 10^\-128 and 10^\+126\.
 **Note**  
 Amazon SQS removes leading and trailing zeroes\.

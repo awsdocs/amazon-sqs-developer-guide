@@ -10,7 +10,7 @@ This section describes the types of Amazon SQS queues and their basic properties
 + [Amazon SQS Message Attributes](sqs-message-attributes.md)
 + [Resources Required to Process Amazon SQS Messages](sqs-resources-required-process-messages.md)
 + [Amazon SQS Cost Allocation Tags](sqs-queue-tags.md)
-+ [Amazon SQS Long Polling](sqs-long-polling.md)
++ [Amazon SQS Short and Long Polling](sqs-short-and-long-polling.md)
 + [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md)
 + [Amazon SQS Visibility Timeout](sqs-visibility-timeout.md)
 + [Amazon SQS Delay Queues](sqs-delay-queues.md)

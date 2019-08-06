@@ -30,7 +30,7 @@ To handle request errors, use one of the following strategies:
 
 ## Setting Up Long Polling<a name="setting-up-long-polling"></a>
 
-*Long polling* helps reduce the cost of using Amazon SQS by eliminating the number of empty responses \(when there are no messages available for a `[ReceiveMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` request\) and false empty responses \(when messages are available but aren't included in a response\)\. For more information, see [Amazon SQS Long Polling](sqs-long-polling.md)\.
+When the wait time for the `ReceiveMessage` API action is greater than 0, *long polling* is in effect\. Long polling helps reduce the cost of using Amazon SQS by eliminating the number of empty responses \(when there are no messages available for a `[ReceiveMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` request\) and false empty responses \(when messages are available but aren't included in a response\)\. For more information, see [Amazon SQS Short and Long Polling](sqs-short-and-long-polling.md)\.
 
 To ensure optimal message processing, use the following strategies:
 + In most cases, you can set the `ReceiveMessage` wait time to 20 seconds\. If 20 seconds is too long for your application, set a shorter `ReceiveMessage` wait time \(1 second minimum\)\. If you don't use an AWS SDK to access Amazon SQS, or if you configure an AWS SDK to have a shorter wait time, you might have to modify your Amazon SQS client to either allow longer requests or use a shorter wait time for long polling\.
