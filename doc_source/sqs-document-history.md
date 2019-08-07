@@ -5,9 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
-| August 7, 2019 | Added the following statement to the [ Limits Related to Queues  Lists Amazon SQS limits related to queues\.   The following table lists limits related to queues\. 
-
-[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html) ](sqs-limits.md#limits-queues) section: The number of messages that an Amazon SQS queue can store is unlimited\. | 
+| August 7, 2019 | Added the following statement to the [Limits Related to Queues](sqs-limits.md#limits-queues) section: The number of messages that an Amazon SQS queue can store is unlimited\. | 
 | August 6, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | July 31, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | July 30, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
