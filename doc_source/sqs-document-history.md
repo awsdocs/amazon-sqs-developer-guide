@@ -5,7 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
-| August 20, 2019 | Revised the information in the [Amazon SQS Metrics](sqs-available-cloudwatch-metrics.md#sqs-metrics) section\. | 
+| August 20, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | August 9, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | August 7, 2019 | Added the following statement to the [Limits Related to Queues](sqs-limits.md#limits-queues) section: The number of messages that an Amazon SQS queue can store is unlimited\. | 
 | August 6, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 

@@ -87,7 +87,7 @@ With the introduction of IAM and the concepts of *Users* and *Amazon Resource Na
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/SQS_PolicyWithNewFeatures.png)
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-1-red.png) In addition to specifying which AWS Accounts have access to a queue, you can specify which users *in your own AWS account* have access to the queue\. If the users are in different accounts, see [Tutorial: Delegate Access Across AWS Accounts Using IAM Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html) in the *IAM User Guide*\.
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-1-red.png) For information about giving permissions to users in different accounts, see [Tutorial: Delegate Access Across AWS Accounts Using IAM Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html) in the *IAM User Guide*\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/number-2-red.png) The subset of actions included in `*` has expanded\. For a list of allowed actions, see [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)\.
 
