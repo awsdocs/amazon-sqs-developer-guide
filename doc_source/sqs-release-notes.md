@@ -5,7 +5,6 @@ The following table lists Amazon SQS feature releases and improvements\. For cha
 
 | Date | Feature Release | 
 | --- | --- | 
-| August 22, 2019 | You can send messages to your Amazon SQS queues from Amazon Virtual Private Cloud in the AWS GovCloud \(US\-East\) and AWS GovCloud \(US\-West\) Regions\. For more information, see [Amazon Virtual Private Cloud Endpoints for Amazon SQS](sqs-vpc-endpoints.md)\. | 
 | July 25, 2019 | Temporary queues help you save development time and deployment costs when using common message patterns such as request\-response\. You can use the [Temporary Queue Client](https://github.com/awslabs/amazon-sqs-java-temporary-queues-client) to create high\-throughput, cost\-effective, application\-managed temporary queues\. For more information, see [Amazon SQS Temporary Queues](sqs-temporary-queues.md)\. | 
 | June 20, 2019 | Server\-side encryption \(SSE\) for Amazon SQS is available in the AWS GovCloud \(US\-East\) Region\. For more information about server\-side encryption and how to get started using it, see [Protecting Amazon SQS Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md)\. | 
 | May 15, 2019 | FIFO \(First\-In\-First\-Out\) queues are available in the Asia Pacific \(Hong Kong\), China \(Beijing\), AWS GovCloud \(US\-East\), and AWS GovCloud \(US\-West\) Regions\. For more information about how FIFO queues work and how to get started using them, see [Amazon SQS FIFO \(First\-In\-First\-Out\) Queues](FIFO-queues.md)\. | 
