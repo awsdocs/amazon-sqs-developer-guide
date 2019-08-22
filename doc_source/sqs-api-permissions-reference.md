@@ -15,6 +15,8 @@ This condition ensures that AWS services grant access only on behalf of resource
 + `aws:UserAgent`
 + `aws:MultiFactorAuthAge`
 + `aws:MultiFactorAuthPresent`
++ `aws:RequestTag`
++ `aws:TagKeys`
 + `aws:TokenAge`
 
 If you see an expand arrow \(**↗**\) in the upper\-right corner of the table, you can open the table in a new window\. To close the window, choose the close button \(**X**\) in the lower\-right corner\.
