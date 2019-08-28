@@ -5,6 +5,7 @@ The following table lists Amazon SQS feature releases and improvements\. For cha
 
 | Date | Feature Release | 
 | --- | --- | 
+| August 28, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-release-notes.html)  | 
 | August 22, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-release-notes.html)  | 
 | July 25, 2019 | Temporary queues help you save development time and deployment costs when using common message patterns such as request\-response\. You can use the [Temporary Queue Client](https://github.com/awslabs/amazon-sqs-java-temporary-queues-client) to create high\-throughput, cost\-effective, application\-managed temporary queues\. For more information, see [Amazon SQS Temporary Queues](sqs-temporary-queues.md)\. | 
 | June 20, 2019 | Server\-side encryption \(SSE\) for Amazon SQS is available in the AWS GovCloud \(US\-East\) Region\. For more information about server\-side encryption and how to get started using it, see [Protecting Amazon SQS Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md)\. | 
@@ -37,7 +38,7 @@ The following table lists Amazon SQS feature releases and improvements\. For cha
 | October 27, 2015 | The Amazon SQS Extended Client Library for Java lets you manage Amazon SQS messages with Amazon S3\. For more information, see [Managing Large Amazon SQS Messages Using Amazon S3](sqs-s3-messages.md) in the Amazon Simple Queue Service Developer Guide\. | 
 | December 29, 2014 |  Amazon SQS lets you use JMS \(Java Message Service\) with Amazon SQS queues\. For more information, see [Working with JMS and Amazon SQS](sqs-java-message-service-jms-client.md) in the *Amazon Simple Queue Service Developer Guide*\.  | 
 | December 8, 2014 |  Amazon SQS lets you delete the messages in a queue using the `PurgeQueue` action\. For more information, see [PurgeQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_PurgeQueue.html) in the *Amazon Simple Queue Service API Reference*\.  | 
-| July 16, 2014 |  Amazon SQS lets you log actions using AWS CloudTrail\. For more information, see [Logging Amazon SQS API Calls Using AWS CloudTrail](logging-using-cloudtrail.md)\.  | 
+| July 16, 2014 |  Amazon SQS lets you log actions using AWS CloudTrail\. For more information, see [Logging Amazon SQS API Calls Using AWS CloudTrail](sqs-logging-using-cloudtrail.md)\.  | 
 | May 6, 2014 |  Amazon SQS provides support for message attributes\. For more information, see [Amazon SQS Message Attributes](sqs-message-attributes.md)\.  | 
 | January 29, 2014 |  Amazon SQS provides support for dead\-letter queues\. For more information, see [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md)\.  | 
 | November 21, 2012 |  You can subscribe an Amazon SQS queue to an Amazon SNS topic using the Amazon SQS console\. For more information, see [Tutorial: Subscribing an Amazon SQS Queue to an Amazon SNS Topic](sqs-subscribe-queue-sns-topic.md)\.  | 

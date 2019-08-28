@@ -1,4 +1,4 @@
-# Logging Amazon SQS API Calls Using AWS CloudTrail<a name="logging-using-cloudtrail"></a>
+# Logging Amazon SQS API Calls Using AWS CloudTrail<a name="sqs-logging-using-cloudtrail"></a>
 
 Amazon SQS is integrated with AWS CloudTrail, a service that provides a record of the Amazon SQS calls that a user, role, or AWS service makes\. CloudTrail captures API calls related to Amazon SQS queues as events, including calls from the Amazon SQS console and code calls from Amazon SQS APIs\. For more information about CloudTrail, see the [https://docs.aws.amazon.com/awscloudtrail/latest/userguide/](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
 

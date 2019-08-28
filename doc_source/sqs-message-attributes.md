@@ -2,6 +2,9 @@
 
 Amazon SQS lets you include structured metadata \(such as timestamps, geospatial data, signatures, and identifiers\) with messages using *message attributes*\. Each message can have up to 10 attributes\. Message attributes are optional and separate from the message body \(however, they are sent alongside it\)\. Your consumer can use message attributes to handle a message in a particular way without having to process the message body first\. For information about sending messages with attributes using the AWS Management Console or the AWS SDK for Java, see [Tutorial: Sending a Message with Attributes to an Amazon SQS Queue](sqs-send-message-with-attributes.md)\.
 
+**Note**  
+Don't confuse message attributes with *message system attributes*: Whereas you can use message attributes to attach custom metadata to Amazon SQS messages for your applications, you can use [message system attributes](sqs-message-system-attributes.md) to store metadata for other AWS services, such as AWS X\-Ray\.
+
 **Topics**
 + [Message Attribute Components](#message-attribute-components)
 + [Message Attribute Data Types](#message-attribute-data-types)

@@ -135,5 +135,5 @@ Now that you've created a queue and learned how to send, receive, and delete mes
   + [Python](https://aws.amazon.com/python/)
   + [Ruby](https://aws.amazon.com/ruby/)
   + [Windows & \.NET](https://aws.amazon.com/net/)
-+ Learn about keeping an eye on costs and resources in the [Monitoring, Logging, and Automating Amazon SQS Queues](sqs-monitoring-logging.md) section\.
++ Learn about keeping an eye on costs and resources in the [Monitoring, Logging, Automating, and Troubleshooting Amazon SQS Queues](sqs-monitoring-logging-automating-troubleshooting.md) section\.
 + Learn about protecting your data and access to it in the [Security](sqs-security.md) section\.

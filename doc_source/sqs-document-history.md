@@ -5,6 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| August 28, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | August 20, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | August 9, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | August 7, 2019 | Added the following statement to the [Limits Related to Queues](sqs-limits.md#limits-queues) section: The number of messages that an Amazon SQS queue can store is unlimited\. | 
@@ -36,7 +37,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | September 4, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | August 28, 2018 | Updated the [Protecting Amazon SQS Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md) section\.  | 
 | August 27, 2018 | Corrected the information in the [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md) section\. | 
-| August 22, 2018 | Rewrote the [Logging Amazon SQS API Calls Using AWS CloudTrail](logging-using-cloudtrail.md) section\. | 
+| August 22, 2018 | Rewrote the [Logging Amazon SQS API Calls Using AWS CloudTrail](sqs-logging-using-cloudtrail.md) section\. | 
 | August 21, 2018 | Revised the attribute table in the [Resources Required to Process Amazon SQS Messages](sqs-resources-required-process-messages.md) section\. | 
 | August 20, 2018 | Added the following note to the [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md) and [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md) section: When you designate a queue to be a source queue, a dead\-letter queue is not created automatically\. You must first create a normal standard or FIFO queue before designating it a dead\-letter queue\. | 
 | August 15, 2018 | Added the following note to the [Amazon SQS Short and Long Polling](sqs-short-and-long-polling.md) section: You can confirm that a queue is empty when you perform a long poll and the ApproximateNumberOfMessagesDelayed, ApproximateNumberOfMessagesNotVisible, and ApproximateNumberOfMessagesVisible metrics are equal to 0 at least 1 minute after the producers stop sending messages \(when the queue metadata reaches eventual consistency\)\. For more information, see [Available CloudWatch Metrics for Amazon SQS](sqs-available-cloudwatch-metrics.md)\. | 
@@ -137,7 +138,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | February 6, 2017 | Updated the [Authentication and Access Control](sqs-authentication-and-access-control.md) section\. | 
 | December 16, 2016 | Retired the Amazon Simple Queue Service Getting Started Guide and incorporated some of its content into the following sections of this guide:[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | December 2, 2016 | Restructured and updated the [Authentication and Access Control](sqs-authentication-and-access-control.md) section\. | 
-| November 2, 2016 | Renamed the Walkthroughs section to [Amazon SQS Tutorials](sqs-tutorials.md)\. | 
+| November 2, 2016 | Renamed the [Amazon SQS Tutorials](sqs-tutorials.md) section\. | 
 | May 27, 2016 | Added the [Best Practices for Amazon SQS](sqs-best-practices.md) section\. | 
 | May 12, 2016 | Added the [Amazon SQS Limits](sqs-limits.md) section\. | 
 | December 7, 2015 |  Updated Amazon SQS console screenshots\.  | 
