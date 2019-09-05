@@ -5,6 +5,7 @@ The following table lists Amazon SQS feature releases and improvements\. For cha
 
 | Date | Feature Release | 
 | --- | --- | 
+| September 5, 2019 | You can send messages to your Amazon SQS queues from Amazon Virtual Private Cloud in the AWS GovCloud \(US\-East\) and AWS GovCloud \(US\-West\) Regions\. For more information, see [Amazon Virtual Private Cloud Endpoints for Amazon SQS](sqs-vpc-endpoints.md)\. | 
 | August 28, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-release-notes.html)  | 
 | August 22, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-release-notes.html)  | 
 | July 25, 2019 | Temporary queues help you save development time and deployment costs when using common message patterns such as request\-response\. You can use the [Temporary Queue Client](https://github.com/awslabs/amazon-sqs-java-temporary-queues-client) to create high\-throughput, cost\-effective, application\-managed temporary queues\. For more information, see [Amazon SQS Temporary Queues](sqs-temporary-queues.md)\. | 
