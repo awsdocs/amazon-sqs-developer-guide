@@ -10,5 +10,5 @@ For information about features of the Amazon SQS Java Messaging Library that sup
 + [Prerequisites](prerequisites.md)
 + [Getting Started with the Amazon SQS Java Messaging Library](getting-started.md)
 + [Using the JMS Client with Other Amazon SQS Clients](sqs-jms-client-with-sqs-clients.md)
-+ [Working Java Example for Using JMS with Amazon SQS Standard Queues](code-examples.md)
++ [Working Java Example for Using JMS with Amazon SQS Standard Queues](sqs-jms-code-examples.md)
 + [Supported JMS 1\.1 Implementations](supported-implementations.md)

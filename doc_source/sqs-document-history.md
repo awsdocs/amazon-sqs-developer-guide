@@ -5,6 +5,8 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| September 18, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
+| September 16, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | September 10, 2019 | Revised the following statement throughout this guide: The default \(minimum\) delay for a message is 0 seconds\. The maximum is 15 minutes\. | 
 | August 29, 2019 | Revised the information in the [Compatibility](FIFO-queues.md#FIFO-compatibility) section\. | 
 | August 28, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
@@ -13,7 +15,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | August 7, 2019 | Added the following statement to the [Limits Related to Queues](sqs-limits.md#limits-queues) section: The number of messages that an Amazon SQS queue can store is unlimited\. | 
 | August 6, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | July 31, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
-| July 30, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
+| July 30, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | July 29, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | July 26, 2019 | Corrected the following statement throughout this guide: By default, FIFO queues support up to 3,000 messages per second, per API action \(SendMessage, ReceiveMessage, or DeleteMessage\), with [batching](sqs-batch-api-actions.md)\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\. | 
 | July 15, 2019 | Added the [Amazon SQS Temporary Queues](sqs-temporary-queues.md) section\. | 

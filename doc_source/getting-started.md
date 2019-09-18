@@ -31,7 +31,7 @@ The wrapped Amazon SQS client object included in the Amazon SQS Java Messaging L
 
 The wrapped client object checks if an Amazon SQS queue exists\.
 
-If a queue doesn't exist, the client creates it\. If the queue does exist, the function doesn't return anything\. For more information, see the "Create the queue if needed" section in the [TextMessageSender\.java](code-examples.md#example-sender) example\.
+If a queue doesn't exist, the client creates it\. If the queue does exist, the function doesn't return anything\. For more information, see the "Create the queue if needed" section in the [TextMessageSender\.java](sqs-jms-code-examples.md#example-sender) example\.
 
 ### To create a standard queue<a name="creating-queue-standard"></a>
 
@@ -169,9 +169,9 @@ Received: Hello World!
 
 **Note**  
 You can use the Spring Framework to initialize these objects\.  
-For additional information, see `SpringExampleConfiguration.xml`, `SpringExample.java`, and the other helper classes in `ExampleConfiguration.java` and `ExampleCommon.java` in the [Working Java Example for Using JMS with Amazon SQS Standard Queues](code-examples.md) section\.
+For additional information, see `SpringExampleConfiguration.xml`, `SpringExample.java`, and the other helper classes in `ExampleConfiguration.java` and `ExampleCommon.java` in the [Working Java Example for Using JMS with Amazon SQS Standard Queues](sqs-jms-code-examples.md) section\.
 
-For complete examples of sending and receiving objects, see [TextMessageSender\.java](code-examples.md#example-sender) and [SyncMessageReceiver\.java](code-examples.md#example-synchronous-message-receiver)\.
+For complete examples of sending and receiving objects, see [TextMessageSender\.java](sqs-jms-code-examples.md#example-sender) and [SyncMessageReceiver\.java](sqs-jms-code-examples.md#example-synchronous-message-receiver)\.
 
 ## Receiving Messages Asynchronously<a name="receive-messages-asynchronously"></a>
 
@@ -214,7 +214,7 @@ The following example shows how to receive the messages asynchronously through a
    Thread.sleep(1000);
    ```
 
-The rest of the steps are identical to the ones in the [Getting Started with the Amazon SQS Java Messaging Library](#getting-started) example\. For a complete example of an asynchronous consumer, see `AsyncMessageReceiver.java` in [Working Java Example for Using JMS with Amazon SQS Standard Queues](code-examples.md)\.
+The rest of the steps are identical to the ones in the [Getting Started with the Amazon SQS Java Messaging Library](#getting-started) example\. For a complete example of an asynchronous consumer, see `AsyncMessageReceiver.java` in [Working Java Example for Using JMS with Amazon SQS Standard Queues](sqs-jms-code-examples.md)\.
 
 The output for this example looks similar to the following:
 
@@ -247,7 +247,7 @@ The example in [Getting Started with the Amazon SQS Java Messaging Library](#get
 **Note**  
 In this mode, when a message is acknowledged, all messages received before this message are implicitly acknowledged as well\. For example, if 10 messages are received, and only the 10th message is acknowledged \(in the order the messages are received\), then all of the previous nine messages are also acknowledged\.
 
-The rest of the steps are identical to the ones in the [Getting Started with the Amazon SQS Java Messaging Library](#getting-started) example\. For a complete example of a synchronous consumer with client acknowledge mode, see `SyncMessageReceiverClientAcknowledge.java` in [Working Java Example for Using JMS with Amazon SQS Standard Queues](code-examples.md)\.
+The rest of the steps are identical to the ones in the [Getting Started with the Amazon SQS Java Messaging Library](#getting-started) example\. For a complete example of a synchronous consumer with client acknowledge mode, see `SyncMessageReceiverClientAcknowledge.java` in [Working Java Example for Using JMS with Amazon SQS Standard Queues](sqs-jms-code-examples.md)\.
 
 The output for this example looks similar to the following:
 

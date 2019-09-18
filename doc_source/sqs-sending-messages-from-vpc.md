@@ -10,7 +10,7 @@ Private DNS doesn't support legacy endpoints such as `queue.amazonaws.com` or `u
 + [Step 1: Create an Amazon EC2 Key Pair](#create-ec2-key-pair)
 + [Step 2: Create AWS Resources](#create-aws-resources)
 + [Step 3: Confirm That Your EC2 Instance Isn't Publicly Accessible](#confirm-ec2-instance-is-not-publicly-accessible)
-+ [Step 4: Create an Amazon VPC Endpoint for Amazon SQS](#create-vpc-endpoint-for-sqs)
++ [Create an Amazon VPC Endpoint for Amazon SQS](#create-vpc-endpoint-for-sqs)
 + [Step 5: Send a Message to Your Amazon SQS Queue](#sqs-vpc-tutorial-publish)
 
 ## Step 1: Create an Amazon EC2 Key Pair<a name="create-ec2-key-pair"></a>
@@ -123,7 +123,7 @@ The EC2 instance still doesn't have access to other AWS services and endpoints o
 
 1. On the **Create Endpoint** page, for **Service Name**, choose the service name for Amazon SQS\.
 **Note**  
-The service names vary based on the current AWS Region\. For example, if you are in US East \(Ohio\), the service name is **sqs\.*us\-east\-2*\.amazonaws\.com**\.
+The service names vary based on the current AWS Region\. For example, if you are in US East \(Ohio\), the service name is **com\.amazonaws\.*us\-east\-2*\.sqs**\.
 
 1. For **VPC**, choose **SQS\-VPCE\-Tutorial\-VPC**\.
 

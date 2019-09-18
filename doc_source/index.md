@@ -67,7 +67,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Prerequisites](prerequisites.md)
       + [Getting Started with the Amazon SQS Java Messaging Library](getting-started.md)
       + [Using the Amazon SQS Java Message Service (JMS) Client with Other Amazon SQS Clients](sqs-jms-client-with-sqs-clients.md)
-      + [Working Java Example for Using JMS with Amazon SQS Standard Queues](code-examples.md)
+      + [Working Java Example for Using JMS with Amazon SQS Standard Queues](sqs-jms-code-examples.md)
       + [Supported JMS 1.1 Implementations](supported-implementations.md)
 + [Best Practices for Amazon SQS](sqs-best-practices.md)
    + [Recommendations for Amazon SQS Standard and FIFO (First-In-First-Out) Queues](sqs-standard-fifo-queue-best-practices.md)

@@ -16,3 +16,11 @@ To avoid processing duplicate messages in a system with multiple producers and c
 **Note**  
 In this scenario, duplicates are eliminated\. However, the ordering of message can't be guaranteed\.  
 Any scenario with multiple producers and consumers increases the risk of inadvertently delivering a duplicate message if a worker doesn't process the message within the visibility timeout and the message becomes available to another worker\.
+
+## Avoid Having a Large Backlog of Messages with the Same Message Group ID<a name="avoiding-having-a-large-backlog-of-messages-with-the-same-message-group-id"></a>
+
+If your queue has a large backlog of 20,000 or more messages with the same message group ID, FIFO queues might be unable to return the messages that have a different message group ID but were sent to the queue at a later time until you successfully consume the messages from the backlog\.
+
+**Note**  
+A backlog of messages that have the same message group ID might build up because of a consumer that can't successfully process a message\. Message processing issues can occur because of an issue with the content of a message or because of a technical issue with the consumer\.  
+To move away messages that can't be processed repeatedly, and to unblock the processing of other messages that have the same message group ID, consider setting up a [dead\-letter queue](sqs-dead-letter-queues.md) policy\.

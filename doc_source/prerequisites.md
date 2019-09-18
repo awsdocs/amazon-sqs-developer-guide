@@ -16,7 +16,7 @@ The [SDK for Java](https://aws.amazon.com/sdkforjava/) and Amazon SQS Extended C
   If you don't use Maven, you must add the `amazon-sqs-java-messaging-lib.jar` package to the Java class path\. For information about downloading the library, see [Amazon SQS Java Messaging Library](https://github.com/awslabs/amazon-sqs-java-messaging-lib)\.
 **Note**  
 The Amazon SQS Java Messaging Library includes support for [Maven](http://maven.apache.org/) and the [Spring Framework](http://projects.spring.io/spring-framework/)\.  
-For code samples that use Maven, the Spring Framework, and the Amazon SQS Java Messaging Library, see [Working Java Example for Using JMS with Amazon SQS Standard Queues](code-examples.md)\.  
+For code samples that use Maven, the Spring Framework, and the Amazon SQS Java Messaging Library, see [Working Java Example for Using JMS with Amazon SQS Standard Queues](sqs-jms-code-examples.md)\.  
 
   ```
   <dependency>

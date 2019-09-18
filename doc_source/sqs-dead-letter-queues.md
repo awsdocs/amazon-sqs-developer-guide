@@ -80,4 +80,4 @@ To adjust this behavior, you can do one of the following:
 
 ### The `NumberOfMessagesSent` and `NumberOfMessagesReceived` for a Dead\-Letter Queue Don't Match<a name="sqs-dlq-number-of-messages"></a>
 
-If you send a message to a dead\-letter queue manually, it is captured by the `NumberOfMessagesSent` metric\. However, a message is sent to a dead\-letter queue as a result of a failed processing attempt, it isn't captured by this metric\. Thus, it is possible for the values of `NumberOfMessagesSent` and `NumberOfMessagesReceived` to be different\.
+If you send a message to a dead\-letter queue manually, it is captured by the `NumberOfMessagesSent` metric\. However, if a message is sent to a dead\-letter queue as a result of a failed processing attempt, it isn't captured by this metric\. Thus, it is possible for the values of `NumberOfMessagesSent` and `NumberOfMessagesReceived` to be different\.
