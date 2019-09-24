@@ -5,6 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| September 24, 2019 | Added the following statement to the [Configuring AWS KMS Permissions](sqs-server-side-encryption.md#sqs-what-permissions-for-sse) section: For each data key that AWS KMS generates, SSE calls the `Decrypt` action to verify the integrity of the data key before using it\. | 
 | September 18, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | September 16, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | September 10, 2019 | Revised the following statement throughout this guide: The default \(minimum\) delay for a message is 0 seconds\. The maximum is 15 minutes\. | 

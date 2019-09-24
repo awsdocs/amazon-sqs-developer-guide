@@ -141,7 +141,8 @@ Before you can use SSE, you must configure AWS KMS key policies to allow encrypt
 
 **Note**  
 You can also manage permissions for KMS keys using IAM policies\. For more information, see [Using IAM Policies with AWS KMS](https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html)\.  
-While you can configure global permissions to send to and receive from Amazon SQS, AWS KMS requires explicitly naming the full ARN of CMKs in specific regions in the `Resource` section of an IAM policy\.
+While you can configure global permissions to send to and receive from Amazon SQS, AWS KMS requires explicitly naming the full ARN of CMKs in specific regions in the `Resource` section of an IAM policy\.  
+For each data key that AWS KMS generates, SSE calls the `Decrypt` action to verify the integrity of the data key before using it\.
 
 You must also ensure that the key policies of the customer master key \(CMK\) allow the necessary permissions\. To do this, name the principals that produce and consume encrypted messages in Amazon SQS as users in the CMK key policy\. 
 
