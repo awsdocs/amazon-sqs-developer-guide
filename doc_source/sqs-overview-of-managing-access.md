@@ -112,12 +112,6 @@ The following is an example policy that allows a user to use all Amazon SQS acti
 
 For more information, see [Using Identity\-Based \(IAM and Amazon SQS\) Policies for Amazon SQS](sqs-using-identity-based-policies.md), and [Identities \(Users, Groups, and Roles\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\.
 
-### Resource\-Based Policies<a name="sqs-resource-based-policies"></a>
-
-Other AWS services, such as Amazon S3, support resource\-based permissions policies\. For example, to manage access permissions for an S3 bucket, you can attach a policy the S3 bucket\.
-
-Amazon SQS doesn't support resource\-level permissions in identity\-based policies \(attached to a user or role\), in which you can specify resources on which users are allowed to perform specified actions\. For more information, see [Overview of AWS IAM Permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_permissions.html) in the *IAM User Guide*\.
-
 ## Specifying Policy Elements: Actions, Effects, Resources, and Principals<a name="sqs-specifying-policy-elements"></a>
 
 For each [Amazon Simple Queue Service resource](#sqs-resource-and-operations), the service defines a set of [actions](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_Operations.html)\. To grant permissions for these actions, Amazon SQS defines a set of actions that you can specify in a policy\.
