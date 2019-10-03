@@ -2,9 +2,12 @@
 
 The following examples provide an introduction to Amazon SQS permission policies\.
 
+**Note**  
+When you configure lifecycle hooks for Amazon EC2 Auto Scaling, you don't need to write a policy to send messages to an Amazon SQS queue\. For more information, see [Amazon EC2 Auto Scaling Lifecycle Hooks](https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html) in the *Amazon EC2 User Guide for Linux Instances*\.
+
 ## Example 1: Allow a User to Create Queues<a name="allow-queue-creation"></a>
 
-In the following example, we create a policy for Bob that lets him access all Amazon SQS actions, but only with queues whose names are prefixed with the literal string `bob_queue_`\.
+In the following example, we create a policy for Bob that lets him access all Amazon SQS actions, but only with queues whose names are prefixed with the literal string `alice_queue_`\.
 
 Amazon SQS doesn't automatically grant the creator of a queue permissions to use the queue\. Therefore, we must explicitly grant Bob permissions to use all Amazon SQS actions in addition to `CreateQueue` action in the IAM policy\.
 
@@ -14,7 +17,7 @@ Amazon SQS doesn't automatically grant the creator of a queue permissions to use
    "Statement": [{
       "Effect": "Allow",
       "Action": "sqs:*",
-      "Resource": "arn:aws:sqs:*:123456789012:bob_queue_*"
+      "Resource": "arn:aws:sqs:*:123456789012:alice_queue_*"
    }]
 }
 ```
