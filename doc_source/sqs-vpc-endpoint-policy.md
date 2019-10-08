@@ -15,7 +15,9 @@ The following example VPC endpoint policy specifies that the IAM user `MyUser` i
       "Action": ["sqs:SendMessage"],
       "Effect": "Allow",
       "Resource": "arn:aws:sqs:us-east-2:123456789012:MyQueue",
-      "Principal": "arn:aws:iam:123456789012us-east:user/MyUser"
+      "Principal": {
+        "AWS": "arn:aws:iam:123456789012:user/MyUser"
+      }
    }]
 }
 ```
