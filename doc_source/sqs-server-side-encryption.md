@@ -3,7 +3,7 @@
 Server\-side encryption \(SSE\) lets you transmit sensitive data in encrypted queues\. SSE protects the contents of messages in Amazon SQS queues using keys managed in AWS Key Management Service \(AWS KMS\)\. For information about managing SSE using the AWS Management Console or the AWS SDK for Java \(and the `[CreateQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`, `[SetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`, and `[GetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)` actions\), see the following tutorials:
 + [Tutorial: Configuring Server\-Side Encryption \(SSE\) for an Existing Amazon SQS Queue](sqs-create-queue-sse.md)
 + [Tutorial: Configuring Server\-Side Encryption \(SSE\) for an Existing Amazon SQS Queue](sqs-configure-sse-existing-queue.md)
-+ [Enable Compatibility between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Encrypted Queues](#compatibility-with-aws-services)
++ [Enable Compatibility between Event Sources from AWS Services and Encrypted Queues](#compatibility-with-aws-services)
 
 [![AWS Videos](http://img.youtube.com/vi/https://www.youtube.com/embed/Mw1NVpJsOZc?rel=0&amp;controls=0&amp;showinfo=0/0.jpg)](http://www.youtube.com/watch?v=https://www.youtube.com/embed/Mw1NVpJsOZc?rel=0&amp;controls=0&amp;showinfo=0)
 
@@ -15,7 +15,7 @@ You can't associate an [encrypted queue](#sqs-server-side-encryption) that uses 
 Some features of AWS services that can send notifications to Amazon SQS using the AWS Security Token Service `[AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)` action are compatible with SSE but work *only with standard queues:*  
 [Auto Scaling Lifecycle Hooks](https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html)
 [AWS Lambda Dead\-Letter Queues](https://docs.aws.amazon.com/lambda/latest/dg/dlq.html)
-For information about compatibility of other services with encrypted queues, see [Enable Compatibility between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Encrypted Queues](#compatibility-with-aws-services) and your service documentation\.
+For information about compatibility of other services with encrypted queues, see [Enable Compatibility between Event Sources from AWS Services and Encrypted Queues](#compatibility-with-aws-services) and your service documentation\.
 
 AWS KMS combines secure, highly available hardware and software to provide a key management system scaled for the cloud\. When you use Amazon SQS with AWS KMS, the [data keys](#sqs-sse-key-terms) that encrypt your message data are also encrypted and stored with the data they protect\.
 
@@ -196,17 +196,13 @@ The consumer must have the `kms:Decrypt` permission for any customer master key 
 }
 ```
 
-### Enable Compatibility between AWS Services Such as Amazon CloudWatch Events, Amazon S3, and Amazon SNS and Encrypted Queues<a name="compatibility-with-aws-services"></a>
+### Enable Compatibility between Event Sources from AWS Services and Encrypted Queues<a name="compatibility-with-aws-services"></a>
 
-To allow Amazon CloudWatch Events, Amazon S3 event notifications, or Amazon SNS topic subscriptions to work with encrypted queues, you must perform the following steps:
+Several AWS services send events to Amazon SQS queues\. To allow these event sources to work with encrypted queues, you must perform the following steps\.
 
-1. [Create a customer master key \(CMK\)\.](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-keys-console)
+1. Use the AWS managed CMK for Amazon SQS\.
 
-1. To allow the AWS service feature to have the `kms:GenerateDataKey*` and `kms:Decrypt` permissions, add the following statement to the policy of the CMK\.
-**Note**  
-For Amazon CloudWatch Events, use `events`
-For Amazon S3 event notifications, use `s3`
-For Amazon SNS topic subscriptions, use `sns`
+1. To allow the AWS service to have the `kms:GenerateDataKey*` and `kms:Decrypt` permissions, add the following statement to the CMK policy\.
 
    ```
    {
@@ -223,14 +219,12 @@ For Amazon SNS topic subscriptions, use `sns`
             "Resource": "*"
           }]
    }
-   ```
+   ```    
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html)
 
 1. [Create a new SSE queue](sqs-create-queue-sse.md) or [configure an existing SSE queue](sqs-configure-sse-existing-queue.md) using the ARN of your CMK\.
 
-**Learn More**
-+ [Subscribe to a Topic](https://docs.aws.amazon.com/sns/latest/dg/SubscribeTopic.html) in the *Amazon Simple Notification Service Developer Guide*
-+ [Creating a CloudWatch Events Rule That Triggers on an Event](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/Create-CloudWatch-Events-Rule.html) in the *Amazon CloudWatch Events User Guide*
-+ [Configuring Amazon S3 Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) in the *Amazon Simple Storage Service Developer Guide*
+1. Provide the ARN of the encrypted queue to the event source\.
 
 ## Errors<a name="sqs-sse-troubleshooting-errors"></a>
 
