@@ -150,7 +150,7 @@ Alternatively, you can specify the required AWS KMS actions and CMK ARN in an IA
 
 ### Allow a User to Send Single or Batched Messages to a Queue with SSE<a name="send-to-encrypted-queue"></a>
 
-The producer must have the `kms:GenerateDataKey` and `kms:Decrypt` permissions for the customer master key \(CMK\)\.
+The producer must have the `kms:GenerateDataKey` and `kms:Decrypt` permissions for the customer master key \(CMK\)\. For each data key that AWS KMS generates, SSE calls the `Decrypt` action to verify the integrity of the data key before using it\.
 
 ```
 {
@@ -175,7 +175,7 @@ The producer must have the `kms:GenerateDataKey` and `kms:Decrypt` permissions f
 
 ### Allow a User to Receive Messages from a Queue with SSE<a name="receive-from-encrypted-queue"></a>
 
-The consumer must have the `kms:Decrypt` permission for any customer master key \(CMK\) that is used to encrypt the messages in the specified queue\. If the queue acts as a [dead\-letter queue](sqs-dead-letter-queues.md), the consumer must also have the `kms:Decrypt` permission for any CMK that is used to encrypt the messages in the source queue\.
+The consumer must have the `kms:Decrypt` permission for any customer master key \(CMK\) that is used to encrypt the messages in the specified queue\. For each data key that AWS KMS generates, SSE calls the `Decrypt` action to verify the integrity of the data key before using it\. If the queue acts as a [dead\-letter queue](sqs-dead-letter-queues.md), the consumer must also have the `kms:Decrypt` permission for any CMK that is used to encrypt the messages in the source queue\.
 
 ```
 {
