@@ -5,6 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| October 29, 2019 | Revised the information in the [Amazon SQS Information in CloudTrail](sqs-logging-using-cloudtrail.md#service-name-info-in-cloudtrail) section\. | 
 | October 24, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | October 16, 2019 | Rewrote the [Enable Compatibility between Event Sources from AWS Services and Encrypted Queues](sqs-server-side-encryption.md#compatibility-with-aws-services) section\. | 
 | October 10, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
