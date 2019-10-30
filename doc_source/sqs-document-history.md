@@ -5,7 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
-| October 29, 2019 | Revised the information in the [Amazon SQS Information in CloudTrail](sqs-logging-using-cloudtrail.md#service-name-info-in-cloudtrail) section\. | 
+| October 29, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | October 24, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | October 16, 2019 | Rewrote the [Enable Compatibility between Event Sources from AWS Services and Encrypted Queues](sqs-server-side-encryption.md#compatibility-with-aws-services) section\. | 
 | October 10, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
@@ -25,7 +25,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | July 31, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | July 30, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | July 29, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| July 26, 2019 | Corrected the following statement throughout this guide: By default, with [batching](sqs-batch-api-actions.md), FIFO queues support up to 3,000 messages per second, per API action \(SendMessage, ReceiveMessage, or DeleteMessage\)\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\. | 
+| July 26, 2019 | Corrected the following statement throughout this guide: By default, with [batching](sqs-batch-api-actions.md), FIFO queues support up to 3,000 messages per second \(TPS\), per API action \(SendMessage, ReceiveMessage, or DeleteMessage\)\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\. | 
 | July 15, 2019 | Added the [Amazon SQS Temporary Queues](sqs-temporary-queues.md) section\. | 
 | July 11, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | June 22, 2019 | Fixed a broken link in the [How Can I Get Started with Amazon SQS?](welcome.md#get-started) section\. | 

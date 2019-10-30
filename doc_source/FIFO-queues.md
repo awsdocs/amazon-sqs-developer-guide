@@ -12,7 +12,7 @@ For information about creating FIFO queues with or without server\-side encrypti
 + Prevent a student from enrolling in a course before registering for an account\.
 
 FIFO queues also provide exactly\-once processing but have a limited number of transactions per second \(TPS\):
-+ By default, with [batching](sqs-batch-api-actions.md), FIFO queues support up to 3,000 messages per second, per API action \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\.
++ By default, with [batching](sqs-batch-api-actions.md), FIFO queues support up to 3,000 messages per second \(TPS\), per API action \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\.
 + Without batching, FIFO queues support up to 300 messages per second, per API action \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\.
 
 **Note**  
@@ -96,7 +96,7 @@ If you have an existing application that uses standard queues and you want to ta
 You can't convert an existing standard queue into a FIFO queue\. To make the move, you must either create a new FIFO queue for your application or delete your existing standard queue and recreate it as a FIFO queue\.
 
 Use the following checklist to ensure that your application works correctly with a FIFO queue\.
-+ By default, with [batching](sqs-batch-api-actions.md), FIFO queues support up to 3,000 messages per second, per API action \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\. Without batching, FIFO queues support up to 300 messages per second, per API action \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\.
++ By default, with [batching](sqs-batch-api-actions.md), FIFO queues support up to 3,000 messages per second \(TPS\), per API action \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\. Without batching, FIFO queues support up to 300 messages per second, per API action \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\.
 + FIFO queues don't support per\-message delays, only per\-queue delays\. If your application sets the same value of the `DelaySeconds` parameter on each message, you must modify your application to remove the per\-message delay and set `DelaySeconds` on the entire queue instead\.
 + Every message sent to a FIFO queue requires a message group ID\. If you don't need multiple ordered message groups, specify the same message group ID for all your messages\.
 + Before sending messages to a FIFO queue, confirm the following:
