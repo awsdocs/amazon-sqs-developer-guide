@@ -3,7 +3,8 @@
 In this tutorial, you learn how to send messages to an Amazon SQS queue over a secure, private network\. This network consists of a VPC that contains an Amazon EC2 instance\. The instance connects to Amazon SQS through an *interface VPC endpoint*, allowing you to connect to the Amazon EC2 instance and send messages to the Amazon SQS queue even though the network is disconnected from the public internet\. For more information, see [Amazon Virtual Private Cloud Endpoints for Amazon SQS](sqs-vpc-endpoints.md)\.
 
 **Important**  
-When you configure Amazon SQS to send messages from Amazon VPC, make sure that you enable private DNS and use only endpoints in the format `sqs.us-east-2.amazonaws.com`\.  
+You can use Amazon Virtual Private Cloud only with HTTPS Amazon SQS endpoints\.
+When you configure Amazon SQS to send messages from Amazon VPC, you must enable private DNS and specify endpoints in the format `sqs.us-east-2.amazonaws.com`\.
 Private DNS doesn't support legacy endpoints such as `queue.amazonaws.com` or `us-east-2.queue.amazonaws.com`\.
 
 **Topics**
