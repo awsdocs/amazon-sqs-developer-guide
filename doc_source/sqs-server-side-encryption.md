@@ -200,7 +200,7 @@ The consumer must have the `kms:Decrypt` permission for any customer master key 
 
 Several AWS services send events to Amazon SQS queues\. To allow these event sources to work with encrypted queues, you must perform the following steps\.
 
-1. Use the AWS managed CMK for Amazon SQS\.
+1. Use a customer managed CMK\. For more information, see [Creating Keys](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) in the *AWS Key Management Service Developer Guide*\.
 
 1. To allow the AWS service to have the `kms:GenerateDataKey*` and `kms:Decrypt` permissions, add the following statement to the CMK policy\.
 
