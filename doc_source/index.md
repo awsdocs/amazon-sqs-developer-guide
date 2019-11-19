@@ -15,7 +15,6 @@ Amazon's trademarks and trade dress may not be used in
 -----
 ## Contents
 + [What Is Amazon Simple Queue Service?](welcome.md)
-+ [Frequently Viewed Amazon SQS Topics](sqs-frequently-viewed-topics.md)
 + [Setting Up Amazon SQS](sqs-setting-up.md)
 + [Getting Started with Amazon SQS](sqs-getting-started.md)
 + [Amazon SQS Tutorials](sqs-tutorials.md)

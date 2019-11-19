@@ -41,13 +41,10 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | January 22, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | January 21, 2019 | Corrected the Java code examples in the [Tutorial: Creating an Amazon SQS Queue with Server\-Side Encryption \(SSE\)](sqs-create-queue-sse.md) section\. | 
 | January 18, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| December 14, 2018 | Updated the [Frequently Viewed Amazon SQS Topics](sqs-frequently-viewed-topics.md) section\. | 
 | December 13, 2018 | Added the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | December 3, 2018 | Corrected the example POST request in the [Making a POST Request](sqs-making-api-requests.md#structure-post-request) section\. | 
-| October 8, 2018 | Updated the [Frequently Viewed Amazon SQS Topics](sqs-frequently-viewed-topics.md) section\. | 
 | October 3, 2018 | Corrected the example IP address in the [Example 3: Give Permission to Requests from Amazon EC2 Instances](sqs-creating-custom-policies-access-policy-examples.md#requests-from-ec2) section\. | 
 | September 25, 2018 | Corrected the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
-| September 10, 2018 | Updated the [Frequently Viewed Amazon SQS Topics](sqs-frequently-viewed-topics.md) section\. | 
 | September 4, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | August 28, 2018 | Updated the [Protecting Amazon SQS Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md) section\.  | 
 | August 27, 2018 | Corrected the information in the [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md) section\. | 
@@ -56,15 +53,13 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | August 20, 2018 | Added the following note to the [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md) and [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md) section: When you designate a queue to be a source queue, a dead\-letter queue is not created automatically\. You must first create a normal standard or FIFO queue before designating it a dead\-letter queue\. | 
 | August 15, 2018 | Added the following note to the [Amazon SQS Short and Long Polling](sqs-short-and-long-polling.md) section: You can confirm that a queue is empty when you perform a long poll and the ApproximateNumberOfMessagesDelayed, ApproximateNumberOfMessagesNotVisible, and ApproximateNumberOfMessagesVisible metrics are equal to 0 at least 1 minute after the producers stop sending messages \(when the queue metadata reaches eventual consistency\)\. For more information, see [Available CloudWatch Metrics for Amazon SQS](sqs-available-cloudwatch-metrics.md)\. | 
 | August 7, 2018 | Clarified the information in the [Inflight Messages](sqs-visibility-timeout.md#inflight-messages) section\. | 
-| August 3, 2018 | Updated the [Frequently Viewed Amazon SQS Topics](sqs-frequently-viewed-topics.md) section\. | 
 | July 25, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | July 6, 2018 |  Revised the following statements throughout this guide: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| July 5, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
+| July 5, 2018 | Added the following note regarding the ApproximateAgeOfOldestMessage metric to the [Available CloudWatch Metrics for Amazon SQS](sqs-available-cloudwatch-metrics.md) section: For [dead\-letter queues](sqs-dead-letter-queues.md), the value of ApproximateAgeOfOldestMessage is the longest time that a message has been in the queue\.  | 
 | July 3, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | June 28, 2018 | Created the [Tutorial: Configuring Messages Arriving in an Amazon SQS Queue to Trigger an AWS Lambda Function](sqs-configure-lambda-function-trigger.md) tutorial\. | 
 | June 26, 2018 | Corrected the information in the [How Do Dead\-Letter Queues Work?](sqs-dead-letter-queues.md#sqs-dead-letter-queues-how-they-work) section\. | 
 | June 11, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| June 8, 2018 | Updated the [Frequently Viewed Amazon SQS Topics](sqs-frequently-viewed-topics.md) section\. | 
 | June 5, 2018 | In addition to GitHub, HTML, PDF, and Kindle, the *Amazon Simple Queue Service Developer Guide* release notes are available as an RSS feed\. ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/amazon-sqs-rss-release-notes.png)  | 
 | May 29, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | May 24, 2018 | Updated the [Protecting Amazon SQS Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md) section\. | 
@@ -73,7 +68,6 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | May 10, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | May 9, 2018 | Rewrote the [Amazon SQS Message Timers](sqs-message-timers.md) section\. | 
 | May 8, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| May 4, 2018 | Updated the [Frequently Viewed Amazon SQS Topics](sqs-frequently-viewed-topics.md) section\. | 
 | May 3, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | May 2, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | May 1, 2018 | Corrected and clarified the information in the [Limits Related to Queues](sqs-limits.md#limits-queues) section\. | 
@@ -95,7 +89,6 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | March 19, 2018 | Clarified in the [Limits Related to Policies](sqs-limits.md#limits-policies) and [Tutorial: Adding Permissions to an Amazon SQS Queue](sqs-add-permissions.md) sections that an Amazon SQS policy can have a maximum of 7 actions\. | 
 | March 14, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | March 13, 2018 | Clarified the batched and unbatched throughput for FIFO queues throughout this guide\. | 
-| March 7, 2018 | Updated the [Frequently Viewed Amazon SQS Topics](sqs-frequently-viewed-topics.md) section\. | 
 | March 2, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | February 28, 2018 | Corrected image display in GitHub\. | 
 | February 27, 2018 | In addition to HTML, PDF, and Kindle, the Amazon Simple Queue Service Developer Guide is available on GitHub\. To leave feedback, choose the GitHub icon in the upper right\-hand corner\.![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/submit-github-feedback.png)  | 
@@ -113,7 +106,6 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | February 7, 2018 | Rewrote the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | February 6, 2018 | Rewrote the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | February 5, 2018 | Clarified the information in the [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md) section\. | 
-| February 2, 2018 | Created the [Frequently Viewed Amazon SQS Topics](sqs-frequently-viewed-topics.md) section\. | 
 | February 1, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | January 31, 2018 | Clarified the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | January 30, 2018 | Rewrote the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
