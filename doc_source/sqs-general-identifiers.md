@@ -14,7 +14,7 @@ The following is the queue URL for a queue named `MyQueue` owned by a user with 
 https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue
 ```
 
-You can also get the queue URL for a queue by listing your queues\. For more information, see `[ListQueues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueues.html)`\.
+You can retrieve the URL of a queue programmatically by listing your queues and parsing the string that follows the account number\. For more information, see `[ListQueues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueues.html)`\.
 
 ## Message ID<a name="message-id"></a>
 
