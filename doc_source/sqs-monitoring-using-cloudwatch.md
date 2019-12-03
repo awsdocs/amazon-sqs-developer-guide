@@ -5,8 +5,12 @@ Amazon SQS and Amazon CloudWatch are integrated so you can use CloudWatch to vie
 CloudWatch metrics for your Amazon SQS queues are automatically collected and pushed to CloudWatch every five minutes\. These metrics are gathered on all queues that meet the CloudWatch guidelines for being *active*\. CloudWatch considers a queue to be active for up to six hours if it contains any messages or if any action accesses it\. 
 
 **Note**  
-There is no charge for the Amazon SQS metrics reported in CloudWatch\. They're provided as part of the Amazon SQS service\.  
-Detailed monitoring \(or one\-minute metrics\) is currently unavailable for Amazon SQS\. Making requests to CloudWatch at this resolution might return no data\.  
+There is no charge for the Amazon SQS metrics reported in CloudWatch\. They're provided as part of the Amazon SQS service\.
+The one\-minute CloudWatch metric for Amazon SQS is currently available only in the following Regions:  
+US East \(Ohio\)
+EU \(Ireland\)
+EU \(Stockholm\)
+Asia Pacific \(Tokyo\)
 CloudWatch metrics are supported for both standard and FIFO queues\.
 
 **Topics**

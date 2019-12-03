@@ -65,6 +65,17 @@ Policies attached to an IAM identity are referred to as *identity\-based* polici
 There are two ways to give your users permissions to your Amazon SQS queues: using the Amazon SQS policy system and using the IAM policy system\. You can use either system, or both, to attach policies to users or roles\. In most cases, you can achieve the same result using either system\. For example, you can do the following:
 + **Attach a permission policy to a user or a group in your account** – To grant user permissions to create an Amazon SQS queue, attach a permissions policy to a user or group that the user belongs to\.
 + **Attach a permission policy to a user in another AWS account** – To grant user permissions to create an Amazon SQS queue, attach an Amazon SQS permissions policy to a user in another AWS account\.
+
+  Cross\-account permissions don't apply to the following actions:
+  + `[AddPermission](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html)`
+  + `[CreateQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`
+  + `[DeleteQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteQueue.html)`
+  + `[ListQueues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueues.html)`
+  + `[ListQueueTags](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueueTags.html)`
+  + `[RemovePermission](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_RemovePermission.html)`
+  + `[SetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`
+  + `[TagQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_TagQueue.html)`
+  + `[UntagQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_UntagQueue.html)`
 + **Attach a permission policy to a role \(grant cross\-account permissions\)** – To grant cross\-account permissions, attach an identity\-based permissions policy to an IAM role\. For example, the AWS account A administrator can create a role to grant cross\-account permissions to AWS account B \(or an AWS service\) as follows:
   + The account A administrator creates an IAM role and attaches a permissions policy—that grants permissions on resources in account A—to the role\.
   + The account A administrator attaches a trust policy to the role that identifies account B as the principal who can assume the role\.
@@ -145,5 +156,6 @@ This condition ensures that AWS services grant access only on behalf of resource
 + `aws:MultiFactorAuthAge`
 + `aws:MultiFactorAuthPresent`
 + `aws:RequestTag`
++ `aws:sourceVpce`
 + `aws:TagKeys`
 + `aws:TokenAge`

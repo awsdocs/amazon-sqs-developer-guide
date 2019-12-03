@@ -16,6 +16,7 @@ This condition ensures that AWS services grant access only on behalf of resource
 + `aws:MultiFactorAuthAge`
 + `aws:MultiFactorAuthPresent`
 + `aws:RequestTag`
++ `aws:sourceVpce`
 + `aws:TagKeys`
 + `aws:TokenAge`
 
