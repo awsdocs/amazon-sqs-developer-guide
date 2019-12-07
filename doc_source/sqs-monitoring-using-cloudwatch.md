@@ -8,8 +8,8 @@ CloudWatch metrics for your Amazon SQS queues are automatically collected and pu
 There is no charge for the Amazon SQS metrics reported in CloudWatch\. They're provided as part of the Amazon SQS service\.
 The one\-minute CloudWatch metric for Amazon SQS is currently available only in the following Regions:  
 US East \(Ohio\)
-EU \(Ireland\)
-EU \(Stockholm\)
+Europe \(Ireland\)
+Europe \(Stockholm\)
 Asia Pacific \(Tokyo\)
 CloudWatch metrics are supported for both standard and FIFO queues\.
 
