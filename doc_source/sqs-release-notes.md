@@ -5,6 +5,7 @@ The following table lists Amazon SQS feature releases and improvements\. For cha
 
 | Date | Feature Release | 
 | --- | --- | 
+| November 25, 2019 | The one\-minute CloudWatch metric for Amazon SQS is currently available only in the following Regions: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-release-notes.html)For more information, see [Monitoring Amazon SQS Queues Using CloudWatch](sqs-monitoring-using-cloudwatch.md)\. | 
 | October 10, 2019 | FIFO \(First\-In\-First\-Out\) queues are available in the Middle East \(Bahrain\) Region\. For more information about how FIFO queues work and how to get started using them, see [Amazon SQS FIFO \(First\-In\-First\-Out\) Queues](FIFO-queues.md)\. | 
 | September 5, 2019 | You can send messages to your Amazon SQS queues from Amazon Virtual Private Cloud in the AWS GovCloud \(US\-East\) and AWS GovCloud \(US\-West\) Regions\. For more information, see [Amazon Virtual Private Cloud Endpoints for Amazon SQS](sqs-vpc-endpoints.md)\. | 
 | August 28, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-release-notes.html)  | 

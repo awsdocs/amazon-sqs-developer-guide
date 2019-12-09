@@ -5,9 +5,8 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
-| November 29, 2019 | Added the following statement to the [Monitoring Amazon SQS Queues Using CloudWatch](sqs-monitoring-using-cloudwatch.md) section:The one\-minute CloudWatch metric for Amazon SQS is currently available only in the following Regions: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | November 27, 2019 | Corrected the prerequisites listed in the [Tutorial: Configuring Messages Arriving in an Amazon SQS Queue to Trigger an AWS Lambda Function](sqs-configure-lambda-function-trigger.md) section\. | 
-| November 25, 2019 | Revised the information in the [Queue Name and URL](sqs-general-identifiers.md#queue-name-url) section\. | 
+| November 25, 2019 | Revised the information in the following sections:[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | November 8, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | November 7, 2019 | Added the following passage throughout this guide:   You can use Amazon Virtual Private Cloud only with HTTPS Amazon SQS endpoints\.   When you configure Amazon SQS to send messages from Amazon VPC, you must enable private DNS and specify endpoints in the format `sqs.us-east-2.amazonaws.com`\.   Private DNS doesn't support legacy endpoints such as `queue.amazonaws.com` or `us-east-2.queue.amazonaws.com`\.    | 
 | October 29, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
