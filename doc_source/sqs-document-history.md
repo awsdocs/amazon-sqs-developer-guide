@@ -5,6 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| December 9, 2019 | Renamed the [Amazon SQS Quotas](sqs-quotas.md) section\. | 
 | November 27, 2019 | Corrected the prerequisites listed in the [Tutorial: Configuring Messages Arriving in an Amazon SQS Queue to Trigger an AWS Lambda Function](sqs-configure-lambda-function-trigger.md) section\. | 
 | November 25, 2019 | Revised the information in the following sections:[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | November 8, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
@@ -24,12 +25,12 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | August 28, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | August 20, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | August 9, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
-| August 7, 2019 | Added the following statement to the [Limits Related to Queues](sqs-limits.md#limits-queues) section: The number of messages that an Amazon SQS queue can store is unlimited\. | 
+| August 7, 2019 | Added the following statement to the [Quotas Related to Queues](sqs-quotas.md#quotas-queues) section: The number of messages that an Amazon SQS queue can store is unlimited\. | 
 | August 6, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | July 31, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | July 30, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | July 29, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| July 26, 2019 | Corrected the following statement throughout this guide: By default, with [batching](sqs-batch-api-actions.md), FIFO queues support up to 3,000 messages per second \(TPS\), per API action \(SendMessage, ReceiveMessage, or DeleteMessage\)\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\. | 
+| July 26, 2019 | Corrected the following statement throughout this guide: By default, with [batching](sqs-batch-api-actions.md), FIFO queues support up to 3,000 messages per second \(TPS\), per API action \(SendMessage, ReceiveMessage, or DeleteMessage\)\. To request a quota increase, [file a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\. | 
 | July 15, 2019 | Added the [Amazon SQS Temporary Queues](sqs-temporary-queues.md) section\. | 
 | July 11, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | June 22, 2019 | Fixed a broken link in the [How Can I Get Started with Amazon SQS?](welcome.md#get-started) section\. | 
@@ -72,7 +73,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | May 8, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | May 3, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | May 2, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| May 1, 2018 | Corrected and clarified the information in the [Limits Related to Queues](sqs-limits.md#limits-queues) section\. | 
+| May 1, 2018 | Corrected and clarified the information in the [Quotas Related to Queues](sqs-quotas.md#quotas-queues) section\. | 
 | April 25, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | April 24, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | April 23, 2018 | Rewrote the [Processing Messages in a Timely Manner](working-with-messages.md#processing-messages-timely-manner) section\. | 
@@ -88,7 +89,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | March 23, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | March 22, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | March 20, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| March 19, 2018 | Clarified in the [Limits Related to Policies](sqs-limits.md#limits-policies) and [Tutorial: Adding Permissions to an Amazon SQS Queue](sqs-add-permissions.md) sections that an Amazon SQS policy can have a maximum of 7 actions\. | 
+| March 19, 2018 | Clarified in the [Quotas Related to Policies](sqs-quotas.md#quotas-policies) and [Tutorial: Adding Permissions to an Amazon SQS Queue](sqs-add-permissions.md) sections that an Amazon SQS policy can have a maximum of 7 actions\. | 
 | March 14, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | March 13, 2018 | Clarified the batched and unbatched throughput for FIFO queues throughout this guide\. | 
 | March 2, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
@@ -135,7 +136,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | July 27, 2017 |  Changed the [deprecated `AmazonSQSClient` constructor](http://aws.amazon.com/blogs/developer/client-constructors-now-deprecated/) to `AmazonSQSClientBuilder` and revised the corresponding region specification in the [Working Java Example for Standard Queues](standard-queues-getting-started-java.md) section\.  | 
 | July 25, 2017 | Clarified the throughput for standard and FIFO queues throughout this guide\. | 
 | July 20, 2017 | Clarified the compatibility between Amazon SQS SSE queues and AWS and third\-party service features throughout this guide: Some features of AWS services that can send notifications to Amazon SQS using the AWS Security Token Service `[AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)` action are compatible with SSE but work *only with standard queues:* [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) For information about compatibility of other services with encrypted queues, see [Enable Compatibility between Event Sources from AWS Services and Encrypted Queues](sqs-server-side-encryption.md#compatibility-with-aws-services) and your service documentation\. | 
-| June 23, 2017 |  Corrected the information in the [Limits Related to Messages](sqs-limits.md#limits-messages) section\.  | 
+| June 23, 2017 |  Corrected the information in the [Quotas Related to Messages](sqs-quotas.md#quotas-messages) section\.  | 
 | June 20, 2017 |  Clarified the information in the [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md) section\.  | 
 | June 2, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | June 1, 2017 |  Updated the [What Is Amazon Simple Queue Service?](welcome.md) section\.  | 
@@ -148,6 +149,6 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | December 2, 2016 | Restructured and updated the [Authentication and Access Control](sqs-authentication-and-access-control.md) section\. | 
 | November 2, 2016 | Renamed the [Amazon SQS Tutorials](sqs-tutorials.md) section\. | 
 | May 27, 2016 | Added the [Best Practices for Amazon SQS](sqs-best-practices.md) section\. | 
-| May 12, 2016 | Added the [Amazon SQS Limits](sqs-limits.md) section\. | 
+| May 12, 2016 | Added the [Amazon SQS Quotas](sqs-quotas.md) section\. | 
 | December 7, 2015 |  Updated Amazon SQS console screenshots\.  | 
 | August 4, 2014 |  Updated information about access keys\. For more information, see [Authenticating Requests](sqs-api-request-authentication.md)\.  | 

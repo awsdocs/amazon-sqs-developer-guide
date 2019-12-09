@@ -29,14 +29,14 @@ An Amazon SQS message has three basic states:
 
 1. Deleted from the queue\.
 
-A message is considered to be *stored* after it is sent to a queue by a producer, but not yet received from the queue by a consumer \(that is, between states 1 and 2\)\. There is no limit to the number of stored messages\. A message is considered to be *in flight* after it is received from a queue by a consumer, but not yet deleted from the queue \(that is, between states 2 and 3\)\. There is a limit to the number of inflight messages\.
+A message is considered to be *stored* after it is sent to a queue by a producer, but not yet received from the queue by a consumer \(that is, between states 1 and 2\)\. There is no quota to the number of stored messages\. A message is considered to be *in flight* after it is received from a queue by a consumer, but not yet deleted from the queue \(that is, between states 2 and 3\)\. There is a quota to the number of inflight messages\.
 
 **Important**  
-Limits that apply to inflight messages are unrelated to the *unlimited* number of stored messages\.
+Quotas that apply to inflight messages are unrelated to the *unlimited* number of stored messages\.
 
-For most standard queues \(depending on queue traffic and message backlog\), there can be a maximum of approximately 120,000 inflight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this limit, Amazon SQS returns the `OverLimit` error message\. To avoid reaching the limit, you should delete messages from the queue after they're processed\. You can also increase the number of queues you use to process your messages\. To request a limit increase, [file a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\.
+For most standard queues \(depending on queue traffic and message backlog\), there can be a maximum of approximately 120,000 inflight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this quota, Amazon SQS returns the `OverLimit` error message\. To avoid reaching the quota, you should delete messages from the queue after they're processed\. You can also increase the number of queues you use to process your messages\. To request a quota increase, [file a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\.
 
-For FIFO queues, there can be a maximum of 20,000 inflight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this limit, Amazon SQS returns no error messages\.
+For FIFO queues, there can be a maximum of 20,000 inflight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this quota, Amazon SQS returns no error messages\.
 
 ## Setting the Visibility Timeout<a name="configuring-visibility-timeout"></a>
 

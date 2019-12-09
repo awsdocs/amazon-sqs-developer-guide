@@ -6,7 +6,7 @@ For more information about the following identifiers, see the *[Amazon Simple Qu
 
 When you create a new queue, you must specify a queue name unique for your AWS account and region\. Amazon SQS assigns each queue you create an identifier called a *queue URL* that includes the queue name and other Amazon SQS components\. Whenever you want to perform an action on a queue, you provide its queue URL\.
 
-The name of a FIFO queue must end with the `.fifo` suffix\. The suffix counts towards the 80\-character queue name limit\. To determine whether a queue is [FIFO](FIFO-queues.md), you can check whether the queue name ends with the suffix\.
+The name of a FIFO queue must end with the `.fifo` suffix\. The suffix counts towards the 80\-character queue name quota\. To determine whether a queue is [FIFO](FIFO-queues.md), you can check whether the queue name ends with the suffix\.
 
 The following is the queue URL for a queue named `MyQueue` owned by a user with the AWS account number `123456789012`\.
 

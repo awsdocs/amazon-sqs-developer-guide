@@ -77,7 +77,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Using the Amazon SQS Message Deduplication ID](using-messagededuplicationid-property.md)
       + [Using the Amazon SQS Message Group ID](using-messagegroupid-property.md)
       + [Using the Amazon SQS Receive Request Attempt ID](using-receiverequestattemptid-request-parameter.md)
-+ [Amazon SQS Limits](sqs-limits.md)
++ [Amazon SQS Quotas](sqs-quotas.md)
 + [Monitoring, Logging, Automating, and Troubleshooting Amazon SQS Queues](sqs-monitoring-logging-automating-troubleshooting.md)
    + [Monitoring Amazon SQS Queues Using CloudWatch](sqs-monitoring-using-cloudwatch.md)
       + [Accessing CloudWatch Metrics for Amazon SQS](sqs-access-metrics.md)
