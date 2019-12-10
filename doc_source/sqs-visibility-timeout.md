@@ -34,7 +34,7 @@ A message is considered to be *stored* after it is sent to a queue by a producer
 **Important**  
 Quotas that apply to inflight messages are unrelated to the *unlimited* number of stored messages\.
 
-For most standard queues \(depending on queue traffic and message backlog\), there can be a maximum of approximately 120,000 inflight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this quota, Amazon SQS returns the `OverLimit` error message\. To avoid reaching the quota, you should delete messages from the queue after they're processed\. You can also increase the number of queues you use to process your messages\. To request a quota increase, [file a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\.
+For most standard queues \(depending on queue traffic and message backlog\), there can be a maximum of approximately 120,000 inflight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this quota, Amazon SQS returns the `OverLimit` error message\. To avoid reaching the quota, you should delete messages from the queue after they're processed\. You can also increase the number of queues you use to process your messages\. To request a quota increase, [submit a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\.
 
 For FIFO queues, there can be a maximum of 20,000 inflight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this quota, Amazon SQS returns no error messages\.
 
