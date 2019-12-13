@@ -4,7 +4,7 @@ You can subscribe one or more Amazon SQS queues to an Amazon SNS topic from a li
 
 **Important**  
 Amazon SNS isn't currently compatible with FIFO queues\.
-For information about using Amazon SNS with encrypted Amazon SQS queues, see [Enable Compatibility between Event Sources from AWS Services and Encrypted Queues](sqs-server-side-encryption.md#compatibility-with-aws-services)\.
+For information about using Amazon SNS with encrypted Amazon SQS queues, see [Enable Compatibility between Event Sources from AWS Services and Encrypted Queues](sqs-key-management.md#compatibility-with-aws-services)\.
 When you subscribe an Amazon SQS queue to an Amazon SNS topic, Amazon SNS uses HTTPS to forward messages to Amazon SQS\.
 
 In this tutorial you learn how to subscribe an existing Amazon SQS queue to an existing Amazon SNS topic\.

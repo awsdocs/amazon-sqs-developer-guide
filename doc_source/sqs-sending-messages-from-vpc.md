@@ -1,6 +1,6 @@
 # Tutorial: Sending a Message to an Amazon SQS Queue from Amazon Virtual Private Cloud<a name="sqs-sending-messages-from-vpc"></a>
 
-In this tutorial, you learn how to send messages to an Amazon SQS queue over a secure, private network\. This network consists of a VPC that contains an Amazon EC2 instance\. The instance connects to Amazon SQS through an *interface VPC endpoint*, allowing you to connect to the Amazon EC2 instance and send messages to the Amazon SQS queue even though the network is disconnected from the public internet\. For more information, see [Amazon Virtual Private Cloud Endpoints for Amazon SQS](sqs-vpc-endpoints.md)\.
+In this tutorial, you learn how to send messages to an Amazon SQS queue over a secure, private network\. This network consists of a VPC that contains an Amazon EC2 instance\. The instance connects to Amazon SQS through an *interface VPC endpoint*, allowing you to connect to the Amazon EC2 instance and send messages to the Amazon SQS queue even though the network is disconnected from the public internet\. For more information, see [Amazon Virtual Private Cloud Endpoints for Amazon SQS](sqs-internetwork-traffic-privacy.md#sqs-vpc-endpoints)\.
 
 **Important**  
 You can use Amazon Virtual Private Cloud only with HTTPS Amazon SQS endpoints\.

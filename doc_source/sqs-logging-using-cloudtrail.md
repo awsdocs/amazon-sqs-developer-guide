@@ -44,39 +44,39 @@ The following example shows a CloudTrail log entry for an `AddPermission` API ca
 
 ```
 {
-  "Records": [
-    {
-      "eventVersion": "1.06",
-      "userIdentity": {
-        "type": "IAMUser",
-        "principalId": "AKIAI44QH8DHBEXAMPLE",
-        "arn": "arn:aws:iam::123456789012:user/Alice",
-        "accountId": "123456789012",
-        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
-        "userName": "Alice"
-      },
-      "eventTime": "2018-06-28T22:23:46Z",
-      "eventSource": "sqs.amazonaws.com",
-      "eventName": "AddPermission",
-      "awsRegion": "us-east-2",
-      "sourceIPAddress": "203.0.113.0",
-      "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0",
-      "requestParameters": {
-        "actions": [
-          "SendMessage"
-        ],
-        "AWSAccountIds": [
-          "123456789012"
-        ],
-        "label": "MyLabel",
-        "queueUrl": "https://sqs.us-east-2.amazon.com/123456789012/MyQueue"
-      },
-      "responseElements": null,
-      "requestID": "123abcde-f4gh-50ij-klmn-60o789012p30",
-      "eventID": "0987g654-32f1-09e8-d765-c4f3fb2109fa"
-    }
-  ]
-}
+	  "Records": [
+	    {
+	      "eventVersion": "1.06",
+	      "userIdentity": {
+	        "type": "IAMUser",
+	        "principalId": "AKIAI44QH8DHBEXAMPLE",
+	        "arn": "arn:aws:iam::123456789012:user/Alice",
+	        "accountId": "123456789012",
+	        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+	        "userName": "Alice"
+	      },
+	      "eventTime": "2018-06-28T22:23:46Z",
+	      "eventSource": "sqs.amazonaws.com",
+	      "eventName": "AddPermission",
+	      "awsRegion": "us-east-2",
+	      "sourceIPAddress": "203.0.113.0",
+	      "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0",
+	      "requestParameters": {
+	        "actions": [
+	          "SendMessage"
+	        ],
+	        "AWSAccountIds": [
+	          "123456789012"
+	        ],
+	        "label": "MyLabel",
+	        "queueUrl": "https://sqs.us-east-2.amazon.com/123456789012/MyQueue"
+	      },
+	      "responseElements": null,
+	      "requestID": "123abcde-f4gh-50ij-klmn-60o789012p30",
+	      "eventID": "0987g654-32f1-09e8-d765-c4f3fb2109fa"
+	    }
+	  ]
+	}
 ```
 
 ### CreateQueue<a name="create-queue"></a>
@@ -85,34 +85,34 @@ The following example shows a CloudTrail log entry for a `CreateQueue` API call\
 
 ```
 {
-  "Records": [
-    {
-      "eventVersion": "1.06",
-      "userIdentity": {
-        "type": "IAMUser",
-        "principalId": "AKIAI44QH8DHBEXAMPLE",
-        "arn": "arn:aws:iam::123456789012:user/Alejandro",
-        "accountId": "123456789012",
-        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
-        "userName": "Alejandro"
-      },
-      "eventTime": "2018-06-28T22:23:46Z",
-      "eventSource": "sqs.amazonaws.com",
-      "eventName": "CreateQueue",
-      "awsRegion": "us-east-2",
-      "sourceIPAddress": "203.0.113.1",
-      "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0",
-      "requestParameters": {
-        "queueName": "MyQueue"
-      },
-      "responseElements": {
-        "queueUrl": "https://sqs.us-east-2.amazon.com/123456789012/MyQueue"
-      },
-      "requestID": "123abcde-f4gh-50ij-klmn-60o789012p30",
-      "eventID": "0987g654-32f1-09e8-d765-c4f3fb2109fa"
-    }
-  ]
-}
+	  "Records": [
+	    {
+	      "eventVersion": "1.06",
+	      "userIdentity": {
+	        "type": "IAMUser",
+	        "principalId": "AKIAI44QH8DHBEXAMPLE",
+	        "arn": "arn:aws:iam::123456789012:user/Alejandro",
+	        "accountId": "123456789012",
+	        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+	        "userName": "Alejandro"
+	      },
+	      "eventTime": "2018-06-28T22:23:46Z",
+	      "eventSource": "sqs.amazonaws.com",
+	      "eventName": "CreateQueue",
+	      "awsRegion": "us-east-2",
+	      "sourceIPAddress": "203.0.113.1",
+	      "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0",
+	      "requestParameters": {
+	        "queueName": "MyQueue"
+	      },
+	      "responseElements": {
+	        "queueUrl": "https://sqs.us-east-2.amazon.com/123456789012/MyQueue"
+	      },
+	      "requestID": "123abcde-f4gh-50ij-klmn-60o789012p30",
+	      "eventID": "0987g654-32f1-09e8-d765-c4f3fb2109fa"
+	    }
+	  ]
+	}
 ```
 
 ### DeleteQueue<a name="delete-queue"></a>
@@ -121,32 +121,32 @@ The following example shows a CloudTrail log entry for a `DeleteQueue` API call\
 
 ```
 {
-  "Records": [
-    {
-      "eventVersion": "1.06",
-      "userIdentity": {
-        "type": "IAMUser",
-        "principalId": "AKIAI44QH8DHBEXAMPLE",
-        "arn": "arn:aws:iam::123456789012:user/Carlos",
-        "accountId": "123456789012",
-        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
-        "userName": "Carlos"
-      },
-      "eventTime": "2018-06-28T22:23:46Z",
-      "eventSource": "sqs.amazonaws.com",
-      "eventName": "DeleteQueue",
-      "awsRegion": "us-east-2",
-      "sourceIPAddress": "203.0.113.2",
-      "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0",
-      "requestParameters": {
-        "queueUrl": "https://sqs.us-east-2.amazon.com/123456789012/MyQueue"
-      },
-      "responseElements": null,
-      "requestID": "123abcde-f4gh-50ij-klmn-60o789012p30",
-      "eventID": "0987g654-32f1-09e8-d765-c4f3fb2109fa"
-    }
-  ]
-}
+	  "Records": [
+	    {
+	      "eventVersion": "1.06",
+	      "userIdentity": {
+	        "type": "IAMUser",
+	        "principalId": "AKIAI44QH8DHBEXAMPLE",
+	        "arn": "arn:aws:iam::123456789012:user/Carlos",
+	        "accountId": "123456789012",
+	        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+	        "userName": "Carlos"
+	      },
+	      "eventTime": "2018-06-28T22:23:46Z",
+	      "eventSource": "sqs.amazonaws.com",
+	      "eventName": "DeleteQueue",
+	      "awsRegion": "us-east-2",
+	      "sourceIPAddress": "203.0.113.2",
+	      "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0",
+	      "requestParameters": {
+	        "queueUrl": "https://sqs.us-east-2.amazon.com/123456789012/MyQueue"
+	      },
+	      "responseElements": null,
+	      "requestID": "123abcde-f4gh-50ij-klmn-60o789012p30",
+	      "eventID": "0987g654-32f1-09e8-d765-c4f3fb2109fa"
+	    }
+	  ]
+	}
 ```
 
 ### RemovePermission<a name="removepermission"></a>
@@ -155,33 +155,33 @@ The following example shows a CloudTrail log entry for a `RemovePermission` API 
 
 ```
 {
-  "Records": [
-    {
-      "eventVersion": "1.06",
-      "userIdentity": {
-        "type": "IAMUser",
-        "principalId": "AKIAI44QH8DHBEXAMPLE",
-        "arn": "arn:aws:iam::123456789012:user/Jane",
-        "accountId": "123456789012",
-        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
-        "userName": "Jane"
-      },
-      "eventTime": "2018-06-28T22:23:46Z",
-      "eventSource": "sqs.amazonaws.com",
-      "eventName": "RemovePermission",
-      "awsRegion": "us-east-2",
-      "sourceIPAddress": "203.0.113.3",
-      "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0",
-      "requestParameters": {
-        "label": "label",
-        "queueUrl": "https://sqs.us-east-2.amazon.com/123456789012/MyQueue"
-      },
-      "responseElements": null,
-      "requestID": "123abcde-f4gh-50ij-klmn-60o789012p30",
-      "eventID": "0987g654-32f1-09e8-d765-c4f3fb2109fa"
-    }
-  ]
-}
+	  "Records": [
+	    {
+	      "eventVersion": "1.06",
+	      "userIdentity": {
+	        "type": "IAMUser",
+	        "principalId": "AKIAI44QH8DHBEXAMPLE",
+	        "arn": "arn:aws:iam::123456789012:user/Jane",
+	        "accountId": "123456789012",
+	        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+	        "userName": "Jane"
+	      },
+	      "eventTime": "2018-06-28T22:23:46Z",
+	      "eventSource": "sqs.amazonaws.com",
+	      "eventName": "RemovePermission",
+	      "awsRegion": "us-east-2",
+	      "sourceIPAddress": "203.0.113.3",
+	      "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0",
+	      "requestParameters": {
+	        "label": "label",
+	        "queueUrl": "https://sqs.us-east-2.amazon.com/123456789012/MyQueue"
+	      },
+	      "responseElements": null,
+	      "requestID": "123abcde-f4gh-50ij-klmn-60o789012p30",
+	      "eventID": "0987g654-32f1-09e8-d765-c4f3fb2109fa"
+	    }
+	  ]
+	}
 ```
 
 ### SetQueueAttributes<a name="set-queue-attributes"></a>
@@ -190,33 +190,33 @@ The following example shows a CloudTrail log entry for `SetQueueAttributes`:
 
 ```
 {
-  "Records": [
-    {
-      "eventVersion": "1.06",
-      "userIdentity": {
-        "type": "IAMUser",
-        "principalId": "AKIAI44QH8DHBEXAMPLE",
-        "arn": "arn:aws:iam::123456789012:user/Maria",
-        "accountId": "123456789012",
-        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
-        "userName": "Maria"
-      },
-      "eventTime": "2018-06-28T22:23:46Z",
-      "eventSource": "sqs.amazonaws.com",
-      "eventName": "SetQueueAttributes",
-      "awsRegion": "us-east-2",
-      "sourceIPAddress": "203.0.113.4",
-      "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0",
-      "requestParameters": {
-        "attributes": {
-          "VisibilityTimeout": "100"
-        },
-        "queueUrl": "https://sqs.us-east-2.amazon.com/123456789012/MyQueue"
-      },
-      "responseElements": null,
-      "requestID": "123abcde-f4gh-50ij-klmn-60o789012p30",
-      "eventID": "0987g654-32f1-09e8-d765-c4f3fb2109fa"
-    }
-  ]
-}
+	  "Records": [
+	    {
+	      "eventVersion": "1.06",
+	      "userIdentity": {
+	        "type": "IAMUser",
+	        "principalId": "AKIAI44QH8DHBEXAMPLE",
+	        "arn": "arn:aws:iam::123456789012:user/Maria",
+	        "accountId": "123456789012",
+	        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+	        "userName": "Maria"
+	      },
+	      "eventTime": "2018-06-28T22:23:46Z",
+	      "eventSource": "sqs.amazonaws.com",
+	      "eventName": "SetQueueAttributes",
+	      "awsRegion": "us-east-2",
+	      "sourceIPAddress": "203.0.113.4",
+	      "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0",
+	      "requestParameters": {
+	        "attributes": {
+	          "VisibilityTimeout": "100"
+	        },
+	        "queueUrl": "https://sqs.us-east-2.amazon.com/123456789012/MyQueue"
+	      },
+	      "responseElements": null,
+	      "requestID": "123abcde-f4gh-50ij-klmn-60o789012p30",
+	      "eventID": "0987g654-32f1-09e8-d765-c4f3fb2109fa"
+	    }
+	  ]
+	}
 ```

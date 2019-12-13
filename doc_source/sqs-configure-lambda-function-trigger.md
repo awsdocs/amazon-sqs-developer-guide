@@ -22,7 +22,7 @@ To configure Lambda function triggers using the console, you must ensure the fol
   + `sqs:GetQueueAttributes`
   + `sqs:ReceiveMessage`
 
-For more information, see [Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource](sqs-overview-of-managing-access.md)\.
+For more information, see [Overview of Managing Access in Amazon SQS](sqs-overview-of-managing-access.md)\.
 
 ## AWS Management Console<a name="configure-lambda-function-trigger-console"></a>
 

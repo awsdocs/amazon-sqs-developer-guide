@@ -118,7 +118,7 @@ The following example Amazon SQS policy denies a specific AWS account access to 
 
 ## Example 5: Deny Access if It Isn't from a VPC Endpoint<a name="deny-not-from-vpc"></a>
 
-The following example Amazon SQS policy restricts access to `queue1`: 111122223333 can perform the [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html) and [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html) actions only from the VPC endpoint ID `vpce-1a2b3c4d` \(specified using the `aws:sourceVpce` condition\)\. For more information, see [Amazon Virtual Private Cloud Endpoints for Amazon SQS](sqs-vpc-endpoints.md)\.
+The following example Amazon SQS policy restricts access to `queue1`: 111122223333 can perform the [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html) and [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html) actions only from the VPC endpoint ID `vpce-1a2b3c4d` \(specified using the `aws:sourceVpce` condition\)\. For more information, see [Amazon Virtual Private Cloud Endpoints for Amazon SQS](sqs-internetwork-traffic-privacy.md#sqs-vpc-endpoints)\.
 
 **Note**  
 The `aws:sourceVpce` condition doesn't require an ARN for the VPC endpoint resource, only the VPC endpoint ID\.

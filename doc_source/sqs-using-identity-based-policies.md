@@ -1,9 +1,9 @@
-# Using Identity\-Based \(IAM and Amazon SQS\) Policies for Amazon SQS<a name="sqs-using-identity-based-policies"></a>
+# Using Identity\-Based Policies with Amazon SQS<a name="sqs-using-identity-based-policies"></a>
 
 This topic provides examples of identity\-based policies in which an account administrator can attach permissions policies to IAM identities \(users, groups, and roles\)\.
 
 **Important**  
-We recommend that you first review the introductory topics that explain the basic concepts and options available for you to manage access to your Amazon Simple Queue Service resources\. For more information, see [Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource](sqs-overview-of-managing-access.md)\.  
+We recommend that you first review the introductory topics that explain the basic concepts and options available for you to manage access to your Amazon Simple Queue Service resources\. For more information, see [Overview of Managing Access in Amazon SQS](sqs-overview-of-managing-access.md)\.  
 With the exception of `ListQueues`, all Amazon SQS actions support resource\-level permissions\. For more information, see [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)\.
 
 **Topics**

@@ -1,10 +1,15 @@
-# Authentication and Access Control for Amazon SQS<a name="sqs-authentication-and-access-control"></a>
+# Identity and Access Management in Amazon SQS<a name="sqs-authentication-and-access-control"></a>
 
- Access to Amazon SQS requires credentials that AWS can use to authenticate your requests\. These credentials must have permissions to access AWS resources, such an Amazon SQS queues and messages\. The following sections provide details on how you can use [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) and Amazon SQS to help secure your resources by controlling access to them\. 
+Access to Amazon SQS requires credentials that AWS can use to authenticate your requests\. These credentials must have permissions to access AWS resources, such an Amazon SQS queues and messages\. The following sections provide details on how you can use [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) and Amazon SQS to help secure your resources by controlling access to them\. 
 
 **Topics**
 + [Authentication](#authentication)
 + [Access Control](#access-control)
++ [Overview of Managing Access](sqs-overview-of-managing-access.md)
++ [Using Identity\-Based Policies with Amazon SQS](sqs-using-identity-based-policies.md)
++ [Using Custom Policies with the Amazon SQS Access Policy Language](sqs-creating-custom-policies.md)
++ [Using Temporary Security Credentials with Amazon SQS](sqs-using-temporary-security-credentials.md)
++ [Actions and Resource Reference](sqs-api-permissions-reference.md)
 
 ## Authentication<a name="authentication"></a>
 
@@ -45,10 +50,3 @@ Cross\-account permissions don't apply to the following actions:
 `[TagQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_TagQueue.html)`
 `[UntagQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_UntagQueue.html)`
 Currently, Amazon SQS supports only a limited subset of the [condition keys available in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys)\. For more information, see [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)\. 
-
-The following sections describe how to manage permissions for Amazon SQS\. We recommend that you read the overview first\.
-+ [Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource](sqs-overview-of-managing-access.md)
-+ [Using Identity\-Based \(IAM and Amazon SQS\) Policies for Amazon SQS](sqs-using-identity-based-policies.md)
-+ [Using Custom Policies with the Amazon SQS Access Policy Language](sqs-creating-custom-policies.md)
-+ [Using Temporary Security Credentials](sqs-using-temporary-security-credentials.md)
-+ [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)

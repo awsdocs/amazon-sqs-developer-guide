@@ -5,6 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| December 18, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | December 9, 2019 | Renamed the [Amazon SQS Quotas](sqs-quotas.md) section\. | 
 | November 27, 2019 | Corrected the prerequisites listed in the [Tutorial: Configuring Messages Arriving in an Amazon SQS Queue to Trigger an AWS Lambda Function](sqs-configure-lambda-function-trigger.md) section\. | 
 | November 25, 2019 | Revised the information in the following sections:[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
@@ -12,12 +13,12 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | November 7, 2019 | Added the following passage throughout this guide:   You can use Amazon Virtual Private Cloud only with HTTPS Amazon SQS endpoints\.   When you configure Amazon SQS to send messages from Amazon VPC, you must enable private DNS and specify endpoints in the format `sqs.us-east-2.amazonaws.com`\.   Private DNS doesn't support legacy endpoints such as `queue.amazonaws.com` or `us-east-2.queue.amazonaws.com`\.    | 
 | October 29, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | October 24, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
-| October 16, 2019 | Rewrote the [Enable Compatibility between Event Sources from AWS Services and Encrypted Queues](sqs-server-side-encryption.md#compatibility-with-aws-services) section\. | 
+| October 16, 2019 | Rewrote the [Enable Compatibility between Event Sources from AWS Services and Encrypted Queues](sqs-key-management.md#compatibility-with-aws-services) section\. | 
 | October 10, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | October 7, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | October 3, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | October 1, 2019 | Revised the information in the [Identity\-Based Policies \(IAM Policies and Amazon SQS Policies\)](sqs-overview-of-managing-access.md#sqs-identity-based-features-of-sqs-policies) section\. | 
-| September 24, 2019 | Added the following statement to the [Configuring AWS KMS Permissions](sqs-server-side-encryption.md#sqs-what-permissions-for-sse) section: For each data key that AWS KMS generates, SSE calls the Decrypt action to verify the integrity of the data key before using it\. | 
+| September 24, 2019 | Added the following statement to the [Configuring AWS KMS Permissions](sqs-key-management.md#sqs-what-permissions-for-sse) section: For each data key that AWS KMS generates, SSE calls the Decrypt action to verify the integrity of the data key before using it\. | 
 | September 18, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | September 16, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | September 10, 2019 | Revised the following statement throughout this guide: The default \(minimum\) delay for a message is 0 seconds\. The maximum is 15 minutes\. | 
@@ -37,7 +38,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | May 30, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | May 15, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | May 14, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
-| April 4, 2019 | Added the [Creating an Amazon VPC Endpoint Policy for Amazon SQS](sqs-vpc-endpoint-policy.md) section\. | 
+| April 4, 2019 | Added the [Creating an Amazon VPC Endpoint Policy for Amazon SQS](sqs-internetwork-traffic-privacy.md#sqs-vpc-endpoint-policy) section\. | 
 | March 26, 2019 | Revised the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | March 15, 2019 | Revised the information in the [Key Terms](sqs-server-side-encryption.md#sqs-sse-key-terms) section\. | 
 | March 14, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
@@ -49,7 +50,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | October 3, 2018 | Corrected the example IP address in the [Example 3: Give Permission to Requests from Amazon EC2 Instances](sqs-creating-custom-policies-access-policy-examples.md#requests-from-ec2) section\. | 
 | September 25, 2018 | Corrected the information in the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | September 4, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| August 28, 2018 | Updated the [Protecting Amazon SQS Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md) section\.  | 
+| August 28, 2018 | Updated the [Encryption at Rest](sqs-server-side-encryption.md) section\.  | 
 | August 27, 2018 | Corrected the information in the [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md) section\. | 
 | August 22, 2018 | Rewrote the [Logging Amazon SQS API Calls Using AWS CloudTrail](sqs-logging-using-cloudtrail.md) section\. | 
 | August 21, 2018 | Revised the attribute table in the [Resources Required to Process Amazon SQS Messages](sqs-resources-required-process-messages.md) section\. | 
@@ -65,7 +66,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | June 11, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | June 5, 2018 | In addition to GitHub, HTML, PDF, and Kindle, the *Amazon Simple Queue Service Developer Guide* release notes are available as an RSS feed\. ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/amazon-sqs-rss-release-notes.png)  | 
 | May 29, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| May 24, 2018 | Updated the [Protecting Amazon SQS Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md) section\. | 
+| May 24, 2018 | Updated the [Encryption at Rest](sqs-server-side-encryption.md) section\. | 
 | May 22, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | May 15, 2018 | Clarified the information in the [Processing Messages in a Timely Manner](working-with-messages.md#processing-messages-timely-manner) section\. | 
 | May 10, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
@@ -115,7 +116,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | January 29, 2018 | Rewrote the following sections: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | January 25, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | January 24, 2018 | Clarified the wording for Amazon SQS actions throughout this guide\. | 
-| January 22, 2018 | Added the [Enable Compatibility between Event Sources from AWS Services and Encrypted Queues](sqs-server-side-encryption.md#compatibility-with-aws-services) section\. | 
+| January 22, 2018 | Added the [Enable Compatibility between Event Sources from AWS Services and Encrypted Queues](sqs-key-management.md#compatibility-with-aws-services) section\. | 
 | January 19, 2018 | Clarified the information in the [How Do Dead\-Letter Queues Work?](sqs-dead-letter-queues.md#sqs-dead-letter-queues-how-they-work) section\. | 
 | January 18, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | January 17, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
@@ -135,13 +136,13 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | August 9, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | July 27, 2017 |  Changed the [deprecated `AmazonSQSClient` constructor](http://aws.amazon.com/blogs/developer/client-constructors-now-deprecated/) to `AmazonSQSClientBuilder` and revised the corresponding region specification in the [Working Java Example for Standard Queues](standard-queues-getting-started-java.md) section\.  | 
 | July 25, 2017 | Clarified the throughput for standard and FIFO queues throughout this guide\. | 
-| July 20, 2017 | Clarified the compatibility between Amazon SQS SSE queues and AWS and third\-party service features throughout this guide: Some features of AWS services that can send notifications to Amazon SQS using the AWS Security Token Service `[AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)` action are compatible with SSE but work *only with standard queues:* [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) For information about compatibility of other services with encrypted queues, see [Enable Compatibility between Event Sources from AWS Services and Encrypted Queues](sqs-server-side-encryption.md#compatibility-with-aws-services) and your service documentation\. | 
+| July 20, 2017 | Clarified the compatibility between Amazon SQS SSE queues and AWS and third\-party service features throughout this guide: Some features of AWS services that can send notifications to Amazon SQS using the AWS Security Token Service `[AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)` action are compatible with SSE but work *only with standard queues:* [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) For information about compatibility of other services with encrypted queues, see [Enable Compatibility between Event Sources from AWS Services and Encrypted Queues](sqs-key-management.md#compatibility-with-aws-services) and your service documentation\. | 
 | June 23, 2017 |  Corrected the information in the [Quotas Related to Messages](sqs-quotas.md#quotas-messages) section\.  | 
 | June 20, 2017 |  Clarified the information in the [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md) section\.  | 
 | June 2, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | June 1, 2017 |  Updated the [What Is Amazon Simple Queue Service?](welcome.md) section\.  | 
 | May 24, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
-| May 23, 2017 | Server\-side encryption \(SSE\) for Amazon SQS is available in the US East \(N\. Virginia\) Region\. For more information about server\-side encryption and how to get started using it, see [Protecting Amazon SQS Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md)\. | 
+| May 23, 2017 | Server\-side encryption \(SSE\) for Amazon SQS is available in the US East \(N\. Virginia\) Region\. For more information about server\-side encryption and how to get started using it, see [Encryption at Rest](sqs-server-side-encryption.md)\. | 
 | May 19, 2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | April 25, 2017 | Restructured and updated the [Amazon SQS Short and Long Polling](sqs-short-and-long-polling.md) section\. | 
 | February 6, 2017 | Updated the [Authentication and Access Control](sqs-authentication-and-access-control.md) section\. | 

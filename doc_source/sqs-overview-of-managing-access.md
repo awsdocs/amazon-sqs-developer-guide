@@ -1,4 +1,4 @@
-# Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource<a name="sqs-overview-of-managing-access"></a>
+# Overview of Managing Access in Amazon SQS<a name="sqs-overview-of-managing-access"></a>
 
 Every AWS resource is owned by an AWS account, and permissions to create or access a resource are governed by permissions policies\. An account administrator can attach permissions policies to IAM identities \(users, groups, and roles\), and some services \(such as Amazon SQS\) also support attaching permissions policies to resources\.
 
@@ -121,7 +121,7 @@ The following is an example policy that allows a user to use all Amazon SQS acti
 }
 ```
 
-For more information, see [Using Identity\-Based \(IAM and Amazon SQS\) Policies for Amazon SQS](sqs-using-identity-based-policies.md), and [Identities \(Users, Groups, and Roles\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\.
+For more information, see [Using Identity\-Based Policies with Amazon SQS](sqs-using-identity-based-policies.md), and [Identities \(Users, Groups, and Roles\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\.
 
 ## Specifying Policy Elements: Actions, Effects, Resources, and Principals<a name="sqs-specifying-policy-elements"></a>
 

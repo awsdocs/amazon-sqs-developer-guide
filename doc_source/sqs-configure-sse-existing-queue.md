@@ -1,6 +1,6 @@
 # Tutorial: Configuring Server\-Side Encryption \(SSE\) for an Existing Amazon SQS Queue<a name="sqs-configure-sse-existing-queue"></a>
 
-You can enable SSE for a queue to protect its data\. For more information about using SSE, see [Protecting Amazon SQS Data Using Server\-Side Encryption \(SSE\) and AWS KMS](sqs-server-side-encryption.md)\.
+You can enable SSE for a queue to protect its data\. For more information about using SSE, see [Encryption at Rest](sqs-server-side-encryption.md)\.
 
 **Important**  
 All requests to queues with SSE enabled must use HTTPS and [Signature Version 4](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)\.  
@@ -46,7 +46,7 @@ For instructions on creating custom CMKs, see [Creating Keys](https://docs.aws.a
    + To use a custom CMK ARN from your AWS account or from another AWS account, select **Enter an existing CMK ARN** from the list and type or copy the CMK\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-server-side-encryption-custom-cmk-arn.png)
 
-1. \(Optional\) For **Data key reuse period**, specify a value between 1 minute and 24 hours\. The default is 5 minutes\. For more information, see [Understanding the Data Key Reuse Period](sqs-server-side-encryption.md#sqs-how-does-the-data-key-reuse-period-work)\.  
+1. \(Optional\) For **Data key reuse period**, specify a value between 1 minute and 24 hours\. The default is 5 minutes\. For more information, see [Understanding the Data Key Reuse Period](sqs-key-management.md#sqs-how-does-the-data-key-reuse-period-work)\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-server-side-encryption-data-key-reuse-period.png)
 
 1. Choose **Save Changes**\.
@@ -57,7 +57,7 @@ For instructions on creating custom CMKs, see [Creating Keys](https://docs.aws.a
 
 Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
 
-Before you can use SSE, you must configure AWS KMS key policies to allow encryption of queues and encryption and decryption of messages\. For more information, see [Configuring AWS KMS Permissions](sqs-server-side-encryption.md#sqs-what-permissions-for-sse)
+Before you can use SSE, you must configure AWS KMS key policies to allow encryption of queues and encryption and decryption of messages\. For more information, see [Configuring AWS KMS Permissions](sqs-key-management.md#sqs-what-permissions-for-sse)
 
 1. Obtain the customer master key \(CMK\) ID\. For more information, see [Key Terms](sqs-server-side-encryption.md#sqs-sse-key-terms)\.
 **Note**  
