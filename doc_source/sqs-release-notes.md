@@ -5,8 +5,7 @@ The following table lists Amazon SQS feature releases and improvements\. For cha
 
 | Date | Feature Release | 
 | --- | --- | 
-| November 25, 2019 | The one\-minute CloudWatch metric for Amazon SQS is currently available only in the following Regions: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-release-notes.html)For more information, see [Available CloudWatch Metrics for Amazon SQS](sqs-available-cloudwatch-metrics.md)\. | 
-| December 12, 2019 | You can create Amazon VPC endpoint policies for Amazon SQS in the Beijing and Ningxia Regions\. For more information, see [Creating an Amazon VPC Endpoint Policy for Amazon SQS](sqs-internetwork-traffic-privacy.md#sqs-vpc-endpoint-policy)\. | 
+| November 25, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-release-notes.html)  | 
 | October 10, 2019 | FIFO \(First\-In\-First\-Out\) queues are available in the Middle East \(Bahrain\) Region\. For more information about how FIFO queues work and how to get started using them, see [Amazon SQS FIFO \(First\-In\-First\-Out\) Queues](FIFO-queues.md)\. | 
 | September 5, 2019 | You can send messages to your Amazon SQS queues from Amazon Virtual Private Cloud in the AWS GovCloud \(US\-East\) and AWS GovCloud \(US\-West\) Regions\. For more information, see [Amazon Virtual Private Cloud Endpoints for Amazon SQS](sqs-internetwork-traffic-privacy.md#sqs-vpc-endpoints)\. | 
 | August 28, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-release-notes.html)  | 

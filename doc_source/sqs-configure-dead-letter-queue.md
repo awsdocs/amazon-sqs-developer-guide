@@ -129,7 +129,7 @@ public class SQSDeadLetterQueueExample {
                             .withAttributeNames("QueueArn"));
             final String deadLetterQueueArn = deadLetterQueueAttributes.getAttributes().get("QueueArn");
 
-            // Set the dead letter queue for the source queue using the redrive policy.
+            // Set the dead-letter queue for the source queue using the redrive policy.
             final String sourceQueueUrl = sqs.getQueueUrl(sourceQueueName)
                     .getQueueUrl();
             final SetQueueAttributesRequest request = new SetQueueAttributesRequest()
