@@ -5,6 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| January 3, 2020 | Added the following statement throughout this guide: The maximum long polling wait time is 20 seconds\. | 
 | December 18, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | December 9, 2019 | Renamed the [Amazon SQS Quotas](sqs-quotas.md) section\. | 
 | November 27, 2019 | Corrected the prerequisites listed in the [Tutorial: Configuring Messages Arriving in an Amazon SQS Queue to Trigger an AWS Lambda Function](sqs-configure-lambda-function-trigger.md) section\. | 
