@@ -1,6 +1,6 @@
 # Amazon SQS Short and Long Polling<a name="sqs-short-and-long-polling"></a>
 
-The process of consuming messages from a queue depends on whether you use short or long polling\. By default, Amazon SQS uses *short polling*, querying only a subset of its servers \(based on a weighted random distribution\) to determine whether any messages are available for a response\.
+The process of consuming messages from a queue depends on whether you use short or long polling\. By default, Amazon SQS uses *short polling*, querying only a subset of its servers \(based on a weighted random distribution\) to determine whether any messages are available for a response\. You can use *long polling* to reduce your costs while allowing your consumers to receive messages as soon as they arrive in the queue\. The following sections explain the differences between consuming messages using short polling and long polling\.
 
 **Topics**
 + [Consuming Messages Using Short Polling](#sqs-short-polling)
