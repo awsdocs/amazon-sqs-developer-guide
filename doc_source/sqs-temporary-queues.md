@@ -19,10 +19,11 @@ Topics
 
 ## Virtual Queues<a name="virtual-queues"></a>
 
-*Virtual queues* are local data structures that the Temporary Queue Client creates\. Virtual queues let you combine multiple low\-traffic destinations into a single Amazon SQS queue\.
+*Virtual queues* are local data structures that the Temporary Queue Client creates\. Virtual queues let you combine multiple low\-traffic destinations into a single Amazon SQS queue\. For best practices, see [Avoid Reusing the Same Message Group ID with Virtual Queues](using-messagegroupid-property.md#avoiding-reusing-message-group-id-with-virtual-queues)\.
 
 **Note**  
 Creating a virtual queue creates only temporary data structures for consumers to receive messages in\. Because a virtual queue makes no API calls to Amazon SQS, virtual queues incur no cost\.
+TPS quotas apply to all virtual queues across a single host queue\. For more information, see [Quotas Related to Messages](sqs-quotas.md#quotas-messages)\.
 
 The `AmazonSQSVirtualQueuesClient` wrapper class adds support for attributes related to virtual queues\. To create a virtual queue, you must call the `CreateQueue` API action using the `HostQueueURL` attribute\. This attribute specifies the existing queue that hosts the virtual queues\.
 

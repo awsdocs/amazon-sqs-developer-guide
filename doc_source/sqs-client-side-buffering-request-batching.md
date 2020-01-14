@@ -17,6 +17,9 @@ The Amazon SQS Buffered Asynchronous Client doesn't currently support FIFO queue
 
 Before you begin, complete the steps in [Setting Up Amazon SQS](sqs-setting-up.md)\. 
 
+**Important**  
+The AWS SDK for Java 2\.x isn't currently compatible with the `AmazonSQSBufferedAsyncClient`\.
+
 You can create a new `AmazonSQSBufferedAsyncClient` based on `AmazonSQSAsyncClient`, for example:
 
 ```
