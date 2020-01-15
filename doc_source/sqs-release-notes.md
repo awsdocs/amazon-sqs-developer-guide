@@ -7,6 +7,7 @@ The following table lists Amazon SQS feature releases and improvements\. For cha
 | --- | --- | 
 | January 9, 2020 | The one\-minute CloudWatch metric for Amazon SQS is available in all commercial Regions\. For more information, see [Available CloudWatch Metrics for Amazon SQS](sqs-available-cloudwatch-metrics.md)\.  | 
 | November 25, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-release-notes.html)  | 
+| November 13, 2019 | Server\-side encryption \(SSE\) for Amazon SQS is available in the China Regions\. For more information about server\-side encryption and how to get started using it, see [Encryption at Rest](sqs-server-side-encryption.md)\. | 
 | October 10, 2019 | FIFO \(First\-In\-First\-Out\) queues are available in the Middle East \(Bahrain\) Region\. For more information about how FIFO queues work and how to get started using them, see [Amazon SQS FIFO \(First\-In\-First\-Out\) Queues](FIFO-queues.md)\. | 
 | September 5, 2019 | You can send messages to your Amazon SQS queues from Amazon Virtual Private Cloud in the AWS GovCloud \(US\-East\) and AWS GovCloud \(US\-West\) Regions\. For more information, see [Amazon Virtual Private Cloud Endpoints for Amazon SQS](sqs-internetwork-traffic-privacy.md#sqs-vpc-endpoints)\. | 
 | August 28, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-release-notes.html)  | 
