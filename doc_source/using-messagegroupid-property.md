@@ -23,7 +23,8 @@ If your queue has a large backlog of 20,000 or more messages with the same messa
 
 **Note**  
 A backlog of messages that have the same message group ID might build up because of a consumer that can't successfully process a message\. Message processing issues can occur because of an issue with the content of a message or because of a technical issue with the consumer\.  
-To move away messages that can't be processed repeatedly, and to unblock the processing of other messages that have the same message group ID, consider setting up a [dead\-letter queue](sqs-dead-letter-queues.md) policy\.
+To move away messages that can't be processed repeatedly, and to unblock the processing of other messages that have the same message group ID, consider setting up a [dead\-letter queue](sqs-dead-letter-queues.md) policy\.  
+For FIFO queues, there can be a maximum of 20,000 inflight messages (received from a queue by a consumer, but not yet deleted from the queue)\. If you reach this quota, Amazon SQS returns no error messages\.  
 
 ## Avoid Reusing the Same Message Group ID with Virtual Queues<a name="avoiding-reusing-message-group-id-with-virtual-queues"></a>
 
