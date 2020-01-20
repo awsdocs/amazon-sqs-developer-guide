@@ -8,7 +8,7 @@ This section outlines the parts of a distributed messaging system and explains t
 
 There are three main parts in a distributed messaging system: the components of your distributed system, your queue \(distributed on Amazon SQS servers\), and the messages in the queue\.
 
-In the following scenario, your system has several components that send messages to the queue and receive messages from the queue\. The queue \(which holds messages A through E\) redundantly stores the messages across multiple Amazon SQS servers\.
+In the following scenario, your system has several *producers* \(components that send messages to the queue\) and *consumers* \(components that receive messages from the queue\)\. The queue \(which holds messages A through E\) redundantly stores the messages across multiple Amazon SQS servers\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/ArchOverview.png)
 
