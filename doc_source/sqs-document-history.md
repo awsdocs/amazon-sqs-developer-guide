@@ -5,6 +5,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 
 | Date | Documentation Update | 
 | --- | --- | 
+| January 31, 2020 | Revised the information in the [How Do Dead\-Letter Queues Work?](sqs-dead-letter-queues.md#sqs-dead-letter-queues-how-they-work) section\. | 
 | January 27, 2020 | Revised the following statement throughout this guide: Currently, Amazon SQS supports only a limited subset of the [condition keys available in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys): [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html) | 
 | January 20, 2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
 | January 14, 2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 
@@ -59,7 +60,7 @@ The following table lists changes to the *Amazon Simple Queue Service Developer 
 | August 27, 2018 | Corrected the information in the [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md) section\. | 
 | August 22, 2018 | Rewrote the [Logging Amazon SQS API Calls Using AWS CloudTrail](sqs-logging-using-cloudtrail.md) section\. | 
 | August 21, 2018 | Revised the attribute table in the [Resources Required to Process Amazon SQS Messages](sqs-resources-required-process-messages.md) section\. | 
-| August 20, 2018 | Added the following note to the [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md) and [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md) section: When you designate a queue to be a source queue, a dead\-letter queue is not created automatically\. You must first create a normal standard or FIFO queue before designating it a dead\-letter queue\. | 
+| August 20, 2018 | Added the following note to the [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md) and [Tutorial: Configuring an Amazon SQS Dead\-Letter Queue](sqs-configure-dead-letter-queue.md) section: When you designate a queue to be a source queue, a dead\-letter queue is not created automatically\. You must first create a standard or FIFO queue before designating it a dead\-letter queue\. | 
 | August 15, 2018 | Added the following note to the [Amazon SQS Short and Long Polling](sqs-short-and-long-polling.md) section: You can confirm that a queue is empty when you perform a long poll and the ApproximateNumberOfMessagesDelayed, ApproximateNumberOfMessagesNotVisible, and ApproximateNumberOfMessagesVisible metrics are equal to 0 at least 1 minute after the producers stop sending messages \(when the queue metadata reaches eventual consistency\)\. For more information, see [Available CloudWatch Metrics for Amazon SQS](sqs-available-cloudwatch-metrics.md)\. | 
 | August 7, 2018 | Clarified the information in the [Inflight Messages](sqs-visibility-timeout.md#inflight-messages) section\. | 
 | July 25, 2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-document-history.html)  | 

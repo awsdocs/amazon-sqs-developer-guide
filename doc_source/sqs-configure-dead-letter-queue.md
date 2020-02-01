@@ -3,7 +3,7 @@
 A dead\-letter queue is a queue that *other* \(source\) queues can target for messages that can't be processed \(consumed\) successfully\. In this tutorial you learn how to create an Amazon SQS source queue and to configure a second queue as a dead\-letter queue for it\. For more information, see [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md)\.
 
 **Important**  
-When you designate a queue to be a source queue, a dead\-letter queue is *not* created automatically\. You must first create a normal standard or FIFO queue before designating it a dead\-letter queue\. This tutorial assumes you already have a normal FIFO queue named `MyDeadLetterQueue.fifo`\.  
+When you designate a queue to be a source queue, a dead\-letter queue is *not* created automatically\. You must first create a standard or FIFO queue before designating it a dead\-letter queue\. This tutorial assumes you already have a normal FIFO queue named `MyDeadLetterQueue.fifo`\.  
 The dead\-letter queue of a FIFO queue must also be a FIFO queue\. Similarly, the dead\-letter queue of a standard queue must also be a standard queue\.
 
 **Topics**
