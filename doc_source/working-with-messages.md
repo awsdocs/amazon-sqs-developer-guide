@@ -49,10 +49,7 @@ The expiration of a message is always based on its original enqueue timestamp\. 
 
 ## Avoiding Inconsistent Message Processing<a name="avoiding-inconsistent-message-processing"></a>
 
-To avoid inconsistent message processing by standard queues, avoid setting the number of maximum receives to 1 when you configure a dead\-letter queue\.
-
-**Important**  
-In some unlikely scenarios, if you set the number of maximum receives to 1, any time a `ReceiveMessage` call fails, a message might be moved to a dead\-letter queue without being received\.
+Because Amazon SQS is a distributed system, it is possible for a consumer to not receive a message even when Amazon SQS marks the message as delivered while returning successfully from a `ReceiveMessage` API method call\. In this case, Amazon SQS records the message as delivered at least once, although the consumer has never received it\. Because no additional attempts to deliver messages are made under these conditions, we don't recommend setting the number of maximum receives to 1 for a [dead\-letter queue](sqs-dead-letter-queues.md)\.
 
 ## Implementing Request\-Response Systems<a name="implementing-request-response-systems"></a>
 
