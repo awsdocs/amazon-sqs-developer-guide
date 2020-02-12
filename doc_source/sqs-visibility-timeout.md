@@ -34,29 +34,4 @@ A message is considered to be *stored* after it is sent to a queue by a producer
 **Important**  
 Quotas that apply to inflight messages are unrelated to the *unlimited* number of stored messages\.
 
-For most standard queues \(depending on queue traffic and message backlog\), there can be a maximum of approximately 120,000 inflight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this quota, Amazon SQS returns the `OverLimit` error message\. To avoid reaching the quota, you should delete messages from the queue after they're processed\. You can also increase the number of queues you use to process your messages\. To request a quota increase, [submit a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\.
-
-For FIFO queues, there can be a maximum of 20,000 inflight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this quota, Amazon SQS returns no error messages\.
-
-## Setting the Visibility Timeout<a name="configuring-visibility-timeout"></a>
-
-The visibility timeout begins when Amazon SQS returns a message\. During this time, the consumer processes and deletes the message\. However, if the consumer fails before deleting the message and your system doesn't call the `[DeleteMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessage.html)` action for that message before the visibility timeout expires, the message becomes visible to other consumers and the message is received again\. If a message must be received only once, your consumer should delete it within the duration of the visibility timeout\.
-
-Every Amazon SQS queue has the default visibility timeout setting of 30 seconds\. You can change this setting for the entire queue\. Typically, you should set the visibility timeout to the maximum time that it takes your application to process and delete a message from the queue\. When receiving messages, you can also set a special visibility timeout for the returned messages without changing the overall queue timeout\. For more information, see the best practices in the [Processing Messages in a Timely Manner](working-with-messages.md#processing-messages-timely-manner) section\.
-
-If you don't know how long it takes to process a message, create a *heartbeat* for your consumer process: Specify the initial visibility timeout \(for example, 2 minutes\) and then—as long as your consumer still works on the message—keep extending the visibility timeout by 2 minutes every minute\.
-
-## Changing the Visibility Timeout for a Message<a name="changing-message-visibility-timeout"></a>
-
-When you receive a message from a queue and begin to process it, the visibility timeout for the queue may be insufficient \(for example, you might need to process and delete a message\)\. You can shorten or extend a message's visibility by specifying a new timeout value using the `[ChangeMessageVisibility](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibility.html)` action\.
-
-For example, if the default timeout for a queue is 60 seconds, 15 seconds have elapsed since you received the message, and you send a `ChangeMessageVisibility` call with `VisibilityTimeout` set to 10 seconds, the 10 seconds begin to count from the time that you make the `ChangeMessageVisibility` call\. Thus, any attempt to change the visibility timeout or to delete that message 10 seconds after you initially change the visibility timeout \(a total of 25 seconds\) might result in an error\.
-
-**Note**  
-The new timeout period takes effect from the time you call the `ChangeMessageVisibility` action\. In addition, the new timeout period applies only to the particular receipt of the message\. `ChangeMessageVisibility` doesn't affect the timeout of later receipts of the message or later queues\.
-
-## Terminating the Visibility Timeout for a Message<a name="terminating-message-visibility-timeout"></a>
-
-When you receive a message from a queue, you might find that you actually don't want to process and delete that message\. Amazon SQS allows you to terminate the visibility timeout for a specific message\. This makes the message immediately visible to other components in the system and available for processing\. 
-
-To terminate a message's visibility timeout after calling `ReceiveMessage`, call [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibility.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibility.html) with `VisibilityTimeout` set to 0 seconds\. 
+For most standard queues \(depending on queue traffic and message backlog\), there can be a maximum of approximately 120,000 inflight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this quota while using [short polling](sqs-short-and-long-polling.md#sqs-short-polling), Amazon SQS returns the `OverLimit` error message\. If you use 
