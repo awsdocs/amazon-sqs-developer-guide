@@ -1,7 +1,7 @@
 # Encryption at Rest<a name="sqs-server-side-encryption"></a>
 
 Server\-side encryption \(SSE\) lets you transmit sensitive data in encrypted queues\. SSE protects the contents of messages in queues using keys managed in AWS Key Management Service \(AWS KMS\)\. For information about managing SSE using the AWS Management Console or the AWS SDK for Java \(and the `[CreateQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`, `[SetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`, and `[GetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)` actions\), see the following tutorials:
-+ [Tutorial: Configuring Server\-Side Encryption \(SSE\) for an Existing Amazon SQS Queue](sqs-create-queue-sse.md)
++ [Tutorial: Creating an Amazon SQS Queue with Server\-Side Encryption \(SSE\)](sqs-create-queue-sse.md)
 + [Tutorial: Configuring Server\-Side Encryption \(SSE\) for an Existing Amazon SQS Queue](sqs-configure-sse-existing-queue.md)
 + [Enable Compatibility between Event Sources from AWS Services and Encrypted Queues](sqs-key-management.md#compatibility-with-aws-services)
 
