@@ -1,4 +1,4 @@
-# Amazon SQS Message System Attributes<a name="sqs-message-system-attributes"></a>
+# Amazon SQS message system attributes<a name="sqs-message-system-attributes"></a>
 
 Whereas you can use [message attributes](sqs-message-attributes.md) to attach custom metadata to Amazon SQS messages for your applications, you can use *message system attributes* to store metadata for other AWS services, such as AWS X\-Ray\. For more information, see the `MessageSystemAttribute` request parameter of the `[SendMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html)` and `[SendMessageBatch](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html)` API actions, the `AWSTraceHeader` attribute of the `[ReceiveMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` API action, and the `[MessageSystemAttributeValue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_MessageSystemAttributeValue.html)` data type in the *Amazon Simple Queue Service API Reference*\.
 

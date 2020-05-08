@@ -1,4 +1,4 @@
-# Tutorial: Purging Messages from an Amazon SQS Queue<a name="sqs-purge-queue"></a>
+# Tutorial: Purging messages from an Amazon SQS queue<a name="sqs-purge-queue"></a>
 
 If you don't want to delete an Amazon SQS queue but need to delete all the messages from it, you can purge the queue\. In this tutorial you learn how to purge a queue\.
 

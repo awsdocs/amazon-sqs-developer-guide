@@ -1,4 +1,4 @@
-# Amazon SQS Temporary Queues<a name="sqs-temporary-queues"></a>
+# Amazon SQS temporary queues<a name="sqs-temporary-queues"></a>
 
 Temporary queues help you save development time and deployment costs when using common message patterns such as *request\-response*\. You can use the [Temporary Queue Client](https://github.com/awslabs/amazon-sqs-java-temporary-queues-client) to create high\-throughput, cost\-effective, application\-managed temporary queues\.
 
@@ -10,20 +10,20 @@ The following are the benefits of temporary queues:
 + They are API\-compatible with static \(normal\) Amazon SQS queues\. This means that existing code that sends and receives messages can send messages to and receive messages from virtual queues\.
 
 Topics
-+ [Virtual Queues](#virtual-queues)
-+ [Request\-Response Messaging Pattern \(Virtual Queues\)](#request-reply-messaging-pattern)
-+ [Example Scenario: Processing a Login Request](#example-scenario)
-  + [On the Client Side](#process-login-request-client-side)
-  + [On the Server Side](#process-login-request-server-side)
-+ [Cleaning Up Queues](#cleaning-up-queues)
++ [Virtual queues](#virtual-queues)
++ [Request\-response messaging pattern \(virtual queues\)](#request-reply-messaging-pattern)
++ [Example scenario: Processing a login request](#example-scenario)
+  + [On the client side](#process-login-request-client-side)
+  + [On the server side](#process-login-request-server-side)
++ [Cleaning up queues](#cleaning-up-queues)
 
-## Virtual Queues<a name="virtual-queues"></a>
+## Virtual queues<a name="virtual-queues"></a>
 
-*Virtual queues* are local data structures that the Temporary Queue Client creates\. Virtual queues let you combine multiple low\-traffic destinations into a single Amazon SQS queue\. For best practices, see [Avoid Reusing the Same Message Group ID with Virtual Queues](using-messagegroupid-property.md#avoiding-reusing-message-group-id-with-virtual-queues)\.
+*Virtual queues* are local data structures that the Temporary Queue Client creates\. Virtual queues let you combine multiple low\-traffic destinations into a single Amazon SQS queue\. For best practices, see [Avoid reusing the same message group ID with virtual queues](using-messagegroupid-property.md#avoiding-reusing-message-group-id-with-virtual-queues)\.
 
 **Note**  
 Creating a virtual queue creates only temporary data structures for consumers to receive messages in\. Because a virtual queue makes no API calls to Amazon SQS, virtual queues incur no cost\.
-TPS quotas apply to all virtual queues across a single host queue\. For more information, see [Quotas Related to Messages](sqs-quotas.md#quotas-messages)\.
+TPS quotas apply to all virtual queues across a single host queue\. For more information, see [Quotas related to messages](sqs-quotas.md#quotas-messages)\.
 
 The `AmazonSQSVirtualQueuesClient` wrapper class adds support for attributes related to virtual queues\. To create a virtual queue, you must call the `CreateQueue` API action using the `HostQueueURL` attribute\. This attribute specifies the existing queue that hosts the virtual queues\.
 
@@ -47,19 +47,19 @@ While the consumer calls the `ReceiveMessage` API action on a virtual queue URL,
 
 The `AmazonSQSTemporaryQueuesClient` class turns all queues it creates into temporary queues automatically\. It also creates host queues with the same queue attributes automatically, on demand\. These queues' names share a common, configurable prefix \(by default, `__RequesterClientQueues__`\) that identifies them as temporary queues\. This allows the client to act as a drop\-in replacement that optimizes existing code which creates and deletes queues\. The client also includes the `AmazonSQSRequester` and `AmazonSQSResponder` interfaces that allow two\-way communication between queues\.
 
-## Request\-Response Messaging Pattern \(Virtual Queues\)<a name="request-reply-messaging-pattern"></a>
+## Request\-response messaging pattern \(virtual queues\)<a name="request-reply-messaging-pattern"></a>
 
-The most common use case for temporary queues is the *request\-response* messaging pattern, where a requester creates a *temporary queue* for receiving each response message\. To avoid creating an Amazon SQS queue for each response message, the Temporary Queue Client lets you create and delete multiple temporary queues without making any Amazon SQS API calls\. For more information, see [Implementing Request\-Response Systems](working-with-messages.md#implementing-request-response-systems)\.
+The most common use case for temporary queues is the *request\-response* messaging pattern, where a requester creates a *temporary queue* for receiving each response message\. To avoid creating an Amazon SQS queue for each response message, the Temporary Queue Client lets you create and delete multiple temporary queues without making any Amazon SQS API calls\. For more information, see [Implementing request\-response systems](working-with-messages.md#implementing-request-response-systems)\.
 
 The following diagram shows a common configuration using this pattern\.
 
 ![\[A diagram of the request-response pattern used with Amazon SQS.\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-request-response-pattern.png)
 
-## Example Scenario: Processing a Login Request<a name="example-scenario"></a>
+## Example scenario: Processing a login request<a name="example-scenario"></a>
 
 The following example scenario shows how you can use the `AmazonSQSRequester` and `AmazonSQSResponder` interfaces to process a user's login request\.
 
-### On the Client Side<a name="process-login-request-client-side"></a>
+### On the client side<a name="process-login-request-client-side"></a>
 
 ```
 public class LoginClient {
@@ -106,7 +106,7 @@ Sending a login request does the following:
 
 1. Returns the response\.
 
-### On the Server Side<a name="process-login-request-server-side"></a>
+### On the server side<a name="process-login-request-server-side"></a>
 
 The following example assumes that, upon construction, a thread is created to poll the queue and call the `handleLoginRequest()` method for every message\. In addition, `doLogin()` is an assumed method\.
 
@@ -139,7 +139,7 @@ public class LoginServer {
 }
 ```
 
-## Cleaning Up Queues<a name="cleaning-up-queues"></a>
+## Cleaning up queues<a name="cleaning-up-queues"></a>
 
 To ensure that Amazon SQS reclaims any in\-memory resources used by virtual queues, when your application no longer needs the Temporary Queue Client, it should call the `shutdown()` method\. You can also use the `shutdown()` method of the `AmazonSQSRequester` interface\.
 
@@ -149,5 +149,3 @@ The Temporary Queue Client also provides a way to eliminate orphaned host queues
 Any API action taken on a queue marks it as non\-idle, including a `ReceiveMessage` action that returns no messages\.
 
 The background thread uses the `ListQueues` and `ListTags` API actions to check all queues with the configured prefix, deleting any queues that haven't been tagged for at least five minutes\. In this way, if one client doesn't shut down cleanly, the other active clients clean up after it\. In order to reduce the duplication of work, all clients with the same prefix communicate through an shared, internal work queue named after the prefix\.
-
-If you use the `AmazonSQSTemporaryQueuesClient` class directly, you can configure the `IdleQueueRetentionPeriodSeconds` queue attribute to customize how long the queue can be idle before Amazon SQS deletes it\. Both host queues and virtual queues support this attribute\.

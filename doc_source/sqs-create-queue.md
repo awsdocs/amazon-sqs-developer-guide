@@ -1,4 +1,4 @@
-# Tutorial: Creating an Amazon SQS Queue<a name="sqs-create-queue"></a>
+# Tutorial: Creating an Amazon SQS queue<a name="sqs-create-queue"></a>
 
 The first and most common Amazon SQS task is creating queues\. In this tutorial you'll learn how to create and configure a queue\.
 
@@ -21,7 +21,7 @@ The name of a FIFO queue must end with the `.fifo` suffix\.
 
 1. Create your queue\.
    + To create your queue with the default parameters, choose **Quick\-Create Queue**\.
-   + To configure your queue's parameters, choose **Configure Queue**\. When you finish configuring the parameters, choose **Create Queue**\. For more information about creating a queue with SSE, see [Tutorial: Creating an Amazon SQS Queue with Server\-Side Encryption \(SSE\)](sqs-create-queue-sse.md)\.
+   + To configure your queue's parameters, choose **Configure Queue**\. When you finish configuring the parameters, choose **Create Queue**\. For more information about creating a queue with SSE, see [Tutorial: Creating an Amazon SQS queue with Server\-Side Encryption \(SSE\)](sqs-create-queue-sse.md)\.
 
      The following example shows the **Content\-Based Deduplication** parameter specific to FIFO queues\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-configure-parameters.png)
@@ -38,7 +38,9 @@ When you create a queue, it can take a short time for the queue to propagate thr
 
 ## AWS SDK for Java<a name="create-queue-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+ The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
+
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
 
 ### To create a standard queue<a name="create-queue-java-standard"></a>
 
@@ -88,7 +90,7 @@ Before you begin working with the example code, specify your AWS credentials\. F
 
 You can use the AWS CloudFormation console and a JSON \(or YAML\) template to create an Amazon SQS queue\. For more information, see [Working with AWS CloudFormation Templates](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html) and the [`AWS::SQS::Queue` Resource](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html) in the *AWS CloudFormation User Guide*\.
 
-1. Copy the following JSON code to a file named `MyQueue.json`\. To create a standard queue, omit the `FifoQueue` and `ContentBasedDeduplication` properties\. For more information on content\-based deduplication, see [Exactly\-Once Processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.
+1. Copy the following JSON code to a file named `MyQueue.json`\. To create a standard queue, omit the `FifoQueue` and `ContentBasedDeduplication` properties\. For more information on content\-based deduplication, see [Exactly\-once processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.
 **Note**  
 The name of a FIFO queue must end with the `.fifo` suffix\.
 
@@ -136,7 +138,7 @@ The name of a FIFO queue must end with the `.fifo` suffix\.
 
 1. Sign in to the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation), and then choose **Create Stack**\.
 
-1. On the **Select Template** page, choose **Upload a template to Amazon S3**, choose your `MyQueue.json` file, and then choose **Next**\.
+1. On the **Specify Template** panel, choose **Upload a template file**, choose your `MyQueue.json` file, and then choose **Next**\.
 
 1. On the **Specify Details** page, type `MyQueue` for **Stack Name**, and then choose **Next**\.
 

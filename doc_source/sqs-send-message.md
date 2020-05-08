@@ -1,4 +1,4 @@
-# Tutorial: Sending a Message to an Amazon SQS Queue<a name="sqs-send-message"></a>
+# Tutorial: Sending a message to an Amazon SQS queue<a name="sqs-send-message"></a>
 
 After you create your queue, you can send a message to it\. The following example shows sending a message to an existing queue\.
 
@@ -21,7 +21,7 @@ After you create your queue, you can send a message to it\. The following exampl
    The following example shows the **Message Group ID** and **Message Deduplication ID** parameters specific to FIFO queues \([content\-based deduplication](FIFO-queues.md#FIFO-queues-exactly-once-processing) is disabled\)\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message-dialog-box.png)
 
-1. To send a message to a FIFO queue, type the **Message Body**, the **Message Group ID** `MyMessageGroupId1234567890`, and the **Message Deduplication ID** `MyMessageDeduplicationId1234567890`, and then choose **Send Message**\. For more information, see [FIFO Delivery Logic](FIFO-queues.md#FIFO-queues-understanding-logic)\.
+1. To send a message to a FIFO queue, type the **Message Body**, the **Message Group ID** `MyMessageGroupId1234567890`, and the **Message Deduplication ID** `MyMessageDeduplicationId1234567890`, and then choose **Send Message**\. For more information, see [FIFO delivery logic](FIFO-queues.md#FIFO-queues-understanding-logic)\.
 **Note**  
 The message group ID is always required\. However, if content\-based deduplication is enabled, the message deduplication ID is optional\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message-button-fifo.png)
@@ -35,7 +35,9 @@ The message group ID is always required\. However, if content\-based deduplicati
 
 ## AWS SDK for Java<a name="send-message-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+ The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
+
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
 
 ### To send a message to a standard queue<a name="send-message-standard-queue"></a>
 

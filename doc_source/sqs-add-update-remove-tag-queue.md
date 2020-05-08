@@ -1,9 +1,9 @@
-# Tutorial: Adding, Updating, and Removing Cost Allocation Tags for an Amazon SQS Queue<a name="sqs-add-update-remove-tag-queue"></a>
+# Tutorial: Adding, updating, and removing cost allocation tags for an Amazon SQS queue<a name="sqs-add-update-remove-tag-queue"></a>
 
-You can add cost allocation tags to your Amazon SQS queues to help organize and identify them\. The following example show how to add, update, and remove tags for a queue\. For a more information, see [Amazon SQS Cost Allocation Tags](sqs-queue-tags.md)\.
+You can add cost allocation tags to your Amazon SQS queues to help organize and identify them\. The following example show how to add, update, and remove tags for a queue\. For a more information, see [Amazon SQS cost allocation tags](sqs-queue-tags.md)\.
 
 **Topics**
-+ [To Update or Remove a Tag Added to an Amazon SQS Queue Using the AWS Management Console](#sqs-update-remove-tag-queue-console)
++ [AWS Management Console](#sqs-update-remove-tag-queue-console)
 + [AWS SDK for Java](#sqs-add-update-remove-tag-queue-java)
 
 ## AWS Management Console<a name="sqs-update-remove-tag-queue-console"></a>
@@ -31,7 +31,9 @@ The following steps assume that you already [created an Amazon SQS queue](sqs-cr
 
 ## AWS SDK for Java<a name="sqs-add-update-remove-tag-queue-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+ The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
+
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
 
 ### To add, update, and remove tags from a queue<a name="sqs-add-update-remove-tag-queue-java-update-remove"></a>
 

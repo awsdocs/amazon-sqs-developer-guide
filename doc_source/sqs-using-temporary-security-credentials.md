@@ -1,4 +1,4 @@
-# Using Temporary Security Credentials with Amazon SQS<a name="sqs-using-temporary-security-credentials"></a>
+# Using temporary security credentials with Amazon SQS<a name="sqs-using-temporary-security-credentials"></a>
 
 In addition to creating IAM users with their own security credentials, IAM also allows you to grant temporary security credentials to any user, allowing the user to access your AWS services and resources\. You can manage users who have AWS accounts \(IAM users\)\. You can also manage users for your system who don't have AWS accounts \(federated users\)\. In addition, applications that you create to access your AWS resources can also be considered to be "users\."
 

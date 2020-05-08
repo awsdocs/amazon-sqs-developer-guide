@@ -1,6 +1,6 @@
-# Tutorial: Sending a Message to an Amazon SQS Queue from Amazon Virtual Private Cloud<a name="sqs-sending-messages-from-vpc"></a>
+# Tutorial: Sending a message to an Amazon SQS queue from Amazon Virtual Private Cloud<a name="sqs-sending-messages-from-vpc"></a>
 
-In this tutorial, you learn how to send messages to an Amazon SQS queue over a secure, private network\. This network consists of a VPC that contains an Amazon EC2 instance\. The instance connects to Amazon SQS through an *interface VPC endpoint*, allowing you to connect to the Amazon EC2 instance and send messages to the Amazon SQS queue even though the network is disconnected from the public internet\. For more information, see [Amazon Virtual Private Cloud Endpoints for Amazon SQS](sqs-internetwork-traffic-privacy.md#sqs-vpc-endpoints)\.
+In this tutorial, you learn how to send messages to an Amazon SQS queue over a secure, private network\. This network consists of a VPC that contains an Amazon EC2 instance\. The instance connects to Amazon SQS through an *interface VPC endpoint*, allowing you to connect to the Amazon EC2 instance and send messages to the Amazon SQS queue even though the network is disconnected from the public internet\. For more information, see [Amazon Virtual Private Cloud endpoints for Amazon SQS](sqs-internetwork-traffic-privacy.md#sqs-vpc-endpoints)\.
 
 **Important**  
 You can use Amazon Virtual Private Cloud only with HTTPS Amazon SQS endpoints\.
@@ -8,13 +8,13 @@ When you configure Amazon SQS to send messages from Amazon VPC, you must enable 
 Private DNS doesn't support legacy endpoints such as `queue.amazonaws.com` or `us-east-2.queue.amazonaws.com`\.
 
 **Topics**
-+ [Step 1: Create an Amazon EC2 Key Pair](#create-ec2-key-pair)
-+ [Step 2: Create AWS Resources](#create-aws-resources)
-+ [Step 3: Confirm That Your EC2 Instance Isn't Publicly Accessible](#confirm-ec2-instance-is-not-publicly-accessible)
-+ [Create an Amazon VPC Endpoint for Amazon SQS](#create-vpc-endpoint-for-sqs)
-+ [Step 5: Send a Message to Your Amazon SQS Queue](#sqs-vpc-tutorial-publish)
++ [Step 1: Create an Amazon EC2 key pair](#create-ec2-key-pair)
++ [Step 2: Create AWS resources](#create-aws-resources)
++ [Step 3: Confirm that your EC2 instance isn't publicly accessible](#confirm-ec2-instance-is-not-publicly-accessible)
++ [Step 4: Create an Amazon VPC endpoint for Amazon SQS](#create-vpc-endpoint-for-sqs)
++ [Step 5: Send a message to your Amazon SQS queue](#sqs-vpc-tutorial-publish)
 
-## Step 1: Create an Amazon EC2 Key Pair<a name="create-ec2-key-pair"></a>
+## Step 1: Create an Amazon EC2 key pair<a name="create-ec2-key-pair"></a>
 
 A *key pair* lets you connect to an Amazon EC2 instance\. It consists of a public key that encrypts your login information and a private key that decrypts it\.
 
@@ -36,7 +36,7 @@ Save this file in a safe place\. EC2 does not generate a `.pem` file for the sam
    chmod 400 SQS-VPCE-Tutorial-KeyPair.pem
    ```
 
-## Step 2: Create AWS Resources<a name="create-aws-resources"></a>
+## Step 2: Create AWS resources<a name="create-aws-resources"></a>
 
 To set up the necessary infrastructure, you must use an AWS CloudFormation *template*, which is a blueprint for creating a *stack* comprised of AWS resources, such as Amazon EC2 instances and Amazon SQS queues\.
 
@@ -67,7 +67,7 @@ The stack for this tutorial includes the following resources:
 
 AWS CloudFormation begins to create the stack and displays the **CREATE\_IN\_PROGRESS** status\. When the process is complete, AWS CloudFormation displays the **CREATE\_COMPLETE** status\.
 
-## Step 3: Confirm That Your EC2 Instance Isn't Publicly Accessible<a name="confirm-ec2-instance-is-not-publicly-accessible"></a>
+## Step 3: Confirm that your EC2 instance isn't publicly accessible<a name="confirm-ec2-instance-is-not-publicly-accessible"></a>
 
 Your AWS CloudFormation template launches an EC2 instance named `SQS-VPCE-Tutorial-EC2-Instance` into your VPC\. This EC2 instance doesn't allow outbound traffic and isn't able to send messages to Amazon SQS\. To verify this, you must connect to the instance, try to connect to a public endpoint, and then try to message Amazon SQS\.
 
@@ -109,7 +109,7 @@ Your AWS CloudFormation template launches an EC2 instance named `SQS-VPCE-Tutori
 **Important**  
 Later, when you create a VPC endpoint for Amazon SQS, your sending attempt will succeed\.
 
-## Step 4: Create an Amazon VPC Endpoint for Amazon SQS<a name="create-vpc-endpoint-for-sqs"></a>
+## Step 4: Create an Amazon VPC endpoint for Amazon SQS<a name="create-vpc-endpoint-for-sqs"></a>
 
 To connect your VPC to Amazon SQS, you must define an interface VPC endpoint\. After you add the endpoint, you can use the Amazon SQS API from the EC2 instance in your VPC\. This allows you to send messages to a queue within the AWS network without crossing the public internet\.
 
@@ -142,7 +142,7 @@ The service names vary based on the current AWS Region\. For example, if you are
 
 Amazon VPC begins to create the endpoint and displays the **pending** status\. When the process is complete, Amazon VPC displays the **available** status\.
 
-## Step 5: Send a Message to Your Amazon SQS Queue<a name="sqs-vpc-tutorial-publish"></a>
+## Step 5: Send a message to your Amazon SQS queue<a name="sqs-vpc-tutorial-publish"></a>
 
 Now that your VPC includes an endpoint for Amazon SQS, you can connect to your EC2 instance and send messages to your queue\.
 
@@ -167,11 +167,11 @@ Now that your VPC includes an endpoint for Amazon SQS, you can connect to your E
    }
    ```
 
-For information about receiving and deleting the message from the queue created by your AWS CloudFormation template \(for example, **VPCE\-SQS\-Tutorial\-Stack\-CFQueue\-1ABCDEFGH2IJK**\), see [Tutorial: Receiving and Deleting a Message from an Amazon SQS Queue](sqs-receive-delete-message.md)\.
+For information about receiving and deleting the message from the queue created by your AWS CloudFormation template \(for example, **VPCE\-SQS\-Tutorial\-Stack\-CFQueue\-1ABCDEFGH2IJK**\), see [Tutorial: Receiving and deleting a message from an Amazon SQS queue](sqs-receive-delete-message.md)\.
 
 For information about deleting your resources, see the following:
 + [Deleting a VPC Endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/delete-vpc-endpoint.html) in the *Amazon VPC User Guide*
-+ [Tutorial: Deleting an Amazon SQS Queue](sqs-delete-queue.md)
++ [Tutorial: Deleting an Amazon SQS queue](sqs-delete-queue.md)
 + [Terminate Your Instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html) in the *Amazon EC2 User Guide for Linux Instances*
 + [Deleting Your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#VPC_Deleting) in the *Amazon VPC User Guide*
 + [Deleting a Stack on the AWS CloudFormation Console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-delete-stack.html) in the *AWS CloudFormation User Guide*

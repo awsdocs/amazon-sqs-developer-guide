@@ -1,4 +1,4 @@
-# Tutorial: Deleting an Amazon SQS Queue<a name="sqs-delete-queue"></a>
+# Tutorial: Deleting an Amazon SQS queue<a name="sqs-delete-queue"></a>
 
 If you don't use an Amazon SQS queue \(and don't foresee using it in the near future\), it is a best practice to delete it from Amazon SQS\. In this tutorial you'll learn how to delete a queue\.
 
@@ -29,10 +29,14 @@ By default, a queue retains a message for four days after it is sent\. You can c
 
 ## AWS SDK for Java<a name="delete-queue-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+ The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
+
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
 
 **Note**  
 This action is identical for standard and FIFO queues\.
+
+**To delete a queue**
 
 1. Copy the [standard queue example program](standard-queues-getting-started-java.md) or the [FIFO queue example program](FIFO-queues-getting-started-java.md)\.
 

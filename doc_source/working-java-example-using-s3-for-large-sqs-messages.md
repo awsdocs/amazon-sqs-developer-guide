@@ -1,28 +1,10 @@
-# Working Java Example for Using Amazon S3 for Large Amazon SQS Messages<a name="working-java-example-using-s3-for-large-sqs-messages"></a>
+# Working Java example for using Amazon S3 for large Amazon SQS messages<a name="working-java-example-using-s3-for-large-sqs-messages"></a>
 
 ## Prerequisites<a name="working-java-example-using-s3-for-large-sqs-messages-prerequisites"></a>
 
-Add the `amazon-sqs-java-extended-client-lib.jar`, `aws-java-sdk-sqs.jar`, and `aws-java-sdk-s3.jar` packages to your Java class path\. The following example shows these dependencies in a Maven project `pom.xml` file\.
+ The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
 
-```
-<dependencies>
-    <dependency>
-        <groupId>com.amazonaws</groupId>
-        <artifactId>amazon-sqs-java-extended-client-lib</artifactId>
-        <version>1.0.1</version>
-    </dependency>
-    <dependency>
-        <groupId>com.amazonaws</groupId>
-        <artifactId>aws-java-sdk-sqs</artifactId>
-        <version>LATEST</version>
-    </dependency>
-    <dependency>
-        <groupId>com.amazonaws</groupId>
-        <artifactId>aws-java-sdk-s3</artifactId>
-        <version>LATEST</version>
-    </dependency>
-</dependencies>
-```
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
 
 ## SQSExtendedClientExample\.java<a name="working-java-example-using-s3-for-large-sqs-messages-example"></a>
 

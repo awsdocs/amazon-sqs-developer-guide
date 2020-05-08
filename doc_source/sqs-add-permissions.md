@@ -1,4 +1,4 @@
-# Tutorial: Adding Permissions to an Amazon SQS Queue<a name="sqs-add-permissions"></a>
+# Tutorial: Adding permissions to an Amazon SQS queue<a name="sqs-add-permissions"></a>
 
 You can specify to whom you allow \(or explicitly deny\) the ability to interact with your queue in specific ways by adding permissions to a queue\. The following example shows how to add the permission for anyone to get a queue's URL\.
 

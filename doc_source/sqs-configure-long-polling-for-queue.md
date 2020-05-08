@@ -1,9 +1,9 @@
-# Tutorial: Configuring Long Polling for an Amazon SQS Queue<a name="sqs-configure-long-polling-for-queue"></a>
+# Tutorial: Configuring long polling for an Amazon SQS queue<a name="sqs-configure-long-polling-for-queue"></a>
 
-When the wait time for the `ReceiveMessage` API action is greater than 0, *long polling* is in effect\. The maximum long polling wait time is 20 seconds\. Long polling helps reduce the cost of using Amazon SQS by eliminating the number of empty responses \(when there are no messages available for a `[ReceiveMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` request\) and false empty responses \(when messages are available but aren't included in a response\)\. In this tutorial you learn how to configure long polling for an Amazon SQS queue\. For more information, see [Amazon SQS Short and Long Polling](sqs-short-and-long-polling.md)\.
+When the wait time for the `ReceiveMessage` API action is greater than 0, *long polling* is in effect\. The maximum long polling wait time is 20 seconds\. Long polling helps reduce the cost of using Amazon SQS by eliminating the number of empty responses \(when there are no messages available for a `[ReceiveMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` request\) and false empty responses \(when messages are available but aren't included in a response\)\. In this tutorial you learn how to configure long polling for an Amazon SQS queue\. For more information, see [Amazon SQS short and long polling](sqs-short-and-long-polling.md)\.
 
 **Topics**
-+ [Configure Long Polling for an Existing Amazon SQS Queue Using the AWS Management Console](#sqs-configure-long-polling-for-queue-console)
++ [AWS Management Console](#sqs-configure-long-polling-for-queue-console)
 + [AWS SDK for Java](#configure-long-polling-for-queue-java)
 
 ## AWS Management Console<a name="sqs-configure-long-polling-for-queue-console"></a>
@@ -23,7 +23,7 @@ The name of a FIFO queue must end with the `.fifo` suffix\.
 1. For **Receive Message Wait Time**, type a number between `1` and `20`\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-configuring-long-polling.png)
 **Note**  
-Setting the value to `0` configures *short polling*\. For more information, see [Differences Between Long and Short Polling](sqs-short-and-long-polling.md#sqs-short-long-polling-differences)\.
+Setting the value to `0` configures *short polling*\. For more information, see [Differences between long and short polling](sqs-short-and-long-polling.md#sqs-short-long-polling-differences)\.
 
 1. Choose **Create Queue**\.
 
@@ -33,25 +33,11 @@ When you create a queue, it can take a short time for the queue to propagate thr
 
 ## AWS SDK for Java<a name="configure-long-polling-for-queue-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+ The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
+
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
 
 ### To configure long polling for a queue<a name="configure-long-polling-for-queue-java-api"></a>
-
-#### Prerequisites<a name="configure-long-polling-for-queue-java-api-prerequisites"></a>
-
-Add the `aws-java-sdk-sqs.jar` package to your Java class path\. The following example shows this dependency in a Maven project `pom.xml` file\.
-
-```
-<dependencies>
-    <dependency>
-        <groupId>com.amazonaws</groupId>
-        <artifactId>aws-java-sdk-sqs</artifactId>
-        <version><replaceable>LATEST</replaceable></version>
-    </dependency>
-</dependencies>
-```
-
-#### SQSLongPollingExample\.java<a name="configure-long-polling-example-java-code"></a>
 
 The following example Java code creates a standard queue and configures long polling for it\.
 

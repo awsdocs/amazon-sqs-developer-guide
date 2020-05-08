@@ -1,8 +1,8 @@
-# Enabling Client\-Side Buffering and Request Batching<a name="sqs-client-side-buffering-request-batching"></a>
+# Enabling client\-side buffering and request batching<a name="sqs-client-side-buffering-request-batching"></a>
 
 The [AWS SDK for Java](https://aws.amazon.com/sdkforjava/) includes `AmazonSQSBufferedAsyncClient` which accesses Amazon SQS\. This client allows for simple request batching using client\-side buffering—calls made from the client are first buffered and then sent as a batch request to Amazon SQS\.
 
-Client\-side buffering allows up to 10 requests to be buffered and sent as a batch request, decreasing your cost of using Amazon SQS and reducing the number of sent requests\. `AmazonSQSBufferedAsyncClient` buffers both synchronous and asynchronous calls\. Batched requests and support for [long polling](sqs-short-and-long-polling.md) can also help increase throughput\. For more information, see [Increasing Throughput using Horizontal Scaling and Action Batching](sqs-throughput-horizontal-scaling-and-batching.md)\.
+Client\-side buffering allows up to 10 requests to be buffered and sent as a batch request, decreasing your cost of using Amazon SQS and reducing the number of sent requests\. `AmazonSQSBufferedAsyncClient` buffers both synchronous and asynchronous calls\. Batched requests and support for [long polling](sqs-short-and-long-polling.md) can also help increase throughput\. For more information, see [Increasing throughput using horizontal scaling and action batching](sqs-throughput-horizontal-scaling-and-batching.md)\.
 
 Because `AmazonSQSBufferedAsyncClient` implements the same interface as `AmazonSQSAsyncClient`, migrating from `AmazonSQSAsyncClient` to `AmazonSQSBufferedAsyncClient` typically requires only minimal changes to your existing code\.
 
@@ -15,7 +15,7 @@ The Amazon SQS Buffered Asynchronous Client doesn't currently support FIFO queue
 
 ## Using AmazonSQSBufferedAsyncClient<a name="using-buffered-async-client"></a>
 
-Before you begin, complete the steps in [Setting Up Amazon SQS](sqs-setting-up.md)\. 
+Before you begin, complete the steps in [Setting up Amazon SQS](sqs-setting-up.md)\. 
 
 **Important**  
 The AWS SDK for Java 2\.x isn't currently compatible with the `AmazonSQSBufferedAsyncClient`\.
@@ -71,9 +71,9 @@ final AmazonSQSAsync bufferedSqs = new AmazonSQSBufferedAsyncClient(sqsAsync, co
 ```
 
 
-**QueueBufferConfig Configuration Parameters**  
+**QueueBufferConfig configuration parameters**  
 
-| Parameter | Default Value | Description | 
+| Parameter | Default value | Description | 
 | --- | --- | --- | 
 | longPoll | true |  When `longPoll` is set to `true`, `AmazonSQSBufferedAsyncClient` attempts to use long polling when it consumes messages\.  | 
 | longPollWaitTimeoutSeconds | 20 s |  The maximum amount of time \(in seconds\) which a `ReceiveMessage` call blocks off on the server, waiting for messages to appear in the queue before returning with an empty receive result\.  When long polling is disabled, this setting has no effect\.   | 

@@ -1,4 +1,4 @@
-# Available CloudWatch Metrics for Amazon SQS<a name="sqs-available-cloudwatch-metrics"></a>
+# Available CloudWatch metrics for Amazon SQS<a name="sqs-available-cloudwatch-metrics"></a>
 
 Amazon SQS sends the following metrics to CloudWatch\.
 
@@ -6,14 +6,14 @@ Amazon SQS sends the following metrics to CloudWatch\.
 For standard queues, the result is approximate because of the distributed architecture of Amazon SQS\. In most cases, the count should be close to the actual number of messages in the queue\.  
 For FIFO queues, the result is exact\.
 
-## Amazon SQS Metrics<a name="sqs-metrics"></a>
+## Amazon SQS metrics<a name="sqs-metrics"></a>
 
 The `AWS/SQS` namespace includes the following metrics\.
 
 
 | Metric | Description | 
 | --- | --- | 
-| ApproximateAgeOfOldestMessage | The approximate age of the oldest non\-deleted message in the queue\.    When the queue has a redrive policy, the message is moved to a [dead\-letter queue](sqs-dead-letter-queues.md) after the configured maximum number of receives\. When the message is moved to the dead\-letter queue, the `ApproximateAgeOfOldestMessage` metric of the dead\-letter queue represents the time when the message was moved to the dead\-letter queue \(not the original time the message was sent\)\.   When a queue *doesn't have* a redrive policy, after the message is received three times \(or more\) and not processed, the message is moved to the back of the queue and the `ApproximateAgeOfOldestMessage` metric points at the second\-oldest message that hasn't been received more than three times\.   Because a single poison\-pill message \(received multiple times but never deleted\) can distort this metric, the age of a poison\-pill message isn't included in the metric until the poison\-pill message is consumed successfully\.   Reporting Criteria: A non\-negative value is reported [if the queue is active](sqs-monitoring-using-cloudwatch.md)\.Units: SecondsValid Statistics: Average, Minimum, Maximum, Sum, Data Samples \(displays as Sample Count in the Amazon SQS console\) | 
+| ApproximateAgeOfOldestMessage | The approximate age of the oldest non\-deleted message in the queue\.    After a message is received three times \(or more\) and not processed, the message is moved to the back of the queue and the `ApproximateAgeOfOldestMessage` metric points at the second\-oldest message that hasn't been received more than three times\. This action occurs even if the queue has a redrive policy\.   Because a single poison\-pill message \(received multiple times but never deleted\) can distort this metric, the age of a poison\-pill message isn't included in the metric until the poison\-pill message is consumed successfully\.   When the queue has a redrive policy, the message is moved to a [dead\-letter queue](sqs-dead-letter-queues.md) after the configured maximum number of receives\. When the message is moved to the dead\-letter queue, the `ApproximateAgeOfOldestMessage` metric of the dead\-letter queue represents the time when the message was moved to the dead\-letter queue \(not the original time the message was sent\)\.   Reporting Criteria: A non\-negative value is reported [if the queue is active](sqs-monitoring-using-cloudwatch.md)\.Units: SecondsValid Statistics: Average, Minimum, Maximum, Sum, Data Samples \(displays as Sample Count in the Amazon SQS console\) | 
 | ApproximateNumberOfMessagesDelayed | The number of messages in the queue that are delayed and not available for reading immediately\. This can happen when the queue is configured as a delay queue or when a message has been sent with a delay parameter\. Reporting Criteria: A non\-negative value is reported [if the queue is active](sqs-monitoring-using-cloudwatch.md)\.Units: CountValid Statistics: Average, Minimum, Maximum, Sum, Data Samples \(displays as Sample Count in the Amazon SQS console\) | 
 | ApproximateNumberOfMessagesNotVisible | The number of messages that are in flight\. Messages are considered to be in flight if they have been sent to a client but have not yet been deleted or have not yet reached the end of their visibility window\.Reporting Criteria: A non\-negative value is reported [if the queue is active](sqs-monitoring-using-cloudwatch.md)\.Units: CountValid Statistics: Average, Minimum, Maximum, Sum, Data Samples \(displays as Sample Count in the Amazon SQS console\) | 
 | ApproximateNumberOfMessagesVisible | The number of messages available for retrieval from the queue\.Reporting Criteria: A non\-negative value is reported [if the queue is active](sqs-monitoring-using-cloudwatch.md)\.Units: CountValid Statistics: Average, Minimum, Maximum, Sum, Data Samples \(displays as Sample Count in the Amazon SQS console\) | 
@@ -23,6 +23,6 @@ The `AWS/SQS` namespace includes the following metrics\.
 | `NumberOfMessagesSent` | The number of messages added to a queue\.Reporting Criteria: A non\-negative value is reported [if the queue is active](sqs-monitoring-using-cloudwatch.md)\.Units: CountValid Statistics: Average, Minimum, Maximum, Sum, Data Samples \(displays as Sample Count in the Amazon SQS console\) | 
 | `SentMessageSize` | The size of messages added to a queue\.Reporting Criteria: A non\-negative value is reported [if the queue is active](sqs-monitoring-using-cloudwatch.md)\.Units: BytesValid Statistics: Average, Minimum, Maximum, Sum, Data Samples \(displays as Sample Count in the Amazon SQS console\) `SentMessageSize` does not display as an available metric in the CloudWatch console until at least one message is sent to the corresponding queue\.  | 
 
-## Dimensions for Amazon SQS Metrics<a name="sqs-metric-dimensions"></a>
+## Dimensions for Amazon SQS metrics<a name="sqs-metric-dimensions"></a>
 
 The only dimension that Amazon SQS sends to CloudWatch is `QueueName`\. This means that all available statistics are filtered by `QueueName`\.

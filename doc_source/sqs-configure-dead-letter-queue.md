@@ -1,6 +1,6 @@
-# Tutorial: Configuring an Amazon SQS Dead\-Letter Queue<a name="sqs-configure-dead-letter-queue"></a>
+# Tutorial: Configuring an Amazon SQS dead\-letter queue<a name="sqs-configure-dead-letter-queue"></a>
 
-A dead\-letter queue is a queue that *other* \(source\) queues can target for messages that can't be processed \(consumed\) successfully\. In this tutorial you learn how to create an Amazon SQS source queue and to configure a second queue as a dead\-letter queue for it\. For more information, see [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md)\.
+A dead\-letter queue is a queue that *other* \(source\) queues can target for messages that can't be processed \(consumed\) successfully\. In this tutorial you learn how to create an Amazon SQS source queue and to configure a second queue as a dead\-letter queue for it\. For more information, see [Amazon SQS dead\-letter queues](sqs-dead-letter-queues.md)\.
 
 **Important**  
 When you designate a queue to be a source queue, a dead\-letter queue is *not* created automatically\. You must first create a standard or FIFO queue before designating it a dead\-letter queue\. This tutorial assumes you already have a normal FIFO queue named `MyDeadLetterQueue.fifo`\.  
@@ -46,25 +46,11 @@ When you create a queue, it can take a short time for the queue to propagate thr
 
 ## AWS SDK for Java<a name="configure-dead-letter-queue-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+ The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
+
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
 
 ### To configure a dead\-letter queue<a name="configure-dead-letter-queue-java-api"></a>
-
-#### Prerequisites<a name="configure-dead-letter-queue-java-api-prerequisites"></a>
-
-Add the `aws-java-sdk-sqs.jar` package to your Java class path\. The following example shows this dependency in a Maven project `pom.xml` file\.
-
-```
-<dependencies>
-    <dependency>
-        <groupId>com.amazonaws</groupId>
-        <artifactId>aws-java-sdk-sqs</artifactId>
-        <version><replaceable>LATEST</replaceable></version>
-    </dependency>
-</dependencies>
-```
-
-#### SQSDeadLetterQueueExample\.java<a name="configure-dead-letter-queue-java-code"></a>
 
 The following example Java code creates two standard queues and configures one queue to act as a source queue for the other—a dead\-letter queue\.
 

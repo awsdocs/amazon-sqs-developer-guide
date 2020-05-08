@@ -1,8 +1,8 @@
-# Tutorial: Sending a Message with Attributes to an Amazon SQS Queue<a name="sqs-send-message-with-attributes"></a>
+# Tutorial: Sending a message with attributes to an Amazon SQS queue<a name="sqs-send-message-with-attributes"></a>
 
-You can include structured metadata \(such as timestamps, geospatial data, signatures, and identifiers\) with messages using *message attributes*\. In this tutorial you learn how to send a message with attributes to an existing queue\. For more information, see [Amazon SQS Message Attributes](sqs-message-attributes.md)\.
+You can include structured metadata \(such as timestamps, geospatial data, signatures, and identifiers\) with messages using *message attributes*\. In this tutorial you learn how to send a message with attributes to an existing queue\. For more information, see [Amazon SQS message attributes](sqs-message-attributes.md)\.
 
-For a more detailed explanation of sending messages to standard and FIFO queues, see [Tutorial: Sending a Message to an Amazon SQS Queue](sqs-send-message.md)\.
+For a more detailed explanation of sending messages to standard and FIFO queues, see [Tutorial: Sending a message to an Amazon SQS queue](sqs-send-message.md)\.
 
 **Topics**
 + [AWS Management Console](#send-message-with-attributes-console)
@@ -26,7 +26,7 @@ For a more detailed explanation of sending messages to standard and FIFO queues,
 1. To send a message to a FIFO queue, type the **Message Body**, the **Message Group ID** `MyMessageGroupId1234567890`, and the **Message Deduplication ID** `MyMessageDeduplicationId1234567890`, and then choose **Message Attributes**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-with-attributes.png)
 
-1. Define the message attribute parameters\. For more information, see [Message Attribute Components](sqs-message-attributes.md#message-attribute-components) and [Message Attribute Data Types](sqs-message-attributes.md#message-attribute-data-types)\.
+1. Define the message attribute parameters\. For more information, see [Message attribute components](sqs-message-attributes.md#message-attribute-components) and [Message attribute data types](sqs-message-attributes.md#message-attribute-data-types)\.
 
    1. For the message attribute **Name** type `MyMessageAttribute`\.
 
@@ -52,15 +52,17 @@ For a more detailed explanation of sending messages to standard and FIFO queues,
 
 ## AWS SDK for Java<a name="send-message-with-attributes-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+ The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
+
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
 
 ### To send a message with attributes to a queue<a name="send-message-with-attributes-procedure"></a>
 
 1. Copy the [standard queue example program](standard-queues-getting-started-java.md) or the [FIFO queue example program](FIFO-queues-getting-started-java.md)\.
 
-1. To define an attribute for a message, add the following code which uses the `[MessageAttributeValue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_MessageAttributeValue.html)` data type\. For more information, see [Message Attribute Components](sqs-message-attributes.md#message-attribute-components) and [Message Attribute Data Types](sqs-message-attributes.md#message-attribute-data-types)\.
+1. To define an attribute for a message, add the following code which uses the `[MessageAttributeValue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_MessageAttributeValue.html)` data type\. For more information, see [Message attribute components](sqs-message-attributes.md#message-attribute-components) and [Message attribute data types](sqs-message-attributes.md#message-attribute-data-types)\.
 **Note**  
-The AWS SDK for Java automatically calculates the message body and message attribute checksums and compares them with the data which Amazon SQS returns\. For more information, see the *[AWS SDK for Java Developer Guide](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/)* and [Calculating the MD5 Message Digest for Message Attributes](sqs-message-attributes.md#sqs-attributes-md5-message-digest-calculation) for other programming languages\.
+The AWS SDK for Java automatically calculates the message body and message attribute checksums and compares them with the data which Amazon SQS returns\. For more information, see the *[AWS SDK for Java Developer Guide](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/)* and [Calculating the MD5 message digest for message attributes](sqs-message-attributes.md#sqs-attributes-md5-message-digest-calculation) for other programming languages\.
 
 ------
 #### [ String ]
@@ -99,7 +101,7 @@ The AWS SDK for Java automatically calculates the message body and message attri
    ```
 
 ------
-#### [ String \(Custom\) ]
+#### [ String \(custom\) ]
 
    This example defines the custom attribute `String.EmployeeId` named `EmployeeId` with the value `ABC123456`\.
 
@@ -111,7 +113,7 @@ The AWS SDK for Java automatically calculates the message body and message attri
    ```
 
 ------
-#### [ Number \(Custom\) ]
+#### [ Number \(custom\) ]
 
    This example defines the custom attribute `Number.AccountId` named `AccountId` with the value `0023456`\.
 
@@ -126,7 +128,7 @@ The AWS SDK for Java automatically calculates the message body and message attri
 Because the base data type is `Number`, the `[ReceiveMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` action returns `123456`\.
 
 ------
-#### [ Binary \(Custom\) ]
+#### [ Binary \(custom\) ]
 
    This example defines the custom attribute `Binary.JPEG` named `ApplicationIcon` with the value of an uninitialized 10\-byte array\.
 

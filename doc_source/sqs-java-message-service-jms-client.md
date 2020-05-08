@@ -4,11 +4,11 @@ The Amazon SQS Java Messaging Library is a JMS interface for Amazon SQS that let
 
 The library supports sending and receiving messages to a queue \(the JMS point\-to\-point model\) according to the [JMS 1\.1 specification](http://docs.oracle.com/javaee/6/api/javax/jms/package-summary.html)\. The library supports sending text, byte, or object messages synchronously to Amazon SQS queues\. The library also supports receiving objects synchronously or asynchronously\.
 
-For information about features of the Amazon SQS Java Messaging Library that support the JMS 1\.1 specification, see [Supported JMS 1\.1 Implementations](supported-implementations.md) and the [Amazon SQS FAQs](https://aws.amazon.com/sqs/faqs/)\.
+For information about features of the Amazon SQS Java Messaging Library that support the JMS 1\.1 specification, see [Supported JMS 1\.1 implementations](supported-implementations.md) and the [Amazon SQS FAQs](https://aws.amazon.com/sqs/faqs/)\.
 
 **Topics**
 + [Prerequisites](prerequisites.md)
-+ [Getting Started with the Amazon SQS Java Messaging Library](getting-started.md)
-+ [Using the JMS Client with Other Amazon SQS Clients](sqs-jms-client-with-sqs-clients.md)
-+ [Working Java Example for Using JMS with Amazon SQS Standard Queues](sqs-jms-code-examples.md)
-+ [Supported JMS 1\.1 Implementations](supported-implementations.md)
++ [Getting started with the Amazon SQS Java Messaging Library](getting-started.md)
++ [Using the Amazon SQS Java Message Service \(JMS\) Client with other Amazon SQS clients](sqs-jms-client-with-sqs-clients.md)
++ [Working Java example for using JMS with Amazon SQS Standard queues](sqs-jms-code-examples.md)
++ [Supported JMS 1\.1 implementations](supported-implementations.md)

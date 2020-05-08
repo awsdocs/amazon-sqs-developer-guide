@@ -1,11 +1,11 @@
-# Tutorial: Receiving and Deleting a Message from an Amazon SQS Queue<a name="sqs-receive-delete-message"></a>
+# Tutorial: Receiving and deleting a message from an Amazon SQS queue<a name="sqs-receive-delete-message"></a>
 
 After you send a message into a queue, you can consume it from the queue\. When you request a message from a queue, you can't specify which message to get\. Instead, you specify the maximum number of messages \(up to 10\) that you want to get\.
 
 **Note**  
 Because Amazon SQS is a distributed system, a queue with very few messages might display an empty response to a receive request\. In this case, you can rerun the request to get your message\. Depending on your application's needs, you might have to use short or [long polling](sqs-short-and-long-polling.md) to receive messages\.
 
-Amazon SQS doesn't automatically delete a message after receiving it for you, in case you don't successfully receive the message \(for example, the consumers can fail or lose connectivity\)\. To delete a message, you must send a separate request which acknowledges that you no longer need the message because you've successfully received and processed it\.
+Amazon SQS doesn't automatically delete a message after receiving it for you, in case you don't successfully receive the message \(for example, the consumers can fail or lose connectivity\)\. To delete a message, you must send a separate request which acknowledges that you no longer need the message because you've successfully received and processed it\. Note that you must receive a message before you can delete it\. 
 
 In this tutorial you'll learn how to receive and delete a message\.
 
@@ -54,7 +54,9 @@ To specify the message to delete, provide the [receipt handle](sqs-general-ident
 **Note**  
 If you don't have the receipt handle for the message, you can call the `ReceiveMessage` action to receive the message again\. Each time you receive the message, you get a different receipt handle\. Use the latest receipt handle when using the `DeleteMessage` action\. Otherwise, your message might not be deleted from the queue\.
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+ The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
+
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
 
 ### To receive and delete a message from a standard queue<a name="receive-delete-message-java-standard"></a>
 

@@ -1,6 +1,6 @@
-# Using the Amazon SQS Java Message Service \(JMS\) Client with Other Amazon SQS Clients<a name="sqs-jms-client-with-sqs-clients"></a>
+# Using the Amazon SQS Java Message Service \(JMS\) Client with other Amazon SQS clients<a name="sqs-jms-client-with-sqs-clients"></a>
 
-Using the Amazon SQS Java Message Service \(JMS\) Client with the AWS SDK limits Amazon SQS message size to 256 KB\. However, you can create a JMS provider using any Amazon SQS client\. For example, you can use the JMS Client with the Amazon SQS Extended Client Library for Java to send an Amazon SQS message that contains a reference to a message payload \(up to 2 GB\) in Amazon S3\. For more information, see [Managing Large Amazon SQS Messages Using Amazon S3](sqs-s3-messages.md)\.
+Using the Amazon SQS Java Message Service \(JMS\) Client with the AWS SDK limits Amazon SQS message size to 256 KB\. However, you can create a JMS provider using any Amazon SQS client\. For example, you can use the JMS Client with the Amazon SQS Extended Client Library for Java to send an Amazon SQS message that contains a reference to a message payload \(up to 2 GB\) in Amazon S3\. For more information, see [Managing large Amazon SQS messages using Amazon S3](sqs-s3-messages.md)\.
 
 The following Java code example creates the JMS provider for the Extended Client Library:
 

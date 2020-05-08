@@ -1,10 +1,10 @@
-# Basic Amazon SQS Architecture<a name="sqs-basic-architecture"></a>
+# Basic Amazon SQS architecture<a name="sqs-basic-architecture"></a>
 
    Learn about the parts of a distributed messaging system and the lifecycle of an Amazon SQS message, from creation to deletion\.   
 
 This section outlines the parts of a distributed messaging system and explains the lifecycle of an Amazon SQS message\.
 
-## Distributed Queues<a name="sqs-distributed-queue"></a>
+## Distributed queues<a name="sqs-distributed-queue"></a>
 
 There are three main parts in a distributed messaging system: the components of your distributed system, your queue \(distributed on Amazon SQS servers\), and the messages in the queue\.
 
@@ -12,7 +12,7 @@ In the following scenario, your system has several *producers* \(components that
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/ArchOverview.png)
 
-## Message Lifecycle<a name="sqs-message-lifecycle"></a>
+## Message lifecycle<a name="sqs-message-lifecycle"></a>
 
 The following scenario describes the lifecycle of an Amazon SQS message in a queue, from creation to deletion\.
 

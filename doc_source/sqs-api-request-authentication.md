@@ -1,6 +1,6 @@
-# Authenticating Requests<a name="sqs-api-request-authentication"></a>
+# Authenticating requests<a name="sqs-api-request-authentication"></a>
 
-Authentication is the process of identifying and verifying the party that sends a request\. During the first stage of authentication, AWS verifies the identity of the producer and whether the producer is [registered to use AWS](https://aws.amazon.com/) \(for more information, see [Step 1: Create an AWS Account](sqs-setting-up.md#sqs-creating-aws-account) and [Step 2: Create an IAM User](sqs-setting-up.md#sqs-creating-iam-user)\)\. Next, AWS abides by the following procedure:
+Authentication is the process of identifying and verifying the party that sends a request\. During the first stage of authentication, AWS verifies the identity of the producer and whether the producer is [registered to use AWS](https://aws.amazon.com/) \(for more information, see [Step 1: Create an AWS account](sqs-setting-up.md#sqs-creating-aws-account) and [Step 2: Create an IAM user](sqs-setting-up.md#sqs-creating-iam-user)\)\. Next, AWS abides by the following procedure:
 
 1. The producer \(sender\) obtains the necessary credential\.
 
@@ -13,11 +13,11 @@ Authentication is the process of identifying and verifying the party that sends 
    + If authentication fails, the consumer rejects the request and returns an error\.
 
 **Topics**
-+ [Basic Authentication Process with HMAC\-SHA](#sqs-api-basic-authentication-process)
-+ [Part 1: The Request from the User](#sqs-authentication-user)
-+ [Part 2: The Response from AWS](#sqs-authentication-aws)
++ [Basic authentication process with HMAC\-SHA](#sqs-api-basic-authentication-process)
++ [Part 1: The request from the user](#sqs-authentication-user)
++ [Part 2: The response from AWS](#sqs-authentication-aws)
 
-## Basic Authentication Process with HMAC\-SHA<a name="sqs-api-basic-authentication-process"></a>
+## Basic authentication process with HMAC\-SHA<a name="sqs-api-basic-authentication-process"></a>
 
 When you access Amazon SQS using the Query API, you must provide the following items to authenticate your request:
 + The **AWS Access Key ID** that identifies your AWS account, which AWS uses to look up your Secret Access Key\.
@@ -49,7 +49,7 @@ Amazon SQS supports Signature Version 4, which provides improved SHA256\-based s
 Make sure that your server time is set correctly\. If you specify a timestamp \(rather than an expiration\), the request automatically expires 15 minutes after the specified time \(AWS doesn't process requests with timestamps more than 15 minutes earlier than the current time on AWS servers\)\.  
 If you use \.NET, you must not send overly specific timestamps \(because of different interpretations of how extra time precision should be dropped\)\. In this case, you should manually construct `dateTime` objects with precision of no more than one millisecond\.
 
-## Part 1: The Request from the User<a name="sqs-authentication-user"></a>
+## Part 1: The request from the user<a name="sqs-authentication-user"></a>
 
 The following is the process you must follow to authenticate AWS requests using an HMAC\-SHA request signature\.
 
@@ -61,7 +61,7 @@ The following is the process you must follow to authenticate AWS requests using 
 
 1. Include the signature and your Access Key ID in the request, and then send the request to AWS\.
 
-## Part 2: The Response from AWS<a name="sqs-authentication-aws"></a>
+## Part 2: The response from AWS<a name="sqs-authentication-aws"></a>
 
 AWS begins the following process in response\.
 

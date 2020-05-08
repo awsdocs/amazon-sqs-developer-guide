@@ -1,6 +1,6 @@
-# Tutorial: Configuring Visibility Timeout for an Amazon SQS Queue<a name="sqs-configure-visibility-timeout-queue"></a>
+# Tutorial: Configuring visibility timeout for an Amazon SQS queue<a name="sqs-configure-visibility-timeout-queue"></a>
 
-Immediately after a message is received, it remains in the queue\. To prevent other consumers from processing the message again, Amazon SQS sets a *visibility timeout*, a period of time during which Amazon SQS prevents other consumers from receiving and processing the message\. The default visibility timeout for a message is 30 seconds\. The minimum is 0 seconds\. The maximum is 12 hours\. In this tutorial you learn how to configure visibility timeout for a queue using the AWS Management Console and for single or multiple messages using the AWS SDK for Java\. For more information, see [Amazon SQS Visibility Timeout](sqs-visibility-timeout.md)\.
+Immediately after a message is received, it remains in the queue\. To prevent other consumers from processing the message again, Amazon SQS sets a *visibility timeout*, a period of time during which Amazon SQS prevents other consumers from receiving and processing the message\. The default visibility timeout for a message is 30 seconds\. The minimum is 0 seconds\. The maximum is 12 hours\. In this tutorial you learn how to configure visibility timeout for a queue using the AWS Management Console and for single or multiple messages using the AWS SDK for Java\. For more information, see [Amazon SQS visibility timeout](sqs-visibility-timeout.md)\.
 
 **Note**  
 You can use the AWS Management Console to configure visibility timeout only for queues, not for single or multiple messages\. To do this, you must use one of the AWS SDKs\. For more information, see the second Java example code below\.
@@ -37,25 +37,11 @@ When you create a queue, it can take a short time for the queue to propagate thr
 
 ## AWS SDK for Java<a name="sqs-configure-visibility-timeout-queue-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+ The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
+
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
 
 ### To configure visibility timeout for a queue<a name="configure-visibility-timeout-queue-java-api"></a>
-
-#### Prerequisites<a name="configure-dead-letter-queue-java-api-prerequisites"></a>
-
-Add the `aws-java-sdk-sqs.jar` package to your Java class path\. The following example shows this dependency in a Maven project `pom.xml` file\.
-
-```
-<dependencies>
-    <dependency>
-        <groupId>com.amazonaws</groupId>
-        <artifactId>aws-java-sdk-sqs</artifactId>
-        <version><replaceable>LATEST</replaceable></version>
-    </dependency>
-</dependencies>
-```
-
-#### SQSVisibilityTimeoutExample\.java<a name="configure-dead-letter-queue-java-api-code"></a>
 
 The following example Java code creates a standard queue and sets the visibility timeout for it to 1 minute\.
 

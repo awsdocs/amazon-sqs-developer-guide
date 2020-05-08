@@ -1,11 +1,11 @@
-# Tutorial: Sending a Message with a Timer to an Amazon SQS Queue<a name="sqs-send-message-with-timer"></a>
+# Tutorial: Sending a message with a timer to an Amazon SQS queue<a name="sqs-send-message-with-timer"></a>
 
-Message timers let you specify an initial invisibility period for a message added to a queue\. For example, if you send a message with a 45\-second timer, the message isn't visible to consumers for its first 45 seconds in the queue\. The default \(minimum\) delay for a message is 0 seconds\. The maximum is 15 minutes\. In this tutorial you learn how to send a message with a timer to an existing queue\. For more information, see [Amazon SQS Message Timers](sqs-message-timers.md)\.
+Message timers let you specify an initial invisibility period for a message added to a queue\. For example, if you send a message with a 45\-second timer, the message isn't visible to consumers for its first 45 seconds in the queue\. The default \(minimum\) delay for a message is 0 seconds\. The maximum is 15 minutes\. In this tutorial you learn how to send a message with a timer to an existing queue\. For more information, see [Amazon SQS message timers](sqs-message-timers.md)\.
 
 **Note**  
 FIFO queues don't support timers on individual messages\.
 
-For a more detailed explanation of sending messages to standard and FIFO queues, see [Tutorial: Sending a Message to an Amazon SQS Queue](sqs-send-message.md)\.
+For a more detailed explanation of sending messages to standard and FIFO queues, see [Tutorial: Sending a message to an Amazon SQS queue](sqs-send-message.md)\.
 
 **Topics**
 + [AWS Management Console](#send-message-with-timer-console)
@@ -35,7 +35,9 @@ For a more detailed explanation of sending messages to standard and FIFO queues,
 
 ## AWS SDK for Java<a name="send-message-with-timer-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+ The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
+
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
 
 ### To send a message with a timer to a queue<a name="send-message-with-timer-procedure"></a>
 

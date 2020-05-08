@@ -1,15 +1,15 @@
-# Identity and Access Management in Amazon SQS<a name="sqs-authentication-and-access-control"></a>
+# Identity and access management in Amazon SQS<a name="sqs-authentication-and-access-control"></a>
 
 Access to Amazon SQS requires credentials that AWS can use to authenticate your requests\. These credentials must have permissions to access AWS resources, such an Amazon SQS queues and messages\. The following sections provide details on how you can use [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) and Amazon SQS to help secure your resources by controlling access to them\. 
 
 **Topics**
 + [Authentication](#authentication)
-+ [Access Control](#access-control)
-+ [Overview of Managing Access](sqs-overview-of-managing-access.md)
-+ [Using Identity\-Based Policies with Amazon SQS](sqs-using-identity-based-policies.md)
-+ [Using Custom Policies with the Amazon SQS Access Policy Language](sqs-creating-custom-policies.md)
-+ [Using Temporary Security Credentials with Amazon SQS](sqs-using-temporary-security-credentials.md)
-+ [Actions and Resource Reference](sqs-api-permissions-reference.md)
++ [Access control](#access-control)
++ [Overview of managing access in Amazon SQS](sqs-overview-of-managing-access.md)
++ [Using identity\-based policies with Amazon SQS](sqs-using-identity-based-policies.md)
++ [Using custom policies with the Amazon SQS Access Policy Language](sqs-creating-custom-policies.md)
++ [Using temporary security credentials with Amazon SQS](sqs-using-temporary-security-credentials.md)
++ [Amazon SQS API permissions: Actions and resource reference](sqs-api-permissions-reference.md)
 
 ## Authentication<a name="authentication"></a>
 
@@ -33,7 +33,7 @@ You can access AWS as any of the following types of identities:
       
   + **Applications running on Amazon EC2** –  You can use an IAM role to manage temporary credentials for applications that are running on an EC2 instance and making AWS CLI or AWS API requests\. This is preferable to storing access keys within the EC2 instance\. To assign an AWS role to an EC2 instance and make it available to all of its applications, you create an instance profile that is attached to the instance\. An instance profile contains the role and enables programs that are running on the EC2 instance to get temporary credentials\. For more information, see [Using an IAM Role to Grant Permissions to Applications Running on Amazon EC2 Instances](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html) in the *IAM User Guide*\. 
 
-## Access Control<a name="access-control"></a>
+## Access control<a name="access-control"></a>
 
 Amazon SQS has its own resource\-based permissions system that uses policies written in the same language used for AWS Identity and Access Management \(IAM\) policies\. This means that you can achieve similar things with Amazon SQS policies and IAM policies\.
 
@@ -49,4 +49,4 @@ Cross\-account permissions don't apply to the following actions:
 `[SetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`
 `[TagQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_TagQueue.html)`
 `[UntagQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_UntagQueue.html)`
-Currently, Amazon SQS supports only a limited subset of the [condition keys available in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys)\. For more information, see [Amazon SQS API Permissions: Actions and Resource Reference](sqs-api-permissions-reference.md)\. 
+Currently, Amazon SQS supports only a limited subset of the [condition keys available in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys)\. For more information, see [Amazon SQS API permissions: Actions and resource reference](sqs-api-permissions-reference.md)\. 

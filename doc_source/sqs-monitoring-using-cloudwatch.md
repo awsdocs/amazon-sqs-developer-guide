@@ -1,4 +1,4 @@
-# Monitoring Amazon SQS Queues Using CloudWatch<a name="sqs-monitoring-using-cloudwatch"></a>
+# Monitoring Amazon SQS queues using CloudWatch<a name="sqs-monitoring-using-cloudwatch"></a>
 
 Amazon SQS and Amazon CloudWatch are integrated so you can use CloudWatch to view and analyze metrics for your Amazon SQS queues\. You can view and analyze your queues' metrics from the [Amazon SQS console](sqs-access-metrics.md#access-cloudwatch-metrics-sqs-console), the [CloudWatch console](sqs-access-metrics.md#access-metrics-cloudwatch-console), using the [AWS CLI](sqs-access-metrics.md#access-cloudwatch-metrics-cli), or using the [CloudWatch API](sqs-access-metrics.md#access-metrics-cloudwatch-api)\. You can also [set CloudWatch alarms](set-cloudwatch-alarms-for-metrics.md) for Amazon SQS metrics\.
 
@@ -9,6 +9,6 @@ There is no charge for the Amazon SQS metrics reported in CloudWatch\. They're p
 CloudWatch metrics are supported for both standard and FIFO queues\.
 
 **Topics**
-+ [Accessing CloudWatch Metrics for Amazon SQS](sqs-access-metrics.md)
-+ [Creating CloudWatch Alarms for Amazon SQS Metrics](set-cloudwatch-alarms-for-metrics.md)
-+ [Available CloudWatch Metrics for Amazon SQS](sqs-available-cloudwatch-metrics.md)
++ [Accessing CloudWatch metrics for Amazon SQS](sqs-access-metrics.md)
++ [Creating CloudWatch alarms for Amazon SQS metrics](set-cloudwatch-alarms-for-metrics.md)
++ [Available CloudWatch metrics for Amazon SQS](sqs-available-cloudwatch-metrics.md)

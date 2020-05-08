@@ -1,4 +1,4 @@
-# Automating Notifications from AWS Services to Amazon SQS using CloudWatch Events<a name="sqs-automating-using-cloudwatch-events"></a>
+# Automating notifications from AWS services to Amazon SQS using CloudWatch Events<a name="sqs-automating-using-cloudwatch-events"></a>
 
 Amazon CloudWatch Events lets you automate AWS services and respond to system events such as application availability issues or resource changes\. Events from AWS services are delivered to CloudWatch Events nearly in real time\. You can write simple rules to indicate which events are of interest to you and what automated actions to take when an event matches a rule\.
 

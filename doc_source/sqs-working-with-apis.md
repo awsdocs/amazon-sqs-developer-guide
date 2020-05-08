@@ -10,5 +10,5 @@ To access Amazon SQS using a variety of programming languages, you can also use 
 For command\-line tool information, see the Amazon SQS sections in the [https://docs.aws.amazon.com/cli/latest/reference/sqs/index.html](https://docs.aws.amazon.com/cli/latest/reference/sqs/index.html) and the [https://docs.aws.amazon.com/powershell/latest/reference/](https://docs.aws.amazon.com/powershell/latest/reference/)\.
 
 **Topics**
-+ [Making Query API Requests](sqs-making-api-requests.md)
-+ [Amazon SQS Batch Actions](sqs-batch-api-actions.md)
++ [Making Query API requests](sqs-making-api-requests.md)
++ [Amazon SQS batch actions](sqs-batch-api-actions.md)

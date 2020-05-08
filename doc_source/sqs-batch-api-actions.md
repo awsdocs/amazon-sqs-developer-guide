@@ -1,4 +1,4 @@
-# Amazon SQS Batch Actions<a name="sqs-batch-api-actions"></a>
+# Amazon SQS batch actions<a name="sqs-batch-api-actions"></a>
 
 To reduce costs or manipulate up to 10 messages with a single action, you can use the following actions:
 + `[SendMessageBatch](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html)`
@@ -13,5 +13,5 @@ You can't set permissions for `SendMessageBatch`, `DeleteMessageBatch`, or `Chan
 The Amazon SQS console doesn't support batch actions\.
 
 **Topics**
-+ [Enabling Client\-Side Buffering and Request Batching](sqs-client-side-buffering-request-batching.md)
-+ [Increasing Throughput using Horizontal Scaling and Action Batching](sqs-throughput-horizontal-scaling-and-batching.md)
++ [Enabling client\-side buffering and request batching](sqs-client-side-buffering-request-batching.md)
++ [Increasing throughput using horizontal scaling and action batching](sqs-throughput-horizontal-scaling-and-batching.md)

@@ -1,16 +1,16 @@
-# Amazon SQS Message Attributes<a name="sqs-message-attributes"></a>
+# Amazon SQS message attributes<a name="sqs-message-attributes"></a>
 
-Amazon SQS lets you include structured metadata \(such as timestamps, geospatial data, signatures, and identifiers\) with messages using *message attributes*\. Each message can have up to 10 attributes\. Message attributes are optional and separate from the message body \(however, they are sent alongside it\)\. Your consumer can use message attributes to handle a message in a particular way without having to process the message body first\. For information about sending messages with attributes using the AWS Management Console or the AWS SDK for Java, see [Tutorial: Sending a Message with Attributes to an Amazon SQS Queue](sqs-send-message-with-attributes.md)\.
+Amazon SQS lets you include structured metadata \(such as timestamps, geospatial data, signatures, and identifiers\) with messages using *message attributes*\. Each message can have up to 10 attributes\. Message attributes are optional and separate from the message body \(however, they are sent alongside it\)\. Your consumer can use message attributes to handle a message in a particular way without having to process the message body first\. For information about sending messages with attributes using the AWS Management Console or the AWS SDK for Java, see [Tutorial: Sending a message with attributes to an Amazon SQS queue](sqs-send-message-with-attributes.md)\.
 
 **Note**  
 Don't confuse message attributes with *message system attributes*: Whereas you can use message attributes to attach custom metadata to Amazon SQS messages for your applications, you can use [message system attributes](sqs-message-system-attributes.md) to store metadata for other AWS services, such as AWS X\-Ray\.
 
 **Topics**
-+ [Message Attribute Components](#message-attribute-components)
-+ [Message Attribute Data Types](#message-attribute-data-types)
-+ [Calculating the MD5 Message Digest for Message Attributes](#sqs-attributes-md5-message-digest-calculation)
++ [Message attribute components](#message-attribute-components)
++ [Message attribute data types](#message-attribute-data-types)
++ [Calculating the MD5 message digest for message attributes](#sqs-attributes-md5-message-digest-calculation)
 
-## Message Attribute Components<a name="message-attribute-components"></a>
+## Message attribute components<a name="message-attribute-components"></a>
 
 **Important**  
 All components of a message attribute are included in the 256 KB message size restriction\.  
@@ -29,7 +29,7 @@ Each message attribute consists of the following components:
   + Is case\-sensitive
 + **Value** – The message attribute value\. For `String` data types, the attribute values has the same restrictions as the message body\.
 
-## Message Attribute Data Types<a name="message-attribute-data-types"></a>
+## Message attribute data types<a name="message-attribute-data-types"></a>
 
 Message attribute data types instruct Amazon SQS how to handle the corresponding message attribute values\. For example, if the type is `Number`, Amazon SQS validates numerical values\.
 
@@ -46,7 +46,7 @@ Amazon SQS removes leading and trailing zeroes\.
 Amazon SQS doesn't interpret, validate, or use the appended data\.  
 The custom\-type label has the same restrictions as the message body\.
 
-## Calculating the MD5 Message Digest for Message Attributes<a name="sqs-attributes-md5-message-digest-calculation"></a>
+## Calculating the MD5 message digest for message attributes<a name="sqs-attributes-md5-message-digest-calculation"></a>
 
 If you use the AWS SDK for Java, you can skip this section\. The `MessageMD5ChecksumHandler` class of the SDK for Java supports MD5 message digests for Amazon SQS message attributes\.
 

@@ -1,20 +1,12 @@
-# Working Java Example for FIFO Queues<a name="FIFO-queues-getting-started-java"></a>
+# Working Java example for FIFO queues<a name="FIFO-queues-getting-started-java"></a>
 
 Learn about Amazon SQS FIFO queue functionality using the provided Maven prerequisites and example Java code\.
 
 ## Prerequisites<a name="FIFO-queue-example-prerequisites"></a>
 
-Add the `aws-java-sdk-sqs.jar` package to your Java class path\. The following example shows this dependency in a Maven project `pom.xml` file\.
+ The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
 
-```
-<dependencies>
-    <dependency>
-        <groupId>com.amazonaws</groupId>
-        <artifactId>aws-java-sdk-sqs</artifactId>
-        <version><replaceable>LATEST</replaceable></version>
-    </dependency>
-</dependencies>
-```
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
 
 ## SQSFIFOJavaClientExample\.java<a name="FIFO-queue-example-java-code"></a>
 
@@ -139,11 +131,13 @@ public class SQSFIFOJavaClientExample {
             }
             System.out.println();
 
-            // Delete the message.
-            System.out.println("Deleting the message.\n");
-            final String messageReceiptHandle = messages.get(0).getReceiptHandle();
-            sqs.deleteMessage(new DeleteMessageRequest(myQueueUrl,
-                    messageReceiptHandle));
+            // Delete the messages.
+            System.out.println("Deleting the messages that we received.\n");
+            
+            for (final Message message : messages) {
+                sqs.deleteMessage(new DeleteMessageRequest(myQueueUrl,
+                        message.getReceiptHandle()));
+            }
 
             // Delete the queue.
             System.out.println("Deleting the queue.\n");

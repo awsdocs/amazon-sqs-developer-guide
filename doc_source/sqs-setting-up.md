@@ -1,8 +1,8 @@
-# Setting Up Amazon SQS<a name="sqs-setting-up"></a>
+# Setting up Amazon SQS<a name="sqs-setting-up"></a>
 
 Before you can use Amazon SQS for the first time, you must complete the following steps\.
 
-## Step 1: Create an AWS Account<a name="sqs-creating-aws-account"></a>
+## Step 1: Create an AWS account<a name="sqs-creating-aws-account"></a>
 
 To access any AWS service, you first need to create an [ AWS account](https://aws.amazon.com/), an Amazon\.com account that can use AWS products\. You can use your AWS account to view your activity and usage reports and to manage authentication and access\.
 
@@ -16,7 +16,7 @@ To avoid using your AWS account root user for Amazon SQS actions, it is a best p
 
    Part of the sign\-up procedure involves receiving a phone call and entering a verification code on the phone keypad\.
 
-## Step 2: Create an IAM User<a name="sqs-creating-iam-user"></a>
+## Step 2: Create an IAM user<a name="sqs-creating-iam-user"></a>
 
 **To create an administrator user for yourself and add the user to an administrators group \(console\)**
 
@@ -56,7 +56,7 @@ You must activate IAM user and role access to Billing before you can use the `Ad
 
 You can use this same process to create more groups and users and to give your users access to your AWS account resources\. To learn about using policies that restrict user permissions to specific AWS resources, see [Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) and [Example Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_examples.html)\.
 
-## Step 3: Get Your Access Key ID and Secret Access Key<a name="sqs-getting-access-key-id-secret-access-key"></a>
+## Step 3: Get your access key ID and secret access key<a name="sqs-getting-access-key-id-secret-access-key"></a>
 
 To use Amazon SQS actions \(for example, using Java or through the AWS Command Line Interface\), you need an access key ID and a secret access key\.
 
@@ -91,15 +91,15 @@ The only time that you can view or download the secret access key is when you cr
 + [What Is IAM?](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) in the *IAM User Guide*
 + [AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html) in *AWS General Reference* 
 
-## Step 4: Get Ready to Use the Example Code<a name="sqs-get-ready-to-use-example-code"></a>
+## Step 4: Get ready to use the example code<a name="sqs-get-ready-to-use-example-code"></a>
 
 This guide shows how to work with Amazon SQS using the AWS Management Console and using Java\. If you want to use the example code, you must install the [Java Standard Edition Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/) and make some configuration changes to the example code\.
 
-You can write code in other programming languages\. For more information, see the [documentation of the AWS SDKs](https://aws.amazon.com//tools/#sdk)\.
+You can write code in other programming languages\. For more information, see the [documentation of the AWS SDKs](https://aws.amazon.com/tools/#sdk)\.
 
 **Note**  
 You can explore Amazon SQS without writing code with tools such as the AWS Command Line Interface \(AWS CLI\) or Windows PowerShell\. You can find AWS CLI examples in the [Amazon SQS section](https://docs.aws.amazon.com/cli/latest/reference/sqs/index.html) of the *AWS CLI Command Reference*\. You can find Windows PowerShell examples in the Amazon Simple Queue Service section of the *[AWS Tools for PowerShell Cmdlet Reference](https://docs.aws.amazon.com/powershell/latest/reference/)*\.
 
-## Next Steps<a name="sqs-next-steps-setting-up"></a>
+## Next steps<a name="sqs-next-steps-setting-up"></a>
 
 Now that you're prepared for working with Amazon SQS, can [get started](sqs-getting-started.md) with managing Amazon SQS queues and messages using the AWS Management Console\. You can also try the more advanced Amazon SQS [tutorials](sqs-tutorials.md)\.

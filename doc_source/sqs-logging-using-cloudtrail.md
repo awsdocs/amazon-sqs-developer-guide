@@ -1,4 +1,4 @@
-# Logging Amazon SQS API Calls Using AWS CloudTrail<a name="sqs-logging-using-cloudtrail"></a>
+# Logging Amazon SQS API calls using AWS CloudTrail<a name="sqs-logging-using-cloudtrail"></a>
 
 Amazon SQS is integrated with AWS CloudTrail, a service that provides a record of the Amazon SQS calls that a user, role, or AWS service makes\. CloudTrail captures API calls related to Amazon SQS queues as events, including calls from the Amazon SQS console and code calls from Amazon SQS APIs\. For more information about CloudTrail, see the [https://docs.aws.amazon.com/awscloudtrail/latest/userguide/](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
 
@@ -7,7 +7,7 @@ CloudTrail logging is supported for both standard and FIFO queues\.
 
 Using the information that CloudTrail collects, you can identify a specific request to an Amazon SQS API, the IP address of the requester, the requester's identity, the date and time of the request, and so on\. If you configure a *trail*, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket\. If you don't configure a trail, you can view the most recent events in the event history in the CloudTrail console\. For more information, see [Overview for Creating a Trail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html) in the *[AWS CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)*\.
 
-## Amazon SQS Information in CloudTrail<a name="service-name-info-in-cloudtrail"></a>
+## Amazon SQS information in CloudTrail<a name="service-name-info-in-cloudtrail"></a>
 
 When you create your AWS account, CloudTrail is enabled\. When a supported Amazon SQS event activity occurs, it is recorded in a CloudTrail event with other AWS service events in the event history\. You can view, search, and download recent events for your AWS account\. For more information, see [Viewing Events with CloudTrail Event History](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html) in the *AWS CloudTrail User Guide*\.
 
@@ -34,7 +34,7 @@ Every event or log entry contains information about the requester\. This informa
 
 For more information, see [CloudTrail userIdentity Element](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html) in the *AWS CloudTrail User Guide*\.
 
-## Example Amazon SQS Log File Entries<a name="understanding-service-name-entries"></a>
+## Example Amazon SQS log file entries<a name="understanding-service-name-entries"></a>
 
 CloudTrail log files contain one or more log entries where each entry is made up of multiple JSON\-formatted events\. A log entry represents a single request from any source and includes information about the requested action, any parameters, the date and time of the action, and so on\. The log entries aren't guaranteed to be in any particular order\. That is, they're not an ordered stack trace of the public API calls\.
 

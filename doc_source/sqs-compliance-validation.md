@@ -1,4 +1,4 @@
-# Compliance Validation for Amazon SQS<a name="sqs-compliance-validation"></a>
+# Compliance validation for Amazon SQS<a name="sqs-compliance-validation"></a>
 
 Third\-party auditors assess the security and compliance of Amazon SQS as part of multiple AWS compliance programs, including the following:
 + Payment Card Industry Data Security Standard \(PCI DSS\)

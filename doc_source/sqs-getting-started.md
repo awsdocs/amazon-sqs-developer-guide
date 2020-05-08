@@ -1,12 +1,12 @@
-# Getting Started with Amazon SQS<a name="sqs-getting-started"></a>
+# Getting started with Amazon SQS<a name="sqs-getting-started"></a>
 
 This section helps you become more familiar with Amazon SQS by showing you how to manage queues and messages using the AWS Management Console\.
 
 ## Prerequisites<a name="sqs-prerequisites"></a>
 
-Before you begin, complete the steps in [Setting Up Amazon SQS](sqs-setting-up.md)\.
+Before you begin, complete the steps in [Setting up Amazon SQS](sqs-setting-up.md)\.
 
-## Step 1: Create a Queue<a name="step-create-queue"></a>
+## Step 1: Create a queue<a name="step-create-queue"></a>
 
 The first and most common Amazon SQS task is creating queues\. In this tutorial you'll learn how to create and configure a queue\.
 
@@ -32,7 +32,7 @@ When you create a queue, it can take a short time for the queue to propagate thr
    Your queue's **Name**, **URL**, and **ARN** are displayed on the **Details** tab\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-details-url-arn.png)
 
-## Step 2: Send a Message<a name="step-send-message"></a>
+## Step 2: Send a message<a name="step-send-message"></a>
 
 After you create your queue, you can send a message to it\. The following example shows sending a message to an existing queue\.
 
@@ -47,7 +47,7 @@ After you create your queue, you can send a message to it\. The following exampl
    The following example shows the **Message Group ID** and **Message Deduplication ID** parameters specific to FIFO queues \([content\-based deduplication](FIFO-queues.md#FIFO-queues-exactly-once-processing) is disabled\)\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message-dialog-box.png)
 
-1. To send a message to a FIFO queue, type the **Message Body**, the **Message Group ID** `MyMessageGroupId1234567890`, and the **Message Deduplication ID** `MyMessageDeduplicationId1234567890`, and then choose **Send Message**\. For more information, see [FIFO Delivery Logic](FIFO-queues.md#FIFO-queues-understanding-logic)\.
+1. To send a message to a FIFO queue, type the **Message Body**, the **Message Group ID** `MyMessageGroupId1234567890`, and the **Message Deduplication ID** `MyMessageDeduplicationId1234567890`, and then choose **Send Message**\. For more information, see [FIFO delivery logic](FIFO-queues.md#FIFO-queues-understanding-logic)\.
 **Note**  
 The message group ID is always required\. However, if content\-based deduplication is enabled, the message deduplication ID is optional\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message-button-fifo.png)
@@ -59,7 +59,7 @@ The message group ID is always required\. However, if content\-based deduplicati
 
 1. Choose **Close**\.
 
-## Step 3: Receive and Delete Your Message<a name="step-receive-delete-message"></a>
+## Step 3: Receive and delete your message<a name="step-receive-delete-message"></a>
 
 After you send a message into a queue, you can consume it \(retrieve it from the queue\)\. When you request a message from a queue, you can't specify which message to get\. Instead, you specify the maximum number of messages \(up to 10\) that you want to get\.
 
@@ -94,7 +94,7 @@ When the progress bar is filled in, the [visibility timeout](sqs-visibility-time
 
 1. Select **Close**\.
 
-## Step 4: Delete Your Queue<a name="step-delete-queue"></a>
+## Step 4: Delete your queue<a name="step-delete-queue"></a>
 
 If you don't use an Amazon SQS queue \(and don't foresee using it in the near future\), it is a best practice to delete it from Amazon SQS\. In this tutorial you'll learn how to delete a queue\.
 
@@ -111,7 +111,7 @@ If you don't use an Amazon SQS queue \(and don't foresee using it in the near fu
 
    The queue is deleted\.
 
-## Next Steps<a name="sqs-next-steps-getting-started"></a>
+## Next steps<a name="sqs-next-steps-getting-started"></a>
 
 Now that you've created a queue and learned how to send, receive, and delete messages and how to delete a queue, you might want to try the following:
 + [Enable server\-side encryption \(SSE\) for a new queue](sqs-create-queue-sse.md) or [configure SSE for an existing queue\.](sqs-configure-sse-existing-queue.md)
@@ -135,5 +135,5 @@ Now that you've created a queue and learned how to send, receive, and delete mes
   + [Python](https://aws.amazon.com/python/)
   + [Ruby](https://aws.amazon.com/ruby/)
   + [Windows & \.NET](https://aws.amazon.com/net/)
-+ Learn about keeping an eye on costs and resources in the [Automating and Troubleshooting Amazon SQS Queues](sqs-automating-troubleshooting.md) section\.
++ Learn about keeping an eye on costs and resources in the [Automating and troubleshooting Amazon SQS queues](sqs-automating-troubleshooting.md) section\.
 + Learn about protecting your data and access to it in the [Security](sqs-security.md) section\.

@@ -1,4 +1,4 @@
-# Tutorial: Creating an Amazon SQS Queue with Server\-Side Encryption \(SSE\)<a name="sqs-create-queue-sse"></a>
+# Tutorial: Creating an Amazon SQS queue with Server\-Side Encryption \(SSE\)<a name="sqs-create-queue-sse"></a>
 
 You can enable SSE for a queue to protect its data\. For more information about using SSE, see [Encryption at Rest](sqs-server-side-encryption.md)\.
 
@@ -8,8 +8,8 @@ All requests to queues with SSE enabled must use HTTPS and [Signature Version 4]
 In this tutorial you learn how to create an Amazon SQS queue with SSE enabled\. Although the example uses a FIFO queue, SSE works with both standard and FIFO queues\.
 
 **Topics**
-+ [Create an Amazon SQS Queue with SSE Using the AWS Management Console](#sqs-create-queue-sse-console)
-+ [Create an Amazon SQS Queue with SSE using the AWS SDK for Java](#sqs-create-queue-sse-java)
++ [AWS Management Console](#sqs-create-queue-sse-console)
++ [AWS SDK for Java](#sqs-create-queue-sse-java)
 
 ## AWS Management Console<a name="sqs-create-queue-sse-console"></a>
 
@@ -25,7 +25,7 @@ The name of a FIFO queue must end with the `.fifo` suffix\.
 
 1. Choose **Configure Queue**, and then choose **Use SSE**\.
 
-1. Specify the customer master key \(CMK\) ID\. For more information, see [Key Terms](sqs-server-side-encryption.md#sqs-sse-key-terms)\. 
+1. Specify the customer master key \(CMK\) ID\. For more information, see [Key terms](sqs-server-side-encryption.md#sqs-sse-key-terms)\. 
 
    For each CMK type, the **Description**, **Account**, and **Key ARN** of the CMK are displayed\.
 **Important**  
@@ -45,7 +45,7 @@ For instructions on creating custom CMKs, see [Creating Keys](https://docs.aws.a
    + To use a custom CMK ARN from your AWS account or from another AWS account, select **Enter an existing CMK ARN** from the list and type or copy the CMK\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-server-side-encryption-custom-cmk-arn.png)
 
-1. \(Optional\) For **Data key reuse period**, specify a value between 1 minute and 24 hours\. The default is 5 minutes\. For more information, see [Understanding the Data Key Reuse Period](sqs-key-management.md#sqs-how-does-the-data-key-reuse-period-work)\.  
+1. \(Optional\) For **Data key reuse period**, specify a value between 1 minute and 24 hours\. The default is 5 minutes\. For more information, see [Understanding the data key reuse period](sqs-key-management.md#sqs-how-does-the-data-key-reuse-period-work)\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-server-side-encryption-data-key-reuse-period.png)
 
 1. Choose **Create Queue**\.
@@ -55,11 +55,15 @@ For instructions on creating custom CMKs, see [Creating Keys](https://docs.aws.a
 
 ## AWS SDK for Java<a name="sqs-create-queue-sse-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+ The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
 
-Before you can use SSE, you must configure AWS KMS key policies to allow encryption of queues and encryption and decryption of messages\. For more information, see [Configuring AWS KMS Permissions](sqs-key-management.md#sqs-what-permissions-for-sse)
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
 
-1. Obtain the customer master key \(CMK\) ID\. For more information, see [Key Terms](sqs-server-side-encryption.md#sqs-sse-key-terms)\. 
+You must ensure that the AWS KMS key policies allow encryption of queues and encryption and decryption of messages\. For more information, see [Configuring AWS KMS permissions](sqs-key-management.md#sqs-what-permissions-for-sse)
+
+**To create a queue with SSE**
+
+1. Obtain the customer master key \(CMK\) ID\. For more information, see [Key terms](sqs-server-side-encryption.md#sqs-sse-key-terms)\. 
 **Note**  
 Keep the following in mind:  
 If you don't specify a custom CMK, Amazon SQS uses the AWS managed CMK for Amazon SQS\. For instructions on creating custom CMKs, see [Creating Keys](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) in the *AWS Key Management Service Developer Guide*\.
@@ -75,9 +79,9 @@ Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` ac
    final Map<String, String> attributes = new HashMap<String, String>();
    final CreateQueueRequest createRequest = new CreateQueueRequest("MyQueue").withAttributes(attributes);
     
-   // Enable server-side encryption by specifying the alias ARN of the
+   // Enable server-side encryption by specifying the alias for the
    // AWS managed CMK for Amazon SQS.
-   final String kmsMasterKeyAlias = "arn:aws:kms:us-east-2:123456789012:alias/aws/sqs";
+   final String kmsMasterKeyAlias = "alias/aws/sqs";
    attributes.put("KmsMasterKeyId", kmsMasterKeyAlias);
     
    // (Optional) Specify the length of time, in seconds, for which Amazon SQS can reuse 
@@ -94,12 +98,12 @@ Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` ac
    final CreateQueueRequest createRequest = new CreateQueueRequest("MyQueue").withAttributes(attributes);
     
    // Enable server-side encryption by specifying the alias ARN of the custom CMK.
-   final String kmsMasterKeyAlias = "arn:aws:kms:us-east-2:123456789012:alias/MyAlias";
+   final String kmsMasterKeyAlias = "alias/MyAlias";
    attributes.put("KmsMasterKeyId", kmsMasterKeyAlias);
     
    // (Optional) Specify the length of time, in seconds, for which Amazon SQS can reuse 
    // a data key to encrypt or decrypt messages before calling AWS KMS again.
-   attributes.put("KmsDataKeyReusePeriodSeconds", "864000");
+   attributes.put("KmsDataKeyReusePeriodSeconds", "86400");
     
    final CreateQueueResult createResult = client.createQueue(createRequest);
    ```

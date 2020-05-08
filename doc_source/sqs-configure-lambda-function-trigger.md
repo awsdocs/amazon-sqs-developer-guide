@@ -1,12 +1,14 @@
-# Tutorial: Configuring Messages Arriving in an Amazon SQS Queue to Trigger an AWS Lambda Function<a name="sqs-configure-lambda-function-trigger"></a>
+# Tutorial: Configuring a queue to trigger an AWS Lambda function<a name="sqs-configure-lambda-function-trigger"></a>
 
 In this tutorial you learn how to configure an existing Amazon SQS queue to trigger an AWS Lambda function when new messages arrive in a queue\.
 
-Lambda functions let you run code without provisioning or managing a server\. For example, you can configure a Lambda function to process messages from one queue while another queue acts as a *dead\-letter queue* for messages that your Lambda function can't process successfully\. When you resolve the issue, you can *redrive* the messages from the dead\-letter queue through the Lambda function\. For more information see [Amazon SQS Dead\-Letter Queues](sqs-dead-letter-queues.md) and also [What is AWS Lambda?](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html) and [Using AWS Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html) in the *AWS Lambda Developer Guide*\.
+This tutorial uses the AWS Management Console\. For instructions on using the CLI to trigger an AWS Lambda function, see [Using AWS Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html)\.
+
+Lambda functions let you run code without provisioning or managing a server\. For example, you can configure a Lambda function to process messages from one queue while another queue acts as a *dead\-letter queue* for messages that your Lambda function can't process successfully\. When you resolve the issue, you can *redrive* the messages from the dead\-letter queue through the Lambda function\. For more information see [Amazon SQS dead\-letter queues](sqs-dead-letter-queues.md) and also [What is AWS Lambda?](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html) and [Using AWS Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html) in the *AWS Lambda Developer Guide*\.
 
 **Note**  
 Your queue and Lambda function must be in the same AWS Region\.
-You can associate only one queue with one or more Lambda functions\.
+A Lambda function can process items from multiple queues \(one Lambda event source for each queue\)\. You can use the same queue with multiple Lambda functions\.
 You can't associate an [encrypted queue](sqs-server-side-encryption.md) that uses an AWS managed customer master key for Amazon SQS with a Lambda function in a different AWS account\.
 If you associate an encrypted queue with a Lambda function but Lambda doesn't poll for messages, add the `kms:Decrypt` permission to your Lambda role\.
 
@@ -22,7 +24,7 @@ To configure Lambda function triggers using the console, you must ensure the fol
   + `sqs:GetQueueAttributes`
   + `sqs:ReceiveMessage`
 
-For more information, see [Overview of Managing Access in Amazon SQS](sqs-overview-of-managing-access.md)\.
+For more information, see [Overview of managing access in Amazon SQS](sqs-overview-of-managing-access.md)\.
 
 ## AWS Management Console<a name="configure-lambda-function-trigger-console"></a>
 

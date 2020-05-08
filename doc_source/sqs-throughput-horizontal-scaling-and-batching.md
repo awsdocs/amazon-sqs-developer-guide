@@ -1,15 +1,15 @@
-# Increasing Throughput using Horizontal Scaling and Action Batching<a name="sqs-throughput-horizontal-scaling-and-batching"></a>
+# Increasing throughput using horizontal scaling and action batching<a name="sqs-throughput-horizontal-scaling-and-batching"></a>
 
-Amazon SQS queues can deliver very high throughput\. Standard queues support a nearly unlimited number of transactions per second \(TPS\) per API action \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\. By default, with [batching](sqs-batch-api-actions.md), FIFO queues support up to 3,000 messages per second \(TPS\), per API action \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\. To request a quota increase, [submit a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\. Without batching, FIFO queues support up to 300 messages per second, per API action \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\.
+Amazon SQS queues can deliver very high throughput\. Standard queues support a nearly unlimited number of API calls per second, per API action \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\. If you use [batching](sqs-batch-api-actions.md), FIFO queues support up to 3,000 transactions per second, per API method \(`SendMessageBatch`, `ReceiveMessage`, or `DeleteMessageBatch`\)\. The 3000 transactions represent 300 API calls, each with a batch of 10 messages\. To request a quota increase, [submit a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\. Without batching, FIFO queues support up to 300 API calls per second, per API method \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\. 
 
 To achieve high throughput, you must scale message producers and consumers horizontally \(add more producers and consumers\)\.
 
 **Topics**
-+ [Horizontal Scaling](#horizontal-scaling)
-+ [Action Batching](#request-batching)
-+ [Working Java Example for Single\-Operation and Batch Requests](#working-java-example-batch-requests)
++ [Horizontal scaling](#horizontal-scaling)
++ [Action batching](#request-batching)
++ [Working Java example for single\-operation and batch requests](#working-java-example-batch-requests)
 
-## Horizontal Scaling<a name="horizontal-scaling"></a>
+## Horizontal scaling<a name="horizontal-scaling"></a>
 
 Because you access Amazon SQS through an HTTP request\-response protocol, the *request latency* \(the interval between initiating a request and receiving a response\) limits the throughput that you can achieve from a single thread using a single connection\. For example, if the latency from an Amazon EC2\-based client to Amazon SQS in the same region averages 20 ms, the maximum throughput from a single thread over a single connection averages 50 TPS\. 
 
@@ -21,7 +21,7 @@ Because you access Amazon SQS through an HTTP request\-response protocol, the *r
 When you add more clients, you achieve essentially linear gains in queue throughput\. For example, if you double the number of clients, you also double the throughput\. 
 
 **Note**  
-As you scale horizontally, you must ensure that the Amazon SQS queue that you use has enough connections or threads to support the number of concurrent message producers and consumers that send requests and receive responses\. For example, by default, instances of the AWS SDK for Java `[AmazonSQSClient](https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/sqs/AmazonSQSClient.html)` class maintain at most 50 connections to Amazon SQS\. To create additional concurrent producers and consumers, you must adjust the maximum number of allowable producer and consumer threads on an `AmazonSQSClientBuilder` object, for example:  
+As you scale horizontally, you must ensure that your Amazon SQS client has enough connections or threads to support the number of concurrent message producers and consumers that send requests and receive responses\. For example, by default, instances of the AWS SDK for Java `[AmazonSQSClient](https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/sqs/AmazonSQSClient.html)` class maintain at most 50 connections to Amazon SQS\. To create additional concurrent producers and consumers, you must adjust the maximum number of allowable producer and consumer threads on an `AmazonSQSClientBuilder` object, for example:  
 
 ```
 final AmazonSQS sqsClient = AmazonSQSClientBuilder.standard()
@@ -31,7 +31,7 @@ final AmazonSQS sqsClient = AmazonSQSClientBuilder.standard()
 ```
 For `[AmazonSQSAsyncClient](https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/sqs/AmazonSQSAsyncClient.html)`, you also must make sure that enough threads are available\.
 
-## Action Batching<a name="request-batching"></a>
+## Action batching<a name="request-batching"></a>
 
 *Batching* performs more work during each round trip to the service \(for example, when you send multiple messages with a single `SendMessageBatch` request\)\. The Amazon SQS batch actions are `[SendMessageBatch](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html)`, `[DeleteMessageBatch](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessageBatch.html)`, and `[ChangeMessageVisibilityBatch](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibilityBatch.html)`\. To take advantage of batching without changing your producers or consumers, you can use the [Amazon SQS Buffered Asynchronous Client](sqs-client-side-buffering-request-batching.md)\.
 
@@ -49,7 +49,7 @@ Batching can introduce some complexity for your application \(for example, you a
 **Important**  
 A batch request might succeed even though individual messages in the batch failed\. After a batch request, always check for individual message failures and retry the action if necessary\.
 
-## Working Java Example for Single\-Operation and Batch Requests<a name="working-java-example-batch-requests"></a>
+## Working Java example for single\-operation and batch requests<a name="working-java-example-batch-requests"></a>
 
 ### Prerequisites<a name="batch-request-java-example-prerequisites"></a>
 
@@ -497,7 +497,7 @@ public class SimpleProducerConsumer {
 }
 ```
 
-### Monitoring Volume Metrics from the Example Run<a name="batch-request-java-example-monitoring-metrics"></a>
+### Monitoring volume metrics from the example run<a name="batch-request-java-example-monitoring-metrics"></a>
 
 Amazon SQS automatically generates volume metrics for sent, received, and deleted messages\. You can access those metrics and others through the **Monitoring** tab for your queue or on the [CloudWatch console](https://console.aws.amazon.com/cloudwatch/home)\.
 

@@ -1,4 +1,4 @@
-# Related Amazon SQS Resources<a name="related-resources"></a>
+# Related Amazon SQS resources<a name="related-resources"></a>
 
 The following table lists related resources that you might find useful as you work with this service\.
 

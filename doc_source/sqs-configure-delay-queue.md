@@ -1,6 +1,6 @@
-# Tutorial: Configuring an Amazon SQS Delay Queue<a name="sqs-configure-delay-queue"></a>
+# Tutorial: Configuring an Amazon SQS delay queue<a name="sqs-configure-delay-queue"></a>
 
-Delay queues let you postpone the delivery of new messages to a queue for a number of seconds, for example, when your consumer application needs additional time to process messages\. If you create a delay queue, any messages that you send to the queue remain invisible to consumers for the duration of the delay period\. The default \(minimum\) delay for a queue is 0 seconds\. The maximum is 15 minutes\. In this tutorial you learn how to configure a delay queue using the AWS Management Console or using the AWS SDK for Java\. For more information, see [Amazon SQS Delay Queues](sqs-delay-queues.md)\.
+Delay queues let you postpone the delivery of new messages to a queue for a number of seconds, for example, when your consumer application needs additional time to process messages\. If you create a delay queue, any messages that you send to the queue remain invisible to consumers for the duration of the delay period\. The default \(minimum\) delay for a queue is 0 seconds\. The maximum is 15 minutes\. In this tutorial you learn how to configure a delay queue using the AWS Management Console or using the AWS SDK for Java\. For more information, see [Amazon SQS delay queues](sqs-delay-queues.md)\.
 
 **Topics**
 + [AWS Management Console](#sqs-configure-delay-queue-console)
@@ -34,25 +34,11 @@ When you create a queue, it can take a short time for the queue to propagate thr
 
 ## AWS SDK for Java<a name="sqs-configure-delay-queue-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+ The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
+
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
 
 ### To configure a delay queue<a name="configure-delay-queue-java-api"></a>
-
-#### Prerequisites<a name="configure-delay-queue-java-api-prerequisites"></a>
-
-Add the `aws-java-sdk-sqs.jar` package to your Java class path\. The following example shows this dependency in a Maven project `pom.xml` file\.
-
-```
-<dependencies>
-    <dependency>
-        <groupId>com.amazonaws</groupId>
-        <artifactId>aws-java-sdk-sqs</artifactId>
-        <version><replaceable>LATEST</replaceable></version>
-    </dependency>
-</dependencies>
-```
-
-#### SQSDelayQueueExample\.java<a name="configure-dead-letter-queue-java-api-code"></a>
 
 The following example Java code creates a standard queue and sets the delay for it to 1 minute\.
 

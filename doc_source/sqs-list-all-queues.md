@@ -1,4 +1,4 @@
-# Tutorial: Listing All Amazon SQS Queues in a Region<a name="sqs-list-all-queues"></a>
+# Tutorial: Listing all Amazon SQS queues in a Region<a name="sqs-list-all-queues"></a>
 
 When you create a queue, it can take a short time for the queue to propagate throughout Amazon SQS\. In this tutorial you learn how to confirm your queue's existence by listing all queues in the current region\.
 
@@ -20,10 +20,14 @@ When you create a queue, it can take a short time for the queue to propagate thr
 
 ## AWS SDK for Java<a name="list-all-queues-java"></a>
 
-Before you begin working with the example code, specify your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\.
+ The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
+
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
 
 **Note**  
 This action is identical for standard and FIFO queues\.
+
+**To list all queues**
 
 1. Copy the [standard queue example program](standard-queues-getting-started-java.md) or the [FIFO queue example program](FIFO-queues-getting-started-java.md)\.
 

@@ -1,15 +1,15 @@
-# Making Query API Requests<a name="sqs-making-api-requests"></a>
+# Making Query API requests<a name="sqs-making-api-requests"></a>
 
 In this section you learn how to construct an Amazon SQS endpoint, make `GET` and `POST` requests and interpret responses\.
 
 **Topics**
-+ [Constructing an Endpoint](#sqs-api-constructing-endpoints)
-+ [Making a GET Request](#structure-get-request)
-+ [Making a POST Request](#structure-post-request)
-+ [Authenticating Requests](sqs-api-request-authentication.md)
-+ [Interpreting Responses](sqs-api-responses.md)
++ [Constructing an endpoint](#sqs-api-constructing-endpoints)
++ [Making a GET request](#structure-get-request)
++ [Making a POST request](#structure-post-request)
++ [Authenticating requests](sqs-api-request-authentication.md)
++ [Interpreting responses](sqs-api-responses.md)
 
-## Constructing an Endpoint<a name="sqs-api-constructing-endpoints"></a>
+## Constructing an endpoint<a name="sqs-api-constructing-endpoints"></a>
 
 In order to work with Amazon SQS queues, you must construct an endpoint\. For information about [region\-specific Amazon SQS endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region), see the *Amazon Web Services General Reference*\.
 
@@ -30,7 +30,7 @@ https://sqs.eu-west-2.amazonaws.com/
 Queue names and queue URLs are case\-sensitive\.  
 The structure of *`AUTHPARAMS`* depends on the signature of the API request\. For more information, see [Signing AWS API Requests](https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html) in the *Amazon Web Services General Reference*\.
 
-## Making a GET Request<a name="structure-get-request"></a>
+## Making a GET request<a name="structure-get-request"></a>
 
 An Amazon SQS `GET` request is structured as a URL which consists of the following:
 + **Endpoint** – The resource that the request is acting on \(the [queue name and URL](sqs-general-identifiers.md#queue-name-url)\), for example: `https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue`
@@ -50,7 +50,7 @@ https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue
 Queue names and queue URLs are case\-sensitive\.  
 Because `GET` requests are URLs, you must URL\-encode all parameter values\. Because spaces aren't allowed in URLs, each space is URL\-encoded as `%20`\. \(The rest of the example isn't URL\-encoded to make it easier to read\.\)
 
-## Making a POST Request<a name="structure-post-request"></a>
+## Making a POST request<a name="structure-post-request"></a>
 
 An Amazon SQS `POST` requests send query parameters as a form in the body of an HTTP request\.
 

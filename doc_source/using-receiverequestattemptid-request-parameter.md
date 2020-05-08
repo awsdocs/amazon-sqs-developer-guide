@@ -1,4 +1,4 @@
-# Using the Amazon SQS Receive Request Attempt ID<a name="using-receiverequestattemptid-request-parameter"></a>
+# Using the Amazon SQS receive request attempt ID<a name="using-receiverequestattemptid-request-parameter"></a>
 
 The receive request attempt ID is the token used for deduplication of `ReceiveMessage` calls\.
 

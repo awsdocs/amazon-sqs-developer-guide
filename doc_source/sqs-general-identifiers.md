@@ -1,8 +1,8 @@
-# Identifiers for Amazon SQS Standard and FIFO Queues<a name="sqs-general-identifiers"></a>
+# Identifiers for Amazon SQS Standard and FIFO queues<a name="sqs-general-identifiers"></a>
 
 For more information about the following identifiers, see the *[Amazon Simple Queue Service API Reference](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/)*\.
 
-## Queue Name and URL<a name="queue-name-url"></a>
+## Queue name and URL<a name="queue-name-url"></a>
 
 When you create a new queue, you must specify a queue name unique for your AWS account and region\. Amazon SQS assigns each queue you create an identifier called a *queue URL* that includes the queue name and other Amazon SQS components\. Whenever you want to perform an action on a queue, you provide its queue URL\.
 
@@ -20,7 +20,7 @@ You can retrieve the URL of a queue programmatically by listing your queues and 
 
 Each message receives a system\-assigned *message ID* that Amazon SQS returns to you in the `[SendMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html)` response\. This identifier is useful for identifying messages\. \(However, to delete a message you need the message's *receipt handle*\.\) The maximum length of a message ID is 100 characters\.
 
-## Receipt Handle<a name="receipt-handle"></a>
+## Receipt handle<a name="receipt-handle"></a>
 
 Every time you receive a message from a queue, you receive a *receipt handle* for that message\. This handle is associated with the action of receiving the message, not with the message itself\. To delete the message or to change the message visibility, you must provide the receipt handle \(not the message ID\)\. Thus, you must always receive a message before you can delete it \(you can't put a message into the queue and then recall it\)\. The maximum length of a receipt handle is 1,024 characters\. 
 

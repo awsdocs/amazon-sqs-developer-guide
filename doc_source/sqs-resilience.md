@@ -4,7 +4,7 @@ The AWS global infrastructure is built around AWS Regions and Availability Zones
 
 In addition to the AWS global infrastructure, Amazon SQS offers distributed queues\.
 
-## Distributed Queues<a name="resilience-distributed-queues"></a>
+## Distributed queues<a name="resilience-distributed-queues"></a>
 
 There are three main parts in a distributed messaging system: the components of your distributed system, your queue \(distributed on Amazon SQS servers\), and the messages in the queue\.
 

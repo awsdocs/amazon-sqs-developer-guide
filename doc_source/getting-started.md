@@ -1,10 +1,10 @@
-# Getting Started with the Amazon SQS Java Messaging Library<a name="getting-started"></a>
+# Getting started with the Amazon SQS Java Messaging Library<a name="getting-started"></a>
 
 To get started using JMS with Amazon SQS, use the code examples in this section\. The following sections show how to create a JMS connection and a session, and how to send and receive a message\.
 
 The wrapped Amazon SQS client object included in the Amazon SQS Java Messaging Library checks if an Amazon SQS queue exists\. If the queue doesn't exist, the client creates it\.
 
-## Creating a JMS Connection<a name="creating-connection"></a>
+## Creating a JMS connection<a name="creating-connection"></a>
 
 1. Create a connection factory and call the `createConnection` method against the factory\.
 
@@ -27,7 +27,7 @@ The wrapped Amazon SQS client object included in the Amazon SQS Java Messaging L
    + If you use `getWrappedAmazonSQSClient`, the returned client object transforms all exceptions into JMS exceptions\.
    + If you use `getAmazonSQSClient`, the exceptions are all Amazon SQS exceptions\.
 
-## Creating an Amazon SQS Queue<a name="creating-queue"></a>
+## Creating an Amazon SQS queue<a name="creating-queue"></a>
 
 The wrapped client object checks if an Amazon SQS queue exists\.
 
@@ -62,9 +62,9 @@ if (!client.queueExists("MyQueue.fifo")) {
 
 **Note**  
 The name of a FIFO queue must end with the `.fifo` suffix\.  
-For more information about the `ContentBasedDeduplication` attribute, see [Exactly\-Once Processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.
+For more information about the `ContentBasedDeduplication` attribute, see [Exactly\-once processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.
 
-## Sending Messages Synchronously<a name="send-messages-synchronously"></a>
+## Sending messages synchronously<a name="send-messages-synchronously"></a>
 
 1. When the connection and the underlying Amazon SQS queue are ready, create a nontransacted JMS session with `AUTO_ACKNOWLEDGE` mode\.
 
@@ -94,7 +94,7 @@ For more information about the `ContentBasedDeduplication` attribute, see [Exact
      producer.send(message);
      System.out.println("JMS Message " + message.getJMSMessageID());
      ```
-   + To send a message to a FIFO queue, you must set the message group ID\. You can also set a message deduplication ID\. For more information, see [Key Terms](FIFO-queues.md#FIFO-key-terms)\.
+   + To send a message to a FIFO queue, you must set the message group ID\. You can also set a message deduplication ID\. For more information, see [Key terms](FIFO-queues.md#FIFO-key-terms)\.
 
      ```
      // Create the text message
@@ -113,7 +113,7 @@ For more information about the `ContentBasedDeduplication` attribute, see [Exact
      System.out.println("JMS Message Sequence Number " + message.getStringProperty("JMS_SQS_SequenceNumber"));
      ```
 
-## Receiving Messages Synchronously<a name="receive-messages-synchronously"></a>
+## Receiving messages synchronously<a name="receive-messages-synchronously"></a>
 
 1. To receive messages, create a consumer for the same queue and invoke the `start` method\.
 
@@ -138,7 +138,7 @@ For more information about the `ContentBasedDeduplication` attribute, see [Exact
          System.out.println("Received: " + ((TextMessage) receivedMessage).getText());
      }
      ```
-   + After receiving a message from a FIFO queue, you can access the contents of the message and other, FIFO\-specific message attributes, such as the message group ID, message deduplication ID, and sequence number\. For more information, see [Key Terms](FIFO-queues.md#FIFO-key-terms)\.
+   + After receiving a message from a FIFO queue, you can access the contents of the message and other, FIFO\-specific message attributes, such as the message group ID, message deduplication ID, and sequence number\. For more information, see [Key terms](FIFO-queues.md#FIFO-key-terms)\.
 
      ```
      // Receive a message from 'MyQueue' and wait up to 1 second
@@ -169,13 +169,13 @@ Received: Hello World!
 
 **Note**  
 You can use the Spring Framework to initialize these objects\.  
-For additional information, see `SpringExampleConfiguration.xml`, `SpringExample.java`, and the other helper classes in `ExampleConfiguration.java` and `ExampleCommon.java` in the [Working Java Example for Using JMS with Amazon SQS Standard Queues](sqs-jms-code-examples.md) section\.
+For additional information, see `SpringExampleConfiguration.xml`, `SpringExample.java`, and the other helper classes in `ExampleConfiguration.java` and `ExampleCommon.java` in the [Working Java example for using JMS with Amazon SQS Standard queues](sqs-jms-code-examples.md) section\.
 
 For complete examples of sending and receiving objects, see [TextMessageSender\.java](sqs-jms-code-examples.md#example-sender) and [SyncMessageReceiver\.java](sqs-jms-code-examples.md#example-synchronous-message-receiver)\.
 
-## Receiving Messages Asynchronously<a name="receive-messages-asynchronously"></a>
+## Receiving messages asynchronously<a name="receive-messages-asynchronously"></a>
 
-In the example in [Getting Started with the Amazon SQS Java Messaging Library](#getting-started), a message is sent to `MyQueue` and received synchronously\.
+In the example in [Getting started with the Amazon SQS Java Messaging Library](#getting-started), a message is sent to `MyQueue` and received synchronously\.
 
 The following example shows how to receive the messages asynchronously through a listener\.
 
@@ -214,7 +214,7 @@ The following example shows how to receive the messages asynchronously through a
    Thread.sleep(1000);
    ```
 
-The rest of the steps are identical to the ones in the [Getting Started with the Amazon SQS Java Messaging Library](#getting-started) example\. For a complete example of an asynchronous consumer, see `AsyncMessageReceiver.java` in [Working Java Example for Using JMS with Amazon SQS Standard Queues](sqs-jms-code-examples.md)\.
+The rest of the steps are identical to the ones in the [Getting started with the Amazon SQS Java Messaging Library](#getting-started) example\. For a complete example of an asynchronous consumer, see `AsyncMessageReceiver.java` in [Working Java example for using JMS with Amazon SQS Standard queues](sqs-jms-code-examples.md)\.
 
 The output for this example looks similar to the following:
 
@@ -223,9 +223,9 @@ JMS Message ID:8example-588b-44e5-bbcf-d816example2
 Received: Hello World!
 ```
 
-## Using Client Acknowledge Mode<a name="using-client-acknowledge-mode"></a>
+## Using client acknowledge mode<a name="using-client-acknowledge-mode"></a>
 
-The example in [Getting Started with the Amazon SQS Java Messaging Library](#getting-started) uses `AUTO_ACKNOWLEDGE` mode where every received message is acknowledged automatically \(and therefore deleted from the underlying Amazon SQS queue\)\.
+The example in [Getting started with the Amazon SQS Java Messaging Library](#getting-started) uses `AUTO_ACKNOWLEDGE` mode where every received message is acknowledged automatically \(and therefore deleted from the underlying Amazon SQS queue\)\.
 
 1. To explicitly acknowledge the messages after they're processed, you must create the session with `CLIENT_ACKNOWLEDGE` mode\.
 
@@ -247,7 +247,7 @@ The example in [Getting Started with the Amazon SQS Java Messaging Library](#get
 **Note**  
 In this mode, when a message is acknowledged, all messages received before this message are implicitly acknowledged as well\. For example, if 10 messages are received, and only the 10th message is acknowledged \(in the order the messages are received\), then all of the previous nine messages are also acknowledged\.
 
-The rest of the steps are identical to the ones in the [Getting Started with the Amazon SQS Java Messaging Library](#getting-started) example\. For a complete example of a synchronous consumer with client acknowledge mode, see `SyncMessageReceiverClientAcknowledge.java` in [Working Java Example for Using JMS with Amazon SQS Standard Queues](sqs-jms-code-examples.md)\.
+The rest of the steps are identical to the ones in the [Getting started with the Amazon SQS Java Messaging Library](#getting-started) example\. For a complete example of a synchronous consumer with client acknowledge mode, see `SyncMessageReceiverClientAcknowledge.java` in [Working Java example for using JMS with Amazon SQS Standard queues](sqs-jms-code-examples.md)\.
 
 The output for this example looks similar to the following:
 
@@ -257,9 +257,9 @@ Received: Hello World!
 Acknowledged: ID:4example-aa0e-403f-b6df-5e02example5
 ```
 
-## Using Unordered Acknowledge Mode<a name="using-unordered-acknowledge-mode"></a>
+## Using unordered acknowledge mode<a name="using-unordered-acknowledge-mode"></a>
 
-When using `CLIENT_ACKNOWLEDGE` mode, all messages received before an explicitly\-acknowledged message are acknowledged automatically\. For more information, see [Using Client Acknowledge Mode](#using-client-acknowledge-mode)\.
+When using `CLIENT_ACKNOWLEDGE` mode, all messages received before an explicitly\-acknowledged message are acknowledged automatically\. For more information, see [Using client acknowledge mode](#using-client-acknowledge-mode)\.
 
 The Amazon SQS Java Messaging Library provides another acknowledgement mode\. When using `UNORDERED_ACKNOWLEDGE` mode, all received messages must be individually and explicitly acknowledged by the client, regardless of their reception order\. To do this, create a session with `UNORDERED_ACKNOWLEDGE` mode\.
 
@@ -268,7 +268,7 @@ The Amazon SQS Java Messaging Library provides another acknowledgement mode\. Wh
 Session session = connection.createSession(false, SQSSession.UNORDERED_ACKNOWLEDGE);
 ```
 
-The remaining steps are identical to the ones in the [Using Client Acknowledge Mode](#using-client-acknowledge-mode) example\. For a complete example of a synchronous consumer with `UNORDERED_ACKNOWLEDGE` mode, see `SyncMessageReceiverUnorderedAcknowledge.java`\.
+The remaining steps are identical to the ones in the [Using client acknowledge mode](#using-client-acknowledge-mode) example\. For a complete example of a synchronous consumer with `UNORDERED_ACKNOWLEDGE` mode, see `SyncMessageReceiverUnorderedAcknowledge.java`\.
 
 In this example, the output looks similar to the following:
 

@@ -1,4 +1,4 @@
-# Basic Examples of Amazon SQS Policies<a name="sqs-basic-examples-of-sqs-policies"></a>
+# Basic examples of Amazon SQS policies<a name="sqs-basic-examples-of-sqs-policies"></a>
 
 This section shows example policies for common Amazon SQS use cases\.
 
@@ -7,7 +7,7 @@ You can use the console to verify the effects of each policy as you attach the p
 **Note**  
 We recommend that you use two browser windows: one to grant permissions and the other to sign into the AWS Management Console using the user's credentials to verify permissions as you grant them to the user\.
 
-## Example 1: Grant One Permission to One AWS Account<a name="grant-one-permission-to-one-account"></a>
+## Example 1: Grant one permission to one AWS account<a name="grant-one-permission-to-one-account"></a>
 
 The following example policy grants AWS account number `111122223333` the `SendMessage` permission for the queue named `444455556666/queue1` in the US East \(Ohio\) region\.
 
@@ -29,7 +29,7 @@ The following example policy grants AWS account number `111122223333` the `SendM
 }
 ```
 
-## Example 2: Grant Two Permissions to One AWS Account<a name="grant-two-permissions-to-one-account"></a>
+## Example 2: Grant two permissions to one AWS account<a name="grant-two-permissions-to-one-account"></a>
 
 The following example policy grants AWS account number `111122223333` both the `SendMessage` and `ReceiveMessage` permission for the queue named `444455556666/queue1`\.
 
@@ -54,7 +54,7 @@ The following example policy grants AWS account number `111122223333` both the `
 }
 ```
 
-## Example 3: Grant All Permissions to Two AWS Accounts<a name="grant-all-permissions-to-two-accounts"></a>
+## Example 3: Grant all permissions to two AWS accounts<a name="grant-all-permissions-to-two-accounts"></a>
 
 The following example policy grants two different AWS accounts numbers \(`111122223333` and `444455556666`\) permission to use all actions to which Amazon SQS allows shared access for the queue named `123456789012/queue1` in the US East \(Ohio\) region\.
 
@@ -77,7 +77,7 @@ The following example policy grants two different AWS accounts numbers \(`111122
 }
 ```
 
-## Example 4: Grant Cross\-Account Permissions to a Role and a User Name<a name="grant-cross-account-permissions-to-role-and-user-name"></a>
+## Example 4: Grant cross\-account permissions to a role and a user name<a name="grant-cross-account-permissions-to-role-and-user-name"></a>
 
 The following example policy grants `role1` and `username1` under AWS account number `111122223333` cross\-account permission to use all actions to which Amazon SQS allows shared access for the queue named `123456789012/queue1` in the US East \(Ohio\) region\.
 
@@ -111,7 +111,7 @@ Cross\-account permissions don't apply to the following actions:
 }
 ```
 
-## Example 5: Grant a Permission to All Users<a name="grant-permissions-to-all-users"></a>
+## Example 5: Grant a permission to all users<a name="grant-permissions-to-all-users"></a>
 
 The following example policy grants all users \(anonymous users\) `ReceiveMessage` permission for the queue named `111122223333/queue1`\.
 
@@ -129,7 +129,7 @@ The following example policy grants all users \(anonymous users\) `ReceiveMessag
 }
 ```
 
-## Example 6: Grant a Time\-Limited Permission to All Users<a name="grant-time-limited-permission-to-all-users"></a>
+## Example 6: Grant a time\-limited permission to all users<a name="grant-time-limited-permission-to-all-users"></a>
 
 The following example policy grants all users \(anonymous users\) `ReceiveMessage` permission for the queue named `111122223333/queue1`, but only between 12:00 p\.m\. \(noon\) and 3:00 p\.m\. on January 31, 2009\.
 
@@ -155,7 +155,7 @@ The following example policy grants all users \(anonymous users\) `ReceiveMessag
 }
 ```
 
-## Example 7: Grant All Permissions to All Users in a CIDR Range<a name="grant-all-permissions-to-all-users-in-cidr-range"></a>
+## Example 7: Grant all permissions to all users in a CIDR range<a name="grant-all-permissions-to-all-users-in-cidr-range"></a>
 
 The following example policy grants all users \(anonymous users\) permission to use all possible Amazon SQS actions that can be shared for the queue named `111122223333/queue1`, but only if the request comes from the `192.168.143.0/24` CIDR range\.
 
@@ -178,7 +178,7 @@ The following example policy grants all users \(anonymous users\) permission to 
 }
 ```
 
-## Example 8: Whitelist and Blacklist Permissions for Users in Different CIDR Ranges<a name="whitelist-blacklist-permissions-for-users-in-different-cidr-ranges"></a>
+## Example 8: Whitelist and blacklist permissions for users in different CIDR ranges<a name="whitelist-blacklist-permissions-for-users-in-different-cidr-ranges"></a>
 
 The following example policy has two statements:
 + The first statement grants all users \(anonymous users\) in the `192.168.143.0/24` CIDR range \(except for `192.168.143.188`\) permission to use the `SendMessage` action for the queue named `111122223333`/queue1\.

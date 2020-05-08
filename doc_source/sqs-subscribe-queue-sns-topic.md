@@ -1,10 +1,10 @@
-# Tutorial: Subscribing an Amazon SQS Queue to an Amazon SNS Topic<a name="sqs-subscribe-queue-sns-topic"></a>
+# Tutorial: Subscribing an Amazon SQS queue to an Amazon SNS topic<a name="sqs-subscribe-queue-sns-topic"></a>
 
 You can subscribe one or more Amazon SQS queues to an Amazon SNS topic from a list of topics available for the selected queue\. Amazon SQS manages the subscription and any necessary permissions\. When you publish a message to a topic, Amazon SNS sends the message to every subscribed queue\. For more information about Amazon SNS, see [What is Amazon Simple Notification Service?](https://docs.aws.amazon.com/sns/latest/dg/welcome.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
 **Important**  
 Amazon SNS isn't currently compatible with FIFO queues\.
-For information about using Amazon SNS with encrypted Amazon SQS queues, see [Enable Compatibility between Event Sources from AWS Services and Encrypted Queues](sqs-key-management.md#compatibility-with-aws-services)\.
+For information about using Amazon SNS with encrypted Amazon SQS queues, see [Configure KMS permissions for AWS services ](sqs-key-management.md#compatibility-with-aws-services)\.
 When you subscribe an Amazon SQS queue to an Amazon SNS topic, Amazon SNS uses HTTPS to forward messages to Amazon SQS\.
 
 In this tutorial you learn how to subscribe an existing Amazon SQS queue to an existing Amazon SNS topic\.
