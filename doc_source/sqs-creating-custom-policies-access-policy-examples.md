@@ -118,10 +118,10 @@ The following example Amazon SQS policy denies a specific AWS account access to 
 
 ## Example 5: Deny access if it isn't from a VPC endpoint<a name="deny-not-from-vpc"></a>
 
-The following example Amazon SQS policy restricts access to `queue1`: 111122223333 can perform the [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html) and [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html) actions only from the VPC endpoint ID `vpce-1a2b3c4d` \(specified using the `aws:sourceVpce` condition\)\. For more information, see [Amazon Virtual Private Cloud endpoints for Amazon SQS](sqs-internetwork-traffic-privacy.md#sqs-vpc-endpoints)\.
+The following example Amazon SQS policy restricts access to `queue1`: 111122223333 can perform the [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html) and [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html) actions only from the VPC endpoint ID `vpc-1a2b3c4d` \(specified using the `aws:sourceVpc` condition\)\. For more information, see [Amazon Virtual Private Cloud endpoints for Amazon SQS](sqs-internetwork-traffic-privacy.md#sqs-vpc-endpoints)\.
 
 **Note**  
-The `aws:sourceVpce` condition doesn't require an ARN for the VPC endpoint resource, only the VPC endpoint ID\.
+The `aws:sourceVpc` condition doesn't require an ARN for the VPC endpoint resource, only the VPC endpoint ID\.
 You can modify the following example to restrict all actions to a specific VPC endpoint by denying all Amazon SQS actions \(`sqs:*`\) in the second statement\. However, such a policy statement would stipulate that all actions \(including administrative actions needed to modify queue permissions\) must be made through the specific VPC endpoint defined in the policy, potentially preventing the user from modifying queue permissions in the future\.
 
 ```
@@ -153,7 +153,7 @@ You can modify the following example to restrict all actions to a specific VPC e
          "Resource": "arn:aws::sqs:us-east-2:111122223333:queue1",
          "Condition": {
             "StringNotEquals": {
-               "aws:sourceVpce": "vpce-1a2b3c4d"
+               "aws:sourceVpc": "vpc-1a2b3c4d"
             }
          }
       }
