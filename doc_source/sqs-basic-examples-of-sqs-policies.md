@@ -164,7 +164,7 @@ The following example policy grants all users \(anonymous users\) permission to 
    "Version": "2012-10-17",
    "Id": "Queue1_Policy_UUID",
    "Statement": [{
-      "Sid":"Queue1_AnonymousAccess_AllActions_WhitelistIP",
+      "Sid":"Queue1_AnonymousAccess_AllActions_AllowlistIP",
       "Effect": "Allow",
       "Principal": "*",
       "Action": "sqs:*",
@@ -178,11 +178,11 @@ The following example policy grants all users \(anonymous users\) permission to 
 }
 ```
 
-## Example 8: Whitelist and blacklist permissions for users in different CIDR ranges<a name="whitelist-blacklist-permissions-for-users-in-different-cidr-ranges"></a>
+## Example 8: Allowlist and blocklist permissions for users in different CIDR ranges<a name="allowlist-blocklist-permissions-for-users-in-different-cidr-ranges"></a>
 
 The following example policy has two statements:
 + The first statement grants all users \(anonymous users\) in the `192.168.143.0/24` CIDR range \(except for `192.168.143.188`\) permission to use the `SendMessage` action for the queue named `111122223333`/queue1\.
-+ The second statement blacklists all users \(anonymous users\) in the `10.1.2.0/24` CIDR range from using the queue\.
++ The second statement blocklists all users \(anonymous users\) in the `10.1.2.0/24` CIDR range from using the queue\.
 
 ```
 {
