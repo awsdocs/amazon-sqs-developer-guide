@@ -19,7 +19,7 @@ The following example policy grants AWS account number `111122223333` the `SendM
       "Sid":"Queue1_SendMessage",
       "Effect": "Allow",
       "Principal": {
-         "AWS": [ 
+         "AWS": [
             "111122223333"
          ]
       },
