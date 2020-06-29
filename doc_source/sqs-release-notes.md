@@ -5,6 +5,7 @@ The following table lists Amazon SQS feature releases and improvements\. For cha
 
 | Date | Feature release | 
 | --- | --- | 
+| June 22, 2020 | Amazon SQS API supports pagination for listQueues and listDeadLetterSourceQueues\. You can specify the maximum number of results to return from a [listQueues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueues.html) or [listDeadLetterSourceQueues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListDeadLetterSourceQueues.html) request\. | 
 | January 9, 2020 | The one\-minute CloudWatch metric for Amazon SQS is available in all commercial Regions\. For more information, see [Available CloudWatch metrics for Amazon SQS](sqs-available-cloudwatch-metrics.md)\.  | 
 | November 25, 2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-release-notes.html)  | 
 | November 13, 2019 | Server\-side encryption \(SSE\) for Amazon SQS is available in the China Regions\. For more information about server\-side encryption and how to get started using it, see [Encryption at Rest](sqs-server-side-encryption.md)\. | 

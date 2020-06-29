@@ -24,18 +24,17 @@ When you create a queue, it can take a short time for the queue to propagate thr
 
 Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
 
-**Note**  
-This action is identical for standard and FIFO queues\.
+ The `listQueues` and `listDeadLetterSourceQueues` API methods now support pagination\. Set parameter `MaxResults` in the `listQueues` or `listDeadLetterSourceQueues` request to specify the maximum number of results to be returned in the response\. If you do not set `MaxResults`, the response includes a maximum of 1,000 results\. If there are additional results to display, the response includes a value for `NextToken`\. Use `NextToken` as a parameter in your next request to `listQueues` to receive the next page of results\. If the `NextToken` value in the response is null, there are no additional results to request\. 
 
 **To list all queues**
 
 1. Copy the [standard queue example program](standard-queues-getting-started-java.md) or the [FIFO queue example program](FIFO-queues-getting-started-java.md)\.
 
-   The following section of the code list all queues in the current region:
+   The following section of the code list all \(or the first 1000\) queues in the current region:
 
    ```
    // List queues
-   System.out.println("Listing all queues in your account.\n");
+   System.out.println("List all (or the first 1000) queues in the current region.\n");
    for (final String queueUrl : sqs.listQueues().getQueueUrls()) {
        System.out.println("  QueueUrl: " + queueUrl);
    }

@@ -76,12 +76,14 @@ Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` ac
 
    ```
    final SetQueueAttributesRequest setAttributesRequest = new SetQueueAttributesRequest();
+   final Map<String, String> attributes = new HashMap<String, String>();
    setAttributesRequest.setQueueUrl(queueUrl);
           
    // Enable server-side encryption by specifying the alias for the
    // AWS managed CMK for Amazon SQS.
    final String kmsMasterKeyAlias = "alias/aws/sqs";
    attributes.put("KmsMasterKeyId", kmsMasterKeyAlias);
+   setQueueAttributesRequest.setAttributes(attributes);
           
    final SetQueueAttributesResult setAttributesResult = client.setQueueAttributes(setAttributesRequest);
    ```

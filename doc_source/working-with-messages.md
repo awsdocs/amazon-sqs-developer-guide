@@ -17,10 +17,9 @@ Setting the visibility timeout depends on how long it takes your application to 
 
 To ensure that there is sufficient time to process messages, use one of the following strategies:
 + If you know \(or can reasonably estimate\) how long it takes to process a message, extend the message's *visibility timeout* to the maximum time it takes to process and delete the message\. For more information, see [Configuring the Visibility Timeout](sqs-visibility-timeout.md#configuring-visibility-timeout) and [Changing a Message's Visibility Timeout](sqs-visibility-timeout.md#changing-message-visibility-timeout)\.
-+ If you don't know how long it takes to process a message, create a *heartbeat* for your consumer process: Specify the initial visibility timeout \(for example, 2 minutes\) and then—as long as your consumer still works on the message—keep extending the visibility timeout by 2 minutes every minute\.
-
-**Note**  
-If you need to extend the visibility timeout for longer than 12 hours, consider using [AWS Step Functions](https://aws.amazon.com/step-functions/)\. 
++ If you do not know how long it takes to process a message, create a *heartbeat* for your consumer process: Specify the initial visibility timeout \(for example, 2 minutes\) and then—as long as your consumer still works on the message—keep extending the visibility timeout by 2 minutes every minute\. 
+**Important**  
+The maximum visibility timeout is 12 hours from the time that Amazon SQS receives the message\. Extending the visibility timeout does not reset the 12\-hour maximum\. If your consumer needs longer than 12 hours, consider using [AWS Step Functions](https://aws.amazon.com/step-functions/)\. 
 
 ## Handling request errors<a name="handling-request-errors"></a>
 
@@ -35,6 +34,9 @@ When the wait time for the `ReceiveMessage` API action is greater than 0, *long 
 To ensure optimal message processing, use the following strategies:
 + In most cases, you can set the `ReceiveMessage` wait time to 20 seconds\. If 20 seconds is too long for your application, set a shorter `ReceiveMessage` wait time \(1 second minimum\)\. If you don't use an AWS SDK to access Amazon SQS, or if you configure an AWS SDK to have a shorter wait time, you might have to modify your Amazon SQS client to either allow longer requests or use a shorter wait time for long polling\.
 + If you implement long polling for multiple queues, use one thread for each queue instead of a single thread for all queues\. Using a single thread for each queue allows your application to process the messages in each of the queues as they become available, while using a single thread for polling multiple queues might cause your application to become unable to process messages available in other queues while the application waits \(up to 20 seconds\) for the queue which doesn't have any available messages\.
+
+**Important**  
+To avoid HTTP errors, ensure that the HTTP response timeout for `ReceiveMessage` requests is longer than the `WaitTimeSeconds` parameter\. For more information, see [ReceiveMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)\.
 
 ## Capturing problematic messages<a name="capturing-problematic-messages"></a>
 
