@@ -1,9 +1,9 @@
 # Amazon SQS dead\-letter queues<a name="sqs-dead-letter-queues"></a>
 
-Amazon SQS supports *dead\-letter queues*, which other queues \(*source queues*\) can target for messages that can't be processed \(consumed\) successfully\. Dead\-letter queues are useful for debugging your application or messaging system because they let you isolate problematic messages to determine why their processing doesn't succeed\. For information about creating a queue and configuring a dead\-letter queue for it using the AWS Management Console or the AWS SDK for Java \(and the `[CreateQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`, `[SetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`, and `[GetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)` actions\), see [Tutorial: Configuring an Amazon SQS dead\-letter queue](sqs-configure-dead-letter-queue.md)\.
+Amazon SQS supports *dead\-letter queues*, which other queues \(*source queues*\) can target for messages that can't be processed \(consumed\) successfully\. Dead\-letter queues are useful for debugging your application or messaging system because they let you isolate problematic messages to determine why their processing doesn't succeed\. For information about creating a queue and configuring a dead\-letter queue for it using the Amazon SQS console, see [Configuring a dead\-letter queue \(console\)](sqs-configure-dead-letter-queue.md)\.
 
 **Important**  
-When you designate a queue to be a source queue, a dead\-letter queue is *not* created automatically\. You must first create a standard or FIFO queue before designating it a dead\-letter queue\.
+Amazon SQS does *not* create the dead\-letter queue automatically\. You must first create the queue before using it as a dead\-letter queue\.
 
 **Topics**
 + [How do dead\-letter queues work?](#sqs-dead-letter-queues-how-they-work)
@@ -20,12 +20,12 @@ Occasionally, producers and consumers might fail to interpret aspects of the pro
 
 The *redrive policy* specifies the *source queue*, the *dead\-letter queue*, and the conditions under which Amazon SQS moves messages from the former to the latter if the consumer of the source queue fails to process a message a specified number of times\. When the `ReceiveCount` for a message exceeds the `maxReceiveCount` for a queue, Amazon SQS moves the message to a dead\-letter queue \(with its original message ID\)\. For example, if the source queue has a redrive policy with `maxReceiveCount` set to 5, and the consumer of the source queue receives a message 6 times without ever deleting it, Amazon SQS moves the message to the dead\-letter queue\.
 
-To specify a dead\-letter queue, you can [use the AWS Management Console or the AWS SDK for Java](sqs-configure-dead-letter-queue.md)\. You must do this for each queue that sends messages to a dead\-letter queue\. Multiple queues of the same type can target a single dead\-letter queue\. For more information, see [Tutorial: Configuring an Amazon SQS dead\-letter queue](sqs-configure-dead-letter-queue.md) and the `RedrivePolicy` attribute of the [ `CreateQueue`](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html#API_CreateQueue_RequestParameters) or [ `SetQueueAttributes`](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html#API_SetQueueAttributes_RequestParameters) action\.
+To specify a dead\-letter queue, you can use the console or the AWS SDK for Java\. You must do this for each queue that sends messages to a dead\-letter queue\. Multiple queues of the same type can target a single dead\-letter queue\. For more information, see [Configuring a dead\-letter queue \(console\)](sqs-configure-dead-letter-queue.md) and the `RedrivePolicy` attribute of the [ `CreateQueue`](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html#API_CreateQueue_RequestParameters) or [ `SetQueueAttributes`](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html#API_SetQueueAttributes_RequestParameters) action\.
 
 **Important**  
 The dead\-letter queue of a FIFO queue must also be a FIFO queue\. Similarly, the dead\-letter queue of a standard queue must also be a standard queue\.  
 You must use the same AWS account to create the dead\-letter queue and the other queues that send messages to the dead\-letter queue\. Also, dead\-letter queues must reside in the same region as the other queues that use the dead\-letter queue\. For example, if you create a queue in the US East \(Ohio\) region and you want to use a dead\-letter queue with that queue, the second queue must also be in the US East \(Ohio\) region\.  
-The expiration of a message is always based on its original enqueue timestamp\. When a message is moved to a [dead\-letter queue](#sqs-dead-letter-queues), the enqueue timestamp remains unchanged\. For example, if a message spends 1 day in the original queue before being moved to a dead\-letter queue, and the retention period of the dead\-letter queue is set to 4 days, the message is deleted from the dead\-letter queue after 3 days\. Thus, it is a best practice to always set the retention period of a dead\-letter queue to be longer than the retention period of the original queue\.
+The expiration of a message is always based on its original enqueue timestamp\. When a message is moved to a dead\-letter queue, the enqueue timestamp remains unchanged\. For example, if a message spends 1 day in the original queue before being moved to a dead\-letter queue, and the retention period of the dead\-letter queue is set to 4 days, the message is deleted from the dead\-letter queue after 3 days\. Thus, it is a best practice to always set the retention period of a dead\-letter queue to be longer than the retention period of the original queue\.
 
 ## What are the benefits of dead\-letter queues?<a name="sqs-dead-letter-queues-benefits"></a>
 
@@ -70,13 +70,13 @@ Even when you use dead\-letter queues, you should continue to monitor your queue
 
 In some cases, Amazon SQS dead\-letter queues might not always behave as expected\. This section gives an overview of common issues and shows how to resolve them\.
 
-### Viewing messages using the AWS Management Console might cause messages to be moved to a dead\-letter queue<a name="sqs-dlq-console"></a>
+### Viewing messages using the console might cause messages to be moved to a dead\-letter queue<a name="sqs-dlq-console"></a>
 
-Amazon SQS counts viewing a message in the AWS Management Console against the corresponding queue's redrive policy\. Thus, if you view a message in the AWS Management Console the number of times specified in the corresponding queue's redrive policy, the message is moved to the corresponding queue's dead\-letter queue\.
+Amazon SQS counts viewing a message in the console against the corresponding queue's redrive policy\. Thus, if you view a message in the console the number of times specified in the corresponding queue's redrive policy, the message is moved to the corresponding queue's dead\-letter queue\.
 
 To adjust this behavior, you can do one of the following:
 + Increase the **Maximum Receives** setting for the corresponding queue's redrive policy\.
-+ Avoid viewing the corresponding queue's messages in the AWS Management Console\.
++ Avoid viewing the corresponding queue's messages in the console\.
 
 ### The `NumberOfMessagesSent` and `NumberOfMessagesReceived` for a dead\-letter queue don't match<a name="sqs-dlq-number-of-messages"></a>
 

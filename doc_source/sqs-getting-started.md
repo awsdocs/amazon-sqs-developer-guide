@@ -1,6 +1,14 @@
 # Getting started with Amazon SQS<a name="sqs-getting-started"></a>
 
-This section helps you become more familiar with Amazon SQS by showing you how to manage queues and messages using the AWS Management Console\.
+This section helps you become more familiar with Amazon SQS by showing you how to manage queues and messages using the Amazon SQS console\.
+
+**Topics**
++ [Prerequisites](#sqs-prerequisites)
++ [Step 1: Create a queue](#step-create-queue)
++ [Step 2: Send a message](#step-send-message)
++ [Step 3: Receive and delete your message](#step-receive-delete-message)
++ [Step 4: Delete your queue](#step-delete-queue)
++ [Next steps](#sqs-next-steps-getting-started)
 
 ## Prerequisites<a name="sqs-prerequisites"></a>
 
@@ -8,125 +16,85 @@ Before you begin, complete the steps in [Setting up Amazon SQS](sqs-setting-up.m
 
 ## Step 1: Create a queue<a name="step-create-queue"></a>
 
-The first and most common Amazon SQS task is creating queues\. In this tutorial you'll learn how to create and configure a queue\.
+The first and most common Amazon SQS task is creating queues\. This procedure shows how to create and configure a FIFO queue\.
 
-1. Sign in to the [Amazon SQS console](https://console.aws.amazon.com/sqs/)\.
+1. Open the Amazon SQS console at [https://console\.aws\.amazon\.com/sqs/](https://console.aws.amazon.com/sqs/)\.
 
-1. Choose **Create New Queue\.**
+1. Choose **Create queue**\.
 
-1. On the **Create New Queue** page, ensure that you're in the correct region and then type the **Queue Name**\.
-**Note**  
-The name of a FIFO queue must end with the `.fifo` suffix\.
+1. On the **Create queue** page, ensure that you set the correct region\.
 
-1. **Standard** is selected by default\. Choose **FIFO**\.
+1. The **Standard** queue type is selected by default\. Choose **FIFO**\.
 
-1. To create your queue with the default parameters, choose **Quick\-Create Queue**\.
+1.  Enter a **Name** for your queue\. The name of a FIFO queue must end with the `.fifo` suffix\.
 
-   Your new queue is created and selected in the queue list\.
-**Note**  
-When you create a queue, it can take a short time for the queue to propagate throughout Amazon SQS\.
+1. To create your queue with the default parameters, scroll to the bottom and choose **Create Queue**\. Amazon SQS creates the queue and displays the queue's **Details** page\. 
 
-   The **Queue Type** column helps you distinguish standard queues from FIFO queues at a glance\. For a FIFO queue, the **Content\-Based Deduplication** column displays whether you have enabled [exactly\-once processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-queue-type-content-based-deduplication-columns.png)
-
-   Your queue's **Name**, **URL**, and **ARN** are displayed on the **Details** tab\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-creating-queue-details-url-arn.png)
+   Amazon SQS propagates information about the new queue across the system\. Because Amazon SQS is a distributed system, you may experience a slight delay before the queue is displayed on the **Queues** page\. 
 
 ## Step 2: Send a message<a name="step-send-message"></a>
 
-After you create your queue, you can send a message to it\. The following example shows sending a message to an existing queue\.
+After you create your queue, you can send a message to it\.
 
-1. From the queue list, select the queue that you've created\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-select-queue.png)
+1. From the left navigation pane, choose **Queues**\. From the queue list, select the queue that you've created\.
 
-1. From **Queue Actions**, select **Send a Message**\.  
+1. From **Actions**, choose **Send and receive messages**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message.png)
 
-   The **Send a Message to *QueueName*** dialog box is displayed\.
+   The console displays the **Send and receive messages** page\.
 
-   The following example shows the **Message Group ID** and **Message Deduplication ID** parameters specific to FIFO queues \([content\-based deduplication](FIFO-queues.md#FIFO-queues-exactly-once-processing) is disabled\)\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message-dialog-box.png)
+1. Enter text in the **Message body**
 
-1. To send a message to a FIFO queue, type the **Message Body**, the **Message Group ID** `MyMessageGroupId1234567890`, and the **Message Deduplication ID** `MyMessageDeduplicationId1234567890`, and then choose **Send Message**\. For more information, see [FIFO delivery logic](FIFO-queues.md#FIFO-queues-understanding-logic)\.
-**Note**  
-The message group ID is always required\. However, if content\-based deduplication is enabled, the message deduplication ID is optional\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message-button-fifo.png)
+1. Enter a **Message group id** for the queue\. For more information, see [FIFO delivery logic](FIFO-queues.md#FIFO-queues-understanding-logic)\. 
 
-   Your message is sent and the **Send a Message to *QueueName*** dialog box is displayed, showing the attributes of the sent message\.
+1. \(Optional\) Enter a **Message deduplication id**\. If you enable content\-based deduplication, the message deduplication ID is not required\. For more information, see [FIFO delivery logic](FIFO-queues.md#FIFO-queues-understanding-logic)\.
 
-   The following example shows the **Sequence Number** attribute specific to FIFO queues\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message-message-attributes.png)
+1. Choose **Send message**\.
 
-1. Choose **Close**\.
+   Your message is sent and the console displays a success message\. Choose **View details** to display information about the sent message\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-success.png)
 
 ## Step 3: Receive and delete your message<a name="step-receive-delete-message"></a>
 
-After you send a message into a queue, you can consume it \(retrieve it from the queue\)\. When you request a message from a queue, you can't specify which message to get\. Instead, you specify the maximum number of messages \(up to 10\) that you want to get\.
+After you send a message to a queue, you can retrieve the message from the queue\. When you request messages from a queue, you can't specify which message to retrieve\. Instead, you specify the maximum number of messages \(up to 10\) that you want to retrieve\.
 
-In this tutorial you'll learn how to receive and delete a message\.
+1. From the **Queues** page, select a queue\.
 
-1. From the queue list, select the queue that you have created\.
+1. From **Queue Actions**, select **Send and receive messages**\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message.png)
 
-1. From **Queue Actions**, select **View/Delete Messages**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-receive-delete-message-view-delete-messages.png)
+   The console displays the **Send and receive messages** page\.
 
-   The **View/Delete Messages in *QueueName*** dialog box is displayed\.
-**Note**  
-The first time you take this action, an information screen is displayed\. To hide the screen, choose **Don't show this again**\.
+1. Choose **Poll for messages\.**
 
-1. Choose **Start Polling for messages\.**  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-start-polling-for-messages.png)
+   Amazon SQS begins to poll servers to find messages in the queue\. The progress bar on the right side of the **Receive messages** section displays the polling duration\.
 
-   Amazon SQS begins to poll the messages in the queue\. The dialog box displays a message from the queue\. A progress bar at the bottom of the dialog box displays the status of the message's visibility timeout\.
+   The **Messages** section displays a list of the received messages\. For each message, the list displays the message ID, sent date, size, and receive count\.
 
-   The following example shows the **Message Group ID**, **Message Deduplication ID**, and **Sequence Number** columns specific to FIFO queues\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-receive-delete-message-polling-process.png)
-**Note**  
-When the progress bar is filled in, the [visibility timeout](sqs-visibility-timeout.md) expires and the message becomes visible to consumers\.
+1. To delete messages, select the messages that you want to delete and then choose **Delete**\.
 
-1. *Before* the visibility timeout expires, select the message that you want to delete and then choose **Delete *1* Message**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-receive-delete-message-select-message-to-delete.png)
-
-1. In the **Delete Messages** dialog box, confirm that the message you want to delete is checked and choose **Yes, Delete Checked Messages**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-receive-delete-message-confirm-deleting-messages.png)
-
-   The selected message is deleted\.
-
-1. Select **Close**\.
+1. In the **Delete Messages** dialog box, choose **Delete**\.
 
 ## Step 4: Delete your queue<a name="step-delete-queue"></a>
 
-If you don't use an Amazon SQS queue \(and don't foresee using it in the near future\), it is a best practice to delete it from Amazon SQS\. In this tutorial you'll learn how to delete a queue\.
+1. From the queue list, select the queue that you have created\.
 
-1. From the queue list, select the queue that you have created\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-select-queue.png)
+1. From the **Queues** page, select the queue to delete\. 
 
-1. From **Queue Actions**, select **Delete Queue**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-deleting-queue-delete-queue.png)
+1. Choose **Delete queue**\.
 
-   The **Delete Queues** dialog box is displayed\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-deleting-queue-delete-queue-dialog-box.png)
+   The console displays the **Delete queue** dialog box\.
 
-1. Choose **Yes, Delete Queue**\.
+1. In the **Delete queue** dialog box, confirm the deletion by entering **delete**\.
 
-   The queue is deleted\.
+1. Choose **Delete**\.
 
 ## Next steps<a name="sqs-next-steps-getting-started"></a>
 
 Now that you've created a queue and learned how to send, receive, and delete messages and how to delete a queue, you might want to try the following:
-+ [Enable server\-side encryption \(SSE\) for a new queue](sqs-create-queue-sse.md) or [configure SSE for an existing queue\.](sqs-configure-sse-existing-queue.md)
-+ [Add permissions to a queue\.](sqs-add-permissions.md)
-+ [Add, update, or remove tags for a queue\.](sqs-add-update-remove-tag-queue.md)
-+ [Configure long polling for a queue\.](sqs-configure-long-polling-for-queue.md)
-+ [Send a message with attributes\.](sqs-send-message-with-attributes.md)
-+ [Send a message with a timer\.](sqs-send-message-with-timer.md)
++  [Configure queues, including SSE and other features](sqs-configuring.md)\.
++ [Send a message with attributes\.](sqs-using-send-message-with-attributes.md)
 + [Send a message from a VPC\.](sqs-sending-messages-from-vpc.md)
-+ [Configure a dead\-letter queue\.](sqs-configure-dead-letter-queue.md)
-+ [Configure visibility timeout for a queue\.](sqs-configure-visibility-timeout-queue.md)
-+ [Configure a delay queue\.](sqs-configure-delay-queue.md)
-+ [Subscribe a queue to an Amazon SNS topic\.](sqs-subscribe-queue-sns-topic.md)
-+ [Configure messages arriving in a queue to trigger a Lambda function\.](sqs-configure-lambda-function-trigger.md)
-+ [Purge a queue\.](sqs-purge-queue.md)
 + Learn more about Amazon SQS workflows and processes: Read [How Queues Work](sqs-how-it-works.md), [Best Practices](sqs-best-practices.md), and [Quotas](sqs-quotas.md)\. You can also explore the [Amazon SQS Articles & Tutorials](https://aws.amazon.com/articles/Amazon-SQS?browse=1)\. If you ever have any questions, browse the [Amazon SQS FAQs](https://aws.amazon.com/sqs/faqs/) or participate in the [Amazon SQS Developer Forums](https://forums.aws.amazon.com/forum.jspa?forumID=12)\.
 + Learn how to interact with Amazon SQS programmatically: Read [Working with APIs](sqs-making-api-requests.md) and explore the [Sample Code and Libraries](https://aws.amazon.com/code/Amazon-SQS?browse=1) and the developer centers:
   + [Java](https://aws.amazon.com/java/)

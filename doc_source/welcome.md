@@ -38,9 +38,10 @@ Amazon SQS and [Amazon SNS](https://aws.amazon.com/sns/) are queue and topic ser
 
 ## How can I get started with Amazon SQS?<a name="get-started"></a>
 + To create your first queue with Amazon SQS and send, receive, and delete a message, see [Getting started with Amazon SQS](sqs-getting-started.md)\.
-+ To trigger a Lambda function, see [Tutorial: Configuring a queue to trigger an AWS Lambda function](sqs-configure-lambda-function-trigger.md)\.
++ To trigger a Lambda function, see [Configuring a queue to trigger an AWS Lambda function \(console\)](sqs-configure-lambda-function-trigger.md)\.
 + To discover the functionality and architecture of Amazon SQS, see [How Amazon SQS works](sqs-how-it-works.md)\.
 + To find out the guidelines and caveats that will help you make the most of Amazon SQS, see [Best practices for Amazon SQS](sqs-best-practices.md)\.
++ Explore the Amazon SQS examples for one of the AWS SDKs, such as the [AWS SDK for Java 2\.x Developer Guide](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/)\. 
 + To learn about Amazon SQS actions, see the [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/)\.
 + To learn about Amazon SQS AWS CLI commands, see the [ *AWS CLI Command Reference*](https://docs.aws.amazon.com/cli/latest/reference/sqs/index.html)\.
 

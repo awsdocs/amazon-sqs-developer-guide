@@ -33,7 +33,7 @@ The structure of *`AUTHPARAMS`* depends on the signature of the API request\. Fo
 ## Making a GET request<a name="structure-get-request"></a>
 
 An Amazon SQS `GET` request is structured as a URL which consists of the following:
-+ **Endpoint** – The resource that the request is acting on \(the [queue name and URL](sqs-general-identifiers.md#queue-name-url)\), for example: `https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue`
++ **Endpoint** – The resource that the request is acting on \(the [queue name and URL](sqs-queue-message-identifiers.md#queue-name-url)\), for example: `https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue`
 + **Action** – The [action](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_Operations.html) that you want to perform on the endpoint\. A question mark \(`?`\) separates the endpoint from the action, for example: `?Action=SendMessage&MessageBody=Your%20Message%20Text`
 + **Parameters** – Any request parameters—each parameter is separated by an ampersand \(`&`\), for example: `&Version=2012-11-05&AUTHPARAMS` 
 

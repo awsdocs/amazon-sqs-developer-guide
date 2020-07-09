@@ -51,7 +51,7 @@ For more information, see [IAM Roles](https://docs.aws.amazon.com/IAM/latest/Use
 
 To mitigate data leakage issues, use encryption at rest to encrypt your messages using a key stored in a different location from the location that stores your messages\. Server\-side encryption \(SSE\) provides data encryption at rest\. Amazon SQS encrypts your data at the message level when it stores it, and decrypts the messages for you when you access them\. SSE uses keys managed in AWS Key Management Service\. As long as you authenticate your request and have access permissions, there is no difference between accessing encrypted and unencrypted queues\.
 
-For more information, see [Encryption at Rest](sqs-server-side-encryption.md) and [Key management](sqs-key-management.md)\.
+For more information, see [Encryption at rest](sqs-server-side-encryption.md) and [Key management](sqs-key-management.md)\.
 
 ### Enforce encryption of data in transit<a name="enforce-encryption-data-in-transit"></a>
 

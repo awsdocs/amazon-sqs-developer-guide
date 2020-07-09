@@ -2,7 +2,7 @@
 
 The following best practices can help you reduce costs and take advantage of additional potential cost reduction and near\-instantaneous response\.
 
-## Batching message actions<a name="batching-message-actions"></a>
+### Batching message actions<a name="batching-message-actions"></a>
 
 To reduce costs, batch your message actions:
 + To send, receive, and delete messages, and to change the message visibility timeout for multiple messages with a single action, use the [Amazon SQS batch API actions](sqs-batch-api-actions.md)\.
@@ -10,7 +10,7 @@ To reduce costs, batch your message actions:
 **Note**  
 The Amazon SQS Buffered Asynchronous Client doesn't currently support FIFO queues\.
 
-## Using the appropriate polling mode<a name="using-appropriate-polling-mode"></a>
+### Using the appropriate polling mode<a name="using-appropriate-polling-mode"></a>
 + Long polling lets you consume messages from your Amazon SQS queue as soon as they become available\. 
   + To reduce the cost of using Amazon SQS and to decrease the number of empty receives to an empty queue \(responses to the `ReceiveMessage` action which return no messages\), enable long polling\. For more information, see [Amazon SQS Long Polling](sqs-short-and-long-polling.md)\.
   + To increase efficiency when polling for multiple threads with multiple receives, decrease the number of threads\.

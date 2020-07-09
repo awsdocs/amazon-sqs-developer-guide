@@ -2,8 +2,6 @@
 
 FIFO queues have all the capabilities of the [standard queue](standard-queues.md)\.
 
-For information about creating FIFO queues with or without server\-side encryption using the AWS Management Console, the AWS SDK for Java \(and the `[CreateQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)` action\), or AWS CloudFormation, see [Tutorial: Creating an Amazon SQS queue](sqs-create-queue.md) and [Tutorial: Creating an Amazon SQS queue with Server\-Side Encryption \(SSE\)](sqs-create-queue-sse.md)\.
-
 [![AWS Videos](http://img.youtube.com/vi/https://www.youtube.com/embed/XrX7rb6M3jw?rel=0&amp;controls=0&amp;showinfo=0/0.jpg)](http://www.youtube.com/watch?v=https://www.youtube.com/embed/XrX7rb6M3jw?rel=0&amp;controls=0&amp;showinfo=0)
 
 *FIFO \(First\-In\-First\-Out\)* queues are designed to enhance messaging between applications when the order of operations and events is critical, or where duplicates can't be tolerated, for example:
@@ -19,9 +17,11 @@ FIFO queues also provide exactly\-once processing but have a limited number of t
 Amazon SNS isn't currently compatible with FIFO queues\.
 The name of a FIFO queue must end with the `.fifo` suffix\. The suffix counts towards the 80\-character queue name quota\. To determine whether a queue is [FIFO](#FIFO-queues), you can check whether the queue name ends with the suffix\.
 
+For information about how to create and configure standard queues using the Amazon SQS console, see [Creating an Amazon SQS queue \(console\)](sqs-configure-create-queue.md)\. For Java examples, see [Amazon SQS Java SDK examples](sqs-java-tutorials.md)\.
+
 For quotas related to FIFO queues, see [Quotas related to queues](sqs-quotas.md#quotas-queues)\.
 
-For best practices of working with FIFO queues, see [Additional recommendations for Amazon SQS FIFO queues ](sqs-additional-fifo-queue-recommendations.md) and [Recommendations for Amazon SQS Standard and FIFO \(First\-In\-First\-Out\) queues ](sqs-standard-fifo-queue-best-practices.md)\.
+For best practices of working with FIFO queues, see [Additional recommendations for Amazon SQS FIFO queues](sqs-best-practices.md#sqs-additional-fifo-queue-recommendations) and [Recommendations for Amazon SQS Standard and FIFO \(First\-In\-First\-Out\) queues](sqs-best-practices.md#sqs-standard-fifo-queue-best-practices)\.
 
 For information about compatibility of clients and services with FIFO queues, see [Compatibility](#FIFO-compatibility)\.
 
@@ -32,7 +32,6 @@ For information about compatibility of clients and services with FIFO queues, se
 + [Exactly\-once processing](#FIFO-queues-exactly-once-processing)
 + [Moving from a Standard queue to a FIFO queue](#FIFO-queues-moving)
 + [Compatibility](#FIFO-compatibility)
-+ [Working Java example for FIFO queues](FIFO-queues-getting-started-java.md)
 
 ## Message ordering<a name="FIFO-queues-message-order"></a>
 

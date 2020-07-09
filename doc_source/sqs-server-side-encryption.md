@@ -1,9 +1,10 @@
-# Encryption at Rest<a name="sqs-server-side-encryption"></a>
+# Encryption at rest<a name="sqs-server-side-encryption"></a>
 
-Server\-side encryption \(SSE\) lets you transmit sensitive data in encrypted queues\. SSE protects the contents of messages in queues using keys managed in AWS Key Management Service \(AWS KMS\)\. For information about managing SSE using the AWS Management Console or the AWS SDK for Java \(and the `[CreateQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`, `[SetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`, and `[GetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)` actions\), see the following tutorials:
-+ [Tutorial: Creating an Amazon SQS queue with Server\-Side Encryption \(SSE\)](sqs-create-queue-sse.md)
-+ [Tutorial: Configuring Server\-Side Encryption \(SSE\) for an existing Amazon SQS queue](sqs-configure-sse-existing-queue.md)
-+ [Configure KMS permissions for AWS services ](sqs-key-management.md#compatibility-with-aws-services)
+Server\-side encryption \(SSE\) lets you transmit sensitive data in encrypted queues\. SSE protects the contents of messages in queues using keys managed in AWS Key Management Service \(AWS KMS\)\. For information about managing SSE using the AWS Management Console, see [Configuring server\-side encryption \(SSE\) for a queue \(console\)](sqs-configure-sse-existing-queue.md)\. 
+
+ For information about managing SSE using the AWS SDK for Java \(and the `[CreateQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`, `[SetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`, and `[GetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)` actions\), see the following examples:
++ [Using server\-side encryption \(SSE\)](sqs-java-configure-sse.md)
++ [Configure KMS permissions for AWS services](sqs-key-management.md#compatibility-with-aws-services)
 
 [![AWS Videos](http://img.youtube.com/vi/https://www.youtube.com/embed/Mw1NVpJsOZc?rel=0&amp;controls=0&amp;showinfo=0/0.jpg)](http://www.youtube.com/watch?v=https://www.youtube.com/embed/Mw1NVpJsOZc?rel=0&amp;controls=0&amp;showinfo=0)
 
@@ -11,11 +12,11 @@ SSE encrypts messages as soon as Amazon SQS receives them\. The messages are sto
 
 **Important**  
 All requests to queues with SSE enabled must use HTTPS and [Signature Version 4](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)\.  
-You can't associate an [encrypted queue](#sqs-server-side-encryption) that uses an AWS managed customer master key for Amazon SQS with a Lambda function in a different AWS account\.  
+An [encrypted queue](#sqs-server-side-encryption) that uses the default key \(AWS managed CMK for Amazon SQS\) cannot invoke a Lambda function in a different AWS account\.  
 Some features of AWS services that can send notifications to Amazon SQS using the AWS Security Token Service `[AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)` action are compatible with SSE but work *only with standard queues:*  
 [Auto Scaling Lifecycle Hooks](https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html)
 [AWS Lambda Dead\-Letter Queues](https://docs.aws.amazon.com/lambda/latest/dg/dlq.html)
-For information about compatibility of other services with encrypted queues, see [Configure KMS permissions for AWS services ](sqs-key-management.md#compatibility-with-aws-services) and your service documentation\.
+For information about compatibility of other services with encrypted queues, see [Configure KMS permissions for AWS services](sqs-key-management.md#compatibility-with-aws-services) and your service documentation\.
 
 AWS KMS combines secure, highly available hardware and software to provide a key management system scaled for the cloud\. When you use Amazon SQS with AWS KMS, the [data keys](#sqs-sse-key-terms) that encrypt your message data are also encrypted and stored with the data they protect\.
 
@@ -62,7 +63,7 @@ In the unlikely event of being unable to reach AWS KMS, Amazon SQS continues to 
 **Customer master key ID**  
 The alias, alias ARN, key ID, or key ARN of an AWS managed customer master key \(CMK\) or a custom CMK—in your account or in another account\. While the alias of the AWS managed CMK for Amazon SQS is always `alias/aws/sqs`, the alias of a custom CMK can, for example, be `alias/MyAlias`\. You can use these CMKs to protect the messages in Amazon SQS queues\.   
 Keep the following in mind:  
-+ If you don't specify a custom CMK, Amazon SQS uses the AWS managed CMK for Amazon SQS\. For instructions on creating custom CMKs, see [Creating Keys](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) in the *AWS Key Management Service Developer Guide*\.
++ If you don't specify a custom CMK, Amazon SQS uses the AWS managed CMK for Amazon SQS\.
 + The first time you use the AWS Management Console to specify the AWS managed CMK for Amazon SQS for a queue, AWS KMS creates the AWS managed CMK for Amazon SQS\.
 + Alternatively, the first time you use the `SendMessage` or `SendMessageBatch` action on a queue with SSE enabled, AWS KMS creates the AWS managed CMK for Amazon SQS\.
 You can create CMKs, define the policies that control how CMKs can be used, and audit CMK usage using the **Customer managed keys** section of the AWS KMS console or the `[CreateKey](https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html)` AWS KMS action\. For more information, see [Customer Master Keys \(CMKs\)](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys) and [Creating Keys](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) in the *AWS Key Management Service Developer Guide*\. For more examples of CMK identifiers, see [KeyId](https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters) in the *AWS Key Management Service API Reference*\. For information about finding CMK identifiers, see [Find the Key ID and ARN](https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn) in the *AWS Key Management Service Developer Guide*\.  

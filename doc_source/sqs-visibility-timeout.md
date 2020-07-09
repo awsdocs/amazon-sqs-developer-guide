@@ -4,7 +4,7 @@ When a consumer receives and processes a message from a queue, the message remai
 
 ![\[Visibility Timeout\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-visibility-timeout-diagram.png)
 
-Immediately after a message is received, it remains in the queue\. To prevent other consumers from processing the message again, Amazon SQS sets a *visibility timeout*, a period of time during which Amazon SQS prevents other consumers from receiving and processing the message\. The default visibility timeout for a message is 30 seconds\. The minimum is 0 seconds\. The maximum is 12 hours\. For information about configuring visibility timeout for a queue using the AWS Management Console and for single or multiple messages using the AWS SDK for Java \(and the `[SetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`, `[GetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html)`, `[ReceiveMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)`, `[ChangeMessageVisibility](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibility.html)`, and `[ChangeMessageVisibilityBatch](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibilityBatch.html)` actions\), see [Tutorial: Configuring visibility timeout for an Amazon SQS queue](sqs-configure-visibility-timeout-queue.md)\.
+Immediately after a message is received, it remains in the queue\. To prevent other consumers from processing the message again, Amazon SQS sets a *visibility timeout*, a period of time during which Amazon SQS prevents other consumers from receiving and processing the message\. The default visibility timeout for a message is 30 seconds\. The minimum is 0 seconds\. The maximum is 12 hours\. For information about configuring visibility timeout for a queue using the console, see [Configuring queue parameters \(console\)](sqs-configure-queue-parameters.md)\.
 
 **Note**  
 For standard queues, the visibility timeout isn't a guarantee against receiving a message twice\. For more information, see [At\-least\-once delivery](standard-queues.md#standard-queues-at-least-once-delivery)\.  
@@ -44,10 +44,10 @@ The visibility timeout begins when Amazon SQS returns a message\. During this ti
 
 Every Amazon SQS queue has the default visibility timeout setting of 30 seconds\. You can change this setting for the entire queue\. Typically, you should set the visibility timeout to the maximum time that it takes your application to process and delete a message from the queue\. When receiving messages, you can also set a special visibility timeout for the returned messages without changing the overall queue timeout\. For more information, see the best practices in the [Processing messages in a timely manner](working-with-messages.md#processing-messages-timely-manner) section\.
 
-If you do not know how long it takes to process a message, create a *heartbeat* for your consumer process: Specify the initial visibility timeout \(for example, 2 minutes\) and then—as long as your consumer still works on the message—keep extending the visibility timeout by 2 minutes every minute\. 
+If you don't know how long it takes to process a message, create a *heartbeat* for your consumer process: Specify the initial visibility timeout \(for example, 2 minutes\) and then—as long as your consumer still works on the message—keep extending the visibility timeout by 2 minutes every minute\. 
 
 **Important**  
-The maximum visibility timeout is 12 hours from the time that Amazon SQS receives the message\. Extending the visibility timeout does not reset the 12\-hour maximum\. If your consumer needs longer than 12 hours, consider using [AWS Step Functions](https://aws.amazon.com/step-functions/)\. 
+The maximum visibility timeout is 12 hours from the time that Amazon SQS receives the message\. Extending the visibility timeout does not reset the 12\-hour maximum\. If your consumer needs longer than 12 hours, consider using Step Functions\. 
 
 ## Changing the visibility timeout for a message<a name="changing-message-visibility-timeout"></a>
 

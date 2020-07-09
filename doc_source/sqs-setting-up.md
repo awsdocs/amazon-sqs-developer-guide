@@ -1,5 +1,12 @@
 # Setting up Amazon SQS<a name="sqs-setting-up"></a>
 
+**Topics**
++ [Step 1: Create an AWS account](#sqs-creating-aws-account)
++ [Step 2: Create an IAM user](#sqs-creating-iam-user)
++ [Step 3: Get your access key ID and secret access key](#sqs-getting-access-key-id-secret-access-key)
++ [Step 4: Get ready to use the example code](#sqs-get-ready-to-use-example-code)
++ [Next steps](#sqs-next-steps-setting-up)
+
 Before you can use Amazon SQS for the first time, you must complete the following steps\.
 
 ## Step 1: Create an AWS account<a name="sqs-creating-aws-account"></a>
@@ -93,13 +100,13 @@ The only time that you can view or download the secret access key is when you cr
 
 ## Step 4: Get ready to use the example code<a name="sqs-get-ready-to-use-example-code"></a>
 
-This guide shows how to work with Amazon SQS using the AWS Management Console and using Java\. If you want to use the example code, you must install the [Java Standard Edition Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/) and make some configuration changes to the example code\.
+This guide includes examples that use the AWS SDK for Java\. To run the example code, follow the set\-up instructions in [Getting Started with AWS SDK for Java 2\.0](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/)\. 
 
-You can write code in other programming languages\. For more information, see the [documentation of the AWS SDKs](https://aws.amazon.com/tools/#sdk)\.
+You can develop AWS applications in other programming languages, such as Go, JavaScript, Python and Ruby\. For more information, see [Tools for developing and managing applications on AWS](https://aws.amazon.com/tools/#sdk)\.
 
 **Note**  
 You can explore Amazon SQS without writing code with tools such as the AWS Command Line Interface \(AWS CLI\) or Windows PowerShell\. You can find AWS CLI examples in the [Amazon SQS section](https://docs.aws.amazon.com/cli/latest/reference/sqs/index.html) of the *AWS CLI Command Reference*\. You can find Windows PowerShell examples in the Amazon Simple Queue Service section of the *[AWS Tools for PowerShell Cmdlet Reference](https://docs.aws.amazon.com/powershell/latest/reference/)*\.
 
 ## Next steps<a name="sqs-next-steps-setting-up"></a>
 
-Now that you're prepared for working with Amazon SQS, can [get started](sqs-getting-started.md) with managing Amazon SQS queues and messages using the AWS Management Console\. You can also try the more advanced Amazon SQS [tutorials](sqs-tutorials.md)\.
+You are now ready for [Getting started](sqs-getting-started.md) with managing Amazon SQS queues and messages using the AWS Management Console\. 

@@ -29,5 +29,5 @@ For code samples that use Maven, the Spring Framework, and the Amazon SQS Java M
 + **Amazon SQS Queue**
 
   Create a queue using the AWS Management Console for Amazon SQS, the `CreateQueue` API, or the wrapped Amazon SQS client included in the Amazon SQS Java Messaging Library\.
-  + For information about creating a queue with Amazon SQS using either the AWS Management Console or the `CreateQueue` API, see [Creating a Queue](sqs-create-queue.md)\.
+  + For information about creating a queue with Amazon SQS using either the AWS Management Console or the `CreateQueue` API, see [Creating a Queue](sqs-configure-create-queue.md)\.
   + For information about using the Amazon SQS Java Messaging Library, see [Getting started with the Amazon SQS Java Messaging Library](getting-started.md)\.

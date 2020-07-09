@@ -167,11 +167,11 @@ Now that your VPC includes an endpoint for Amazon SQS, you can connect to your E
    }
    ```
 
-For information about receiving and deleting the message from the queue created by your AWS CloudFormation template \(for example, **VPCE\-SQS\-Tutorial\-Stack\-CFQueue\-1ABCDEFGH2IJK**\), see [Tutorial: Receiving and deleting a message from an Amazon SQS queue](sqs-receive-delete-message.md)\.
+For information about receiving and deleting the message from the queue created by your AWS CloudFormation template \(for example, **VPCE\-SQS\-Tutorial\-Stack\-CFQueue\-1ABCDEFGH2IJK**\), see [Receiving and deleting messages \(console\)](sqs-using-receive-delete-message.md)\.
 
 For information about deleting your resources, see the following:
 + [Deleting a VPC Endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/delete-vpc-endpoint.html) in the *Amazon VPC User Guide*
-+ [Tutorial: Deleting an Amazon SQS queue](sqs-delete-queue.md)
++ [Deleting an Amazon SQS queue \(console\)](sqs-using-delete-queue.md)
 + [Terminate Your Instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html) in the *Amazon EC2 User Guide for Linux Instances*
 + [Deleting Your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#VPC_Deleting) in the *Amazon VPC User Guide*
 + [Deleting a Stack on the AWS CloudFormation Console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-delete-stack.html) in the *AWS CloudFormation User Guide*

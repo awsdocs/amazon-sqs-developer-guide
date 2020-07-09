@@ -1,6 +1,6 @@
 # Key management<a name="sqs-key-management"></a>
 
-Amazon SQS integrates with the AWS Key Management Service to manage [customer master keys](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys) \(CMKs\) for server\-side encryption \(SSE\)\. See [Encryption at Rest](sqs-server-side-encryption.md) for SSE information and key management definitions\. Amazon SQS uses CMKs to validate and secure the data keys that encrypt and decrypt the messages\. The following sections provide information about working with CMKs and data keys in the Amazon SQS service\.
+Amazon SQS integrates with the AWS Key Management Service to manage [customer master keys](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys) \(CMKs\) for server\-side encryption \(SSE\)\. See [Encryption at rest](sqs-server-side-encryption.md) for SSE information and key management definitions\. Amazon SQS uses CMKs to validate and secure the data keys that encrypt and decrypt the messages\. The following sections provide information about working with CMKs and data keys in the Amazon SQS service\.
 
 **Topics**
 + [Configuring AWS KMS permissions](#sqs-what-permissions-for-sse)
@@ -47,7 +47,7 @@ Several AWS services act as event sources that can send events to Amazon SQS que
    Replace "service" in the above example with the *Service name* of the event source\. Event sources include the following services\.    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-key-management.html)
 
-1. [Create a new SSE queue](sqs-create-queue-sse.md) or [configure an existing SSE queue](sqs-configure-sse-existing-queue.md) using the ARN of your CMK\.
+1.  [configure an existing SSE queue](sqs-configure-sse-existing-queue.md) using the ARN of your CMK\.
 
 1. Provide the ARN of the encrypted queue to the event source\.
 

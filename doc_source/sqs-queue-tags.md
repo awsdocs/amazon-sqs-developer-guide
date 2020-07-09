@@ -1,6 +1,6 @@
 # Amazon SQS cost allocation tags<a name="sqs-queue-tags"></a>
 
-To organize and identify your Amazon SQS queues for cost allocation, you can add metadata *tags* that identify a queue's purpose, owner, or environment\. —this is especially useful when you have many queues\. For information about managing Amazon SQS queue tags using the AWS Management Console or the AWS SDK for Java \(and the `[TagQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_TagQueue.html)`, `[UntagQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_UntagQueue.html)`, and `[ListQueueTags](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueueTags.html)` actions\), see the [Tutorial: Adding, updating, and removing cost allocation tags for an Amazon SQS queue](sqs-add-update-remove-tag-queue.md) tutorial\.
+To organize and identify your Amazon SQS queues for cost allocation, you can add metadata *tags* that identify a queue's purpose, owner, or environment\. —this is especially useful when you have many queues\. To configure tags using the the Amazon SQS console, see [Configuring cost allocation tags for an Amazon SQS queue \(console\)](sqs-configure-tag-queue.md)
 
 [![AWS Videos](http://img.youtube.com/vi/https://www.youtube.com/embed/cQhMtYX6HRI?rel=0&amp;controls=0&amp;showinfo=0/0.jpg)](http://www.youtube.com/watch?v=https://www.youtube.com/embed/cQhMtYX6HRI?rel=0&amp;controls=0&amp;showinfo=0)
 
@@ -24,5 +24,3 @@ Tags are case\-sensitive\.
 A new tag with a key identical to that of an existing tag overwrites the existing tag\.
 Tagging actions are limited to 5 TPS per AWS account\. If your application requires a higher throughput, [submit a request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\.
 For a full list of tag restrictions, see [Quotas related to queues](sqs-quotas.md#quotas-queues)\.
-
-You can't add tags to a new queue when you create it using the AWS Management Console \(you *can* add tags after the queue is created\)\. However, you can add, update, or remove queue tags at any time using the Amazon SQS actions\.

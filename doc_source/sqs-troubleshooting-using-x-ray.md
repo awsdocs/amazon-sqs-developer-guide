@@ -4,7 +4,7 @@ AWS X\-Ray collects data about requests that your application serves and lets yo
 
 To send AWS X\-Ray trace headers through Amazon SQS, you can do one of the following:
 + Use the `X-Amzn-Trace-Id` [tracing header](https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader)\.
-+ Use the `AWSTraceHeader` [message system attribute](sqs-message-system-attributes.md)\.
++ Use the `AWSTraceHeader` [message system attribute](sqs-message-metadata.md#sqs-message-system-attributes)\.
 
 To collect data on errors and latency, you must instrument the [https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/index.html?com/amazonaws/services/sqs/AmazonSQSClient.html](https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/index.html?com/amazonaws/services/sqs/AmazonSQSClient.html) client using the [AWS X\-Ray SDK](https://docs.aws.amazon.com/xray-sdk-for-java/latest/javadoc/index.html)\.
 

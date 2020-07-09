@@ -144,19 +144,4 @@ For a table of all Amazon Simple Queue Service actions and the resources that th
 
 When you grant permissions, you can use the Amazon SQS Access Policy Language to specify the conditions for when a policy should take effect\. For example, you might want a policy to be applied only after a specific date\. For more information about specifying conditions in a policy language, see [Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#Condition) in the *IAM User Guide*\.
 
-To express conditions, you use predefined condition keys\. There are no condition keys specific to Amazon SQS\. However, there are AWS\-wide condition keys that you can use with Amazon SQS\. Currently, Amazon SQS supports only a limited subset of the [condition keys available in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys):
-+ `aws:CurrentTime`
-+ `aws:EpochTime`
-+ `aws:SecureTransport`
-+ `aws:SourceArn`
-**Note**  
-This condition ensures that AWS services grant access only on behalf of resources that your AWS account owns\. You can't specify the ARN of an IAM role as source ARN, because an IAM role is neither a source nor a service\.
-+ `aws:SourceIP`
-+ `aws:UserAgent`
-+ `aws:MultiFactorAuthAge`
-+ `aws:MultiFactorAuthPresent`
-+ `aws:PrincipalOrgID`
-+ `aws:RequestTag`
-+ `aws:sourceVpce`
-+ `aws:TagKeys`
-+ `aws:TokenAge`
+To express conditions, you use predefined condition keys\. There are no condition keys specific to Amazon SQS\. However, there are AWS\-wide condition keys that you can use with Amazon SQS\. Currently, Amazon SQS supports only a limited subset of the condition keys available in IAM\. See [Amazon SQS API permissions: Actions and resource reference](sqs-api-permissions-reference.md)\. 

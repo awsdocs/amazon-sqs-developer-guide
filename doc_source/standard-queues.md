@@ -2,7 +2,7 @@
 
 Amazon SQS offers *standard* as the default queue type\. Standard queues support a nearly unlimited number of API calls per second, per API action \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\. Standard queues support at\-least\-once message delivery\. However, occasionally \(because of the highly distributed architecture that allows nearly unlimited throughput\), more than one copy of a message might be delivered out of order\. Standard queues provide best\-effort ordering which ensures that messages are generally delivered in the same order as they're sent\.
 
-For information about creating standard queues with or without server\-side encryption using the AWS Management Console, the AWS SDK for Java \(and the `[CreateQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)` action\), or AWS CloudFormation, see [Tutorial: Creating an Amazon SQS queue](sqs-create-queue.md) and [Tutorial: Creating an Amazon SQS queue with Server\-Side Encryption \(SSE\)](sqs-create-queue-sse.md)\.
+For information about how to create and configure standard queues using the Amazon SQS console, see [Creating an Amazon SQS queue \(console\)](sqs-configure-create-queue.md)\. For Java examples, see [Amazon SQS Java SDK examples](sqs-java-tutorials.md)\.
 
 You can use standard message queues in many scenarios, as long as your application can process messages that arrive more than once and out of order, for example:
 + **Decouple live user requests from intensive background work** – Let users upload media while resizing or encoding it\.
@@ -11,12 +11,7 @@ You can use standard message queues in many scenarios, as long as your applicati
 
 For quotas related to standard queues, see [Quotas related to queues](sqs-quotas.md#quotas-queues)\.
 
-For best practices of working with standard queues, see [Recommendations for Amazon SQS Standard and FIFO \(First\-In\-First\-Out\) queues ](sqs-standard-fifo-queue-best-practices.md)\.
-
-**Topics**
-+ [Message ordering](#standard-queues-message-order)
-+ [At\-least\-once delivery](#standard-queues-at-least-once-delivery)
-+ [Working Java example for Standard queues](standard-queues-getting-started-java.md)
+For best practices of working with standard queues, see [Recommendations for Amazon SQS Standard and FIFO \(First\-In\-First\-Out\) queues](sqs-best-practices.md#sqs-standard-fifo-queue-best-practices)\.
 
 ## Message ordering<a name="standard-queues-message-order"></a>
 
