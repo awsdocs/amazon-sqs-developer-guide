@@ -12,6 +12,8 @@ You can use the Amazon SQS console to create [standard queues](standard-queues.m
 
 1. The **Standard** queue type is selected by default\. To create a FIFO queue, choose **FIFO**\.
 
+   You can't change the queue type after you create a queue\. 
+
 1.  Enter a **Name** for your queue\. The name of a FIFO queue must end with the `.fifo` suffix\.
 
 1. To create a queue using all of the default settings, scroll to the end of the page and choose **Create queue**\. After you create the queue, you can [edit](sqs-configure-edit-queue.md) all of the queue configuration settings \(except the queue type\) \. 
@@ -46,4 +48,6 @@ You can use the Amazon SQS console to create [standard queues](standard-queues.m
 
 1. When you finish configuring the queue, choose **Create queue**\. Amazon SQS creates the queue and displays the queue's **Details** page\.
 
- Amazon SQS propagates information about the new queue across the system\. Because Amazon SQS is a distributed system, you might experience a slight delay before the queue is displayed on the **Queues** page\. 
+Amazon SQS propagates information about the new queue across the system\. Because Amazon SQS is a distributed system, you might experience a slight delay before the queue is displayed on the **Queues** page\. 
+
+After creating a queue, you can [send messages](sqs-using-send-messages.md) to it, and [receive and delete messages](sqs-using-receive-delete-message.md)\.

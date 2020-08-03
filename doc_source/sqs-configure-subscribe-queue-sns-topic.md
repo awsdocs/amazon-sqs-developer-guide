@@ -22,7 +22,7 @@ When you subscribe an Amazon SQS queue to an SNS topic, Amazon SNS uses HTTPS to
 
 1. Choose **Save**\. 
 
-1. To verify the result of the subscription, publish to the topic and then view the message that the topic sends to the queue\. For more information, see [Sending Amazon SNS Messages to Amazon SQS Queues](https://docs.aws.amazon.com/sns/latest/dg/SendMessageToSQS.html) in the *Amazon Simple Notification Service Developer Guide*\.
+1. To verify the result of the subscription, publish to the topic and then view the message that the topic sends to the queue\. For more information, see [Publishing a message to an Amazon SNS topic](https://docs.aws.amazon.com/sns/latest/dg/sns-tutorial-publish-message-to-topic.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
 **Note**  
 If your Amazon SQS queue and SNS topic are in different AWS accounts, the owner of the topic must first confirm the subscription\. For more information, see [Confirm the Subscription](https://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm) in the *Amazon Simple Notification Service Developer Guide*\.

@@ -11,7 +11,7 @@ You can use standard message queues in many scenarios, as long as your applicati
 
 For quotas related to standard queues, see [Quotas related to queues](sqs-quotas.md#quotas-queues)\.
 
-For best practices of working with standard queues, see [Recommendations for Amazon SQS Standard and FIFO \(First\-In\-First\-Out\) queues](sqs-best-practices.md#sqs-standard-fifo-queue-best-practices)\.
+For best practices of working with standard queues, see [Recommendations for Amazon SQS standard and FIFO queues](sqs-best-practices.md#sqs-standard-fifo-queue-best-practices)\.
 
 ## Message ordering<a name="standard-queues-message-order"></a>
 

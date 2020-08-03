@@ -2,7 +2,7 @@
 
 These best practices can help you make the most of Amazon SQS\.
 
-## Recommendations for Amazon SQS Standard and FIFO \(First\-In\-First\-Out\) queues<a name="sqs-standard-fifo-queue-best-practices"></a>
+## Recommendations for Amazon SQS standard and FIFO queues<a name="sqs-standard-fifo-queue-best-practices"></a>
 
 The following best practices can help you reduce costs and process messages efficiently using Amazon SQS\.
 

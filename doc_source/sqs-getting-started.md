@@ -26,6 +26,8 @@ The first and most common Amazon SQS task is creating queues\. This procedure sh
 
 1. The **Standard** queue type is selected by default\. Choose **FIFO**\.
 
+   You can't change the queue type after you create a queue\. 
+
 1.  Enter a **Name** for your queue\. The name of a FIFO queue must end with the `.fifo` suffix\.
 
 1. To create your queue with the default parameters, scroll to the bottom and choose **Create Queue**\. Amazon SQS creates the queue and displays the queue's **Details** page\. 
@@ -36,7 +38,7 @@ The first and most common Amazon SQS task is creating queues\. This procedure sh
 
 After you create your queue, you can send a message to it\.
 
-1. From the left navigation pane, choose **Queues**\. From the queue list, select the queue that you've created\.
+1. From the left navigation pane, choose **Queues**\. From the queue list, select the queue that you created\.
 
 1. From **Actions**, choose **Send and receive messages**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message.png)
