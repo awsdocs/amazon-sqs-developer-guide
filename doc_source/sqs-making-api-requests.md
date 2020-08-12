@@ -52,7 +52,7 @@ Because `GET` requests are URLs, you must URL\-encode all parameter values\. Bec
 
 ## Making a POST request<a name="structure-post-request"></a>
 
-An Amazon SQS `POST` requests send query parameters as a form in the body of an HTTP request\.
+An Amazon SQS `POST` request sends query parameters as a form in the body of an HTTP request\.
 
 The following is an example of a HTTP header with `Content-Type` set to `application/x-www-form-urlencoded`\. 
 
