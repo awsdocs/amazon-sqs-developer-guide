@@ -1,6 +1,6 @@
 # Amazon SQS tutorials<a name="sqs-other-tutorials"></a>
 
-Intro blurb for these tutorials
+This section provides tutorials that you can use to explore Amazon SQS features and functionality\.
 
 **Topics**
 + [Creating an Amazon SQS queue \(AWS CloudFormation\)](create-queue-cloudformation.md)
