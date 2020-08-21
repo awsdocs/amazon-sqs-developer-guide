@@ -171,7 +171,7 @@ For information about receiving and deleting the message from the queue created 
 
 For information about deleting your resources, see the following:
 + [Deleting a VPC Endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/delete-vpc-endpoint.html) in the *Amazon VPC User Guide*
-+ [Deleting an Amazon SQS queue \(console\)](sqs-using-delete-queue.md)
++ [Deleting an Amazon SQS queue](sqs-using-delete-queue.md)
 + [Terminate Your Instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html) in the *Amazon EC2 User Guide for Linux Instances*
 + [Deleting Your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#VPC_Deleting) in the *Amazon VPC User Guide*
 + [Deleting a Stack on the AWS CloudFormation Console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-delete-stack.html) in the *AWS CloudFormation User Guide*

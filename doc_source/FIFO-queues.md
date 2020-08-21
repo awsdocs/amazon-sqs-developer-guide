@@ -23,7 +23,7 @@ For information about how to create and configure standard queues using the Amaz
 
 For quotas related to FIFO queues, see [Quotas related to queues](sqs-quotas.md#quotas-queues)\.
 
-For best practices of working with FIFO queues, see [Additional recommendations for Amazon SQS FIFO queues](sqs-best-practices.md#sqs-additional-fifo-queue-recommendations) and [Recommendations for Amazon SQS standard and FIFO queues](sqs-best-practices.md#sqs-standard-fifo-queue-best-practices)\.
+For best practices of working with FIFO queues, see [Additional recommendations for Amazon SQS FIFO queues](sqs-additional-fifo-queue-recommendations.md) and [Recommendations for Amazon SQS standard and FIFO queues](sqs-standard-fifo-queue-best-practices.md)\.
 
 For information about compatibility of clients and services with FIFO queues, see [Compatibility](#FIFO-compatibility)\.
 

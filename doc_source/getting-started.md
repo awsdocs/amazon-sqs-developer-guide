@@ -1,6 +1,6 @@
 # Getting started with the Amazon SQS Java Messaging Library<a name="getting-started"></a>
 
-To get started using JMS with Amazon SQS, use the code examples in this section\. The following sections show how to create a JMS connection and a session, and how to send and receive a message\.
+To get started using the Java Message Service \(JMS\) with Amazon SQS, use the code examples in this section\. The following sections show how to create a JMS connection and a session, and how to send and receive a message\.
 
 The wrapped Amazon SQS client object included in the Amazon SQS Java Messaging Library checks if an Amazon SQS queue exists\. If the queue doesn't exist, the client creates it\.
 
