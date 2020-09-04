@@ -21,7 +21,7 @@ Amazon SQS FIFO queues are available in all Regions where Amazon SQS is availabl
 
 For information about how to create and configure standard queues using the Amazon SQS console, see [Creating an Amazon SQS queue \(console\)](sqs-configure-create-queue.md)\. For Java examples, see [Amazon SQS Java SDK examples](sqs-java-tutorials.md)\.
 
-For quotas related to FIFO queues, see [Quotas related to queues](sqs-quotas.md#quotas-queues)\.
+For quotas related to FIFO queues, see [Quotas related to queues](quotas-queues.md)\.
 
 For best practices of working with FIFO queues, see [Additional recommendations for Amazon SQS FIFO queues](sqs-additional-fifo-queue-recommendations.md) and [Recommendations for Amazon SQS standard and FIFO queues](sqs-standard-fifo-queue-best-practices.md)\.
 

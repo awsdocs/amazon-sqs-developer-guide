@@ -2,6 +2,18 @@
 
 Use the Amazon SQS console to configure and manage Amazon Simple Queue Service \(Amazon SQS\) queues and features\. You can also use the console to configure features such as server\-side encryption, associate a dead\-letter queue with your queue, or set a trigger to invoke an AWS Lambda function\. 
 
+**Topics**
++ [Understanding the Amazon SQS console](#sqs-configure-overview)
++ [Creating a queue](sqs-configure-create-queue.md)
++ [Editing a queue](sqs-configure-edit-queue.md)
++ [Configuring queue parameters](sqs-configure-queue-parameters.md)
++ [Configuring access policy](sqs-configure-add-permissions.md)
++ [Configuring SSE for a queue](sqs-configure-sse-existing-queue.md)
++ [Configuring a dead\-letter queue](sqs-configure-dead-letter-queue.md)
++ [Configuring tags for a queue](sqs-configure-tag-queue.md)
++ [Subscribing a queue to a topic](sqs-configure-subscribe-queue-sns-topic.md)
++ [Configuring a Lambda trigger](sqs-configure-lambda-function-trigger.md)
+
 ## Understanding the Amazon SQS console<a name="sqs-configure-overview"></a>
 
 When you open the console, choose **Queues** from the navigation pane to display the **Queues** page\. The **Queues** page provides information about all of your queues in the active region\. 

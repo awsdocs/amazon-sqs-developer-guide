@@ -23,4 +23,4 @@ Tags don't have any semantic meaning\. Amazon SQS interprets tags as character s
 Tags are case\-sensitive\.
 A new tag with a key identical to that of an existing tag overwrites the existing tag\.
 Tagging actions are limited to 5 TPS per AWS account\. If your application requires a higher throughput, [submit a request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\.
-For a full list of tag restrictions, see [Quotas related to queues](sqs-quotas.md#quotas-queues)\.
+For a full list of tag restrictions, see [Quotas related to queues](quotas-queues.md)\.

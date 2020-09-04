@@ -16,7 +16,7 @@ You can use the Amazon SQS console to create [standard queues](standard-queues.m
 
 1.  Enter a **Name** for your queue\. The name of a FIFO queue must end with the `.fifo` suffix\.
 
-1. To create a queue using all of the default settings, scroll to the end of the page and choose **Create queue**\. After you create the queue, you can [edit](sqs-configure-edit-queue.md) all of the queue configuration settings \(except the queue type\) \. 
+1. To create a queue using all of the default settings, scroll to the end of the page and choose **Create queue**\. After you create the queue, you can [edit](sqs-configure-edit-queue.md) all of the queue configuration settings \(except the queue type\)\. 
 
 1. \(Optional\) The console sets default values for the queue configuration parameters\. You can set new values for the following parameters\. For additional information, see [Configuration parameters](sqs-configure-queue-parameters.md)\. 
 

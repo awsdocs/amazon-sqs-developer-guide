@@ -3,7 +3,7 @@
 If you no longer use an Amazon SQS queue and don't foresee using it in the near future, we recommend deleting it\. 
 
 **Tip**  
-Ifyou want to verify that a queue is empty before you delete it, see [Confirming that a queue is empty](confirm-queue-is-empty.md)\.
+If you want to verify that a queue is empty before you delete it, see [Confirming that a queue is empty](confirm-queue-is-empty.md)\.
 
 You can delete a queue even when it isn't empty\. To delete the messages in a queue but not the queue itself, [purge the queue](sqs-using-purge-queue.md)\.
 

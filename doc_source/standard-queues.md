@@ -9,7 +9,7 @@ You can use standard message queues in many scenarios, as long as your applicati
 + **Allocate tasks to multiple worker nodes** – Process a high number of credit card validation requests\.
 + **Batch messages for future processing** – Schedule multiple entries to be added to a database\.
 
-For quotas related to standard queues, see [Quotas related to queues](sqs-quotas.md#quotas-queues)\.
+For quotas related to standard queues, see [Quotas related to queues](quotas-queues.md)\.
 
 For best practices of working with standard queues, see [Recommendations for Amazon SQS standard and FIFO queues](sqs-standard-fifo-queue-best-practices.md)\.
 

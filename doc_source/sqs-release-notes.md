@@ -1,4 +1,4 @@
-# Amazon SQS releases<a name="sqs-release-notes"></a>
+# Documentation history<a name="sqs-release-notes"></a>
 
 The following table describes the important changes to the *Amazon SQS Developer Guide* since Jan 2019\. For notification about updates to this documentation, subscribe to the [RSS feed](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/recent-updates.rss)\.
 
