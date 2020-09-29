@@ -80,7 +80,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Automating notifications from AWS services to Amazon SQS using CloudWatch Events](sqs-automating-using-cloudwatch-events.md)
    + [Troubleshooting Amazon Simple Queue Service queues using AWS X-Ray](sqs-troubleshooting-using-x-ray.md)
 + [Security in Amazon SQS](sqs-security.md)
-   + [Data protection in Amazon SQS](sqs-data-protection.md)
+   + [Data protection](sqs-data-protection.md)
       + [Data encryption](sqs-data-encryption.md)
          + [Encryption at rest](sqs-server-side-encryption.md)
          + [Key management](sqs-key-management.md)

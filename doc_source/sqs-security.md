@@ -3,7 +3,7 @@
 This section provides information about Amazon SQS security, authentication and access control, and the Amazon SQS Access Policy Language\.
 
 **Topics**
-+ [Data protection in Amazon SQS](sqs-data-protection.md)
++ [Data protection](sqs-data-protection.md)
 + [Identity and access management in Amazon SQS](sqs-authentication-and-access-control.md)
 + [Logging and monitoring in Amazon SQS](sqs-logging-monitoring.md)
 + [Compliance validation for Amazon SQS](sqs-compliance-validation.md)
