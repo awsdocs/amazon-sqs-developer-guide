@@ -121,7 +121,7 @@ public class LoginServer {
     private final AmazonSQSResponder sqsResponder = 
             AmazonSQSResponderClientBuilder.defaultClient();
 
-    private final AmazonSQS(String requestQueueUrl) {
+    private final LoginServer(String requestQueueUrl) {
         this.requestQueueUrl = requestQueueUrl;
     }
 
