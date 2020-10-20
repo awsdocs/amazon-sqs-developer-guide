@@ -33,7 +33,7 @@ Save this file in a safe place\. EC2 does not generate a `.pem` file for the sam
 1. To allow an SSH client to connect to your EC2 instance, set the permissions for your private key file so that only your user can have read permissions for it, for example:
 
    ```
-   chmod 400 SQS-VPCE-Tutorial-KeyPair.pem
+   chmod 400 SQS-VPCE-Tutorial-Key-Pair.pem
    ```
 
 ## Step 2: Create AWS resources<a name="create-aws-resources"></a>

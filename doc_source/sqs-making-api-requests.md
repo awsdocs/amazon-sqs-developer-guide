@@ -11,7 +11,9 @@ In this section you learn how to construct an Amazon SQS endpoint, make `GET` an
 
 ## Constructing an endpoint<a name="sqs-api-constructing-endpoints"></a>
 
-In order to work with Amazon SQS queues, you must construct an endpoint\. For information about [region\-specific Amazon SQS endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region), see the *Amazon Web Services General Reference*\.
+In order to work with Amazon SQS queues, you must construct an endpoint\. For information about Amazon SQS endpoints, see the following pages in the *Amazon Web Services General Reference*:
++ [Regional endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region)
++ [Amazon Simple Queue Service endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/sqs-service)
 
 Every Amazon SQS endpoint is independent\. For example, if two queues are named `MyQueue` and one has the endpoint `sqs.us-east-2.amazonaws.com` while the other has the endpoint `sqs.eu-west-2.amazonaws.com`, the two queues don't share any data with each other\.
 
