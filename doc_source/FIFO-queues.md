@@ -14,7 +14,6 @@ FIFO queues also provide exactly\-once processing but have a limited number of t
 + Without batching, FIFO queues support up to 300 API calls per second, per API method \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\. 
 
 **Note**  
-Amazon SNS isn't currently compatible with FIFO queues\.
 The name of a FIFO queue must end with the `.fifo` suffix\. The suffix counts towards the 80\-character queue name quota\. To determine whether a queue is [FIFO](#FIFO-queues), you can check whether the queue name ends with the suffix\.
 
 Amazon SQS FIFO queues are available in all Regions where Amazon SQS is available, except in the Asia Pacific \(Osaka\-Local\) Region\.
