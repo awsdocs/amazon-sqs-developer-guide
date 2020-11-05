@@ -18,7 +18,7 @@ The name of a FIFO queue must end with the `.fifo` suffix\. The suffix counts to
 
 Amazon SQS FIFO queues are available in all Regions where Amazon SQS is available, except in the Asia Pacific \(Osaka\-Local\) Region\.
 
-For information about how to create and configure standard queues using the Amazon SQS console, see [Creating an Amazon SQS queue \(console\)](sqs-configure-create-queue.md)\. For Java examples, see [Amazon SQS Java SDK examples](sqs-java-tutorials.md)\.
+For information about how to create and configure queues using the Amazon SQS console, see [Creating an Amazon SQS queue \(console\)](sqs-configure-create-queue.md)\. For Java examples, see [Amazon SQS Java SDK examples](sqs-java-tutorials.md)\.
 
 For quotas related to FIFO queues, see [Quotas related to queues](quotas-queues.md)\.
 
