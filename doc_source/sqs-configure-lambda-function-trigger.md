@@ -35,14 +35,14 @@ For more information, see [Overview of managing access in Amazon SQS](sqs-overvi
 
 1. On the **Queues** page, choose the queue to configure\. 
 
-1. From **Actions**, choose **Configure Lambda function trigger**\.
+1. On the queue's page, choose the **Lambda triggers** tab\.
 
-1. On the **Configure Lambda function** page, choose a Lambda function\.
+1. On the **Lambda triggers** page, choose a Lambda trigger\.
 
-   If the list doesn't include the Lambda function that you need, choose **Enter Lambda function ARN** and enter the Amazon Resource Name \(ARN\) of the Lambda function\.
+   If the list doesn't include the Lambda trigger that you need, choose **Configure Lambda function trigger**\. Enter the Amazon Resource Name \(ARN\) of the Lambda function or choose an existing resource\. Then choose **Save**\.
 
 1. Choose **Save**\. The console saves the configuration and displays the **Details** page for the queue\.
 
-   On the **Details** page, the **Lambda Triggers** tab displays the Lambda function and its status\. It takes approximately 1 minute for the Lambda function to become associated with your queue\.
+   On the **Details** page, the **Lambda triggers** tab displays the Lambda function and its status\. It takes approximately 1 minute for the Lambda function to become associated with your queue\.
 
 1. To verify the results of the configuration, [send a message to your queue](sqs-using-send-messages.md) and then view the triggered Lambda function in the Lambda console\.
