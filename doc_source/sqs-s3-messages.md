@@ -16,7 +16,7 @@ The [SDK for Java](https://aws.amazon.com/sdkforjava/) and Amazon SQS Extended C
 
  The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
 
-Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html) in the *AWS SDK for Java Developer Guide*\. 
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup.html#setup-credentials) in the *AWS SDK for Java Developer Guide*\. 
 
 ## Example: Using Amazon S3 to manage large Amazon SQS messages<a name="working-java-example-using-s3-for-large-sqs-messages-example"></a>
 

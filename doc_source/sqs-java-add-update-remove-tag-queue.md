@@ -2,7 +2,7 @@
 
 Use cost\-allocation tags to help organize and identify your Amazon SQS queues\. The following examples show how to configure tags using the AWS SDK for Java\. For more information, see [Amazon SQS cost allocation tags](sqs-queue-tags.md)\.
 
- Before you run the example code, make sure that you have set your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/setup-credentials.html) in the *AWS SDK for Java 2\.x Developer Guide*\. 
+ Before you run the example code, make sure that you have set your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/setup.html#setup-credentials) in the *AWS SDK for Java 2\.x Developer Guide*\. 
 
 ## Listing tags<a name="sqs-java-list-tags"></a>
 

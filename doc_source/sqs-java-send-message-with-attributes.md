@@ -2,7 +2,7 @@
 
 You can include structured metadata \(such as timestamps, geospatial data, signatures, and identifiers\) with messages using *message attributes*\. For more information, see [Amazon SQS message attributes](sqs-message-metadata.md#sqs-message-attributes)\.
 
- Before you run the example code, make sure that you have set your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/setup-credentials.html) in the *AWS SDK for Java 2\.x Developer Guide*\. 
+ Before you run the example code, make sure that you have set your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/setup.html#setup-credentials) in the *AWS SDK for Java 2\.x Developer Guide*\. 
 
 ## Defining attributes<a name="sqs-java-define-attributes"></a>
 

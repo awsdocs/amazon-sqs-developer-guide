@@ -8,7 +8,7 @@ To enable server\-side encryption for an existing queue, use the `[SetQueueAttri
 
 The following code example sets the master key as the AWS managed CMK for Amazon SQS\. The example also sets the [master key reuse period](sqs-server-side-encryption.md#sqs-sse-key-terms) to 140 seconds\.
 
- Before you run the example code, make sure that you have set your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/setup-credentials.html) in the *AWS SDK for Java 2\.x Developer Guide*\. 
+ Before you run the example code, make sure that you have set your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/setup.html#setup-credentials) in the *AWS SDK for Java 2\.x Developer Guide*\. 
 
 ```
 // Create an SqsClient for the specified Region.
@@ -48,7 +48,7 @@ To enable SSE when you create the queue, add the `KmsMasterKeyId` attribute to t
 
 The following example creates a new queue with SSE enabled\. The queue uses the AWS managed CMK for Amazon SQS\. The example also sets the [master key reuse period](sqs-server-side-encryption.md#sqs-sse-key-terms) to 160 seconds\.
 
- Before you run the example code, make sure that you have set your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/setup-credentials.html) in the *AWS SDK for Java 2\.x Developer Guide*\. 
+ Before you run the example code, make sure that you have set your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/setup.html#setup-credentials) in the *AWS SDK for Java 2\.x Developer Guide*\. 
 
 ```
 // Create an SqsClient for the specified Region.

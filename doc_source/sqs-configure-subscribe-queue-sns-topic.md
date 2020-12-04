@@ -2,7 +2,7 @@
 
 You can subscribe one or more Amazon SQS queues to an Amazon Simple Notification Service \(Amazon SNS\) topic\. When you publish a message to a topic, Amazon SNS sends the message to each of the subscribed queues\. Amazon SQS manages the subscription and any necessary permissions\. For more information about Amazon SNS, see [What is Amazon Simple Notification Service?](https://docs.aws.amazon.com/sns/latest/dg/welcome.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
-When you subscribe an Amazon SQS queue to an SNS topic, Amazon SNS uses HTTPS to forward messages to Amazon SQS For information about using Amazon SNS with encrypted Amazon SQS queues, see [Configure KMS permissions for AWS services](sqs-key-management.md#compatibility-with-aws-services)\.
+When you subscribe an Amazon SQS queue to an SNS topic, Amazon SNS uses HTTPS to forward messages to Amazon SQS\. For information about using Amazon SNS with encrypted Amazon SQS queues, see [Configure KMS permissions for AWS services](sqs-key-management.md#compatibility-with-aws-services)\.
 
 **To subscribe a queue to an SNS topic \(console\)**
 
