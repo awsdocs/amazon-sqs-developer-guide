@@ -6,6 +6,8 @@ With *short polling*, the [https://docs.aws.amazon.com/AWSSimpleQueueService/lat
 
 With *long polling*, the [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html) request queries all of the servers for messages\. Amazon SQS sends a response after it collects at least one available message, up to the maximum number of messages specified in the request\. Amazon SQS sends an empty response only if the polling wait time expires\. 
 
+
+
 The following sections explain the details of short polling and long polling\.
 
 **Topics**

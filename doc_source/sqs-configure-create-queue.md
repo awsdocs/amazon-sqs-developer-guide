@@ -1,6 +1,13 @@
 # Creating an Amazon SQS queue \(console\)<a name="sqs-configure-create-queue"></a>
 
-You can use the Amazon SQS console to create [standard queues](standard-queues.md) and [FIFO queues](FIFO-queues.md)\. The console provides default values for all fields except for the queue name\. 
+
+****  
+
+|  | 
+| --- |
+| High throughput for Amazon SQS FIFO queues is in preview release and is subject to change\. For more information, see [Preview: High throughput for FIFO queues](high-throughput-fifo.md)\. | 
+
+You can use the Amazon SQS console to create [standard queues](standard-queues.md) and [FIFO queues](FIFO-queues.md)\. The console provides default values for all settings except for the queue name\.
 
 **To create an Amazon SQS queue \(console\)**
 
@@ -8,46 +15,42 @@ You can use the Amazon SQS console to create [standard queues](standard-queues.m
 
 1. Choose **Create queue**\.
 
-1. On the **Create queue** page, ensure that you set the correct region\.
-
-1. The **Standard** queue type is selected by default\. To create a FIFO queue, choose **FIFO**\.
-
-   You can't change the queue type after you create a queue\. 
+1. For **Type**, the **Standard** queue type is set by default\. To create a FIFO queue, choose **FIFO**\.
+**Note**  
+You can't change the queue type after you create the queue\.
 
 1.  Enter a **Name** for your queue\. The name of a FIFO queue must end with the `.fifo` suffix\.
 
-1. To create a queue using all of the default settings, scroll to the end of the page and choose **Create queue**\. After you create the queue, you can [edit](sqs-configure-edit-queue.md) all of the queue configuration settings \(except the queue type\)\. 
+1. \(Optional\) The console sets default values for the queue [configuration parameters](sqs-configure-queue-parameters.md)\. Under **Configuration**, you can set new values for the following parameters:
 
-1. \(Optional\) The console sets default values for the queue configuration parameters\. You can set new values for the following parameters\. For additional information, see [Configuration parameters](sqs-configure-queue-parameters.md)\. 
+   1. For **Visibility timeout **, enter the duration and units\. The range is from 0 seconds to 12 hours\. The default value is 30 seconds\.
 
-   1. For **Visibility timeout **, enter the duration and units\. The range is 0 seconds to 12 hours\. The default value is 30 seconds\.
+   1. For **Message retention period**, enter the duration and units\. The range is from 1 minute to 14 days\. The default value is 4 days\.
 
-   1. For **Message retention period**, enter the duration and units\. The range is 1 minute to 14 days\. The default value is 4 days\.
+   1. For **Delivery delay**, enter the duration and units\. The range is from 0 seconds to 15 minutes\. The default value is 0 seconds\.
 
-   1. For **Delivery delay**, enter the duration and units\. The range is 0 seconds to 15 minutes\. The default value is 0 seconds\.
+   1. For **Maximum message size**, enter a value\. The range is from 1 KB to 256 KB\. The default value is 256 KB\. 
 
-   1. For **Maximum message size**, enter a value\. The range is 1 byte to 256 KB\. The default value is 256 KB\. 
+   1. For **Receive message wait time**, enter a value\. The range is from 0 to 20 seconds\. The default value is 0 seconds, which sets [short polling](sqs-short-and-long-polling.md)\. Any non\-zero value sets long polling\.
 
-   1. For a standard queue, enter a value for **Receive message wait time**\. The range is 0 to 20 seconds\. The default value is 0 seconds, which sets [short polling](sqs-short-and-long-polling.md)\. Any non\-zero value sets long polling\.
+   1. For a FIFO queue, choose **Enable content\-based deduplication** to enable content\-based deduplication\. The default setting is disabled\. 
 
-   1. For a FIFO queue, choose **Content\-based deduplication** to enable content\-based deduplication\. The default setting is disabled\. 
+   1. \(Optional\) For a FIFO queue, to enable higher throughput for sending and receiving messages in the queue, choose **Enable high throughput FIFO**\. This option is currently in preview release\. Choosing this option changes the related preview options \(**Deduplication scope** and **FIFO throughput limit**\) to the required settings for enabling high throughput\. For more information, see [Preview: High throughput for FIFO queues](high-throughput-fifo.md) and [Quotas related to messages](quotas-messages.md)\.
 
-1. \(Optional\) Define an [Access policy](sqs-creating-custom-policies-access-policy-examples.md)\. The access policy defines the accounts, users, and roles that can access the queue\. The access policy also defines the actions \(such as `SendMessage`, `ReceiveMessage`, or `DeleteMessage`\) that the users can access\. The default policy allows only the queue owner to send and receive messages\. 
+1. \(Optional\) Define an **Access policy**\. The [access policy](sqs-creating-custom-policies-access-policy-examples.md) defines the accounts, users, and roles that can access the queue\. The access policy also defines the actions \(such as `SendMessage`, `ReceiveMessage`, or `DeleteMessage`\) that the users can access\. The default policy allows only the queue owner to send and receive messages\.
 
-   You can configure basic and advanced settings for the policy\. 
+   To define the access policy, do one of the following:
+   + Choose **Basic** to configure who can send messages to the queue and who can receive messages from the queue\. The console creates the policy based on your choices and displays the resulting access policy in the read\-only JSON panel\.
+   + Choose **Advanced** to modify the JSON access policy directly\. This allows you to specify a custom set of actions that each principal \(account, user, or role\) can perform\.
 
-   1. In the basic settings, you configure who can send messages to the queue, and who can receive messages from the queue\. The read\-only JSON panel displays the resulting access policy for the queue\. 
+1. \(Optional\) To configure [encryption](sqs-configure-sse-existing-queue.md) for the queue, expand **Encryption**\.
 
-   1. In the advanced settings, you modify the JSON access policy directly\. This allows you to specify a custom set of actions that each principal \(account, user, or role\) can perform\. 
+1. \(Optional\) To configure a [dead\-letter queue](sqs-configure-dead-letter-queue.md) to receive undeliverable messages, expand **Dead\-letter queue**\.
 
-1. \(Optional\) Add [Encryption](sqs-configure-sse-existing-queue.md) to the queue\.
+1. \(Optional\) To add [tags](sqs-configure-tag-queue.md) to the queue, expand **Tags**\.
 
-1. \(Optional\) Add a [Dead\-letter queue](sqs-configure-dead-letter-queue.md) to receive undeliverable messages\.
+1. Choose **Create queue**\. Amazon SQS creates the queue and displays the queue's **Details** page\.
 
-1. \(Optional\) Add [Tags](sqs-configure-tag-queue.md) to the queue\.
+Amazon SQS propagates information about the new queue across the system\. Because Amazon SQS is a distributed system, you might experience a slight delay before the console displays the queue on the **Queues** page\.
 
-1. When you finish configuring the queue, choose **Create queue**\. Amazon SQS creates the queue and displays the queue's **Details** page\.
-
-Amazon SQS propagates information about the new queue across the system\. Because Amazon SQS is a distributed system, you might experience a slight delay before the queue is displayed on the **Queues** page\. 
-
-After creating a queue, you can [send messages](sqs-using-send-messages.md) to it, and [receive and delete messages](sqs-using-receive-delete-message.md)\.
+After creating a queue, you can [send messages](sqs-using-send-messages.md) to it, and [receive and delete messages](sqs-using-receive-delete-message.md)\. You can also [edit](sqs-configure-edit-queue.md) any of the queue configuration settings except the queue type\.

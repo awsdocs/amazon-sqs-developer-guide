@@ -1,5 +1,12 @@
 # Amazon SQS FIFO \(First\-In\-First\-Out\) queues<a name="FIFO-queues"></a>
 
+
+****  
+
+|  | 
+| --- |
+| High throughput for Amazon SQS FIFO queues is in preview release and is subject to change\. For more information, see [Preview: High throughput for FIFO queues](high-throughput-fifo.md)\. | 
+
 FIFO queues have all the capabilities of the [standard queue](standard-queues.md)\.
 
 [![AWS Videos](http://img.youtube.com/vi/https://www.youtube.com/embed/XrX7rb6M3jw?rel=0&amp;controls=0&amp;showinfo=0/0.jpg)](http://www.youtube.com/watch?v=https://www.youtube.com/embed/XrX7rb6M3jw?rel=0&amp;controls=0&amp;showinfo=0)

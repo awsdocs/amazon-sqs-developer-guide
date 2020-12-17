@@ -2,6 +2,8 @@
 
 To protect the data in a queue's messages, you can enable server\-side encryption \(SSE\) for a queue\. Amazon SQS integrates with the AWS Key Management Service \(AWS KMS\) to manage [customer master keys](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys) \(CMKs\) for server\-side encryption \(SSE\)\. For information about using SSE, see [Encryption at rest](sqs-server-side-encryption.md)\.
 
+
+
 The CMK that you assign to your queue must have a key policy that includes permissions for all principals that are authorized to use the queue\. For information, see [Key Management](sqs-key-management.md)\.
 
 If you aren't the owner of the CMK, or if you log in with an account that doesn't have `kms:ListAliases` and `kms:DescribeKey` permissions, you won't be able to view information about the CMK on the Amazon SQS console\. Ask the owner of the CMK to grant you these permissions\. For more information, see [Key Management](sqs-key-management.md)\.

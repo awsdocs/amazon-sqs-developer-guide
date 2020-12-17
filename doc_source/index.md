@@ -18,6 +18,7 @@ Amazon's trademarks and trade dress may not be used in
 + [Setting up Amazon SQS](sqs-setting-up.md)
 + [Getting started with Amazon SQS](sqs-getting-started.md)
 + [Configuring Amazon SQS queues (console)](sqs-configuring.md)
+   + [Preview: High throughput for FIFO queues](high-throughput-fifo.md)
    + [Creating an Amazon SQS queue (console)](sqs-configure-create-queue.md)
    + [Editing an Amazon SQS queue (console)](sqs-configure-edit-queue.md)
    + [Configuring queue parameters (console)](sqs-configure-queue-parameters.md)
