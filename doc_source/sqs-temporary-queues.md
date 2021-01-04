@@ -121,7 +121,7 @@ public class LoginServer {
     private final AmazonSQSResponder sqsResponder = 
             AmazonSQSResponderClientBuilder.defaultClient();
 
-    private final AmazonSQS(String requestQueueUrl) {
+    private final LoginServer(String requestQueueUrl) {
         this.requestQueueUrl = requestQueueUrl;
     }
 
@@ -148,4 +148,4 @@ The Temporary Queue Client also provides a way to eliminate orphaned host queues
 **Note**  
 Any API action taken on a queue marks it as non\-idle, including a `ReceiveMessage` action that returns no messages\.
 
-The background thread uses the `ListQueues` and `ListTags` API actions to check all queues with the configured prefix, deleting any queues that haven't been tagged for at least five minutes\. In this way, if one client doesn't shut down cleanly, the other active clients clean up after it\. In order to reduce the duplication of work, all clients with the same prefix communicate through an shared, internal work queue named after the prefix\.
+The background thread uses the `ListQueues` and `ListTags` API actions to check all queues with the configured prefix, deleting any queues that haven't been tagged for at least five minutes\. In this way, if one client doesn't shut down cleanly, the other active clients clean up after it\. In order to reduce the duplication of work, all clients with the same prefix communicate through a shared, internal work queue named after the prefix\.
