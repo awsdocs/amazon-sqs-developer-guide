@@ -19,7 +19,7 @@ To ensure that there is sufficient time to process messages, use one of the foll
 + If you know \(or can reasonably estimate\) how long it takes to process a message, extend the message's *visibility timeout* to the maximum time it takes to process and delete the message\. For more information, see [Configuring the Visibility Timeout](sqs-visibility-timeout.md#configuring-visibility-timeout)\.
 + If you don't know how long it takes to process a message, create a *heartbeat* for your consumer process: Specify the initial visibility timeout \(for example, 2 minutes\) and then—as long as your consumer still works on the message—keep extending the visibility timeout by 2 minutes every minute\. 
 **Important**  
-The maximum visibility timeout is 12 hours from the time that Amazon SQS receives the ReceiveMessage request\. Extending the visibility timeout does not reset the 12\-hour maximum\. If your consumer needs longer than 12 hours, consider using Step Functions\. 
+The maximum visibility timeout is 12 hours from the time that Amazon SQS receives the `ReceiveMessage` request\. Extending the visibility timeout does not reset the 12\-hour maximum\. If your consumer needs longer than 12 hours, consider using Step Functions\. 
 
 ## Handling request errors<a name="handling-request-errors"></a>
 

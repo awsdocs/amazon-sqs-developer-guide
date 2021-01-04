@@ -47,7 +47,7 @@ Every Amazon SQS queue has the default visibility timeout setting of 30 seconds\
 If you don't know how long it takes to process a message, create a *heartbeat* for your consumer process: Specify the initial visibility timeout \(for example, 2 minutes\) and then—as long as your consumer still works on the message—keep extending the visibility timeout by 2 minutes every minute\. 
 
 **Important**  
-The maximum visibility timeout is 12 hours from the time that Amazon SQS receives the ReceiveMessage request\. Extending the visibility timeout does not reset the 12\-hour maximum\. If your consumer needs longer than 12 hours, consider using Step Functions\. 
+The maximum visibility timeout is 12 hours from the time that Amazon SQS receives the `ReceiveMessage` request\. Extending the visibility timeout does not reset the 12\-hour maximum\. If your consumer needs longer than 12 hours, consider using Step Functions\. 
 
 ## Changing the visibility timeout for a message<a name="changing-message-visibility-timeout"></a>
 
