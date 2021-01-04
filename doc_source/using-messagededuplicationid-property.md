@@ -9,7 +9,6 @@ Amazon SQS continues to keep track of the message deduplication ID even after th
 ## Providing the message deduplication ID<a name="providing-message-deduplication-id"></a>
 
 The producer should provide message deduplication ID values for each message in the following scenarios:
-
 + Messages sent with identical message bodies that Amazon SQS must treat as unique\.
 + Messages sent with identical content but different message attributes that Amazon SQS must treat as unique\.
 + Messages sent with different content \(for example, retry counts included in the message body\) that Amazon SQS must treat as duplicates\.
