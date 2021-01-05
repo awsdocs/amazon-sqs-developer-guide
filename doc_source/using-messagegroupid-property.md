@@ -27,4 +27,4 @@ To move away messages that can't be processed repeatedly, and to unblock the pro
 
 ## Avoid reusing the same message group ID with virtual queues<a name="avoiding-reusing-message-group-id-with-virtual-queues"></a>
 
-To prevent messages with the the same message group ID sent to different [virtual queues](sqs-temporary-queues.md#virtual-queues) with the same host queue from blocking each other, avoid reusing the same message group ID with virtual queues\.
+To prevent messages with the same message group ID sent to different [virtual queues](sqs-temporary-queues.md#virtual-queues) with the same host queue from blocking each other, avoid reusing the same message group ID with virtual queues\.

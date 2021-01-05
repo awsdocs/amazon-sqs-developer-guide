@@ -141,7 +141,7 @@ public class LoginServer {
 
 ## Cleaning up queues<a name="cleaning-up-queues"></a>
 
-To ensure that Amazon SQS reclaims any in\-memory resources used by virtual queues, when your application no longer needs the Temporary Queue Client, it should call the `shutdown()` method\. You can also use the `shutdown()` method of the `AmazonSQSRequester` interface\.
+To make sure that Amazon SQS reclaims any in\-memory resources used by virtual queues, when your application no longer needs the Temporary Queue Client, it should call the `shutdown()` method\. You can also use the `shutdown()` method of the `AmazonSQSRequester` interface\.
 
 The Temporary Queue Client also provides a way to eliminate orphaned host queues\. For each queue that receives an API call over a period of time \(by default, five minutes\), the client uses the `TagQueue` API action to tag a queue that remains in use\. 
 

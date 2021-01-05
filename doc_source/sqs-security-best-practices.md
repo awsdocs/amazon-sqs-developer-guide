@@ -10,16 +10,16 @@ The specific implementation guidance provided is for common use cases and implem
 The following are preventative security best practices for Amazon SQS\.
 
 **Topics**
-+ [Ensure queues aren't publicly accessible](#ensure-queues-not-publicly-accessible)
++ [Make sure that queues aren't publicly accessible](#ensure-queues-not-publicly-accessible)
 + [Implement least\-privilege access](#implement-least-privilege-access)
 + [Use IAM roles for applications and AWS services which require Amazon SQS access](#use-iam-roles-for-applications-aws-services-which-require-access)
 + [Implement server\-side encryption](#implement-server-side-encryption)
 + [Enforce encryption of data in transit](#enforce-encryption-data-in-transit)
 + [Consider using VPC endpoints to access Amazon SQS](#consider-using-vpc-endpoints-access-sqs)
 
-### Ensure queues aren't publicly accessible<a name="ensure-queues-not-publicly-accessible"></a>
+### Make sure that queues aren't publicly accessible<a name="ensure-queues-not-publicly-accessible"></a>
 
-Unless you explicitly require anyone on the internet to be able to read or write to your Amazon SQS queue, you should ensure that your queue isn't publicly accessible \(accessible by everyone in the world or by any authenticated AWS user\)\.
+Unless you explicitly require anyone on the internet to be able to read or write to your Amazon SQS queue, you should make sure that your queue isn't publicly accessible \(accessible by everyone in the world or by any authenticated AWS user\)\.
 + Avoid creating policies with `Principal` set to `""`\.
 + Avoid using a wildcard \(`*`\)\. Instead, name a specific user or users\.
 

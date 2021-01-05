@@ -39,19 +39,19 @@ The main task of a dead\-letter queue is handling message failure\. A dead\-lett
 
 ### Standard queues<a name="dead-letter-queues-standard-queues"></a>
 
-[Standard queues](standard-queues.md) keep processing messages until the expiration of the retention period\. This ensures continuous processing of messages, which minimizes the chances of your queue being blocked by messages that can’t be processed\. It also ensures fast recovery for your queue\.
+[Standard queues](standard-queues.md) keep processing messages until the expiration of the retention period\. This continuous processing of messages minimizes the chances of having your queue blocked by messages that can’t be processed\. Continuous message processing also provides faster recovery for your queue\.
 
 In a system that processes thousands of messages, having a large number of messages that the consumer repeatedly fails to acknowledge and delete might increase costs and place extra load on the hardware\. Instead of trying to process failing messages until they expire, it is better to move them to a dead\-letter queue after a few processing attempts\.
 
 **Note**  
-Standard queues allow a high number of inflight messages\. If the majority of your messages can’t be consumed and aren’t sent to a dead\-letter queue, your rate of processing valid messages can slow down\. Thus, to maintain the efficiency of your queue, you must ensure that your application handles message processing correctly\.
+Standard queues allow a high number of inflight messages\. If the majority of your messages can’t be consumed and aren’t sent to a dead\-letter queue, your rate of processing valid messages can slow down\. Thus, to maintain the efficiency of your queue, make sure that your application correctly handles message processing\.
 
 ### FIFO queues<a name="dead-letter-queues-FIFO-queues"></a>
 
-[FIFO queues](FIFO-queues.md) ensure exactly\-once processing by consuming messages in sequence from a message group\. Thus, although the consumer can continue to retrieve ordered messages from another message group, the first message group remains unavailable until the message blocking the queue is processed successfully\.
+[FIFO queues](FIFO-queues.md) provide exactly\-once processing by consuming messages in sequence from a message group\. Thus, although the consumer can continue to retrieve ordered messages from another message group, the first message group remains unavailable until the message blocking the queue is processed successfully\.
 
 **Note**  
-FIFO queues allow a lower number of inflight messages\. Thus, to ensure that your FIFO queue doesn’t get blocked by a message, you must ensure that your application handles message processing correctly\.
+FIFO queues allow a lower number of inflight messages\. Thus, to keep your FIFO queue from getting blocked by a message, make sure that your application correctly handles message processing\.
 
 ## When should I use a dead\-letter queue?<a name="sqs-dead-letter-queues-when-to-use"></a>
 

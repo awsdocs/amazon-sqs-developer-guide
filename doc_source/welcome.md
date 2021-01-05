@@ -15,7 +15,7 @@ Amazon SQS supports both [standard](standard-queues.md) and [FIFO queues](FIFO-q
 + **Security** – [You control](sqs-authentication-and-access-control.md) who can send messages to and receive messages from an Amazon SQS queue\.
 
   [Server\-side encryption \(SSE\)](sqs-server-side-encryption.md) lets you transmit sensitive data by protecting the contents of messages in queues using keys managed in AWS Key Management Service \(AWS KMS\)\.
-+ **Durability** – To ensure the safety of your messages, Amazon SQS stores them on multiple servers\. Standard queues support [at\-least\-once message delivery](standard-queues.md#standard-queues-at-least-once-delivery), and FIFO queues support [exactly\-once message processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.
++ **Durability** – For the safety of your messages, Amazon SQS stores them on multiple servers\. Standard queues support [at\-least\-once message delivery](standard-queues.md#standard-queues-at-least-once-delivery), and FIFO queues support [exactly\-once message processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.
 + **Availability** – Amazon SQS uses [redundant infrastructure](sqs-basic-architecture.md) to provide highly\-concurrent access to messages and high availability for producing and consuming messages\. 
 + **Scalability** – Amazon SQS can process each [buffered request](sqs-client-side-buffering-request-batching.md) independently, scaling transparently to handle any load increases or spikes without any provisioning instructions\.
 + **Reliability** – Amazon SQS locks your messages during processing, so that multiple producers can send and multiple consumers can receive messages at the same time\. 

@@ -11,10 +11,10 @@ FIFO queues have all the capabilities of the [standard queue](standard-queues.md
 
 [![AWS Videos](http://img.youtube.com/vi/https://www.youtube.com/embed/XrX7rb6M3jw?rel=0&amp;controls=0&amp;showinfo=0/0.jpg)](http://www.youtube.com/watch?v=https://www.youtube.com/embed/XrX7rb6M3jw?rel=0&amp;controls=0&amp;showinfo=0)
 
-*FIFO \(First\-In\-First\-Out\)* queues are designed to enhance messaging between applications when the order of operations and events is critical, or where duplicates can't be tolerated, for example:
-+ Ensure that user\-entered commands are executed in the right order\.
-+ Display the correct product price by sending price modifications in the right order\.
-+ Prevent a student from enrolling in a course before registering for an account\.
+*FIFO \(First\-In\-First\-Out\)* queues are designed to enhance messaging between applications when the order of operations and events is critical, or where duplicates can't be tolerated\. Examples of situations where you might use FIFO queues include the following:
++ To make sure that user\-entered commands are run in the right order\.
++ To display the correct product price by sending price modifications in the right order\.
++ To prevent a student from enrolling in a course before registering for an account\.
 
 FIFO queues also provide exactly\-once processing but have a limited number of transactions per second \(TPS\):
 + If you use [batching](sqs-batch-api-actions.md), FIFO queues support up to 3,000 transactions per second, per API method \(`SendMessageBatch`, `ReceiveMessage`, or `DeleteMessageBatch`\)\. The 3000 transactions represent 300 API calls, each with a batch of 10 messages\. To request a quota increase, [submit a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\.
@@ -73,7 +73,7 @@ The following concepts can help you better understand the sending of messages to
 
 **Sending messages**  
 If multiple messages are sent in succession to a FIFO queue, each with a distinct message deduplication ID, Amazon SQS stores the messages and acknowledges the transmission\. Then, each message can be received and processed in the exact order in which the messages were transmitted\.  
-In FIFO queues, messages are ordered based on message group ID\. If multiple hosts \(or different threads on the same host\) send messages with the same message group ID to a FIFO queue, Amazon SQS stores the messages in the order in which they arrive for processing\. To ensure that Amazon SQS preserves the order in which messages are sent and received, ensure that each producer uses a unique message group ID to send all its messages\.  
+In FIFO queues, messages are ordered based on message group ID\. If multiple hosts \(or different threads on the same host\) send messages with the same message group ID to a FIFO queue, Amazon SQS stores the messages in the order in which they arrive for processing\. To make sure that Amazon SQS preserves the order in which messages are sent and received, each producer should use a unique message group ID to send all its messages\.  
 FIFO queue logic applies only per message group ID\. Each message group ID represents a distinct ordered message group within an Amazon SQS queue\. For each message group ID, all messages are sent and received in strict order\. However, messages with different message group ID values might be sent and received out of order\. You must associate a message group ID with a message\. If you don't provide a message group ID, the action fails\. If you require a single group of ordered messages, provide the same message group ID for messages sent to the FIFO queue\.
 
 **Receiving messages**  
@@ -102,7 +102,7 @@ If you have an existing application that uses standard queues and you want to ta
 **Note**  
 You can't convert an existing standard queue into a FIFO queue\. To make the move, you must either create a new FIFO queue for your application or delete your existing standard queue and recreate it as a FIFO queue\.
 
-Use the following checklist to ensure that your application works correctly with a FIFO queue\.
+To make sure that your application correctly works with a FIFO queue, use the following checklist:
 + If you use [batching](sqs-batch-api-actions.md), FIFO queues support up to 3,000 transactions per second, per API method \(`SendMessageBatch`, `ReceiveMessage`, or `DeleteMessageBatch`\)\. The 3000 transactions represent 300 API calls, each with a batch of 10 messages\. To request a quota increase, [submit a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\. Without batching, FIFO queues support up to 300 API calls per second, per API method \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\. 
 + FIFO queues don't support per\-message delays, only per\-queue delays\. If your application sets the same value of the `DelaySeconds` parameter on each message, you must modify your application to remove the per\-message delay and set `DelaySeconds` on the entire queue instead\.
 + Every message sent to a FIFO queue requires a message group ID\. If you don't need multiple ordered message groups, specify the same message group ID for all your messages\.

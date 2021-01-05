@@ -22,7 +22,7 @@ The first and most common Amazon SQS task is creating queues\. This procedure sh
 
 1. Choose **Create queue**\.
 
-1. On the **Create queue** page, ensure that you set the correct region\.
+1. On the **Create queue** page, specify the correct region\.
 
 1. The **Standard** queue type is selected by default\. Choose **FIFO**\.
 
