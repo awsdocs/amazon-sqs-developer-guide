@@ -1,6 +1,6 @@
 # Configuring a queue to trigger an AWS Lambda function \(console\)<a name="sqs-configure-lambda-function-trigger"></a>
 
-You can configure an Amazon SQS queue to invoke an AWS Lambda function when each new message arrives in the queue\. For example, you can configure a Lambda function to process messages from a queue\. You can specify another queue to act as a *dead\-letter queue* for messages that your Lambda function can't process successfully\. 
+You can use an AWS Lambda function to process messages in an Amazon SQS queue\. Lambda polls the queue and invokes your Lambda function synchronously with an event that contains queue messages\. You can specify another queue to act as a *dead\-letter queue* for messages that your Lambda function can't process\. 
 
 A Lambda function can process items from multiple queues \(using one Lambda event source for each queue\)\. You can use the same queue with multiple Lambda functions\.
 
