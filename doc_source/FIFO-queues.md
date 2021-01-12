@@ -23,7 +23,7 @@ FIFO queues also provide exactly\-once processing but have a limited number of t
 **Note**  
 The name of a FIFO queue must end with the `.fifo` suffix\. The suffix counts towards the 80\-character queue name quota\. To determine whether a queue is [FIFO](#FIFO-queues), you can check whether the queue name ends with the suffix\.
 
-Amazon SQS FIFO queues are available in all Regions where Amazon SQS is available, except in the Asia Pacific \(Osaka\-Local\) Region\.
+Amazon SQS FIFO queues are available in all Regions where Amazon SQS is available\.
 
 For information about how to create and configure queues using the Amazon SQS console, see [Creating an Amazon SQS queue \(console\)](sqs-configure-create-queue.md)\. For Java examples, see [Amazon SQS Java SDK examples](sqs-java-tutorials.md)\.
 
