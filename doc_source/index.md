@@ -78,7 +78,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Quotas related to messages](quotas-messages.md)
    + [Quotas related to policies](quotas-policies.md)
 + [Automating and troubleshooting Amazon SQS queues](sqs-automating-troubleshooting.md)
-   + [Automating notifications from AWS services to Amazon SQS using CloudWatch Events](sqs-automating-using-cloudwatch-events.md)
+   + [Automating notifications from AWS services to Amazon SQS using Amazon EventBridge](sqs-automating-using-eventbridge.md)
    + [Troubleshooting Amazon Simple Queue Service queues using AWS X-Ray](sqs-troubleshooting-using-x-ray.md)
 + [Security in Amazon SQS](sqs-security.md)
    + [Data protection](sqs-data-protection.md)
