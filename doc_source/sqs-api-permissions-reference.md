@@ -8,6 +8,7 @@ Currently, Amazon SQS supports only a limited subset of the [condition keys avai
 + `aws:CurrentTime`
 + `aws:EpochTime`
 + `aws:SecureTransport`
++ `aws:SourceAccount`
 + `aws:SourceArn`
 **Note**  
 This condition ensures that AWS services grant access only on behalf of resources that your AWS account owns\. You can't specify the ARN of an IAM role as source ARN, because an IAM role is neither a source nor a service\.

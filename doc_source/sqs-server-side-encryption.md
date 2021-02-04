@@ -46,7 +46,7 @@ Encrypting a message makes its contents unavailable to unauthorized or anonymous
 
 Moving a message to a [dead\-letter queue](sqs-dead-letter-queues.md) doesn't affect its encryption:
 + When Amazon SQS moves a message from an encrypted source queue to an unencrypted dead\-letter queue, the message remains encrypted\.
-+ When Amazon SQS moves a message from a unencrypted source queue to an encrypted dead\-letter queue, the message remains unencrypted\.
++ When Amazon SQS moves a message from an unencrypted source queue to an encrypted dead\-letter queue, the message remains unencrypted\.
 
 ## Key terms<a name="sqs-sse-key-terms"></a>
 
