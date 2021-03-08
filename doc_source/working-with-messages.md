@@ -47,7 +47,7 @@ To capture all messages that can't be processed, and to collect accurate CloudWa
 
 ## Setting up dead\-letter queue retention<a name="setting-up-dead-letter-queue-retention"></a>
 
-The expiration of a message is always based on its original enqueue timestamp\. When a message is moved to a dead\-letter queue, the enqueue timestamp remains unchanged\. For example, if a message spends 1 day in the original queue before being moved to a dead\-letter queue, and the retention period of the dead\-letter queue is set to 4 days, the message is deleted from the dead\-letter queue after 3 days\. Thus, it is a best practice to always set the retention period of a dead\-letter queue to be longer than the retention period of the original queue\.
+The expiration of a message is always based on its original enqueue timestamp\. When a message is moved to a dead\-letter queue, the enqueue timestamp is unchanged\. The `ApproximateAgeOfOldestMessage` metric indicates when the message moved to the dead\-letter queue, *not* when the message was originally sent\. For example, assume that a message spends 1 day in the original queue before it's moved to a dead\-letter queue\. If the dead\-letter queue's retention period is 4 days, the message is deleted from the dead\-letter queue after 3 days and the `ApproximateAgeOfOldestMessage` is 3 days\. Thus, it is a best practice to always set the retention period of a dead\-letter queue to be longer than the retention period of the original queue\.
 
 ## Avoiding inconsistent message processing<a name="avoiding-inconsistent-message-processing"></a>
 
