@@ -25,7 +25,7 @@ The following are benefits of using AWS KMS:
 + You can also use the AWS managed CMK for Amazon SQS, which is unique for each account and region\.
 + The AWS KMS security standards can help you meet encryption\-related compliance requirements\.
 
-For more information, see [What is AWS Key Management Service?](https://docs.aws.amazon.com/kms/latest/developerguide/overview.html) in the *AWS Key Management Service Developer Guide* and the [AWS Key Management Service Cryptographic Details](https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf) whitepaper\.
+For more information, see [What is AWS Key Management Service?](https://docs.aws.amazon.com/kms/latest/developerguide/overview.html) in the *AWS Key Management Service Developer Guide*\.
 
 **Topics**
 + [Encryption scope](#sqs-encryption-what-does-sse-encrypt)
