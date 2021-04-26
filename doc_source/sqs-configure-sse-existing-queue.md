@@ -28,8 +28,7 @@ When you [create](sqs-configure-create-queue.md) or [edit](sqs-configure-edit-qu
 
    1. Choose the **Choose a CMK alias** option\.
 
-   1. The default key is the AWS managed CMK for Amazon SQS\. To use this key, choose it from the **Customer master key** list\.   
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-server-side-encryption-default-service-cmk.png)
+   1. The default key is the AWS managed CMK for Amazon SQS\. To use this key, choose it from the **Customer master key** list\. 
 
    1. To use a custom CMK from your AWS account, choose it from the **Customer master key** list\. For instructions on creating custom CMKs, see [Creating Keys](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) in the *AWS Key Management Service Developer Guide*\.
 
