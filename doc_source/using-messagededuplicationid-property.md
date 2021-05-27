@@ -13,7 +13,7 @@ The producer should provide message deduplication ID values for each message in 
 + Messages sent with identical content but different message attributes that Amazon SQS must treat as unique\.
 + Messages sent with different content \(for example, retry counts included in the message body\) that Amazon SQS must treat as duplicates\.
 
-## Enabling deduplication for a single\-Producer/Consumer system<a name="single-producer-single-consumer"></a>
+## Enabling deduplication for a single\-producer/consumer system<a name="single-producer-single-consumer"></a>
 
 If you have a single producer and a single consumer and the messages are unique because an application\-specific message ID is included in the body of the message, follow these best practices:
 + Enable content\-based deduplication for the queue \(each of your messages has a unique body\)\. The producer can omit the message deduplication ID\.

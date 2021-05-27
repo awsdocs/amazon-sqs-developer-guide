@@ -1,12 +1,5 @@
 # Creating an Amazon SQS queue \(console\)<a name="sqs-configure-create-queue"></a>
 
-
-****  
-
-|  | 
-| --- |
-| High throughput for Amazon SQS FIFO queues is in preview release and is subject to change\. For more information, see [Preview: High throughput for FIFO queues](high-throughput-fifo.md)\. | 
-
 You can use the Amazon SQS console to create [standard queues](standard-queues.md) and [FIFO queues](FIFO-queues.md)\. The console provides default values for all settings except for the queue name\.
 
 **To create an Amazon SQS queue \(console\)**
@@ -35,7 +28,9 @@ You can't change the queue type after you create the queue\.
 
    1. For a FIFO queue, choose **Enable content\-based deduplication** to enable content\-based deduplication\. The default setting is disabled\. 
 
-   1. \(Optional\) For a FIFO queue, to enable higher throughput for sending and receiving messages in the queue, choose **Enable high throughput FIFO**\. This option is currently in preview release\. Choosing this option changes the related preview options \(**Deduplication scope** and **FIFO throughput limit**\) to the required settings for enabling high throughput\. For more information, see [Preview: High throughput for FIFO queues](high-throughput-fifo.md) and [Quotas related to messages](quotas-messages.md)\.
+   1. \(Optional\) For a FIFO queue, to enable higher throughput for sending and receiving messages in the queue, choose **Enable high throughput FIFO**\.
+
+      Choosing this option changes the related options \(**Deduplication scope** and **FIFO throughput limit**\) to the required settings for enabling high throughput for FIFO queues\. If you change any of the settings required for using high throughput FIFO, normal throughput is in effect for the queue, and deduplication occurs as specified\. For more information, see [High throughput for FIFO queues](high-throughput-fifo.md) and [Quotas related to messages](quotas-messages.md)\.
 
 1. \(Optional\) Define an **Access policy**\. The [access policy](sqs-creating-custom-policies-access-policy-examples.md) defines the accounts, users, and roles that can access the queue\. The access policy also defines the actions \(such as `SendMessage`, `ReceiveMessage`, or `DeleteMessage`\) that the users can access\. The default policy allows only the queue owner to send and receive messages\.
 

@@ -45,7 +45,7 @@ auMZc8ZRv37sIW2iJKq3M9MFx1YvV11A2x/KSbkJ0=
 
 ## Additional identifiers for Amazon SQS FIFO queues<a name="sqs-additional-fifo-queue-identifiers"></a>
 
-For more information about the following identifiers, see [Exactly\-once processing](FIFO-queues.md#FIFO-queues-exactly-once-processing) and the *[Amazon Simple Queue Service API Reference](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/)*\.
+For more information about the following identifiers, see [Exactly\-once processing](FIFO-queues-exactly-once-processing.md) and the *[Amazon Simple Queue Service API Reference](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/)*\.
 
 ### Message deduplication ID<a name="sqs-fifo-queue-messagededuplicationid"></a>
 

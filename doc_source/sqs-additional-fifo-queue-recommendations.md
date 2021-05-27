@@ -1,12 +1,5 @@
 # Additional recommendations for Amazon SQS FIFO queues<a name="sqs-additional-fifo-queue-recommendations"></a>
 
-
-****  
-
-|  | 
-| --- |
-| High throughput for Amazon SQS FIFO queues is in preview release and is subject to change\. For more information, see [Preview: High throughput for FIFO queues](high-throughput-fifo.md)\. | 
-
 The following best practices can help you use the message deduplication ID and message group ID optimally\. For more information, see the [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html) and [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html) actions in the *[Amazon Simple Queue Service API Reference](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/)*\.
 
 **Topics**

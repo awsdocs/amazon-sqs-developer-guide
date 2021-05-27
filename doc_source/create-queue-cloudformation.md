@@ -4,7 +4,7 @@ You can use the AWS CloudFormation console and a JSON \(or YAML\) template to cr
 
 **To use AWS CloudFormation to create an Amazon SQS queue\.**
 
-1. Copy the following JSON code to a file named `MyQueue.json`\. To create a standard queue, omit the `FifoQueue` and `ContentBasedDeduplication` properties\. For more information on content\-based deduplication, see [Exactly\-once processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.
+1. Copy the following JSON code to a file named `MyQueue.json`\. To create a standard queue, omit the `FifoQueue` and `ContentBasedDeduplication` properties\. For more information on content\-based deduplication, see [Exactly\-once processing](FIFO-queues-exactly-once-processing.md)\.
 **Note**  
 The name of a FIFO queue must end with the `.fifo` suffix\.
 

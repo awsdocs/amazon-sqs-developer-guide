@@ -1,6 +1,6 @@
 # Increasing throughput using horizontal scaling and action batching<a name="sqs-throughput-horizontal-scaling-and-batching"></a>
 
-Amazon SQS queues can deliver very high throughput\. Standard queues support a nearly unlimited number of API calls per second, per API action \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\. If you use [batching](sqs-batch-api-actions.md), FIFO queues support up to 3,000 transactions per second, per API method \(`SendMessageBatch`, `ReceiveMessage`, or `DeleteMessageBatch`\)\. The 3000 transactions represent 300 API calls, each with a batch of 10 messages\. To request a quota increase, [submit a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\. Without batching, FIFO queues support up to 300 API calls per second, per API method \(`SendMessage`, `ReceiveMessage`, or `DeleteMessage`\)\. 
+Amazon SQS queues can deliver very high throughput\. For information on throughput quotas, see [Quotas related to messages](quotas-messages.md)\.
 
 To achieve high throughput, you must scale message producers and consumers horizontally \(add more producers and consumers\)\.
 

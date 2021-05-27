@@ -17,9 +17,9 @@ After you create your queue, you can send messages to it\.
 
 1. In the **Message body**, enter the message text\.
 
-1. For a First\-In\-First\-Out \(FIFO\) queue, enter a **Message group ID**\. For more information, see [FIFO delivery logic](FIFO-queues.md#FIFO-queues-understanding-logic)\.
+1. For a First\-In\-First\-Out \(FIFO\) queue, enter a **Message group ID**\. For more information, see [FIFO delivery logic](FIFO-queues-understanding-logic.md)\.
 
-1. \(Optional\) For a FIFO queue, you can enter a **Message deduplication ID**\. If you enabled content\-based deduplication for the queue, the message deduplication ID isn't required\. For more information, see [FIFO delivery logic](FIFO-queues.md#FIFO-queues-understanding-logic)\. 
+1. \(Optional\) For a FIFO queue, you can enter a **Message deduplication ID**\. If you enabled content\-based deduplication for the queue, the message deduplication ID isn't required\. For more information, see [FIFO delivery logic](FIFO-queues-understanding-logic.md)\. 
 
 1. \(Optional\) For a standard queue, you can enter a value for **Delivery delay** and choose the units\. For example, enter `60` and choose **seconds**\. FIFO queues don't support timers on individual messages\. For more information, see [Amazon SQS message timers](sqs-message-timers.md)\.
 

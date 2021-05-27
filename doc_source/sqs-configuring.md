@@ -4,7 +4,6 @@ Use the Amazon SQS console to configure and manage Amazon Simple Queue Service \
 
 **Topics**
 + [Understanding the Amazon SQS console](#sqs-configure-overview)
-+ [Preview: High throughput for FIFO queues](high-throughput-fifo.md)
 + [Creating a queue](sqs-configure-create-queue.md)
 + [Editing a queue](sqs-configure-edit-queue.md)
 + [Configuring queue parameters](sqs-configure-queue-parameters.md)

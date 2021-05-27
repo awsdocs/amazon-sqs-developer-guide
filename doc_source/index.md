@@ -1,7 +1,7 @@
 # Amazon Simple Queue Service Developer Guide
 
 -----
-*****Copyright &copy;  Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -18,7 +18,6 @@ Amazon's trademarks and trade dress may not be used in
 + [Setting up Amazon SQS](sqs-setting-up.md)
 + [Getting started with Amazon SQS](sqs-getting-started.md)
 + [Configuring Amazon SQS queues (console)](sqs-configuring.md)
-   + [Preview: High throughput for FIFO queues](high-throughput-fifo.md)
    + [Creating an Amazon SQS queue (console)](sqs-configure-create-queue.md)
    + [Editing an Amazon SQS queue (console)](sqs-configure-edit-queue.md)
    + [Configuring queue parameters (console)](sqs-configure-queue-parameters.md)
@@ -39,6 +38,14 @@ Amazon's trademarks and trade dress may not be used in
    + [Basic Amazon SQS architecture](sqs-basic-architecture.md)
    + [Amazon SQS Standard queues](standard-queues.md)
    + [Amazon SQS FIFO (First-In-First-Out) queues](FIFO-queues.md)
+      + [Message ordering](FIFO-queues-message-order.md)
+      + [Key terms](FIFO-key-terms.md)
+      + [FIFO delivery logic](FIFO-queues-understanding-logic.md)
+      + [Exactly-once processing](FIFO-queues-exactly-once-processing.md)
+      + [Moving from a standard queue to a FIFO queue](FIFO-queues-moving.md)
+      + [High throughput for FIFO queues](high-throughput-fifo.md)
+         + [Partitions and data distribution for high throughput for SQS FIFO queues](partitions-and-data-distribution.md)
+      + [Compatibility](FIFO-compatibility.md)
    + [Amazon SQS queue and message identifiers](sqs-queue-message-identifiers.md)
    + [Message metadata](sqs-message-metadata.md)
    + [Resources required to process Amazon SQS messages](sqs-resources-required-process-messages.md)

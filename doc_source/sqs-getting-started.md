@@ -47,9 +47,9 @@ After you create your queue, you can send a message to it\.
 
 1. Enter text in the **Message body**
 
-1. Enter a **Message group id** for the queue\. For more information, see [FIFO delivery logic](FIFO-queues.md#FIFO-queues-understanding-logic)\. 
+1. Enter a **Message group id** for the queue\. For more information, see [FIFO delivery logic](FIFO-queues-understanding-logic.md)\. 
 
-1. \(Optional\) Enter a **Message deduplication id**\. If you enable content\-based deduplication, the message deduplication ID is not required\. For more information, see [FIFO delivery logic](FIFO-queues.md#FIFO-queues-understanding-logic)\.
+1. \(Optional\) Enter a **Message deduplication id**\. If you enable content\-based deduplication, the message deduplication ID is not required\. For more information, see [FIFO delivery logic](FIFO-queues-understanding-logic.md)\.
 
 1. Choose **Send message**\.
 

@@ -62,7 +62,7 @@ if (!client.queueExists("MyQueue.fifo")) {
 
 **Note**  
 The name of a FIFO queue must end with the `.fifo` suffix\.  
-For more information about the `ContentBasedDeduplication` attribute, see [Exactly\-once processing](FIFO-queues.md#FIFO-queues-exactly-once-processing)\.
+For more information about the `ContentBasedDeduplication` attribute, see [Exactly\-once processing](FIFO-queues-exactly-once-processing.md)\.
 
 ## Sending messages synchronously<a name="send-messages-synchronously"></a>
 
@@ -94,7 +94,7 @@ For more information about the `ContentBasedDeduplication` attribute, see [Exact
      producer.send(message);
      System.out.println("JMS Message " + message.getJMSMessageID());
      ```
-   + To send a message to a FIFO queue, you must set the message group ID\. You can also set a message deduplication ID\. For more information, see [Key terms](FIFO-queues.md#FIFO-key-terms)\.
+   + To send a message to a FIFO queue, you must set the message group ID\. You can also set a message deduplication ID\. For more information, see [Key terms](FIFO-key-terms.md)\.
 
      ```
      // Create the text message
@@ -138,7 +138,7 @@ For more information about the `ContentBasedDeduplication` attribute, see [Exact
          System.out.println("Received: " + ((TextMessage) receivedMessage).getText());
      }
      ```
-   + After receiving a message from a FIFO queue, you can access the contents of the message and other, FIFO\-specific message attributes, such as the message group ID, message deduplication ID, and sequence number\. For more information, see [Key terms](FIFO-queues.md#FIFO-key-terms)\.
+   + After receiving a message from a FIFO queue, you can access the contents of the message and other, FIFO\-specific message attributes, such as the message group ID, message deduplication ID, and sequence number\. For more information, see [Key terms](FIFO-key-terms.md)\.
 
      ```
      // Receive a message from 'MyQueue' and wait up to 1 second
