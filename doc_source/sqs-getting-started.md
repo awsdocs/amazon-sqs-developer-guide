@@ -16,7 +16,7 @@ Before you begin, complete the steps in [Setting up Amazon SQS](sqs-setting-up.m
 
 ## Step 1: Create a queue<a name="step-create-queue"></a>
 
-The first and most common Amazon SQS task is creating queues\. This procedure shows how to create and configure a FIFO queue\.
+The first and most common Amazon SQS task is creating a queue\. This procedure shows how to create and configure a FIFO queue\.
 
 1. Open the Amazon SQS console at [https://console\.aws\.amazon\.com/sqs/](https://console.aws.amazon.com/sqs/)\.
 
