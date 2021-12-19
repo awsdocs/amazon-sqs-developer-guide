@@ -317,12 +317,12 @@ public class AsyncMessageReceiver {
         Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
         MessageConsumer consumer = session.createConsumer( session.createQueue( config.getQueueName() ) );
          
-        ReceiverCallback callback = new ReceiverCallback();
-        consumer.setMessageListener( callback );
-
         // No messages are processed until this is called
         connection.start();
          
+        ReceiverCallback callback = new ReceiverCallback();
+        consumer.setMessageListener( callback );
+
         callback.waitForOneMinuteOfSilence();
         System.out.println( "Returning after one minute of silence" );
 
