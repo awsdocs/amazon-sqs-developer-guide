@@ -25,7 +25,9 @@ Each partition supports up to 3,000 messages per second with batching, or up to 
 
 When using batch APIs, each message is routed based on the process described in [Distributing data by message group IDs ](#data-distribution-message-group-id)\. Messages that are routed to the same partition are grouped and processed in a single transaction\.
 
-To optimize partition utilization, AWS recommends batching messages with the same message group IDs when possible\.
+To optimize partition utilization for the `SendMessageBatch` API, AWS recommends batching messages with the same message group IDs when possible\.
+
+To optimize partition utilization for the `DeleteMessageBatch` and `ChangeMessageVisibilityBatch` APIs, AWS recommends using `ReceiveMessage` requests with the `MaxNumberOfMessages` parameter set to 10, and batching the receipt\-handles returned by a single `ReceiveMessage` request\.
 
 In the following example, a batch of messages with various message group IDs is sent\. The batch is split into three groups, each of which counts against the quota for the partition\.
 

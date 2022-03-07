@@ -9,7 +9,7 @@ FIFO queue logic applies only per message group ID\. Each message group ID repre
 
 **Receiving messages**  
 You can't request to receive messages with a specific message group ID\.  
-When receiving messages from a FIFO queue with multiple message group IDs, Amazon SQS first attempts to return as many messages with the same message group ID as possible\. This allows other consumers to process messages with a different message group ID\.  
+When receiving messages from a FIFO queue with multiple message group IDs, Amazon SQS first attempts to return as many messages with the same message group ID as possible\. This allows other consumers to process messages with a different message group ID\. When you receive a message with a message group ID, no more messages for the same message group ID are returned unless you delete the message or it becomes visible\.  
 It is possible to receive up to 10 messages in a single call using the `MaxNumberOfMessages` request parameter of the `[ReceiveMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html)` action\. These messages retain their FIFO order and can have the same message group ID\. Thus, if there are fewer than 10 messages available with the same message group ID, you might receive messages from another message group ID, in the same batch of 10 messages, but still in FIFO order\.
 
 **Retrying multiple times**  

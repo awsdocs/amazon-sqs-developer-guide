@@ -8,7 +8,7 @@ If you associate an encrypted queue with a Lambda function but Lambda doesn't po
 
 Note the following restrictions:
 + Your queue and the Lambda function must be in the same AWS Region\.
-+ An [encrypted queue](sqs-server-side-encryption.md) that uses the default key \(AWS managed CMK for Amazon SQS\) cannot invoke a Lambda function in a different AWS account\.
++ An [encrypted queue](sqs-server-side-encryption.md) that uses the default key \(AWS managed KMS key for Amazon SQS\) cannot invoke a Lambda function in a different AWS account\.
 
 For information about implementing the Lambda function, see [Using AWS Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html) in the *AWS Lambda Developer Guide*\.
 

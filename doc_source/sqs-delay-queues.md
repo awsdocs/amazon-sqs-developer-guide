@@ -1,6 +1,6 @@
 # Amazon SQS delay queues<a name="sqs-delay-queues"></a>
 
-Delay queues let you postpone the delivery of new messages to a queue for a number of seconds, for example, when your consumer application needs additional time to process messages\. If you create a delay queue, any messages that you send to the queue remain invisible to consumers for the duration of the delay period\. The default \(minimum\) delay for a queue is 0 seconds\. The maximum is 15 minutes\. For information about configuring delay queues using the console see [Configuring queue parameters \(console\)](sqs-configure-queue-parameters.md)\.
+Delay queues let you postpone the delivery of new messages to consumers for a number of seconds, for example, when your consumer application needs additional time to process messages\. If you create a delay queue, any messages that you send to the queue remain invisible to consumers for the duration of the delay period\. The default \(minimum\) delay for a queue is 0 seconds\. The maximum is 15 minutes\. For information about configuring delay queues using the console see [Configuring queue parameters \(console\)](sqs-configure-queue-parameters.md)\.
 
 **Note**  
 For standard queues, the per\-queue delay setting is *not retroactive*—changing the setting doesn't affect the delay of messages already in the queue\.  

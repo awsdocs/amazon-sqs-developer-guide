@@ -11,7 +11,7 @@ Before you can use Amazon SQS for the first time, you must complete the followin
 
 ## Step 1: Create an AWS account<a name="sqs-creating-aws-account"></a>
 
-To access any AWS service, you first need to create an [ AWS account](https://aws.amazon.com/), an Amazon\.com account that can use AWS products\. You can use your AWS account to view your activity and usage reports and to manage authentication and access\.
+To access any AWS service, you first need to create an [AWS account](https://aws.amazon.com/), an Amazon\.com account that can use AWS products\. You can use your AWS account to view your activity and usage reports and to manage authentication and access\.
 
 To avoid using your AWS account root user for Amazon SQS actions, it is a best practice to create an IAM user for each person who needs administrative access to Amazon SQS\.
 
@@ -100,7 +100,7 @@ The only time that you can view or download the secret access key is when you cr
 
 ## Step 4: Get ready to use the example code<a name="sqs-get-ready-to-use-example-code"></a>
 
-This guide includes examples that use the AWS SDK for Java\. To run the example code, follow the set\-up instructions in [Getting Started with AWS SDK for Java 2\.0](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/)\. 
+This guide includes examples that use the AWS SDK for Java\. To run the example code, follow the set\-up instructions in [Getting Started with AWS SDK for Java 2\.0](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/)\. 
 
 You can develop AWS applications in other programming languages, such as Go, JavaScript, Python and Ruby\. For more information, see [Tools for developing and managing applications on AWS](https://aws.amazon.com/tools/#sdk)\.
 

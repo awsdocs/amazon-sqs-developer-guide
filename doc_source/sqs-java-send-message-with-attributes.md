@@ -2,13 +2,13 @@
 
 You can include structured metadata \(such as timestamps, geospatial data, signatures, and identifiers\) with messages using *message attributes*\. For more information, see [Amazon SQS message attributes](sqs-message-metadata.md#sqs-message-attributes)\.
 
- Before you run the example code, make sure that you have set your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/setup.html#setup-credentials) in the *AWS SDK for Java 2\.x Developer Guide*\. 
+ Before you run the example code, make sure that you have set your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/setup.html#setup-credentials) in the *AWS SDK for Java 2\.x Developer Guide*\. 
 
 ## Defining attributes<a name="sqs-java-define-attributes"></a>
 
 To define an attribute for a message, add the following code, which uses the `[MessageAttributeValue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_MessageAttributeValue.html)` data type\. For more information, see [Message attribute components](sqs-message-metadata.md#message-attribute-components) and [Message attribute data types](sqs-message-metadata.md#message-attribute-data-types)\.
 
-The AWS SDK for Java automatically calculates the message body and message attribute checksums and compares them with the data that Amazon SQS returns\. For more information, see the *[AWS SDK for Java 2\.x Developer Guide](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/)* and [Calculating the MD5 message digest for message attributes](sqs-message-metadata.md#sqs-attributes-md5-message-digest-calculation) for other programming languages\.
+The AWS SDK for Java automatically calculates the message body and message attribute checksums and compares them with the data that Amazon SQS returns\. For more information, see the *[AWS SDK for Java 2\.x Developer Guide](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/)* and [Calculating the MD5 message digest for message attributes](sqs-message-metadata.md#sqs-attributes-md5-message-digest-calculation) for other programming languages\.
 
 ------
 #### [ String ]

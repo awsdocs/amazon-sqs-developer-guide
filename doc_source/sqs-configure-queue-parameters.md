@@ -10,6 +10,7 @@ Using the console to configure the visibility timeout configures the timeout val
 + **Receive message wait time** – The maximum amount of time that Amazon SQS waits for messages to become available after the queue gets a receive request\. For more information, see [Amazon SQS short and long polling](sqs-short-and-long-polling.md)\.
 + **Enable content\-based deduplication** – Amazon SQS can automatically create deduplication IDs based on the body of the message\. For more information, see [Amazon SQS FIFO \(First\-In\-First\-Out\) queues](FIFO-queues.md)\.
 + **Enable high throughput FIFO** – Use to enable high throughput for messages in the queue\. Choosing this option changes the related options \(**Deduplication scope** and **FIFO throughput limit**\) to the required settings for enabling high throughput for FIFO queues\. For more information, see [High throughput for FIFO queues](high-throughput-fifo.md) and [Quotas related to messages](quotas-messages.md)\.
++  **Redrive allow policy**: defines which source queues can use this queue as the dead\-letter queue\. For more information, see [Amazon SQS dead\-letter queues](sqs-dead-letter-queues.md)\. 
 
 
 
@@ -36,5 +37,7 @@ Using the console to configure the visibility timeout configures the timeout val
 1. \(Optional\) For a FIFO queue, to enable higher throughput for sending and receiving messages in the queue, choose **Enable high throughput FIFO**\.
 
    Choosing this option changes the related options \(**Deduplication scope** and **FIFO throughput limit**\) to the required settings for enabling high throughput for FIFO queues\. If you change any of the settings required for using high throughput FIFO, normal throughput is in effect for the queue, and deduplication occurs as specified\. For more information, see [High throughput for FIFO queues](high-throughput-fifo.md) and [Quotas related to messages](quotas-messages.md)\.
+
+1.  For **Redrive allow policy**, choose **Allow all** \(the default\), **By queue** or **Deny all**\. When choosing **By queue**, specify a list of up to 10 source queues by the Amazon Resource Name \(ARN\)\. 
 
 1. When you finish configuring the queue parameters, choose **Save**\.

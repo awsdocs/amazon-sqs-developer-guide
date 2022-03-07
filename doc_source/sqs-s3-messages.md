@@ -14,9 +14,9 @@ The [SDK for Java](https://aws.amazon.com/sdkforjava/) and Amazon SQS Extended C
 
 ## Prerequisites<a name="working-java-example-using-s3-for-large-sqs-messages-prerequisites"></a>
 
- The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
+ The following example uses the AWS Java SDK\. To install and set up the SDK, see [Set up the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/setup-install.html) in the *AWS SDK for Java Developer Guide*\.
 
-Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup.html#setup-credentials) in the *AWS SDK for Java Developer Guide*\. 
+Before you run the example code, configure your AWS credentials\. For more information, see [Set up AWS Credentials and Region for Development](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/setup.html#setup-credentials) in the *AWS SDK for Java Developer Guide*\. 
 
 ## Example: Using Amazon S3 to manage large Amazon SQS messages<a name="working-java-example-using-s3-for-large-sqs-messages-example"></a>
 
@@ -65,7 +65,7 @@ public static void main(String[] args) {
     /*
      * Create a new instance of the builder with all defaults (credentials
      * and region) set automatically. For more information, see 
-     * [Creating Service Clients](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/creating-clients.html) in the AWS SDK for Java Developer Guide.
+     * [Creating Service Clients](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/creating-clients.html) in the AWS SDK for Java Developer Guide.
      */
     final AmazonS3 s3 = AmazonS3ClientBuilder.defaultClient();
 

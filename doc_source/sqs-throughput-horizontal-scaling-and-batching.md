@@ -21,7 +21,7 @@ Because you access Amazon SQS through an HTTP request\-response protocol, the *r
 When you add more clients, you achieve essentially linear gains in queue throughput\. For example, if you double the number of clients, you also double the throughput\. 
 
 **Note**  
-As you scale horizontally, make sure that your Amazon SQS client has enough connections or threads to support the number of concurrent message producers and consumers that send requests and receive responses\. For example, by default, instances of the AWS SDK for Java `[AmazonSQSClient](https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/sqs/AmazonSQSClient.html)` class maintain at most 50 connections to Amazon SQS\. To create additional concurrent producers and consumers, you must adjust the maximum number of allowable producer and consumer threads on an `AmazonSQSClientBuilder` object, for example:  
+As you scale horizontally, make sure that your Amazon SQS client has enough connections or threads to support the number of concurrent message producers and consumers that send requests and receive responses\. For example, by default, instances of the AWS SDK for Java `[AmazonSQSClient](https://docs.aws.amazon.com/sdk-for-java/latest/reference/com/amazonaws/services/sqs/AmazonSQSClient.html)` class maintain at most 50 connections to Amazon SQS\. To create additional concurrent producers and consumers, you must adjust the maximum number of allowable producer and consumer threads on an `AmazonSQSClientBuilder` object, for example:  
 
 ```
 final AmazonSQS sqsClient = AmazonSQSClientBuilder.standard()
@@ -29,7 +29,7 @@ final AmazonSQS sqsClient = AmazonSQSClientBuilder.standard()
                 .withMaxConnections(producerCount + consumerCount))
         .build();
 ```
-For `[AmazonSQSAsyncClient](https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/sqs/AmazonSQSAsyncClient.html)`, you also must make sure that enough threads are available\.
+For `[AmazonSQSAsyncClient](https://docs.aws.amazon.com/sdk-for-java/latest/reference/com/amazonaws/services/sqs/AmazonSQSAsyncClient.html)`, you also must make sure that enough threads are available\.
 
 ## Action batching<a name="request-batching"></a>
 

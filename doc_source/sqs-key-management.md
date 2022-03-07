@@ -1,6 +1,6 @@
 # Key management<a name="sqs-key-management"></a>
 
-Amazon SQS integrates with the AWS Key Management Service to manage [customer master keys](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys) \(CMKs\) for server\-side encryption \(SSE\)\. See [Encryption at rest](sqs-server-side-encryption.md) for SSE information and key management definitions\. Amazon SQS uses CMKs to validate and secure the data keys that encrypt and decrypt the messages\. The following sections provide information about working with CMKs and data keys in the Amazon SQS service\.
+Amazon SQS integrates with the AWS Key Management Service \(KMS\) to manage [KMS keys](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys) for server\-side encryption \(SSE\)\. See [Encryption at rest](sqs-server-side-encryption.md) for SSE information and key management definitions\. Amazon SQS uses KMS keys to validate and secure the data keys that encrypt and decrypt the messages\. The following sections provide information about working with KMS keys and data keys in the Amazon SQS service\.
 
 **Topics**
 + [Configuring AWS KMS permissions](#sqs-what-permissions-for-sse)
@@ -10,22 +10,22 @@ Amazon SQS integrates with the AWS Key Management Service to manage [customer ma
 
 ## Configuring AWS KMS permissions<a name="sqs-what-permissions-for-sse"></a>
 
-Every CMK must have a key policy\. Note that you cannot modify the key policy of an AWS managed CMK for Amazon SQS\. The policy for this CMK includes permissions for all principals in the account \(that are authorized to use Amazon SQS\) to use encrypted queues\. 
+Every KMS key must have a key policy\. Note that you cannot modify the key policy of an AWS managed KMS key for Amazon SQS\. The policy for this KMS key includes permissions for all principals in the account \(that are authorized to use Amazon SQS\) to use encrypted queues\. 
 
-For a customer managed CMK, you must configure the key policy to add permissions for each queue producer and consumer\. To do this, you name the producer and consumer as users in the CMK key policy\. For more information about AWS KMS permissions, see [AWS KMS resources and operations](https://docs.aws.amazon.com/kms/latest/developerguide/control-access-overview.html#kms-resources-operations) or [ AWS KMS API permissions reference](https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html) in the *AWS Key Management Service Developer Guide*\.
+For a customer managed KMS key, you must configure the key policy to add permissions for each queue producer and consumer\. To do this, you name the producer and consumer as users in the KMS key policy\. For more information about AWS KMS permissions, see [AWS KMS resources and operations](https://docs.aws.amazon.com/kms/latest/developerguide/control-access-overview.html#kms-resources-operations) or [AWS KMS API permissions reference](https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html) in the *AWS Key Management Service Developer Guide*\.
 
 Alternatively, you can specify the required permissions in an IAM policy assigned to the principals that produce and consume encrypted messages\. For more information, see [Using IAM Policies with AWS KMS](https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html) in the *AWS Key Management Service Developer Guide*\.
 
 **Note**  
-While you can configure global permissions to send to and receive from Amazon SQS, AWS KMS requires explicitly naming the full ARN of CMKs in specific regions in the `Resource` section of an IAM policy\.
+While you can configure global permissions to send to and receive from Amazon SQS, AWS KMS requires explicitly naming the full ARN of KMS keys in specific regions in the `Resource` section of an IAM policy\.
 
 ### Configure KMS permissions for AWS services<a name="compatibility-with-aws-services"></a>
 
-Several AWS services act as event sources that can send events to Amazon SQS queues\. To allow these event sources to work with encrypted queues, you must create a customer managed CMK and add permissions in the key policy for the service to use the required AWS KMS API methods\. Perform the following steps to configure the permissions\.
+Several AWS services act as event sources that can send events to Amazon SQS queues\. To allow these event sources to work with encrypted queues, you must create a customer managed KMS key and add permissions in the key policy for the service to use the required AWS KMS API methods\. Perform the following steps to configure the permissions\.
 
-1. Create a customer managed CMK\. For more information, see [Creating Keys](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) in the *AWS Key Management Service Developer Guide*\.
+1. Create a customer managed KMS key\. For more information, see [Creating Keys](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) in the *AWS Key Management Service Developer Guide*\.
 
-1. To allow the AWS service event source to use the `kms:GenerateDataKey` and `kms:Decrypt` API methods, add the following statement to the CMK key policy\.
+1. To allow the AWS service event source to use the `kms:GenerateDataKey` and `kms:Decrypt` API methods, add the following statement to the KMS key key policy\.
 
    ```
    {
@@ -47,13 +47,13 @@ Several AWS services act as event sources that can send events to Amazon SQS que
    Replace "service" in the above example with the *Service name* of the event source\. Event sources include the following services\.    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-key-management.html)
 
-1.  [configure an existing SSE queue](sqs-configure-sse-existing-queue.md) using the ARN of your CMK\.
+1.  [Configure an existing SSE queue](sqs-configure-sse-existing-queue.md) using the ARN of your KMS key\.
 
 1. Provide the ARN of the encrypted queue to the event source\.
 
 ### Configure KMS permissions for producers<a name="send-to-encrypted-queue"></a>
 
-When the [data key reuse period](#sqs-how-does-the-data-key-reuse-period-work) expires, the producer's next call to `SendMessage` or `SendMessageBatch` also triggers calls to `kms:GenerateDataKey` and `kms:Decrypt`\. The call to `kms:Decrypt` is to verify the integrity of the new data key before using it\. Therefore, the producer must have the `kms:GenerateDataKey` and `kms:Decrypt` permissions for the customer master key \(CMK\)\. 
+When the [data key reuse period](#sqs-how-does-the-data-key-reuse-period-work) expires, the producer's next call to `SendMessage` or `SendMessageBatch` also triggers calls to `kms:GenerateDataKey` and `kms:Decrypt`\. The call to `kms:Decrypt` is to verify the integrity of the new data key before using it\. Therefore, the producer must have the `kms:GenerateDataKey` and `kms:Decrypt` permissions for the KMS key\. 
 
 Add the following statement to the IAM policy of the producer\. Remember to use the correct ARN values for the key resource and the queue resource\.
 
@@ -79,7 +79,7 @@ Add the following statement to the IAM policy of the producer\. Remember to use 
 
 ### Configure KMS permissions for consumers<a name="receive-from-encrypted-queue"></a>
 
-When the data key reuse period expires, the consumer's next call to `ReceiveMesssage` also triggers a call to `kms:Decrypt`, to verify the integrity of the new data key before using it\. Therefore, the consumer must have the `kms:Decrypt` permission for any customer master key \(CMK\) that is used to encrypt the messages in the specified queue\. If the queue acts as a [dead\-letter queue](sqs-dead-letter-queues.md), the consumer must also have the `kms:Decrypt` permission for any CMK that is used to encrypt the messages in the source queue\. Add the following statement to the IAM policy of the consumer\. Remember to use the correct ARN values for the key resource and the queue resource\.
+When the data key reuse period expires, the consumer's next call to `ReceiveMessage` also triggers a call to `kms:Decrypt`, to verify the integrity of the new data key before using it\. Therefore, the consumer must have the `kms:Decrypt` permission for any KMS key that is used to encrypt the messages in the specified queue\. If the queue acts as a [dead\-letter queue](sqs-dead-letter-queues.md), the consumer must also have the `kms:Decrypt` permission for any KMS key that is used to encrypt the messages in the source queue\. Add the following statement to the IAM policy of the consumer\. Remember to use the correct ARN values for the key resource and the queue resource\.
 
 ```
 {
@@ -100,6 +100,46 @@ When the data key reuse period expires, the consumer's next call to `ReceiveMess
 }
 ```
 
+### Configure KMS permissions with confused deputy protection<a name="sqs-adding-confused-deputy-protection"></a>
+
+When the principal in a key policy statement is an [AWS service principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services), you can use the [https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn) or [https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount) global condition keys to protect against the [confused deputy scenario](https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html)\. To use these condition keys, set the value to the Amazon Resource Name \(ARN\) of the resource that is being encrypted\. If you don't know the ARN of the resource, use `aws:SourceAccount` instead\. 
+
+In this KMS key policy, a specific resource from *service* that is owned by account `111122223333` is allowed to call KMS for `Decrypt` and `GenerateDataKey` actions, which occur during SSE usage of Amazon SQS\.
+
+```
+{
+	"Version": "2012-10-17",
+	"Statement": [{
+		"Effect": "Allow",
+		"Principal": {
+            "Service": "<replaceable>service</replaceable>.amazonaws.com"
+		},
+		"Action": [
+			"kms:GenerateDataKey",
+			"kms:Decrypt"
+		],
+		"Resource": "*",
+		"Condition": {
+			"ArnEquals": {
+				"aws:SourceArn": [
+					"arn:aws:service::111122223333:resource"
+				]
+			}
+		}
+	}]
+}
+```
+
+When using SSE enabled Amazon SQS queues, the following services support `aws:SourceArn`:
++ Amazon SNS
++ Amazon S3
++ CloudWatch Events
++ AWS Lambda
++ CodeBuild
++ Amazon Connect Customer Profiles
++ AWS Auto Scaling
++ Amazon Chime
+
 ## Understanding the data key reuse period<a name="sqs-how-does-the-data-key-reuse-period-work"></a>
 
 The [ data key reuse period](sqs-server-side-encryption.md#sqs-sse-key-terms) defines the maximum duration for Amazon SQS to reuse the same data key\. When the data key reuse period ends, Amazon SQS generates a new data key\. Note the following guidelines about the reuse period\.
@@ -110,7 +150,7 @@ The [ data key reuse period](sqs-server-side-encryption.md#sqs-sse-key-terms) de
 
 ## Estimating AWS KMS costs<a name="sqs-estimate-kms-usage-costs"></a>
 
-To predict costs and better understand your AWS bill, you might want to know how often Amazon SQS uses your customer master key \(CMK\)\.
+To predict costs and better understand your AWS bill, you might want to know how often Amazon SQS uses your KMS key\.
 
 **Note**  
 Although the following formula can give you a very good idea of expected costs, actual costs might be higher because of the distributed nature of Amazon SQS\.
@@ -164,5 +204,5 @@ This example assumes the following:
 
 When you work with Amazon SQS and AWS KMS, you might encounter errors\. The following references describe the errors and possible troubleshooting solutions\.
 + [ Common AWS KMS errors](https://docs.aws.amazon.com/kms/latest/APIReference/CommonErrors.html)
-+ [ AWS KMS Decrypt errors](https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html#API_Decrypt_Errors)
-+ [ AWS KMS GenerateDataKey errors](https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKey.html#API_GenerateDataKey_Errors)
++ [AWS KMS Decrypt errors](https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html#API_Decrypt_Errors)
++ [AWS KMS GenerateDataKey errors](https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKey.html#API_GenerateDataKey_Errors)

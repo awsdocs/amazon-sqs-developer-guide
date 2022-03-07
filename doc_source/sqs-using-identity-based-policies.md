@@ -9,7 +9,7 @@ With the exception of `ListQueues`, all Amazon SQS actions support resource\-lev
 **Topics**
 + [Using Amazon SQS and IAM policies](#sqs-using-sqs-and-iam-policies)
 + [Permissions required to use the Amazon SQS console](#sqs-console-permissions)
-+ [AWS managed \(predefined\) policies for Amazon SQS](#sqs-access-policy-aws-managed-policies)
++ [AWS managed \(predefined\) policies for Amazon SQS](sqs-access-policy-aws-managed-policies.md)
 + [Basic examples of IAM policies for Amazon SQS](sqs-basic-examples-of-iam-policies.md)
 + [Basic examples of Amazon SQS policies](sqs-basic-examples-of-sqs-policies.md)
 
@@ -43,13 +43,3 @@ A user who wants to work with the Amazon SQS console must have the minimum set o
 If you create an IAM policy that is more restrictive than the minimum required permissions, the console might not function as intended for users with that IAM policy\.
 
 You don't need to allow minimum console permissions for users that make calls only to the AWS CLI or Amazon SQS actions\. 
-
-## AWS managed \(predefined\) policies for Amazon SQS<a name="sqs-access-policy-aws-managed-policies"></a>
-
-AWS addresses many common use cases by providing standalone AWS managed IAM policies\. These AWS managed policies simplify working with permissions by granting the permissions necessary for common use cases\. For more information, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\. 
-
-The following AWS managed policies \(that you can attach to users in your account\) are specific to Amazon SQS:
-+ **AmazonSQSReadOnlyAccess** – Grants read\-only access to Amazon SQS queues using the AWS Management Console\.
-+ **AmazonSQSFullAccess** – Grants full access to Amazon SQS queues using the AWS Management Console\.
-
-You can search and review available policies on the IAM console\. You can also create your own custom IAM policies to allow permissions for Amazon SQS actions and queues\. You can attach these custom policies to the IAM users or groups that require permissions\. 

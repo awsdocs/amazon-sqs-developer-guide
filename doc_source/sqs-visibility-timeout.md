@@ -38,6 +38,9 @@ For most standard queues \(depending on queue traffic and message backlog\), the
 
 For FIFO queues, there can be a maximum of 20,000 inflight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this quota, Amazon SQS returns no error messages\.
 
+**Important**  
+When working with FIFO queues, `DeleteMessage` operations will fail if the request is received outside of the visibility timeout window\. If the visibility timeout is 0 seconds, the message must be deleted within the same millisecond it was sent, or it is considered abandoned\. This can cause Amazon SQS to include duplicate messages in the same response to a `ReceiveMessage` operation if the `MaxNumberOfMessages` parameter is greater than 1\. For additional details see [How the Amazon SQS FIFO API Works](http://aws.amazon.com/blogs/developer/how-the-amazon-sqs-fifo-api-works/)\.
+
 ## Setting the visibility timeout<a name="configuring-visibility-timeout"></a>
 
 The visibility timeout begins when Amazon SQS returns a message\. During this time, the consumer processes and deletes the message\. However, if the consumer fails before deleting the message and your system doesn't call the `[DeleteMessage](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessage.html)` action for that message before the visibility timeout expires, the message becomes visible to other consumers and the message is received again\. If a message must be received only once, your consumer should delete it within the duration of the visibility timeout\.

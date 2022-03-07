@@ -1,6 +1,6 @@
 # Managing Amazon SQS queues \(console\)<a name="sqs-using-sqs"></a>
 
-After you create and configure your queue, you can use the Amazon SQS console to send messages to the queue and retrieve then from the queue\.
+After you create and configure your queue, you can use the Amazon SQS console to send messages to the queue and retrieve them from the queue\.
 
 **Topics**
 + [Sending messages](sqs-using-send-messages.md)

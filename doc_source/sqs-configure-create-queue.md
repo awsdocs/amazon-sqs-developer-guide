@@ -2,6 +2,9 @@
 
 You can use the Amazon SQS console to create [standard queues](standard-queues.md) and [FIFO queues](FIFO-queues.md)\. The console provides default values for all settings except for the queue name\.
 
+**Important**  
+Do not add personally identifiable information \(PII\) or other confidential or sensitive information in queue names\. Queue names are accessible to many Amazon Web Services, including billing and CloudWatch logs\. Queue names are not intended to be used for private or sensitive data\.
+
 **To create an Amazon SQS queue \(console\)**
 
 1. Open the Amazon SQS console at [https://console\.aws\.amazon\.com/sqs/](https://console.aws.amazon.com/sqs/)\.
@@ -31,6 +34,8 @@ You can't change the queue type after you create the queue\.
    1. \(Optional\) For a FIFO queue, to enable higher throughput for sending and receiving messages in the queue, choose **Enable high throughput FIFO**\.
 
       Choosing this option changes the related options \(**Deduplication scope** and **FIFO throughput limit**\) to the required settings for enabling high throughput for FIFO queues\. If you change any of the settings required for using high throughput FIFO, normal throughput is in effect for the queue, and deduplication occurs as specified\. For more information, see [High throughput for FIFO queues](high-throughput-fifo.md) and [Quotas related to messages](quotas-messages.md)\.
+
+   1. For **Redrive allow policy**, choose **Allow all** \(the default\), **By queue** or **Deny all**\. When choosing **By queue**, specify a list of up to 10 source queues by the Amazon Resource Name \(ARN\)\.
 
 1. \(Optional\) Define an **Access policy**\. The [access policy](sqs-creating-custom-policies-access-policy-examples.md) defines the accounts, users, and roles that can access the queue\. The access policy also defines the actions \(such as `SendMessage`, `ReceiveMessage`, or `DeleteMessage`\) that the users can access\. The default policy allows only the queue owner to send and receive messages\.
 
