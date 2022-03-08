@@ -58,7 +58,7 @@ A *permissions policy* describes the permissions granted to accounts\. The foll
 **Note**  
  This section discusses using IAM in the context of Amazon SQS\. It doesn't provide detailed information about the IAM service\. For complete IAM documentation, see [What is IAM?](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) in the *IAM User Guide*\. For information about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\. 
 
-Policies attached to an IAM identity are referred to as *identity\-based* policies \(IAM polices\) and policies attached to a resource are referred to as *resource\-based* policies\.
+Policies attached to an IAM identity are referred to as *identity\-based* policies \(IAM policies\) and policies attached to a resource are referred to as *resource\-based* policies\.
 
 ### Identity\-based policies \(IAM policies and Amazon SQS policies\)<a name="sqs-identity-based-features-of-sqs-policies"></a>
 
