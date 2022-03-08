@@ -27,16 +27,6 @@ You can access AWS as any of the following types of identities:
 
 Amazon SQS has its own resource\-based permissions system that uses policies written in the same language used for AWS Identity and Access Management \(IAM\) policies\. This means that you can achieve similar things with Amazon SQS policies and IAM policies\.
 
-**Note**  
-It is important to understand that all AWS accounts can delegate their permissions to users under their accounts\. Cross\-account access allows you to share access to your AWS resources without having to manage additional users\. For information about using cross\-account access, see [Enabling Cross\-Account Access](https://docs.aws.amazon.com/IAM/latest/UserGuide/Delegation.html) in the *IAM User Guide*\.   
-Cross\-account permissions don't apply to the following actions:  
-`[AddPermission](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html)`
-`[CreateQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html)`
-`[DeleteQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteQueue.html)`
-`[ListQueues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueues.html)`
-`[ListQueueTags](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueueTags.html)`
-`[RemovePermission](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_RemovePermission.html)`
-`[SetQueueAttributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html)`
-`[TagQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_TagQueue.html)`
-`[UntagQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_UntagQueue.html)`
-Currently, Amazon SQS supports only a limited subset of the [condition keys available in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys)\. For more information, see [Amazon SQS API permissions: Actions and resource reference](sqs-api-permissions-reference.md)\. 
+**Note**
+It is important to understand that all AWS accounts can delegate their permissions to users under their accounts\. Cross\-account access allows you to share access to your AWS resources without having to manage additional users\. For information about using cross\-account access, see [Enabling Cross\-Account Access](https://docs.aws.amazon.com/IAM/latest/UserGuide/Delegation.html) in the *IAM User Guide*\.
+See [Limitations of Custom Policies](sqs-limitations-of-custom-policies.md) for further details on cross-account permissions and condition keys within SQS Custom Policies.
