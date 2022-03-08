@@ -34,7 +34,7 @@ In most cases, you can use [long polling](sqs-short-and-long-polling.md#sqs-long
 1. Observe the metrics for the following attributes:
    + `ApproximateNumberOfMessagesDelayed`
    + `ApproximateNumberOfMessagesNotVisible`
-   + `ApproximateNumberOfMessagesVisible`
+   + `ApproximateNumberOfMessages`
 
    When all of them are `0` for several minutes, the queue is empty\.
 
