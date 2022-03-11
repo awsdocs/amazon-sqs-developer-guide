@@ -65,9 +65,10 @@ Even when you use dead\-letter queues, you should continue to monitor your queue
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/checkmark.png)Do use dead\-letter queues to decrease the number of messages and to reduce the possibility of exposing your system to *poison\-pill messages* \(messages that can be received but can't be processed\)\.
 
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/checkmark.png)Do use a dead\-letter queue with a FIFO queue if you don't want to break the exact order of messages or operations\. For example, don't use a dead\-letter queue with instructions in an Edit Decision List \(EDL\) for a video editing suite, where changing the order of edits changes the context of subsequent edits\.
+
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/cross.png)Don't use a dead\-letter queue with standard queues when you want to be able to keep retrying the transmission of a message indefinitely\. For example, don't use a dead\-letter queue if your program must wait for a dependent process to become active or available\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/cross.png)Don't use a dead\-letter queue with a FIFO queue if you don't want to break the exact order of messages or operations\. For example, don't use a dead\-letter queue with instructions in an Edit Decision List \(EDL\) for a video editing suite, where changing the order of edits changes the context of subsequent edits\.
 
 ## Moving messages out of a dead\-letter queue<a name="sqs-dead-letter-queues-redrive"></a>
 
