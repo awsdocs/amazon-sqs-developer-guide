@@ -107,6 +107,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Amazon SQS Access Policy Language key concepts](sqs-creating-custom-policies-key-concepts.md)
          + [Amazon SQS Access Policy Language evaluation logic](sqs-creating-custom-policies-evaluation-logic.md)
          + [Relationships between explicit and default denials in the Amazon SQS Access Policy Language](sqs-creating-custom-policies-relationships-between-explicit-default-denials.md)
+         + [Limitations of Custom Policies](sqs-limitations-of-custom-policies.md)
          + [Custom Amazon SQS Access Policy Language examples](sqs-creating-custom-policies-access-policy-examples.md)
       + [Using temporary security credentials with Amazon SQS](sqs-using-temporary-security-credentials.md)
       + [Amazon SQS API permissions: Actions and resource reference](sqs-api-permissions-reference.md)

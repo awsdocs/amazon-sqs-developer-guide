@@ -4,7 +4,7 @@ To organize and identify your Amazon SQS queues for cost allocation, you can add
 
 [![AWS Videos](http://img.youtube.com/vi/https://www.youtube.com/embed/cQhMtYX6HRI?rel=0&amp;controls=0&amp;showinfo=0/0.jpg)](http://www.youtube.com/watch?v=https://www.youtube.com/embed/cQhMtYX6HRI?rel=0&amp;controls=0&amp;showinfo=0)
 
-You can use cost allocation tags to organize your AWS bill to reflect your own cost structure\. To do this, sign up to get your AWS account bill to include tag keys and values\. For more information, see [Setting Up a Monthly Cost Allocation Report](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/configurecostallocreport.html#allocation-report) in the *AWS Billing and Cost Management User Guide*\.
+You can use cost allocation tags to organize your AWS bill to reflect your own cost structure\. To do this, sign up to get your AWS account bill to include tag keys and values\. For more information, see [Setting Up a Monthly Cost Allocation Report](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/configurecostallocreport.html#allocation-report) in the *AWS Billing User Guide*\.
 
 Each tag consists of a key\-value pair that you define\. For example, you can easily identify your *production* and *testing* queues if you tag your queues as follows:
 
@@ -18,7 +18,7 @@ Each tag consists of a key\-value pair that you define\. For example, you can ea
 
 **Note**  
 When you use queue tags, keep the following guidelines in mind:  
-We don't recommend adding more than 50 tags to a queue\.
+We don't recommend adding more than 50 tags to a queue\. Tagging supports Unicode characters in UTF\-8\.
 Tags don't have any semantic meaning\. Amazon SQS interprets tags as character strings\.
 Tags are case\-sensitive\.
 A new tag with a key identical to that of an existing tag overwrites the existing tag\.

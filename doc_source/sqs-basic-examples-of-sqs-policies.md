@@ -157,7 +157,7 @@ The following example policy grants all users \(anonymous users\) `ReceiveMessag
 
 ## Example 7: Grant all permissions to all users in a CIDR range<a name="grant-all-permissions-to-all-users-in-cidr-range"></a>
 
-The following example policy grants all users \(anonymous users\) permission to use all possible Amazon SQS actions that can be shared for the queue named `111122223333/queue1`, but only if the request comes from the `192.168.143.0/24` CIDR range\.
+The following example policy grants all users \(anonymous users\) permission to use all possible Amazon SQS actions that can be shared for the queue named `111122223333/queue1`, but only if the request comes from the `192.0.2.0/24` CIDR range\.
 
 ```
 {
@@ -171,7 +171,7 @@ The following example policy grants all users \(anonymous users\) permission to 
       "Resource": "arn:aws:sqs:*:111122223333:queue1",
       "Condition" : {
          "IpAddress" : {
-            "aws:SourceIp":"192.168.143.0/24"
+            "aws:SourceIp":"192.0.2.0/24"
          }
       }
    }]
@@ -181,8 +181,8 @@ The following example policy grants all users \(anonymous users\) permission to 
 ## Example 8: Allowlist and blocklist permissions for users in different CIDR ranges<a name="allowlist-blocklist-permissions-for-users-in-different-cidr-ranges"></a>
 
 The following example policy has two statements:
-+ The first statement grants all users \(anonymous users\) in the `192.168.143.0/24` CIDR range \(except for `192.168.143.188`\) permission to use the `SendMessage` action for the queue named `111122223333`/queue1\.
-+ The second statement blocks all users \(anonymous users\) in the `10.1.2.0/24` CIDR range from using the queue\.
++ The first statement grants all users \(anonymous users\) in the `192.0.2.0/24` CIDR range \(except for `192.0.2.188`\) permission to use the `SendMessage` action for the queue named `111122223333`/queue1\.
++ The second statement blocks all users \(anonymous users\) in the `12.148.72.0/23` CIDR range from using the queue\.
 
 ```
 {
@@ -196,10 +196,10 @@ The following example policy has two statements:
       "Resource": "arn:aws:sqs:*:111122223333:queue1",
       "Condition" : {
          "IpAddress" : {
-            "aws:SourceIp":"192.168.143.0/24"
+            "aws:SourceIp":"192.0.2.0/24"
          },
          "NotIpAddress" : {
-            "aws:SourceIp":"192.168.143.188/32"
+            "aws:SourceIp":"192.0.2.188/32"
          }
       }
    }, {
@@ -210,7 +210,7 @@ The following example policy has two statements:
       "Resource": "arn:aws:sqs:*:111122223333:queue1",
       "Condition" : {
          "IpAddress" : {
-            "aws:SourceIp":"10.1.2.0/24"
+            "aws:SourceIp":"12.148.72.0/23"
          }
       }
    }]

@@ -27,7 +27,7 @@ The following are examples of the ARN format for queues:
 + An ARN for a queue named `my_queue` in the US East \(Ohio\) region, belonging to AWS Account 123456789012:
 
   ```
-  arn:aws:sqs:us-east-2:123456789012:my_queue		
+  arn:aws:sqs:us-east-2:123456789012:my_queue
   ```
 + An ARN for a queue named `my_queue` in each of the different regions that Amazon SQS supports:
 

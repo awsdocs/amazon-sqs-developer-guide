@@ -140,7 +140,7 @@ You can modify the following example to restrict all actions to a specific VPC e
          "sqs:SendMessage",
          "sqs:ReceiveMessage"
       ],
-         "Resource": "arn:aws::sqs:us-east-2:111122223333:queue1"
+         "Resource": "arn:aws:sqs:us-east-2:111122223333:queue1"
       },
       {
          "Sid": "2",
@@ -150,7 +150,7 @@ You can modify the following example to restrict all actions to a specific VPC e
             "sqs:SendMessage",
             "sqs:ReceiveMessage"
          ],
-         "Resource": "arn:aws::sqs:us-east-2:111122223333:queue1",
+         "Resource": "arn:aws:sqs:us-east-2:111122223333:queue1",
          "Condition": {
             "StringNotEquals": {
                "aws:sourceVpce": "vpce-1a2b3c4d"

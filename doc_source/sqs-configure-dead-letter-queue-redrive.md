@@ -21,7 +21,9 @@ You can configure a *dead\-letter queue redrive* to move standard unconsumed mes
    + **Custom max velocity** \- Redrive dead\-letter queue messages with a custom maximum rate of messages per second\. The maximum allowed rate is 500 messages per second\.
 
 1. When you finish configuring the dead\-letter queue redrive, choose **Redrive messages**\.
-**Note**  
+**Important**  
+Amazon SQS supports dead\-letter queue redrive only for standard queues in the Amazon SQS console\.  
+Amazon SQS doesn't support filtering and modifying messages while redriving them from the dead\-letter queue\.  
 A dead\-letter queue redrive task can run a maximum of 36 hours\. Amazon SQS supports a maximum of 100 active redrive tasks per account\.  
 The redrive task resets the retention period\. A new `messageID` and `enqueueTime` are assigned to redriven messages\.
 

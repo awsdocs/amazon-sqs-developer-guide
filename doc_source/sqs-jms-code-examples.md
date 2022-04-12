@@ -319,10 +319,10 @@ public class AsyncMessageReceiver {
          
         // No messages are processed until this is called
         connection.start();
-         
+
         ReceiverCallback callback = new ReceiverCallback();
         consumer.setMessageListener( callback );
-
+         
         callback.waitForOneMinuteOfSilence();
         System.out.println( "Returning after one minute of silence" );
 
