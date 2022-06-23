@@ -55,7 +55,7 @@ Moving a message to a [dead\-letter queue](sqs-dead-letter-queues.md) doesn't af
 The following key terms can help you better understand the functionality of SSE\. For detailed descriptions, see the *[Amazon Simple Queue Service API Reference](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/)*\.
 
 **Data key**  
-The data encryption key \(DEK\) responsible for encrypting the contents of Amazon SQS messages\.  
+The key \(DEK\) responsible for encrypting the contents of Amazon SQS messages\.  
 For more information, see [Data Keys](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys) in the *AWS Key Management Service Developer Guide* in the *AWS Encryption SDK Developer Guide*\.
 
 **Data key reuse period**  

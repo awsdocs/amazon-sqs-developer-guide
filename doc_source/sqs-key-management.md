@@ -25,7 +25,7 @@ Several AWS services act as event sources that can send events to Amazon SQS que
 
 1. Create a customer managed KMS key\. For more information, see [Creating Keys](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html) in the *AWS Key Management Service Developer Guide*\.
 
-1. To allow the AWS service event source to use the `kms:GenerateDataKey` and `kms:Decrypt` API methods, add the following statement to the KMS key key policy\.
+1. To allow the AWS service event source to use the `kms:GenerateDataKey` and `kms:Decrypt` API methods, add the following statement to the KMS key policy\.
 
    ```
    {
