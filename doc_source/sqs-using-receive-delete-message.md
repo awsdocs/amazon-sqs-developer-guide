@@ -18,7 +18,7 @@ After receiving messages from the Amazon SQS console, the console immediately se
 
 1. On the **Queues** page, choose a queue\.
 
-1. From **Actions**, choose **Send and receive messages**\.  
+1. Choose **Send and receive messages**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-tutorials-sending-message-to-queue-send-a-message.png)
 
    The console displays the **Send and receive messages** page\.

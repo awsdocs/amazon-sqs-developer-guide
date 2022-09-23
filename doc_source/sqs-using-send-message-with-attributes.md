@@ -10,7 +10,7 @@ For standard and FIFO queues, you can include structured metadata \(such as time
 
 1. On the **Queues** page, choose a queue\.
 
-1. From **Actions**, choose **Send and receive messages**\. 
+1. Choose **Send and receive messages**\. 
 
 1. Enter the message attribute parameters\. 
 

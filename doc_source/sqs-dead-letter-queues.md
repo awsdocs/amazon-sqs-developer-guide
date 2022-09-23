@@ -47,14 +47,14 @@ The main task of a dead\-letter queue is to handle the lifecycle of unconsumed m
 In a system that processes thousands of messages, having a large number of messages that the consumer repeatedly fails to acknowledge and delete might increase costs and place extra load on the hardware\. Instead of trying to process failing messages until they expire, it is better to move them to a dead\-letter queue after a few processing attempts\.
 
 **Note**  
-Standard queues allow a high number of inflight messages\. If the majority of your messages can't be consumed and aren't sent to a dead\-letter queue, your rate of processing valid messages can slow down\. Thus, to maintain the efficiency of your queue, make sure that your application correctly handles message processing\.
+Standard queues allow a high number of in flight messages\. If the majority of your messages can't be consumed and aren't sent to a dead\-letter queue, your rate of processing valid messages can slow down\. Thus, to maintain the efficiency of your queue, make sure that your application correctly handles message processing\.
 
 ### FIFO queues<a name="dead-letter-queues-FIFO-queues"></a>
 
 [FIFO queues](FIFO-queues.md) provide exactly\-once processing by consuming messages in sequence from a message group\. Thus, although the consumer can continue to retrieve ordered messages from another message group, the first message group remains unavailable until the message blocking the queue is processed successfully\.
 
 **Note**  
-FIFO queues allow a lower number of inflight messages\. Thus, to keep your FIFO queue from getting blocked by a message, make sure that your application correctly handles message processing\.
+FIFO queues allow a lower number of in flight messages\. Thus, to keep your FIFO queue from getting blocked by a message, make sure that your application correctly handles message processing\.
 
 ## When should I use a dead\-letter queue?<a name="sqs-dead-letter-queues-when-to-use"></a>
 

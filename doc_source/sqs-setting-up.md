@@ -1,13 +1,13 @@
 # Setting up Amazon SQS<a name="sqs-setting-up"></a>
 
+Before you can use Amazon SQS for the first time, you must complete the following steps\.
+
 **Topics**
 + [Step 1: Create an AWS account](#sqs-creating-aws-account)
 + [Step 2: Create an IAM user](#sqs-creating-iam-user)
 + [Step 3: Get your access key ID and secret access key](#sqs-getting-access-key-id-secret-access-key)
 + [Step 4: Get ready to use the example code](#sqs-get-ready-to-use-example-code)
 + [Next steps](#sqs-next-steps-setting-up)
-
-Before you can use Amazon SQS for the first time, you must complete the following steps\.
 
 ## Step 1: Create an AWS account<a name="sqs-creating-aws-account"></a>
 

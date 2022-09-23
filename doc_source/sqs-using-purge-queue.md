@@ -13,7 +13,7 @@ When you purge a queue, you can't retrieve any of the deleted messages\.
 
 1. On the **Queues** page, choose the queue to purge\. 
 
-1. Choose **Purge**\.
+1. From **Actions**, choose **Purge**\.
 
 1. In the **Purge queue** dialog box, confirm the purge by entering **purge** and choosing **Purge**\.
 

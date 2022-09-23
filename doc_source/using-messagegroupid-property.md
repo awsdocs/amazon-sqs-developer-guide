@@ -19,7 +19,7 @@ Any scenario with multiple producers and consumers increases the risk of inadver
 
 ## Avoid having a large backlog of messages with the same message group ID<a name="avoiding-having-a-large-backlog-of-messages-with-the-same-message-group-id"></a>
 
-For FIFO queues, there can be a maximum of 20,000 inflight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this quota, Amazon SQS returns no error messages\. A FIFO queue looks through the first 20k messages to determine available message groups\. This means that if you have a backlog of messages in a single message group, you can't consume messages from other message groups that were sent to the queue at a later time until you successfully consume the messages from the backlog\.
+For FIFO queues, there can be a maximum of 20,000 in flight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this quota, Amazon SQS returns no error messages\. A FIFO queue looks through the first 20k messages to determine available message groups\. This means that if you have a backlog of messages in a single message group, you can't consume messages from other message groups that were sent to the queue at a later time until you successfully consume the messages from the backlog\.
 
 **Note**  
 A backlog of messages that have the same message group ID might build up because of a consumer that can't successfully process a message\. Message processing issues can occur because of an issue with the content of a message or because of a technical issue with the consumer\.  

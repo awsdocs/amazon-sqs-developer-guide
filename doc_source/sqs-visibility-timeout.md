@@ -14,12 +14,12 @@ If the consumer detects a failed `ReceiveMessage` action, it can retry as many t
 When you receive a message with a message group ID, no more messages for the same message group ID are returned unless you delete the message or it becomes visible\.
 
 **Topics**
-+ [Inflight messages](#inflight-messages)
++ [In flight messages](#inflight-messages)
 + [Setting the visibility timeout](#configuring-visibility-timeout)
 + [Changing the visibility timeout for a message](#changing-message-visibility-timeout)
 + [Terminating the visibility timeout for a message](#terminating-message-visibility-timeout)
 
-## Inflight messages<a name="inflight-messages"></a>
+## In flight messages<a name="inflight-messages"></a>
 
 An Amazon SQS message has three basic states:
 
@@ -29,14 +29,14 @@ An Amazon SQS message has three basic states:
 
 1. Deleted from the queue\.
 
-A message is considered to be *stored* after it is sent to a queue by a producer, but not yet received from the queue by a consumer \(that is, between states 1 and 2\)\. There is no quota to the number of stored messages\. A message is considered to be *in flight* after it is received from a queue by a consumer, but not yet deleted from the queue \(that is, between states 2 and 3\)\. There is a quota to the number of inflight messages\.
+A message is considered to be *stored* after it is sent to a queue by a producer, but not yet received from the queue by a consumer \(that is, between states 1 and 2\)\. There is no quota to the number of stored messages\. A message is considered to be *in flight* after it is received from a queue by a consumer, but not yet deleted from the queue \(that is, between states 2 and 3\)\. There is a quota to the number of in flight messages\.
 
 **Important**  
-Quotas that apply to inflight messages are unrelated to the *unlimited* number of stored messages\.
+Quotas that apply to in flight messages are unrelated to the *unlimited* number of stored messages\.
 
-For most standard queues \(depending on queue traffic and message backlog\), there can be a maximum of approximately 120,000 inflight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this quota while using [short polling](sqs-short-and-long-polling.md#sqs-short-polling), Amazon SQS returns the `OverLimit` error message\. If you use [long polling](sqs-short-and-long-polling.md#sqs-long-polling), Amazon SQS returns no error messages\. To avoid reaching the quota, you should delete messages from the queue after they're processed\. You can also increase the number of queues you use to process your messages\. To request a quota increase, [submit a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\.
+For most standard queues \(depending on queue traffic and message backlog\), there can be a maximum of approximately 120,000 in flight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this quota while using [short polling](sqs-short-and-long-polling.md#sqs-short-polling), Amazon SQS returns the `OverLimit` error message\. If you use [long polling](sqs-short-and-long-polling.md#sqs-long-polling), Amazon SQS returns no error messages\. To avoid reaching the quota, you should delete messages from the queue after they're processed\. You can also increase the number of queues you use to process your messages\. To request a quota increase, [submit a support request](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sqs)\.
 
-For FIFO queues, there can be a maximum of 20,000 inflight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this quota, Amazon SQS returns no error messages\.
+For FIFO queues, there can be a maximum of 20,000 in flight messages \(received from a queue by a consumer, but not yet deleted from the queue\)\. If you reach this quota, Amazon SQS returns no error messages\.
 
 **Important**  
 When working with FIFO queues, `DeleteMessage` operations will fail if the request is received outside of the visibility timeout window\. If the visibility timeout is 0 seconds, the message must be deleted within the same millisecond it was sent, or it is considered abandoned\. This can cause Amazon SQS to include duplicate messages in the same response to a `ReceiveMessage` operation if the `MaxNumberOfMessages` parameter is greater than 1\. For additional details see [How the Amazon SQS FIFO API Works](http://aws.amazon.com/blogs/developer/how-the-amazon-sqs-fifo-api-works/)\.
