@@ -77,6 +77,16 @@ Add the following statement to the IAM policy of the producer\. Remember to use 
 }
 ```
 
+* In case of cross-account access the below actions are required
+
+```
+         "kms:Encrypt",
+         "kms:Decrypt",
+         "kms:ReEncrypt*",
+         "kms:GenerateDataKey*",
+         "kms:DescribeKey",
+```
+
 ### Configure KMS permissions for consumers<a name="receive-from-encrypted-queue"></a>
 
 When the data key reuse period expires, the consumer's next call to `ReceiveMessage` also triggers a call to `kms:Decrypt`, to verify the integrity of the new data key before using it\. Therefore, the consumer must have the `kms:Decrypt` permission for any KMS key that is used to encrypt the messages in the specified queue\. If the queue acts as a [dead\-letter queue](sqs-dead-letter-queues.md), the consumer must also have the `kms:Decrypt` permission for any KMS key that is used to encrypt the messages in the source queue\. Add the following statement to the IAM policy of the consumer\. Remember to use the correct ARN values for the key resource and the queue resource\.
