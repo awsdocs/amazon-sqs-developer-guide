@@ -19,6 +19,7 @@ You can configure a *dead\-letter queue redrive* to move standard unconsumed mes
 1. Under **Velocity control settings**, choose one of the following:
    + **System optimized** \- Redrive dead\-letter queue messages at the maximum number of messages per second\.
    + **Custom max velocity** \- Redrive dead\-letter queue messages with a custom maximum rate of messages per second\. The maximum allowed rate is 500 messages per second\.
+     + It is recommended to start with a small value for "Custom Max Velocity" and verify that the source queue does not get overwhelmed with messages. From there gradually ramp up the "Custom Max Velocity" value, continuing to monitor the state of the source queue.
 
 1. When you finish configuring the dead\-letter queue redrive, choose **Redrive messages**\.
 **Important**  
