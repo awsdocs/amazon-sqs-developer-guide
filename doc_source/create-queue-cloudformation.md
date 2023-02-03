@@ -1,6 +1,6 @@
 # Creating an Amazon SQS queue \(AWS CloudFormation\)<a name="create-queue-cloudformation"></a>
 
-You can use the AWS CloudFormation console and a JSON \(or YAML\) template to create an Amazon SQS queue\. For more information, see [Working with AWS CloudFormation Templates](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html) and the [`AWS::SQS::Queue` Resource](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html) in the *AWS CloudFormation User Guide*\.
+You can use the AWS CloudFormation console and a JSON \(or YAML\) template to create an Amazon SQS queue\. For more information, see [Working with AWS CloudFormation Templates](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html) and the [`AWS::SQS::Queue` Resource](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html) in the *AWS CloudFormation User Guide*\.
 
 **To use AWS CloudFormation to create an Amazon SQS queue\.**
 
