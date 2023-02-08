@@ -56,6 +56,9 @@ Standard queues allow a high number of in flight messages\. If the majority of y
 **Note**  
 FIFO queues allow a lower number of in flight messages\. Thus, to keep your FIFO queue from getting blocked by a message, make sure that your application correctly handles message processing\.
 
+**Note**
+When a message is moved from a FIFO Queue to a FIFO DLQ the original messages deduplication ID will be replaced with the original messages ID. This is to make sure that the DLQ deduplication will not prevent storing of two independent messages that happen to share a deduplication id.
+
 ## When should I use a dead\-letter queue?<a name="sqs-dead-letter-queues-when-to-use"></a>
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/checkmark.png)Do use dead\-letter queues with standard queues\. You should always take advantage of dead\-letter queues when your applications don't depend on ordering\. Dead\-letter queues can help you troubleshoot incorrect message transmission operations\.
